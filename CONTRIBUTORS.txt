@@ -9,3 +9,4 @@
 # they accept any liabilities with respect to them.
 
 - Rafael Corchuelo (corchu@us.es)
+- Juan Salado Jurado DT Student (juasaljur@alum.us.es)
