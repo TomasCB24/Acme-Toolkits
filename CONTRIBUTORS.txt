@@ -1,4 +1,4 @@
-# NOTICE.txt
+# CONTRIBUTORS.txt
 #
 # Copyright (C) 2012-2022 Rafael Corchuelo.
 #
@@ -9,4 +9,6 @@
 # they accept any liabilities with respect to them.
 
 - Rafael Corchuelo (corchu@us.es)
+- Pablo Rivera Jiménez DT Student (pabrivjim@alum.us.es)
 - Juan Salado Jurado DT Student (juasaljur@alum.us.es)
+
