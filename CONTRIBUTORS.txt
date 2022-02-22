@@ -11,9 +11,9 @@
 This project was contributed by the following people:
 
 - Rafael Corchuelo (corchu@us.es)
+- Miguel Romero Arjona DT Student (migromarj@alum.us.es)
 - Tomas Camero Borrego DT Student (tomcambor@alum.us.es / tcamerob@gmail.com)
 - Ismael Pérez Ortiz DT Student (ismperort@alum.us.es)
 - Pablo Rivera Jiménez DT Student (pabrivjim@alum.us.es)
 - Juan Salado Jurado DT Student (juasaljur@alum.us.es)
-
 
