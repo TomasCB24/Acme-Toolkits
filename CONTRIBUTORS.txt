@@ -9,3 +9,4 @@
 # they accept any liabilities with respect to them.
 
 - Rafael Corchuelo (corchu@us.es)
+- Tomas Camero Borrego DT Student (tomcambor@alum.us.es / tcamerob@gmail.com)
