@@ -1,0 +1,13 @@
+username,password,name,surname,email,company,sector
+johnny,johnny,Johnny,López,john@mail.com,"Cash & Carry, Co",Retailer
+lorraine,lorraine,Lorraine,Williams,lorraine@yellow-house.com,"Cash & Carry, Co",Retailer
+leslie,leslie,Leslie Marti,Ramport,leslie@us.es,"Networks, Inc.",Communications
+robert,robert,Robert,Johnson,robert@mail.server.com,"Networks, Inc.",Communications
+pepeluis,pepeluis,José Luis,Sørensen,ppepe.sorensen@sweden.sw,"Baby Care, GmbH",Children care
+luisa,luisa,Luisa,Martínez López,luisa@luisa.name,"Baby Care, GmbH",Children care
+lukas,lukas,Lukas,Smith,lukas@mail.com,Like children,N/A
+mary-dt,mary-dt,Mary,Design-Testing,mary@email.com,Good at WIS development,Design and Testing II
+jorge,jorge,Jorge,Libertad,jorge@yahoo.com,Good at playing the piano,Skoove on-line course
+sonia,sonia,Snojia Guðrún,Þor-Anaïs,sonja@liberty.de,N/A,N/A
+parker,parker,Parker Sigurður,Mañón-Perigüeñez,parker@outlook.com,Like spiders,Aracno Master at Toaster’s University
+manolo,manolo,Manuel Raúl,Benítez López,manolo@engineer.com,"Java EE, HTML, CSS, JavaScript, JSP",Toaster’s University

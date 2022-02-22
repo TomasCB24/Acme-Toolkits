@@ -1,0 +1,19 @@
+# company-es.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+master.company.title = La empresa
+master.company.text = \
+	Hello World, Inc. es una empresa ficticia que ofrece un proyecto starter para los \
+	estudiantes de la asignatura Diseño y Pruebas de la titulación de \
+	Ingeniería del Software en la Universidad de Sevilla. 
+master.company.name = Acme, Inc.
+master.company.address = 01 Acme Drive, Wondercity, Wonderland
+master.company.phone = +1 000 111 222
+master.company.email = contact@acme.com
