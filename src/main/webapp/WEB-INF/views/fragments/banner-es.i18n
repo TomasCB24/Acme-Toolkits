@@ -8,5 +8,5 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-master.banner.background = #FFFBB2
-master.banner.alt = Hello World, S.A.
+master.banner.background = #DFFFA5 
+master.banner.alt = Acme Toolkits, S.A.
