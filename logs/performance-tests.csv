@@ -1,14 +1,20 @@
 timestamp,test-class,test-method,time,description,result
-2022-02-22 12:21:23.25,acme.testing.FavouriteLinkTest,favouriteLink,1735,"favouriteLink()",OK
-2022-02-22 12:21:40.598,acme.testing.SignUpTest,positiveSignUp,16271,"[1] username=johnny, password=johnny, name=Johnny, surname=López, email=john@mail.com, phone=Cash & Carry, Co",OK
-2022-02-22 12:21:51.954,acme.testing.SignUpTest,positiveSignUp,10988,"[2] username=lorraine, password=lorraine, name=Lorraine, surname=Williams, email=lorraine@yellow-house.com, phone=Cash & Carry, Co",OK
-2022-02-22 12:22:03.523,acme.testing.SignUpTest,positiveSignUp,11134,"[3] username=leslie, password=leslie, name=Leslie Marti, surname=Ramport, email=leslie@us.es, phone=Networks, Inc.",OK
-2022-02-22 12:22:15.032,acme.testing.SignUpTest,positiveSignUp,11152,"[4] username=robert, password=robert, name=Robert, surname=Johnson, email=robert@mail.server.com, phone=Networks, Inc.",OK
-2022-02-22 12:22:26.397,acme.testing.SignUpTest,positiveSignUp,11025,"[5] username=pepeluis, password=pepeluis, name=José Luis, surname=Sørensen, email=ppepe.sorensen@sweden.sw, phone=Baby Care, GmbH",OK
-2022-02-22 12:22:37.841,acme.testing.SignUpTest,positiveSignUp,11117,"[6] username=luisa, password=luisa, name=Luisa, surname=Martínez López, email=luisa@luisa.name, phone=Baby Care, GmbH",OK
-2022-02-22 12:22:49.171,acme.testing.SignUpTest,positiveSignUp,10942,"[7] username=lukas, password=lukas, name=Lukas, surname=Smith, email=lukas@mail.com, phone=Like children",OK
-2022-02-22 12:23:00.488,acme.testing.SignUpTest,positiveSignUp,10993,"[8] username=mary-dt, password=mary-dt, name=Mary, surname=Design-Testing, email=mary@email.com, phone=Good at WIS development",OK
-2022-02-22 12:23:11.826,acme.testing.SignUpTest,positiveSignUp,10998,"[9] username=jorge, password=jorge, name=Jorge, surname=Libertad, email=jorge@yahoo.com, phone=Good at playing the piano",OK
-2022-02-22 12:23:23.213,acme.testing.SignUpTest,positiveSignUp,11001,"[10] username=sonia, password=sonia, name=Snojia Guðrún, surname=Þor-Anaïs, email=sonja@liberty.de, phone=N/A",OK
-2022-02-22 12:23:34.458,acme.testing.SignUpTest,positiveSignUp,10922,"[11] username=parker, password=parker, name=Parker Sigurður, surname=Mañón-Perigüeñez, email=parker@outlook.com, phone=Like spiders",OK
-2022-02-22 12:23:45.887,acme.testing.SignUpTest,positiveSignUp,11089,"[12] username=manolo, password=manolo, name=Manuel Raúl, surname=Benítez López, email=manolo@engineer.com, phone=Java EE, HTML, CSS, JavaScript, JSP",OK
+2022-02-26 12:03:59.632,acme.testing.FavouriteLinkTest,favouriteLink,1509,"favouriteLink()",OK
+2022-02-26 12:04:14.787,acme.testing.SignUpTest,positiveSignUp,14139,"[1] username=johnny, password=johnny, name=Johnny, surname=López, email=john@mail.com, phone=Cash & Carry, Co",OK
+2022-02-26 12:04:26.383,acme.testing.SignUpTest,positiveSignUp,11192,"[2] username=lorraine, password=lorraine, name=Lorraine, surname=Williams, email=lorraine@yellow-house.com, phone=Cash & Carry, Co",OK
+2022-02-26 12:04:38.389,acme.testing.SignUpTest,positiveSignUp,11696,"[3] username=leslie, password=leslie, name=Leslie Marti, surname=Ramport, email=leslie@us.es, phone=Networks, Inc.",OK
+2022-02-26 12:04:50.181,acme.testing.SignUpTest,positiveSignUp,11360,"[4] username=robert, password=robert, name=Robert, surname=Johnson, email=robert@mail.server.com, phone=Networks, Inc.",OK
+2022-02-26 12:05:01.739,acme.testing.SignUpTest,positiveSignUp,11174,"[5] username=pepeluis, password=pepeluis, name=José Luis, surname=Sørensen, email=ppepe.sorensen@sweden.sw, phone=Baby Care, GmbH",OK
+2022-02-26 12:05:13.787,acme.testing.SignUpTest,positiveSignUp,11596,"[6] username=luisa, password=luisa, name=Luisa, surname=Martínez López, email=luisa@luisa.name, phone=Baby Care, GmbH",OK
+2022-02-26 12:05:25.374,acme.testing.SignUpTest,positiveSignUp,11217,"[7] username=lukas, password=lukas, name=Lukas, surname=Smith, email=lukas@mail.com, phone=Like children",OK
+2022-02-26 12:05:36.88,acme.testing.SignUpTest,positiveSignUp,11151,"[8] username=mary-dt, password=mary-dt, name=Mary, surname=Design-Testing, email=mary@email.com, phone=Good at WIS development",OK
+2022-02-26 12:05:48.268,acme.testing.SignUpTest,positiveSignUp,11033,"[9] username=jorge, password=jorge, name=Jorge, surname=Libertad, email=jorge@yahoo.com, phone=Good at playing the piano",OK
+2022-02-26 12:05:59.644,acme.testing.SignUpTest,positiveSignUp,11053,"[10] username=sonia, password=sonia, name=Snojia Guðrún, surname=Þor-Anaïs, email=sonja@liberty.de, phone=N/A",OK
+2022-02-26 12:06:10.943,acme.testing.SignUpTest,positiveSignUp,10974,"[11] username=parker, password=parker, name=Parker Sigurður, surname=Mañón-Perigüeñez, email=parker@outlook.com, phone=Like spiders",OK
+2022-02-26 12:06:16.032,acme.testing.SignUpTest,positiveSignUp,4684,"[12] username=manolo, password=manolo, name=Manuel Raúl, surname=Benítez López, email=manolo@engineer.com, phone=Java EE, HTML, CSS, JavaScript, JSP",Failed to decode response from marionette
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-1MNTN9I', ip: '192.168.1.52', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_281'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 97.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220216172458, moz:geckodriverVersion: 0.30.0, moz:headless: false, moz:processID: 12836, moz:profile: C:\Users\tcame\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 6465ae8a-670f-4754-a92b-76428940f328
+*** Element info: {Using=tag name, value=html}
