@@ -18,6 +18,7 @@ master.menu.sign-out = Salir
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
+master.menu.anonymous.favourite-link = Enlace favorito
 master.menu.anonymous.favourite-link-tomas = 47343607Q: Camero Borrego, Tomás
 master.menu.anonymous.favourite-link-ezequiel = 49825086W: Gonzalez Macho, Ezequiel
 master.menu.anonymous.favourite-link-ismael = 47429397Q: Pérez Ortiz, Ismael

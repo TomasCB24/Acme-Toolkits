@@ -19,8 +19,8 @@
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
-      
-      <acme:menu-suboption code="master.menu.anonymous.favourite-link-tomas" action="https://www3.animeflv.net"/>
+      		<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
+      		<acme:menu-suboption code="master.menu.anonymous.favourite-link-tomas" action="https://www3.animeflv.net"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-ezequiel" action="https://github.com/ezegonmac/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-ismael" action="https://gdg.community.dev/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-pablo" action="https://www.mangatigre.com/"/>
