@@ -2,6 +2,7 @@ package acme.forms;
 
 import java.io.Serializable;
 
+import acme.framework.datatypes.Money;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,16 +17,16 @@ public class AdministratorDashboard implements Serializable {
 	// Attributes -------------------------------------------------------------
 
 	Double						totalNumberOfComponents;
-	Double						averageOfComponentsRetailPrice;
-	Double						deviationOfComponentsRetailPrice;
-	Double						minimumOfComponentsRetailPrice;
-	Double						maximumOfComponentsRetailPrice;
+	Money						averageOfComponentsRetailPrice;
+	Money						deviationOfComponentsRetailPrice;
+	Money						minimumOfComponentsRetailPrice;
+	Money						maximumOfComponentsRetailPrice;
 	
 	Double						totalNumberOftools;
-	Double						averageOfToolsRetailPrice;
-	Double						deviationOfToolsRetailPrice;
-	Double						minimumOfToolsRetailPrice;
-	Double						maximumOfToolsRetailPrice;
+	Money						averageOfToolsRetailPrice;
+	Money						deviationOfToolsRetailPrice;
+	Money						minimumOfToolsRetailPrice;
+	Money						maximumOfToolsRetailPrice;
 	
 	Double						totalNumberOfProposedPatronages;
 	Double						totalNumberOfAcceptedPatronages;
@@ -39,13 +40,13 @@ public class AdministratorDashboard implements Serializable {
 	Double						deviationOfAcceptedPatronages;
 	Double						deviationOfDeniedPatronages;
 	
-	Double						minimumOfProposedPatronages;
-	Double						minimumOfAcceptedPatronages;
-	Double						minimumOfDeniedPatronages;
+	Money						minimumOfProposedPatronages;
+	Money						minimumOfAcceptedPatronages;
+	Money						minimumOfDeniedPatronages;
 	
-	Double						maximumOfProposedPatronages;
-	Double						maximumOfAcceptedPatronages;
-	Double						maximumOfDeniedPatronages;
+	Money						maximumOfProposedPatronages;
+	Money						maximumOfAcceptedPatronages;
+	Money						maximumOfDeniedPatronages;
 
 	// Derived attributes -----------------------------------------------------
 
