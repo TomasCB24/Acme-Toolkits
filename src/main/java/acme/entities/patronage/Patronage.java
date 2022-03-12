@@ -6,13 +6,14 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.framework.datatypes.Money;
 import acme.framework.entities.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -34,17 +35,22 @@ public class Patronage extends AbstractEntity{
 	protected String code;
 	
 	@NotBlank
-	@Length(min=0, max=256)
+	@Length(max=256)
 	protected String legalStuff;
 	
-	@Min(0)
-	protected Double budget;
+	protected Money budget;
 	
-	//to be reviewed
-	@Temporal(TemporalType.TIME)
-	protected Date	periodOfTime;
+	@Past
+	@Temporal(TemporalType.DATE)
+	protected Date	creationDate;
+	
+	@Temporal(TemporalType.DATE)
+	protected Date	initialPeriodDate;
+	
+	@Temporal(TemporalType.DATE)
+	protected Date	finalPeriodDate;
 	
 	@URL
-	protected String info;
+	protected String link;
 
 }
