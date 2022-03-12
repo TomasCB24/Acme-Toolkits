@@ -1,5 +1,6 @@
 package acme.forms;
 
+import acme.framework.datatypes.Money;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,20 +17,20 @@ public class PatronDashboard {
 	Integer						totalNumberOfAcceptedPatronages;
 	Integer						totalNumberOfDeniedPatronages;
 	
-	Double						averageBudgetOfProposedPatronages;
-	Double						deviationBudgetOfProposedPatronages;
-	Double						minimumBudgetOfProposedPatronages;
-	Double						maximumBudgetOfProposedPatronages;
+	Money						averageBudgetOfProposedPatronages;
+	Money						deviationBudgetOfProposedPatronages;
+	Money						minimumBudgetOfProposedPatronages;
+	Money						maximumBudgetOfProposedPatronages;
 	
-	Double						averageBudgetOfAcceptedPatronages;
-	Double						deviationBudgetOfAcceptedPatronages;
-	Double						minimumBudgetOfAcceptedPatronages;
-	Double						maximumBudgetOfAcceptedPatronages;
+	Money						averageBudgetOfAcceptedPatronages;
+	Money						deviationBudgetOfAcceptedPatronages;
+	Money						minimumBudgetOfAcceptedPatronages;
+	Money						maximumBudgetOfAcceptedPatronages;
 	
-	Double						averageBudgetOfDeniedPatronages;
-	Double						deviationBudgetOfDeniedPatronages;
-	Double						minimumBudgetOfDeniedPatronages;
-	Double						maximumBudgetOfDeniedPatronages;
+	Money						averageBudgetOfDeniedPatronages;
+	Money						deviationBudgetOfDeniedPatronages;
+	Money						minimumBudgetOfDeniedPatronages;
+	Money						maximumBudgetOfDeniedPatronages;
 
 
 	// Derived attributes -----------------------------------------------------
