@@ -26,6 +26,10 @@ public class PatronageReport extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 	
+	@NotBlank
+	@Pattern(regexp = "^[0-9]{4}$")
+	protected String serialNumber;
+	
 	//Must be automatic (toDo)
 	@NotBlank
 	@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?:[0-9]{4}$")
@@ -36,10 +40,10 @@ public class PatronageReport extends AbstractEntity {
 	protected Date	creationMoment;
 	
 	@NotBlank
-	@Length(min=0, max=256)
+	@Length(max=256)
 	protected String memorandum;
 	
 	@URL
-	protected String info;
+	protected String link;
 	
 }
