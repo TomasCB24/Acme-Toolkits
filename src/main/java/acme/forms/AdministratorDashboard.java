@@ -40,13 +40,13 @@ public class AdministratorDashboard implements Serializable {
 	Double						deviationOfAcceptedPatronages;
 	Double						deviationOfDeniedPatronages;
 	
-	Money						minimumOfProposedPatronages;
-	Money						minimumOfAcceptedPatronages;
-	Money						minimumOfDeniedPatronages;
+	Double						minimumOfProposedPatronages;
+	Double						minimumOfAcceptedPatronages;
+	Double						minimumOfDeniedPatronages;
 	
-	Money						maximumOfProposedPatronages;
-	Money						maximumOfAcceptedPatronages;
-	Money						maximumOfDeniedPatronages;
+	Double						maximumOfProposedPatronages;
+	Double						maximumOfAcceptedPatronages;
+	Double						maximumOfDeniedPatronages;
 
 	// Derived attributes -----------------------------------------------------
 
