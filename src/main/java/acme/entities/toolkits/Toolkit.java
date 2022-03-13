@@ -2,10 +2,13 @@ package acme.entities.toolkits;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.URL;
 
 import acme.framework.datatypes.Money;
 import acme.framework.entities.AbstractEntity;
@@ -24,6 +27,7 @@ public class Toolkit extends AbstractEntity{
 	// Attributes -------------------------------------------------------------
 
 	@Column(unique=true)
+	@NotBlank
 	@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
 	protected String			code;
 
@@ -39,6 +43,7 @@ public class Toolkit extends AbstractEntity{
 	@Length(max = 256)
 	protected String			assemblyNotes;
 
+	@URL
 	protected String 			link;
 
 	@NotBlank
@@ -46,6 +51,7 @@ public class Toolkit extends AbstractEntity{
 	protected String			toolName;
 	
 	@Column(unique=true)
+	@NotBlank
 	@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
 	protected String			toolCode;
 
@@ -57,8 +63,11 @@ public class Toolkit extends AbstractEntity{
 	@Length(max = 256)
 	protected String			toolDescription;
 
+	@NotNull
+	@Valid
 	protected Money				toolRetailPrice;
 	
+	@URL
 	protected String 			toolLink;
 	
 	// Derived attributes -----------------------------------------------------
