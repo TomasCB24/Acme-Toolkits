@@ -44,6 +44,7 @@ public class Patronage extends AbstractEntity{
 	protected String legalStuff;
 	
 	@NotNull
+	@Valid
 	protected Money budget;
 	
 	@Past
