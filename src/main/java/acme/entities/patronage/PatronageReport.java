@@ -3,9 +3,12 @@ package acme.entities.patronage;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
@@ -33,10 +36,11 @@ public class PatronageReport extends AbstractEntity {
 	//Must be automatic (toDo)
 	@NotBlank
 	@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?:[0-9]{4}$")
-	protected String sequenceNumber;
+	protected String sequenceNumber = this.patronage.getCode() + ":" + this.serialNumber;
 	
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
+	@NotNull
 	protected Date	creationMoment;
 	
 	@NotBlank
@@ -45,5 +49,13 @@ public class PatronageReport extends AbstractEntity {
 	
 	@URL
 	protected String link;
+	
+	// Relationships ----------------------------------------------------------
+
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	protected Patronage patronage;
 	
 }
