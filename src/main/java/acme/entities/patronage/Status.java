@@ -1,7 +1,7 @@
 package acme.entities.patronage;
 
 
-public enum PatronageStatus {
+public enum Status {
 		PROPOSED, ACCEPTED, DENIED
 
 }
