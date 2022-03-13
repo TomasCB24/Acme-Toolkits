@@ -6,6 +6,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.URL;
 
 import acme.framework.entities.AbstractEntity;
 import lombok.Getter;
@@ -23,6 +24,7 @@ public class Toolkit extends AbstractEntity{
 	// Attributes -------------------------------------------------------------
 
 	@Column(unique=true)
+	@NotBlank
 	@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
 	protected String			code;
 
@@ -38,6 +40,7 @@ public class Toolkit extends AbstractEntity{
 	@Length(max = 256)
 	protected String			assemblyNotes;
 
+	@URL
 	protected String 			link;
 
 
