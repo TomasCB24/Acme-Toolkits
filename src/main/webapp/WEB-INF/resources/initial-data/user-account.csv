@@ -2,3 +2,13 @@ key,enabled,identity,password,username
 user-account-anonymous-01,false,"UserIdentity{name: 'John', surname: 'Doe', email: 'john.doe@acme.com'}",HIDDEN-PASSWORD,anonymous
 user-account-administrator-01,true,"UserIdentity{name: 'Administrator', surname: 'Acme', email: 'administrator@acme.com'}",administrator,administrator
 user-account-administrator-02,true,"UserIdentity{name: 'Administrador', surname: 'Acme', email: 'administrador@acme.com'}",administrador,administrador
+user-account-patron-01,true,"UserIdentity{name: 'Patron1', surname: 'Acme', email: 'patron1@acme.com'}",patron1,patron1
+user-account-patron-02,true,"UserIdentity{name: 'Patron2', surname: 'Acme', email: 'patron2@acme.com'}",patron2,patron2
+user-account-patron-03,true,"UserIdentity{name: 'Patron3', surname: 'Acme', email: 'patron3@acme.com'}",patron3,patron3
+user-account-patron-04,true,"UserIdentity{name: 'Patron4', surname: 'Acme', email: 'patron4@acme.com'}",patron4,patron4
+user-account-patron-05,true,"UserIdentity{name: 'Patron5', surname: 'Acme', email: 'patron5@acme.com'}",patron5,patron5
+user-account-inventor-01,true,"UserIdentity{name: 'Inventor1', surname: 'Acme', email: 'inventor1@acme.com'}",inventor1,inventor1
+user-account-inventor-02,true,"UserIdentity{name: 'Inventor2', surname: 'Acme', email: 'inventor2@acme.com'}",inventor2,inventor2
+user-account-inventor-03,true,"UserIdentity{name: 'Inventor3', surname: 'Acme', email: 'inventor3@acme.com'}",inventor3,inventor3
+user-account-inventor-04,true,"UserIdentity{name: 'Inventor4', surname: 'Acme', email: 'inventor4@acme.com'}",inventor4,inventor4
+user-account-inventor-05,true,"UserIdentity{name: 'Inventor5', surname: 'Acme', email: 'inventor5@acme.com'}",inventor5,inventor5
