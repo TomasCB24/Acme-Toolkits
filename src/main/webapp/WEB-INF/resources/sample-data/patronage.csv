@@ -1,0 +1,7 @@
+key,key:patron,key:inventor,status,code,legal-stuff,budget,creation-date,initial-period-date,final-period-date,link
+patronage-01,patron-01,inventor-01,PROPOSED,AAA-000-A,legal Stuff 1,EUR 100.00,2022/01/06,2022/02/10,2022/03/11,null
+patronage-02,patron-02,inventor-02,PROPOSED,AAA-000-B,legal Stuff 1,EUR 100.00,2022/01/06,2022/02/10,2022/03/11,null
+patronage-03,patron-03,inventor-03,PROPOSED,AAA-000-C,legal Stuff 1,EUR 100.00,2022/01/06,2022/02/10,2022/03/11,null
+patronage-04,patron-04,inventor-04,PROPOSED,AAA-000-D,legal Stuff 1,EUR 100.00,2022/01/06,2022/02/10,2022/03/11,null
+patronage-05,patron-05,inventor-05,PROPOSED,AAA-000-E,legal Stuff 1,EUR 100.00,2022/01/06,2022/02/10,2022/03/11,null
+
