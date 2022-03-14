@@ -1,10 +1,14 @@
-package acme.entities.chirp;
+package acme.entities.chirps;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -22,8 +26,10 @@ public class Chirp extends AbstractEntity{
 	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
-
-	protected LocalDate			creationMoment = LocalDate.now();
+	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
+	@Past
+	protected Date			creationMoment;
 
 	@NotBlank
 	@Length(max = 101)

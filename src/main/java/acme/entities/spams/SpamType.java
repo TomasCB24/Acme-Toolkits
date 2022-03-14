@@ -1,4 +1,4 @@
-package acme.entities.spam;
+package acme.entities.spams;
 
 
 public enum SpamType {

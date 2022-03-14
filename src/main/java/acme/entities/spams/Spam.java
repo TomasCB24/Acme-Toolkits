@@ -1,4 +1,4 @@
-package acme.entities.spam;
+package acme.entities.spams;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;

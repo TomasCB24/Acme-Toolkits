@@ -1,6 +1,6 @@
 key,creation-moment,title,author,body,email
-chirp-01,2022/02/28 23:59,title1,author1,This is body 1,chirp1@acme.com
-chirp-02,2022/02/28 23:59,title2,author2,This is body 2,chirp2@acme.com
-chirp-03,2022/02/28 23:59,title3,author3,This is body 3,chirp3@acme.com
-chirp-04,2022/02/28 23:59,title4,author4,This is body 4,chirp4@acme.com
-chirp-05,2022/02/28 23:59,title5,author5,This is body 5,chirp5@acme.com
+chirp-01,"2022/02/28 23:59",title1,author1,This is body 1,chirp1@acme.com
+chirp-02,"2022/02/28 23:59",title2,author2,This is body 2,chirp2@acme.com
+chirp-03,"2022/02/28 23:59",title3,author3,This is body 3,chirp3@acme.com
+chirp-04,"2022/02/28 23:59",title4,author4,This is body 4,chirp4@acme.com
+chirp-05,"2022/02/28 23:59",title5,author5,This is body 5,chirp5@acme.com
