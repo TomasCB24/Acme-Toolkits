@@ -1,7 +1,8 @@
 package acme.entities.patronage;
 
 import java.util.Date;
-
+import acme.roles.Inventor;
+import acme.roles.Patron;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
