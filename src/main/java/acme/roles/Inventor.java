@@ -1,7 +1,6 @@
 package acme.roles;
 
 import javax.persistence.Entity;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.Length;
@@ -29,7 +28,6 @@ public class Inventor extends UserRole {
 	@Length(max=255)
 	protected String			statement;
 
-	@Email
-	protected String			email;
+	protected String			link;
 	
 }
