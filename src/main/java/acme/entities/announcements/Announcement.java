@@ -1,6 +1,6 @@
 package acme.entities.announcements;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
@@ -30,7 +30,7 @@ public class Announcement extends AbstractEntity{
 		@Temporal(TemporalType.TIMESTAMP)
 		@Past
 		@NotNull
-		protected LocalDate creationMoment;
+		protected Date creationMoment;
 		
 		@NotBlank
 		@Length(max = 101)
