@@ -1,6 +1,6 @@
 package acme.entities.components;
 
-import java.awt.Toolkit;
+import acme.entities.toolkits.Toolkit;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
