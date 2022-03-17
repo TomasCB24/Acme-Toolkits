@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.URL;
 
 import acme.framework.roles.UserRole;
 import lombok.Getter;
@@ -21,13 +22,14 @@ public class Patron extends UserRole {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	@Length(max=100)
+	@Length(min=1,max=100)
 	protected String			company;
 
 	@NotBlank
-	@Length(max=255)
+	@Length(min=1,max=255)
 	protected String			statement;
 
+	@URL
 	protected String			link;
 	
 }
