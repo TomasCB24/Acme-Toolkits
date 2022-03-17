@@ -2,6 +2,7 @@ package acme.entities.patronage;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
@@ -29,7 +30,8 @@ public class PatronageReport extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 	
-	@NotBlank
+	
+	@Column(unique=true)
 	@Pattern(regexp = "^[0-9]{4}$")
 	protected String serialNumber;
 	
@@ -40,7 +42,7 @@ public class PatronageReport extends AbstractEntity {
 	protected Date	creationMoment;
 	
 	@NotBlank
-	@Length(max=256)
+	@Length(min=1, max=255)
 	protected String memorandum;
 	
 	@URL
@@ -56,7 +58,7 @@ public class PatronageReport extends AbstractEntity {
 
 	@NotNull
 	@Valid
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = true)
 	protected Patronage patronage;
 	
 }
