@@ -1,6 +1,6 @@
 key,key:user-account,company,statement,link
-inventor-01,user-account-inventor-01,Company1,This is the statement1,null
+inventor-01,user-account-inventor-01,Company1,This is the statement1,https://www.google.com/
 inventor-02,user-account-inventor-02,Company2,This is the statement2,null
 inventor-03,user-account-inventor-03,Company3,This is the statement3,null
-inventor-04,user-account-inventor-04,Company4,This is the statement4,null
+inventor-04,user-account-inventor-04,Company4,This is the statement4,https://www.google.com/
 inventor-05,user-account-inventor-05,Company5,This is the statement5,null
