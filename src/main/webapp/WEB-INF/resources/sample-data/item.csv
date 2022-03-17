@@ -1,6 +1,6 @@
-key,key:inventor,name,code,technology,description,retail-price,link
-item-01,inventor-01,name1,AAA-000-A,technology1,This is description 1,EUR 130.00,null
-item-02,inventor-02,name2,AAA-000-B,technology2,This is description 2,EUR 130.00,https://www.google.com/
-item-03,inventor-03,name3,AAA-000-C,technology3,This is description 3,EUR 130.00,null
-item-04,inventor-04,name4,AAA-000-D,technology4,This is description 4,EUR 130.00,https://www.google.com/
-item-05,inventor-05,name5,AAA-000-E,technology5,This is description 5,EUR 130.00,null
+key,key:inventor,name,code,technology,description,retail-price,link,type
+item-01,inventor-01,name1,AAA-000-A,technology1,This is description 1,EUR 130.00,null,TOOL
+item-02,inventor-02,name2,AAA-000-B,technology2,This is description 2,EUR 130.00,https://www.google.com/,TOOL
+item-03,inventor-03,name3,AAA-000-C,technology3,This is description 3,EUR 130.00,null,COMPONENT
+item-04,inventor-04,name4,AAA-000-D,technology4,This is description 4,EUR 130.00,https://www.google.com/,COMPONENT
+item-05,inventor-05,name5,AAA-000-E,technology5,This is description 5,EUR 130.00,null,TOOL
