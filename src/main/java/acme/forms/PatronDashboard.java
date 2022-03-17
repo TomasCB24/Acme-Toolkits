@@ -1,12 +1,14 @@
 package acme.forms;
 
+import java.io.Serializable;
+
 import acme.framework.datatypes.Money;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class PatronDashboard {
+public class PatronDashboard implements Serializable {
 	// Serialisation identifier -----------------------------------------------
 
 	protected static final long	serialVersionUID	= 1L;
@@ -17,20 +19,20 @@ public class PatronDashboard {
 	Integer						totalNumberOfAcceptedPatronages;
 	Integer						totalNumberOfDeniedPatronages;
 	
-	Money						averageBudgetOfProposedPatronages;
-	Money						deviationBudgetOfProposedPatronages;
-	Money						minimumBudgetOfProposedPatronages;
-	Money						maximumBudgetOfProposedPatronages;
+	Money						averageBudgetOfProposedPatronagesGroupedByCurrency;
+	Money						deviationBudgetOfProposedPatronagesGroupedByCurrency;
+	Money						minimumBudgetOfProposedPatronagesGroupedByCurrency;
+	Money						maximumBudgetOfProposedPatronagesGroupedByCurrency;
 	
-	Money						averageBudgetOfAcceptedPatronages;
-	Money						deviationBudgetOfAcceptedPatronages;
-	Money						minimumBudgetOfAcceptedPatronages;
-	Money						maximumBudgetOfAcceptedPatronages;
+	Money						averageBudgetOfAcceptedPatronagesGroupedByCurrency;
+	Money						deviationBudgetOfAcceptedPatronagesGroupedByCurrency;
+	Money						minimumBudgetOfAcceptedPatronagesGroupedByCurrency;
+	Money						maximumBudgetOfAcceptedPatronagesGroupedByCurrency;
 	
-	Money						averageBudgetOfDeniedPatronages;
-	Money						deviationBudgetOfDeniedPatronages;
-	Money						minimumBudgetOfDeniedPatronages;
-	Money						maximumBudgetOfDeniedPatronages;
+	Money						averageBudgetOfDeniedPatronagesGroupedByCurrency;
+	Money						deviationBudgetOfDeniedPatronagesGroupedByCurrency;
+	Money						minimumBudgetOfDeniedPatronagesGroupedByCurrency;
+	Money						maximumBudgetOfDeniedPatronagesGroupedByCurrency;
 
 
 	// Derived attributes -----------------------------------------------------
