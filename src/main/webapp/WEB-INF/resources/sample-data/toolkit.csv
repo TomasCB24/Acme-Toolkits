@@ -1,6 +1,6 @@
-key,code,title,description,assembly-notes,link,tool-name,tool-code,tool-technology,tool-description,tool-retail-price,tool-link
-toolkit-01,AAA-000-A,title1,This is description 1,this is the assembly notes 1,null,name1,AAA-000-A,technology1,This is description 1,EUR 50.00,null
-toolkit-02,AAA-000-B,title2,This is description 2,this is the assembly notes 2,null,name2,AAA-000-B,technology2,This is description 2,EUR 50.00,null
-toolkit-03,AAA-000-C,title3,This is description 3,this is the assembly notes 3,null,name3,AAA-000-C,technology3,This is description 3,EUR 50.00,null
-toolkit-04,AAA-000-D,title4,This is description 4,this is the assembly notes 4,null,name4,AAA-000-D,technology4,This is description 4,EUR 50.00,null
-toolkit-05,AAA-000-E,title5,This is description 5,this is the assembly notes 5,null,name5,AAA-000-E,technology5,This is description 5,EUR 50.00,null
+key,code,title,description,assembly-notes,link
+toolkit-01,AAA-000-A,title1,This is description 1,this is the assembly notes 1,https://www.google.com/
+toolkit-02,AAA-000-B,title2,This is description 2,this is the assembly notes 2,null
+toolkit-03,AAA-000-C,title3,This is description 3,this is the assembly notes 3,null
+toolkit-04,AAA-000-D,title4,This is description 4,this is the assembly notes 4,null
+toolkit-05,AAA-000-E,title5,This is description 5,this is the assembly notes 5,https://ev.us.es
