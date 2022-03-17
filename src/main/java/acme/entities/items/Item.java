@@ -1,7 +1,4 @@
-package acme.entities.components;
-
-import acme.entities.toolkits.Toolkit;
-
+package acme.entities.items;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -15,23 +12,26 @@ import org.hibernate.validator.constraints.URL;
 
 import acme.framework.datatypes.Money;
 import acme.framework.entities.AbstractEntity;
+import acme.roles.Inventor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Component extends AbstractEntity {
-	
+public class Item extends AbstractEntity{
+		
 	// Serialisation identifier -----------------------------------------------
 
 	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
 
+	@NotNull
+	protected ItemType			type;
 	
 	@NotBlank
-	@Length(max = 101)
+	@Length(min=1, max=100)
 	protected String			name;
 
 	@Column(unique=true)
@@ -39,11 +39,11 @@ public class Component extends AbstractEntity {
 	protected String			code;
 
 	@NotBlank
-	@Length(max = 101)
+	@Length(min=1, max = 100)
 	protected String			technology;
 
 	@NotBlank
-	@Length(max = 256)
+	@Length(min=1, max = 255)
 	protected String			description;
 	
 	@NotNull
@@ -61,6 +61,9 @@ public class Component extends AbstractEntity {
 	@NotNull
     @Valid
     @ManyToOne(optional = false)
-    protected Toolkit toolkit;
+    protected Inventor inventor;
 
 }
+
+
+
