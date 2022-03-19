@@ -1,8 +1,8 @@
 package acme.forms;
 
 import java.io.Serializable;
+import java.util.Map;
 
-import acme.framework.datatypes.Money;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,26 +14,24 @@ public class PatronDashboard implements Serializable {
 	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
-
-	Integer						totalNumberOfProposedPatronages;
-	Integer						totalNumberOfAcceptedPatronages;
-	Integer						totalNumberOfDeniedPatronages;
 	
-	Money						averageBudgetOfProposedPatronagesGroupedByCurrency;
-	Money						deviationBudgetOfProposedPatronagesGroupedByCurrency;
-	Money						minimumBudgetOfProposedPatronagesGroupedByCurrency;
-	Money						maximumBudgetOfProposedPatronagesGroupedByCurrency;
+	int							totalNumberOfProposedPatronages;
+	Map<String, Double>			averageBudgetOfProposedPatronages;
+	Map<String, Double>			deviationBudgetOfProposedPatronages;
+	Map<String, Double>			minimumBudgetOfProposedPatronages;
+	Map<String, Double>			maximumBudgetOfProposedPatronages;
 	
-	Money						averageBudgetOfAcceptedPatronagesGroupedByCurrency;
-	Money						deviationBudgetOfAcceptedPatronagesGroupedByCurrency;
-	Money						minimumBudgetOfAcceptedPatronagesGroupedByCurrency;
-	Money						maximumBudgetOfAcceptedPatronagesGroupedByCurrency;
+	int							totalNumberOfAcceptedPatronages;
+	Map<String, Double>			averageBudgetOfAcceptedPatronages;
+	Map<String, Double>			deviationBudgetOfAcceptedPatronages;
+	Map<String, Double>			minimumBudgetOfAcceptedPatronages;
+	Map<String, Double>			maximumBudgetOfAcceptedPatronages;
 	
-	Money						averageBudgetOfDeniedPatronagesGroupedByCurrency;
-	Money						deviationBudgetOfDeniedPatronagesGroupedByCurrency;
-	Money						minimumBudgetOfDeniedPatronagesGroupedByCurrency;
-	Money						maximumBudgetOfDeniedPatronagesGroupedByCurrency;
-
+	int							totalNumberOfDeniedPatronages;
+	Map<String, Double>			averageBudgetOfDeniedPatronages;
+	Map<String, Double>			deviationBudgetOfDeniedPatronages;
+	Map<String, Double>			minimumBudgetOfDeniedPatronages;
+	Map<String, Double>			maximumBudgetOfDeniedPatronages;
 
 	// Derived attributes -----------------------------------------------------
 
