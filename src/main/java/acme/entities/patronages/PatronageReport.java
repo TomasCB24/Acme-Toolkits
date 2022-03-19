@@ -8,10 +8,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
-import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -32,8 +33,10 @@ public class PatronageReport extends AbstractEntity {
 	
 	
 	@Column(unique=true)
-	@Pattern(regexp = "^[0-9]{4}$")
-	protected String serialNumber;
+	@Max(9999)
+	@Min(1)
+	@NotNull
+	protected Integer serialNumber;
 	
 	
 	@Past
@@ -50,7 +53,17 @@ public class PatronageReport extends AbstractEntity {
 	
 	// Derived attributes -----------------------------------------------------
 	public String sequenceNumber() {
-		return this.patronage.getCode() + ":" + this.serialNumber;
+		String serialNumberToString;
+		if(this.serialNumber>999) {
+			serialNumberToString = this.serialNumber.toString();
+		}else if(this.serialNumber>99) {
+			serialNumberToString="0"+this.serialNumber.toString();
+		}else if(this.serialNumber>9){
+			serialNumberToString="00"+this.serialNumber.toString();
+		}else {
+			serialNumberToString="000"+this.serialNumber.toString();
+		}
+		return this.patronage.getCode() + ":" + serialNumberToString;
 	}
 	
 	// Relationships ----------------------------------------------------------
@@ -58,7 +71,7 @@ public class PatronageReport extends AbstractEntity {
 
 	@NotNull
 	@Valid
-	@ManyToOne(optional = true)
+	@ManyToOne
 	protected Patronage patronage;
 	
 }

@@ -10,6 +10,7 @@ import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
@@ -37,7 +38,7 @@ public class Patronage extends AbstractEntity{
 
     @Column(unique=true)
     @Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
-    @NotNull
+    @NotBlank
     protected String code;
 
     @NotBlank
@@ -50,6 +51,7 @@ public class Patronage extends AbstractEntity{
 
     @Temporal(TemporalType.DATE)
     @NotNull
+    @Past
     protected Date    creationDate;
 
     @Temporal(TemporalType.DATE)
@@ -68,12 +70,12 @@ public class Patronage extends AbstractEntity{
 
     @NotNull
     @Valid
-    @ManyToOne(optional = false)
+    @ManyToOne
     protected Patron patron;
 
     @NotNull
     @Valid
-    @ManyToOne(optional = false)
+    @ManyToOne
     protected Inventor inventor;
 
 
