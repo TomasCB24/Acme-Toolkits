@@ -1,8 +1,10 @@
 package acme.forms;
 
 import java.io.Serializable;
+import java.util.Map;
 
-import acme.framework.datatypes.Money;
+import org.springframework.data.util.Pair;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,25 +16,14 @@ public class PatronDashboard implements Serializable {
 	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
-
-	Integer						totalNumberOfProposedPatronages;
-	Integer						totalNumberOfAcceptedPatronages;
-	Integer						totalNumberOfDeniedPatronages;
 	
-	Money						averageBudgetOfProposedPatronagesGroupedByCurrency;
-	Money						deviationBudgetOfProposedPatronagesGroupedByCurrency;
-	Money						minimumBudgetOfProposedPatronagesGroupedByCurrency;
-	Money						maximumBudgetOfProposedPatronagesGroupedByCurrency;
-	
-	Money						averageBudgetOfAcceptedPatronagesGroupedByCurrency;
-	Money						deviationBudgetOfAcceptedPatronagesGroupedByCurrency;
-	Money						minimumBudgetOfAcceptedPatronagesGroupedByCurrency;
-	Money						maximumBudgetOfAcceptedPatronagesGroupedByCurrency;
-	
-	Money						averageBudgetOfDeniedPatronagesGroupedByCurrency;
-	Money						deviationBudgetOfDeniedPatronagesGroupedByCurrency;
-	Money						minimumBudgetOfDeniedPatronagesGroupedByCurrency;
-	Money						maximumBudgetOfDeniedPatronagesGroupedByCurrency;
+	int							totalNumberOfProposedPatronages;
+	int							totalNumberOfAcceptedPatronages;
+	int							totalNumberOfDeniedPatronages;
+	Map<Pair<String,String>, Double>			averageBudgetOfPatronages;
+	Map<Pair<String,String>, Double>			deviationBudgetOfPatronages;
+	Map<Pair<String,String>, Double>			minimumBudgetOfPatronages;
+	Map<Pair<String,String>, Double>			maximumBudgetOfPatronages;
 
 
 	// Derived attributes -----------------------------------------------------
