@@ -16,37 +16,37 @@ public class AdministratorDashboard implements Serializable {
 	
 	// Attributes -------------------------------------------------------------
 
-	Double						totalNumberOfComponents;
-	Money						averageOfComponentsRetailPrice;
-	Money						deviationOfComponentsRetailPrice;
-	Money						minimumOfComponentsRetailPrice;
-	Money						maximumOfComponentsRetailPrice;
+	Integer						totalNumberOfComponentsByTechnologyAndCurrency;
+	Money						averageOfComponentsRetailPriceByTechnologyAndCurrency;
+	Money						deviationOfComponentsRetailPriceByTechnologyAndCurrency;
+	Money						minimumOfComponentsRetailPriceByTechnologyAndCurrency;
+	Money						maximumOfComponentsRetailPriceByTechnologyAndCurrency;
 	
-	Double						totalNumberOftools;
-	Money						averageOfToolsRetailPrice;
-	Money						deviationOfToolsRetailPrice;
-	Money						minimumOfToolsRetailPrice;
-	Money						maximumOfToolsRetailPrice;
+	Integer						totalNumberOftoolsByCurrency;
+	Money						averageOfToolsRetailPriceByCurrency;
+	Money						deviationOfToolsRetailPriceByCurrency;
+	Money						minimumOfToolsRetailPriceByCurrency;
+	Money						maximumOfToolsRetailPriceByCurrency;
 	
-	Double						totalNumberOfProposedPatronages;
-	Double						totalNumberOfAcceptedPatronages;
-	Double						totalNumberOfDeniedPatronages;
+	Integer						totalNumberOfProposedPatronages;
+	Integer						totalNumberOfAcceptedPatronages;
+	Integer						totalNumberOfDeniedPatronages;
 	
-	Double						averageOfProposedPatronages;
-	Double						averageOfAcceptedPatronages;
-	Double						averageOfDeniedPatronages;
+	Money						averageBudgetOfProposedPatronages;
+	Money						averageBudgetOfAcceptedPatronages;
+	Money						averageBudgetOfDeniedPatronages;
 	
-	Double						deviationOfProposedPatronages;
-	Double						deviationOfAcceptedPatronages;
-	Double						deviationOfDeniedPatronages;
+	Money						deviationBudgetOfProposedPatronages;
+	Money						deviationBudgetOfAcceptedPatronages;
+	Money						deviationBudgetOfDeniedPatronages;
 	
-	Double						minimumOfProposedPatronages;
-	Double						minimumOfAcceptedPatronages;
-	Double						minimumOfDeniedPatronages;
+	Money						minimumBudgetOfProposedPatronages;
+	Money						minimumBudgetOfAcceptedPatronages;
+	Money						minimumBudgetOfDeniedPatronages;
 	
-	Double						maximumOfProposedPatronages;
-	Double						maximumOfAcceptedPatronages;
-	Double						maximumOfDeniedPatronages;
+	Money						maximumBudgetOfProposedPatronages;
+	Money						maximumBudgetOfAcceptedPatronages;
+	Money						maximumBudgetOfDeniedPatronages;
 
 	// Derived attributes -----------------------------------------------------
 
