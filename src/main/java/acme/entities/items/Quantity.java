@@ -22,9 +22,9 @@ public class Quantity extends AbstractEntity{
 
 	// Attributes -------------------------------------------------------------
 
-	@NotNull
+
 	@Min(1)
-	protected Integer			number;
+	protected int			number;
 	
 	
 
