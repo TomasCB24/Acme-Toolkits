@@ -1,6 +1,6 @@
-key,code,title,description,assembly-notes,link
-toolkit-01,AAA-000-A,title1,This is description 1,this is the assembly notes 1,https://www.google.com/
-toolkit-02,AAA-000-B,title2,This is description 2,this is the assembly notes 2,null
-toolkit-03,AAA-000-C,title3,This is description 3,this is the assembly notes 3,null
-toolkit-04,AAA-000-D,title4,This is description 4,this is the assembly notes 4,null
-toolkit-05,AAA-000-E,title5,This is description 5,this is the assembly notes 5,https://ev.us.es
+key,draft-mode,code,title,description,assembly-notes,link
+toolkit-01,true,AAA-000-A,1,1,1,https://www.google.com/
+toolkit-02,false,AAA-000-B,AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,null
+toolkit-03,true,AAA-000-C,title3,This is description 3,this is the assembly notes 3,null
+toolkit-04,false,AAA-000-D,title4,This is description 4,this is the assembly notes 4,null
+toolkit-05,true,AAA-000-E,title5,This is description 5,this is the assembly notes 5,https://ev.us.es
