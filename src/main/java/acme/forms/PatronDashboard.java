@@ -3,6 +3,8 @@ package acme.forms;
 import java.io.Serializable;
 import java.util.Map;
 
+import org.springframework.data.util.Pair;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,22 +18,13 @@ public class PatronDashboard implements Serializable {
 	// Attributes -------------------------------------------------------------
 	
 	int							totalNumberOfProposedPatronages;
-	Map<String, Double>			averageBudgetOfProposedPatronages;
-	Map<String, Double>			deviationBudgetOfProposedPatronages;
-	Map<String, Double>			minimumBudgetOfProposedPatronages;
-	Map<String, Double>			maximumBudgetOfProposedPatronages;
-	
 	int							totalNumberOfAcceptedPatronages;
-	Map<String, Double>			averageBudgetOfAcceptedPatronages;
-	Map<String, Double>			deviationBudgetOfAcceptedPatronages;
-	Map<String, Double>			minimumBudgetOfAcceptedPatronages;
-	Map<String, Double>			maximumBudgetOfAcceptedPatronages;
-	
 	int							totalNumberOfDeniedPatronages;
-	Map<String, Double>			averageBudgetOfDeniedPatronages;
-	Map<String, Double>			deviationBudgetOfDeniedPatronages;
-	Map<String, Double>			minimumBudgetOfDeniedPatronages;
-	Map<String, Double>			maximumBudgetOfDeniedPatronages;
+	Map<Pair<String,String>, Double>			averageBudgetOfPatronages;
+	Map<Pair<String,String>, Double>			deviationBudgetOfPatronages;
+	Map<Pair<String,String>, Double>			minimumBudgetOfPatronages;
+	Map<Pair<String,String>, Double>			maximumBudgetOfPatronages;
+
 
 	// Derived attributes -----------------------------------------------------
 
