@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.data.util.Pair;
 
+import acme.entities.patronages.Status;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,10 +21,10 @@ public class PatronDashboard implements Serializable {
 	int							totalNumberOfProposedPatronages;
 	int							totalNumberOfAcceptedPatronages;
 	int							totalNumberOfDeniedPatronages;
-	Map<Pair<String,String>, Double>			averageBudgetOfPatronages;
-	Map<Pair<String,String>, Double>			deviationBudgetOfPatronages;
-	Map<Pair<String,String>, Double>			minimumBudgetOfPatronages;
-	Map<Pair<String,String>, Double>			maximumBudgetOfPatronages;
+	Map<Pair<String,Status>, Double>			averageBudgetOfPatronages;
+	Map<Pair<String,Status>, Double>			deviationBudgetOfPatronages;
+	Map<Pair<String,Status>, Double>			minimumBudgetOfPatronages;
+	Map<Pair<String,Status>, Double>			maximumBudgetOfPatronages;
 
 
 	// Derived attributes -----------------------------------------------------

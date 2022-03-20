@@ -35,8 +35,7 @@ public class PatronageReport extends AbstractEntity {
 	@Column(unique=true)
 	@Max(9999)
 	@Min(1)
-	@NotNull
-	protected Integer serialNumber;
+	protected int serialNumber;
 	
 	
 	@Past
@@ -55,13 +54,13 @@ public class PatronageReport extends AbstractEntity {
 	public String sequenceNumber() {
 		String serialNumberToString;
 		if(this.serialNumber>999) {
-			serialNumberToString = this.serialNumber.toString();
+			serialNumberToString = Integer.toString(this.serialNumber);
 		}else if(this.serialNumber>99) {
-			serialNumberToString="0"+this.serialNumber.toString();
+			serialNumberToString="0"+Integer.toString(this.serialNumber);
 		}else if(this.serialNumber>9){
-			serialNumberToString="00"+this.serialNumber.toString();
+			serialNumberToString="00"+Integer.toString(this.serialNumber);
 		}else {
-			serialNumberToString="000"+this.serialNumber.toString();
+			serialNumberToString="000"+Integer.toString(this.serialNumber);
 		}
 		return this.patronage.getCode() + ":" + serialNumberToString;
 	}
@@ -71,7 +70,7 @@ public class PatronageReport extends AbstractEntity {
 
 	@NotNull
 	@Valid
-	@ManyToOne
+	@ManyToOne(optional = false)
 	protected Patronage patronage;
 	
 }
