@@ -16,14 +16,13 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.framework.controllers.AbstractController;
 import acme.framework.roles.Authenticated;
 import acme.roles.Consumer;
 
 @Controller
-@RequestMapping("/authenticated/consumer/")
+//@RequestMapping("/authenticated/consumer/")
 public class AuthenticatedConsumerController extends AbstractController<Authenticated, Consumer> {
 
 	// Internal state ---------------------------------------------------------
