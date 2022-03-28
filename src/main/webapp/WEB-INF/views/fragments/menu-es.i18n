@@ -29,6 +29,7 @@ master.menu.anonymous.favourite-link-juan = 30697250R: Salado Jurado, Juan
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
+master.menu.administrator.system-configuration = Configuración del sistema
 master.menu.administrator.dashboard = Panel de indicadores
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.populate-initial = Poblar BD (inicial)
