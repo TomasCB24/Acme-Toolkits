@@ -38,7 +38,7 @@
 		<link>
 			<name>acme-framework</name>
 			<type>2</type>
-			<location>C:/Users/ismae/Desktop/UNIVERSIDAD/3º IISW3/2º Cuatrimestre/DP2/Workspace-22.0/Frameworks/Acme-Framework-22.2/target/classes</location>
+			<locationURI>WORKSPACE_LOC/Frameworks/Acme-Framework-22.2/target/classes</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
