@@ -35,6 +35,11 @@ master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
 
+# master.menu.inventor ###################################################
+
+master.menu.inventor = Inventor
+master.menu.inventor.toolkit = Listar mis Toolkits
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor
