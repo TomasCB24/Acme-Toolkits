@@ -9,9 +9,9 @@
 # they accept any liabilities with respect to them.
 
 
-administrator.system-configuration.form.label.system-currency = System Currency
-administrator.system-configuration.form.label.accepted-currencies = Accepted Currencies
-administrator.system-configuration.form.label.strong-spam-words = Strong Spam Words
-administrator.system-configuration.form.label.strong-spam-threshold = Strong Spam Threshold
-administrator.system-configuration.form.label.weak-spam-words = Weak Spam Words
-administrator.system-configuration.form.label.weak-spam-threshold = Weak Spam Threshold
+administrator.system-configuration.form.label.system-currency = System Currency:
+administrator.system-configuration.form.label.accepted-currencies = Accepted Currencies:
+administrator.system-configuration.form.label.strong-spam-words = Strong Spam Words:
+administrator.system-configuration.form.label.strong-spam-threshold = Strong Spam Threshold:
+administrator.system-configuration.form.label.weak-spam-words = Weak Spam Words:
+administrator.system-configuration.form.label.weak-spam-threshold = Weak Spam Threshold:

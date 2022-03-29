@@ -8,9 +8,9 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-administrator.system-configuration.form.label.system-currency = Moneda del Sistema
-administrator.system-configuration.form.label.accepted-currencies = Monedas Aceptadas
-administrator.system-configuration.form.label.strong-spam-words = Palabras Fuertes de Spam
-administrator.system-configuration.form.label.strong-spam-threshold = Umbral de Spam Fuerte
-administrator.system-configuration.form.label.weak-spam-words = Palabras Débiles de Spam
-administrator.system-configuration.form.label.weak-spam-threshold = Umbral de Spam Débil
+administrator.system-configuration.form.label.system-currency = Moneda del Sistema:
+administrator.system-configuration.form.label.accepted-currencies = Monedas Aceptadas:
+administrator.system-configuration.form.label.strong-spam-words = Palabras Fuertes de Spam:
+administrator.system-configuration.form.label.strong-spam-threshold = Umbral de Spam Fuerte:
+administrator.system-configuration.form.label.weak-spam-words = Palabras Débiles de Spam:
+administrator.system-configuration.form.label.weak-spam-threshold = Umbral de Spam Débil:
