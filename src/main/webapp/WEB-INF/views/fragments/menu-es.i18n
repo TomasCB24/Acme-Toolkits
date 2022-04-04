@@ -45,6 +45,15 @@ master.menu.provider.favourite-link = Enlace favorito
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
 
+# master.menu.patron ##########################################################
+
+master.menu.patron = Patrón
+
+
+# master.menu.inventor ##########################################################
+
+master.menu.inventor = Inventor
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
@@ -53,3 +62,6 @@ master.menu.user-account.provider = Datos de proveedor
 master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
+
+# master.menu.any.chirp ####################################################
+master.menu.any.chirp-list = Lista de Chirp
