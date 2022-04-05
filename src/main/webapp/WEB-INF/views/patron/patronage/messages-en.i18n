@@ -1,0 +1,23 @@
+# i18n-en.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+
+patron.patronage.list.label.code = Code
+patron.patronage.list.label.creation-date = Creation Date
+patron.patronage.list.label.legal-stuff = Legal Stuff
+
+patron.patronage.form.label.status = Status
+patron.patronage.form.label.code = Code
+patron.patronage.form.label.legal-stuff = Legal Stuff
+patron.patronage.form.label.budget = Budget
+patron.patronage.form.label.creation-date = Creation Date
+patron.patronage.form.label.initial-period-date = Initial Period Date
+patron.patronage.form.label.final-period-date = Final Period Date
+patron.patronage.form.label.link = Link for more info 
