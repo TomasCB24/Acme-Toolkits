@@ -20,12 +20,6 @@
 	<acme:input-textbox code="inventor.toolkit.form.label.title" path="title"/>
 	<acme:input-textarea code="inventor.toolkit.form.label.description" path="description"/>
 	<acme:input-textarea code="inventor.toolkit.form.label.assembly-notes" path="assemblyNotes"/>
-	
-	<acme:input-select code="inventor.toolkit.form.label.draft-mode" path="draftMode">
-		<acme:input-option code="inventor.toolkit.form.label.draft-mode.true" value="true" selected="${draftMode == 'true'}"/>
-		<acme:input-option code="inventor.toolkit.form.label.draft-mode.false" value="false" selected="${draftMode == 'false'}"/>
-	</acme:input-select>
-	
 	<acme:input-url code="inventor.toolkit.form.label.link" path="link"/>
 	
 	<acme:button code="inventor.toolkit.form.label.items" action="/inventor/item/list?masterId=${inventorId}"/>

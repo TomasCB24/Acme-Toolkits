@@ -25,7 +25,7 @@ public class InventorItemController extends AbstractController<Inventor, Item>{
 	
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("list", "list", this.listService);
+		super.addCommand("list", this.listService);
 		super.addCommand("show", this.showService);
 	}
 	

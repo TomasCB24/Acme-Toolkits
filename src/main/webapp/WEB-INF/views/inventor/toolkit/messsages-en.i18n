@@ -12,9 +12,6 @@ inventor.toolkit.form.label.code = Code:
 inventor.toolkit.form.label.title = Title:
 inventor.toolkit.form.label.description = Description:
 inventor.toolkit.form.label.assembly-notes = Assembly Notes:
-inventor.toolkit.form.label.draft-mode = Draft Mode:
-inventor.toolkit.form.label.draft-mode.true = Yes
-inventor.toolkit.form.label.draft-mode.false = No
 inventor.toolkit.form.label.link = Link: (Optional)
 
 inventor.toolkit.list.label.code = Code

@@ -47,7 +47,7 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		assert model != null;
 		
 		request.unbind(entity, model, "code", "title","description",
-						"assemblyNotes","draftMode","link");
+						"assemblyNotes","link");
 		model.setAttribute("inventorId", entity.getId());
 		
 	}
