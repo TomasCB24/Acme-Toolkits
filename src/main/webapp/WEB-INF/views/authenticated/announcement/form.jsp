@@ -20,11 +20,4 @@
 	<acme:input-textbox code="administrator.announcement.form.label.flag" path="flag"/>
 	<acme:input-textarea code="administrator.announcement.form.label.text" path="text"/>
 	<acme:input-url code="administrator.announcement.form.label.info" path="info"/>
-	
-	<%--
-	<jstl:if test="${!readonly}">
-		<acme:input-checkbox code="administrator.announcement.form.label.confirmation" path="confirmation"/>
-		<acme:submit code="administrator.announcement.form.button.create" action="/administrator/announcement/create"/>
-	</jstl:if>
-	--%>
 </acme:form>

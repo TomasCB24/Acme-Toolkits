@@ -10,7 +10,7 @@
 
 administrator.announcement.form.label.title = Title:
 administrator.announcement.form.label.text = Text:
-administrator.announcement.form.label.info = Information:
+administrator.announcement.form.label.info = Information: (Optional)
 administrator.announcement.form.label.flag = Status:
 
 administrator.announcement.list.label.creationMoment = Creation Moment
