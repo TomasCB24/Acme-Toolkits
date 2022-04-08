@@ -35,6 +35,13 @@ master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shut-down = Shut down
 
+
+# master.menu.authenticated ###################################################
+
+master.menu.authenticated = Authenticated
+master.menu.authenticated.list-recent = List recent announcements
+
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Provider
@@ -45,6 +52,16 @@ master.menu.provider.favourite-link = Favourite link
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
 
+# master.menu.patron ##########################################################
+
+master.menu.patron = Patron
+
+
+# master.menu.inventor ##########################################################
+
+master.menu.inventor = Inventor
+
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
@@ -53,3 +70,12 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+
+
+# master.menu.patron ########################################################
+master.menu.patron = Patron
+master.menu.patron.patronage-report = Patronage Report
+
+
+# master.menu.any.chirp ####################################################
+master.menu.any.chirp.list-recent = List recents chirps
