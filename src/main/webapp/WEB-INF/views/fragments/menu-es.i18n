@@ -34,6 +34,7 @@ master.menu.authenticated.currency-system = Sistema de Configuración de la Mone
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
+master.menu.administrator.system-configuration = Configuración del sistema
 master.menu.administrator.dashboard = Panel de indicadores
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.populate-initial = Poblar BD (inicial)
