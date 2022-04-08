@@ -26,7 +26,7 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-pablo" action="https://www.mangatigre.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-miguel" action="https://developer.android.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-juan" action="https://www.youtube.com/"/>
-    	
+    		<acme:menu-suboption code="master.menu.any.user-account-list" action="/any/user-account/list"/>
 
 		</acme:menu-option>
 
@@ -37,10 +37,21 @@
 			<acme:menu-suboption code="master.menu.administrator.populate-sample" action="/administrator/populate-sample"/>			
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.any.chirp-list" action="/any/chirp/list"/>
+		</acme:menu-option>
+
+		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
+			<acme:menu-suboption code="master.menu.any.user-account-list" action="/any/user-account/list"/>
+		</acme:menu-option>
+
+		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
+			<acme:menu-suboption code="master.menu.any.user-account-list" action="/any/user-account/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
 			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
+			<acme:menu-suboption code="master.menu.any.user-account-list" action="/any/user-account/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
