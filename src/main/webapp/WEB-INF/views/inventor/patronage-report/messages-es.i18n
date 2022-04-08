@@ -12,7 +12,7 @@ inventor.patronage-report.list.label.serial-number = Número de Serie
 inventor.patronage-report.list.label.memorandum = Memorándum
 
 
-inventor.patronage-report.form.label.serial-number = Número de Serie
-inventor.patronage-report.form.label.memorandum = Memorándum
-inventor.patronage-report.form.label.creation-moment = Fecha de Creación
-inventor.patronage-report.form.label.link = Link para más información
+inventor.patronage-report.form.label.serial-number = Número de Serie:
+inventor.patronage-report.form.label.memorandum = Memorándum:
+inventor.patronage-report.form.label.creation-moment = Fecha de Creación:
+inventor.patronage-report.form.label.link = Link para más información: (Opcional)
