@@ -15,5 +15,5 @@ patron.patronage-report.list.label.memorandum = memorandum
 patron.patronage-report.form.label.serial-number = Serial Number
 patron.patronage-report.form.label.memorandum = Memorandum
 patron.patronage-report.form.label.creation-moment = Creation Moment
-patron.patronage-report.form.label.link = Link for more info
+patron.patronage-report.form.label.link = Link for more info (Optional)
 
