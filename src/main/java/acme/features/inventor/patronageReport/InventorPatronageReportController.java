@@ -21,6 +21,6 @@ public class InventorPatronageReportController extends AbstractController<Invent
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("show", this.showService);
-		super.addCommand("list", this.listService);
+		super.addCommand("list-mine","list", this.listService);
 	}
 }
