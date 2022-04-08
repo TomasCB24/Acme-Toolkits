@@ -8,12 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-any.chirp.form.label.creationMoment = Moment Of Creation:
-any.chirp.form.label.title = Title:
-any.chirp.form.label.author = Author:
-any.chirp.form.label.body = Body:
-any.chirp.form.label.email = Email:
-
 any.chirp.list.label.creationMoment = Moment Of Creation
 any.chirp.list.label.title = Title
 any.chirp.list.label.author = Author
+any.chirp.list.label.body = Body

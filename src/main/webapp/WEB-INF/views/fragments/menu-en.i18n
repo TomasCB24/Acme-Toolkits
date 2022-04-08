@@ -66,4 +66,4 @@ master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
 
 # master.menu.any.chirp ####################################################
-master.menu.any.chirp-list = Chirp List
+master.menu.any.chirp.list-recent = List recents chirps

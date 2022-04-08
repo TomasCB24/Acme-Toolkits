@@ -14,7 +14,7 @@ import acme.framework.roles.Any;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AnyChirpListService implements AbstractListService<Any, Chirp>{
+public class AnyChirpListRecentService implements AbstractListService<Any, Chirp>{
 	
 	@Autowired
 	protected AnyChirpRepository repository;
@@ -49,7 +49,7 @@ public class AnyChirpListService implements AbstractListService<Any, Chirp>{
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "creationMoment", "title","author");
+		request.unbind(entity, model, "creationMoment", "title","author", "body");
 		
 	}
 

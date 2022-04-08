@@ -15,13 +15,13 @@ public class AnyChirpController extends AbstractController<Any, Chirp>{
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnyChirpListService				listService;
+	protected AnyChirpListRecentService				listRecentService;
 	
 
 	// Constructors -----------------------------------------------------------
 	
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("list", "list", this.listService);
+		super.addCommand("list-recent", "list", this.listRecentService);
 	}	
 }

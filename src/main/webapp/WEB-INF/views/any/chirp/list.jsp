@@ -16,8 +16,9 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="any.chirp.list.label.creationMoment" path="creationMoment" width="33%"/>
-	<acme:list-column code="any.chirp.list.label.title" path="title" width="34%"/>
-	<acme:list-column code="any.chirp.list.label.author" path="author" width="33%"/>
+	<acme:list-column code="any.chirp.list.label.creationMoment" path="creationMoment" width="25%"/>
+	<acme:list-column code="any.chirp.list.label.title" path="title" width="25%"/>
+	<acme:list-column code="any.chirp.list.label.body" path="body" width="25%"/>
+	<acme:list-column code="any.chirp.list.label.author" path="author" width="25%"/>
 </acme:list>
 

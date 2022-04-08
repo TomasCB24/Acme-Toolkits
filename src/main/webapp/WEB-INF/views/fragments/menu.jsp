@@ -26,7 +26,7 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-pablo" action="https://www.mangatigre.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-miguel" action="https://developer.android.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-juan" action="https://www.youtube.com/"/>
-			<acme:menu-suboption code="master.menu.any.chirp-list" action="/any/chirp/list"/>
+			<acme:menu-suboption code="master.menu.any.chirp.list-recent" action="/any/chirp/list-recent"/>
     	
 
 		</acme:menu-option>
@@ -39,15 +39,15 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
 			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.any.chirp-list" action="/any/chirp/list"/>
+			<acme:menu-suboption code="master.menu.any.chirp.list-recent" action="/any/chirp/list-recent"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
-			<acme:menu-suboption code="master.menu.any.chirp-list" action="/any/chirp/list"/>
+			<acme:menu-suboption code="master.menu.any.chirp.list-recent" action="/any/chirp/list-recent"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
-			<acme:menu-suboption code="master.menu.any.chirp-list" action="/any/chirp/list"/>
+			<acme:menu-suboption code="master.menu.any.chirp.list-recent" action="/any/chirp/list-recent"/>
 		</acme:menu-option>
 		
 
@@ -70,7 +70,7 @@
 			<acme:menu-suboption code="master.menu.user-account.provider" action="/authenticated/provider/update" access="hasRole('Provider')"/>
 			<acme:menu-suboption code="master.menu.user-account.become-consumer" action="/authenticated/consumer/create" access="!hasRole('Consumer')"/>
 			<acme:menu-suboption code="master.menu.user-account.consumer" action="/authenticated/consumer/update" access="hasRole('Consumer')"/>
-			<acme:menu-suboption code="master.menu.any.chirp-list" action="/any/chirp/list"/>
+			<acme:menu-suboption code="master.menu.any.chirp.list-recent" action="/any/chirp/list-recent"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.sign-out" action="/master/sign-out" access="isAuthenticated()"/>
