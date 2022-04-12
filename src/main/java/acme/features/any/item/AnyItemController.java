@@ -17,12 +17,17 @@ public class AnyItemController extends AbstractController<Any, Item>{
 	@Autowired
 	protected AnyItemListService				listService;
 	
+	@Autowired
+	protected AnyItemShowService				showService;
+	
 
 	// Constructors -----------------------------------------------------------
 	
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("list", this.listService);
+		super.addCommand("show", this.showService);
+		
 	}
 
 	

@@ -8,6 +8,15 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+any.item.form.label.item-type = Tipo:
+any.item.form.label.item-type.tool = Herramienta
+any.item.form.label.item-type.component = Componente
+any.item.form.label.name = Nombre:
+any.item.form.label.code = Código:
+any.item.form.label.technology = Tecnología:
+any.item.form.label.description = Descripción:
+any.item.form.label.retail-price = Precio al por menor:
+any.item.form.label.link = Enlace: (Opcional)
 
 any.item.list.label.type = Tipo
 any.item.list.label.name = Nombre
