@@ -20,7 +20,7 @@ public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
 	@Autowired
 	protected AnyToolkitRepository repository;
 
-	// AbstractShowService<Inventor, Toolkit> ---------------------------
+	// AbstractShowService<Any, Toolkit> ---------------------------
 	
 	@Override
 	public boolean authorise(final Request<Toolkit> request) {

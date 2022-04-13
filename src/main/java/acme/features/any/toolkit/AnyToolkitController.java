@@ -1,5 +1,5 @@
 /*
- * AuthenticatedConsumerController.java
+ * AnyToolkitController.java
  *
  * Copyright (C) 2012-2022 Rafael Corchuelo.
  *

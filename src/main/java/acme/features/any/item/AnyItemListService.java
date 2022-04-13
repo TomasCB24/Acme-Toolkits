@@ -1,5 +1,5 @@
 /*
- * AuthenticatedConsumerCreateService.java
+ * AnyItemListService.java
  *
  * Copyright (C) 2012-2022 Rafael Corchuelo.
  *
@@ -32,7 +32,7 @@ public class AnyItemListService implements AbstractListService<Any, Item> {
 	@Autowired
 	protected AnyItemRepository repository;
 
-	// AbstractShowService<Inventor, Item> ---------------------------
+	// AbstractListService<Any, Item> ---------------------------
 	
 	@Override
 	public boolean authorise(final Request<Item> request) {

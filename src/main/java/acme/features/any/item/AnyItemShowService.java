@@ -1,5 +1,5 @@
 /*
- * AuthenticatedConsumerUpdateService.java
+ * AnyItemShowService.java
  *
  * Copyright (C) 2012-2022 Rafael Corchuelo.
  *
@@ -32,7 +32,7 @@ public class AnyItemShowService implements AbstractShowService<Any, Item> {
 	@Autowired
 	protected AnyItemRepository repository;
 
-	// AbstractShowService<Inventor, Toolkit> ---------------------------
+	// AbstractShowService<Any, Item> ---------------------------
 	
 	@Override
 	public boolean authorise(final Request<Item> request) {

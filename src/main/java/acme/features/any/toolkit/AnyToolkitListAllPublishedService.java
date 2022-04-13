@@ -1,5 +1,5 @@
 /*
- * AuthenticatedConsumerCreateService.java
+ * AnyToolkitListAllPublishedService.java
  *
  * Copyright (C) 2012-2022 Rafael Corchuelo.
  *
@@ -31,7 +31,7 @@ public class AnyToolkitListAllPublishedService implements AbstractListService<An
 	@Autowired
 	protected AnyToolkitRepository repository;
 
-	// AbstractShowService<Inventor, Toolkit> ---------------------------
+	// AbstractListService<Any, Toolkit> ---------------------------
 	
 	@Override
 	public boolean authorise(final Request<Toolkit> request) {
