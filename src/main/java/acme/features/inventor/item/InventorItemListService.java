@@ -20,7 +20,7 @@ public class InventorItemListService implements AbstractListService<Inventor, It
 	@Autowired
 	protected InventorItemRepository repository;
 
-	// AbstractShowService<Inventor, Item> ---------------------------
+	// AbstractListService<Inventor, Item> ---------------------------
 	
 	@Override
 	public boolean authorise(final Request<Item> request) {
@@ -57,6 +57,19 @@ public class InventorItemListService implements AbstractListService<Inventor, It
 		assert model != null;
 		
 		request.unbind(entity, model, "type", "name","retailPrice");
+		
+		//Quantity
+		
+		int toolkitId;
+		toolkitId = request.getModel().getInteger("masterId");
+
+		int itemId;
+		itemId = entity.getId();
+		
+		int quantity;
+		quantity = this.repository.findQuantityForItemInToolkit(toolkitId, itemId);
+		
+		model.setAttribute("quantity", quantity);
 		
 	}
 
