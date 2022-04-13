@@ -29,8 +29,10 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 		assert request != null;
 		
 		Collection<UserAccount> result;
-		
 		result = this.repository.findAllUserAccounts();
+        for (final UserAccount userAccount : result) {
+            userAccount.getRoles().forEach(r -> { ; });
+        }
 		
 		return result;
 	}
@@ -41,7 +43,7 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "username", "identity.email", "identity.name", "identity.surname");
+		request.unbind(entity, model, "username", "roles", "identity.email", "identity.name", "identity.surname");
 	}
 
 }

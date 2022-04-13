@@ -47,7 +47,14 @@ public class AnyUserAccountShowService implements AbstractShowService<Any, UserA
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "username", "identity.email", "identity.name", "identity.surname");
+		final String name = entity.getIdentity().getName();
+		model.setAttribute("name", name);
+		final String surname = entity.getIdentity().getSurname();
+		model.setAttribute("surname", surname);
+		final String email = entity.getIdentity().getEmail();
+		model.setAttribute("email", email);
+		
+		request.unbind(entity, model, "username");
 	}
 
 }

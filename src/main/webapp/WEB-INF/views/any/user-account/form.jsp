@@ -6,6 +6,6 @@
 <acme:form readonly="${readonly}">
 	<acme:input-textbox code="any.user-account.form.label.username" path="username"/>	
 	<acme:input-textbox code="any.user-account.form.label.name" path="name"/>
-	<acme:input-textarea code="any.user-account.form.label.surname" path="surname"/>
+	<acme:input-textbox code="any.user-account.form.label.surname" path="surname"/>
 	<acme:input-url code="any.user-account.form.label.email" path="email"/>
 </acme:form>
