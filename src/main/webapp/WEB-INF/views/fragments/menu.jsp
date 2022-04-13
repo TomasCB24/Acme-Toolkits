@@ -19,6 +19,8 @@
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
+			<acme:menu-suboption code="master.menu.any.toolkit" action="/any/toolkit/list-published"/>
+			<acme:menu-separator/>
       		<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
       		<acme:menu-suboption code="master.menu.anonymous.favourite-link-tomas" action="https://www3.animeflv.net"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-ezequiel" action="https://github.com/ezegonmac/"/>
@@ -53,6 +55,8 @@
 		<acme:menu-option code="master.menu.sign-in" action="/master/sign-in" access="isAnonymous()"/>
 
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
+			<acme:menu-suboption code="master.menu.any.toolkit" action="/any/toolkit/list-published"/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.user-account.general-data" action="/authenticated/user-account/update"/>
 			<acme:menu-suboption code="master.menu.user-account.become-provider" action="/authenticated/provider/create" access="!hasRole('Provider')"/>
 			<acme:menu-suboption code="master.menu.user-account.provider" action="/authenticated/provider/update" access="hasRole('Provider')"/>
