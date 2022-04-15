@@ -29,7 +29,6 @@ master.menu.anonymous.favourite-link-juan = 30697250R: Salado Jurado, Juan
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
-master.menu.administrator.dashboard = Panel de indicadores
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
@@ -44,6 +43,11 @@ master.menu.provider.favourite-link = Enlace favorito
 
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
+
+# master.menu.patron ####################################################
+
+master.menu.patron = Patrocinador
+master.menu.patron.patron-dashboard = Panel de métricas
 
 # master.menu.user-account ####################################################
 
