@@ -20,7 +20,7 @@ public class InventorToolkitListMineService implements AbstractListService<Inven
 	@Autowired
 	protected InventorToolkitRepository repository;
 
-	// AbstractShowService<Inventor, Toolkit> ---------------------------
+	// AbstractListService<Inventor, Toolkit> ---------------------------
 	
 	@Override
 	public boolean authorise(final Request<Toolkit> request) {

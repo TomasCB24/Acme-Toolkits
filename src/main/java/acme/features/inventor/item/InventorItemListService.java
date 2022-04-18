@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.items.Item;
+import acme.entities.toolkits.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractListService;
@@ -19,13 +20,21 @@ public class InventorItemListService implements AbstractListService<Inventor, It
 	@Autowired
 	protected InventorItemRepository repository;
 
-	// AbstractShowService<Inventor, Item> ---------------------------
+	// AbstractListService<Inventor, Item> ---------------------------
 	
 	@Override
 	public boolean authorise(final Request<Item> request) {
 		assert request != null;
 		
-		return true;
+		boolean result;
+		int masterId;
+		Toolkit toolkit;
+
+		masterId = request.getModel().getInteger("masterId");
+		toolkit = this.repository.findOneToolkitById(masterId);
+		result = (toolkit != null && (!toolkit.isDraftMode() || request.isPrincipal(toolkit.getInventor())));
+
+		return result;
 	}
 
 	@Override
@@ -48,6 +57,19 @@ public class InventorItemListService implements AbstractListService<Inventor, It
 		assert model != null;
 		
 		request.unbind(entity, model, "type", "name","retailPrice");
+		
+		//Quantity
+		
+		int toolkitId;
+		toolkitId = request.getModel().getInteger("masterId");
+
+		int itemId;
+		itemId = entity.getId();
+		
+		int quantity;
+		quantity = this.repository.findQuantityForItemInToolkit(toolkitId, itemId);
+		
+		model.setAttribute("quantity", quantity);
 		
 	}
 

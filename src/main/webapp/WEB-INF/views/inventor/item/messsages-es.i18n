@@ -21,3 +21,4 @@ inventor.item.form.label.link = Enlace: (Opcional)
 inventor.item.list.label.type = Tipo
 inventor.item.list.label.name = Nombre
 inventor.item.list.label.retailPrice = Precio al por menor
+inventor.item.list.label.quantity = Cantidad
