@@ -1,6 +1,35 @@
-key,draft-mode,code,title,description,assembly-notes,link
-toolkit-01,true,AAA-000-A,1,1,1,https://www.google.com/
-toolkit-02,false,AAA-000-B,AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,null
-toolkit-03,true,AAA-000-C,title3,This is description 3,this is the assembly notes 3,null
-toolkit-04,false,AAA-000-D,title4,This is description 4,this is the assembly notes 4,null
-toolkit-05,true,AAA-000-E,title5,This is description 5,this is the assembly notes 5,https://ev.us.es
+key,key:inventor,draft-mode,code,title,description,assembly-notes,link
+toolkit-01,inventor-01,true,AAA-000-A,1,1,1,https://www.google.com/
+toolkit-02,inventor-01,false,AAA-001-A,Title 1,1,1,https://www.google.com/
+toolkit-03,inventor-01,true,AAA-002-A,Title 2,Description,N,http://www.acme.com/a?b
+toolkit-04,inventor-01,false,AAA-003-A,Title 3,Description, 1,null
+toolkit-05,inventor-01,false,AAA-004-A,Title 4,1,1,https://www.google.com/
+toolkit-06,inventor-01,false,AAA-005-A,<script>alert("hi!")<script>,1,1,null
+toolkit-07,inventor-01,true,AAA-006-A,!·$%&(/)=?¿¡ª!|@#~€¬,<h1>This is description</h1>,1,http://www.acme.com/a?b
+toolkit-08,inventor-02,false,AAA-000-B,AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,null
+toolkit-09,inventor-02,false,AAA-001-B,1,1,1,https://www.google.com/
+toolkit-10,inventor-02,true,AAA-002-B,Title 10,Description,Notes,null
+toolkit-11,inventor-02,false,AAA-003-B,Title 11,Description,1,null
+toolkit-12,inventor-02,false,AAA-004-B,Title 12,1,1,https://www.google.com/
+toolkit-13,inventor-02,false,AAA-005-B,<script>alert("hi!")<script>,1,1,null
+toolkit-14,inventor-02,true,AAA-006-B,!·$%&(/)=?¿¡ª!|@#~€¬,<h1>This is description</h1>,1,null
+toolkit-15,inventor-03,true,AAA-000-C,title3,This is description 3,this is the assembly notes 3,null
+toolkit-16,inventor-03,false,AAA-001-C,Title 16,1,1,https://www.google.com/
+toolkit-17,inventor-03,true,AAA-002-C,Title 17,Description,1,null
+toolkit-18,inventor-03,false,AAA-003-C,Title 18,Description,1,null
+toolkit-19,inventor-03,false,AAA-004-C,Title 19,1,1,https://www.google.com/
+toolkit-20,inventor-03,false,AAA-005-C,<script>alert("hi!")<script>,1,1,null
+toolkit-21,inventor-03,true,AAA-006-C,!·$%&(/)=?¿¡ª!|@#~€¬,<h1>This is description</h1>,1,http://www.acme.com/a?b
+toolkit-22,inventor-04,false,AAA-000-D,title4,This is description 4,this is the assembly notes 4,null
+toolkit-23,inventor-04,false,AAA-001-D,Title 20,1,1,https://www.google.com/
+toolkit-24,inventor-04,true,AAA-002-D,Title 21,Description,N,null
+toolkit-25,inventor-04,false,AAA-003-D,Title 22,Description,Notes,null
+toolkit-26,inventor-04,false,AAA-004-D,Title 23,1,1,https://www.google.com/
+toolkit-27,inventor-04,false,AAA-005-D,<script>alert("hi!")<script>,1,1,null
+toolkit-28,inventor-04,true,AAA-006-D,!·$%&(/)=?¿¡ª!|@#~€¬,<h1>This is description</h1>,1,https://www.google.com/
+toolkit-29,inventor-05,true,AAA-000-E,title5,This is description 5,this is the assembly notes 5,https://ev.us.es
+toolkit-30,inventor-05,false,AAA-001-E,Title 30,1,1,https://www.google.com/
+toolkit-31,inventor-05,true,AAA-002-E,Title 31,Description,1,null
+toolkit-32,inventor-05,false,AAA-003-E,Title 32,Description,1,null
+toolkit-33,inventor-05,false,AAA-004-E,Title 33,1,1,https://www.google.com/
+toolkit-34,inventor-05,false,AAA-005-E,<script>alert("hi!")<script>,1,1,null
