@@ -11,7 +11,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class AdministratorDashboard implements Serializable {
+public class AdminDashboard implements Serializable {
 	
 	// Serialisation identifier -----------------------------------------------
 
@@ -21,7 +21,7 @@ public class AdministratorDashboard implements Serializable {
 
 	int								totalNumberOfComponents;
 	//The strings are Technology and Currency and the double the value of this Technology and Currency pair for average or other stat
-	Map<Pair<String,String>,Double> averageOfComponentsRetailPrice;
+	Map<Pair<String,String>,Double> averageOfComponentsRetailPrice; 
 	Map<Pair<String,String>,Double> deviationOfComponentsRetailPrice;
 	Map<Pair<String,String>,Double> minimumOfComponentsRetailPrice;
 	Map<Pair<String,String>,Double> maximumOfComponentsRetailPrice;
@@ -39,10 +39,10 @@ public class AdministratorDashboard implements Serializable {
 	int								totalNumberOfDeniedPatronages;
 	
 	//The strings are "proposed", "accepted" or "denied"
-	Map<Status,Double> 				averageBudgetPatronages;
-	Map<Status,Double> 				deviationBudgetPatronages;
-	Map<Status,Double> 				minimumBudgetPatronages;
-	Map<Status,Double> 				maximumBudgetPatronages;
+	Map<Pair<String,Status>, Double>				averageBudgetPatronages;
+	Map<Pair<String,Status>, Double> 				deviationBudgetPatronages;
+	Map<Pair<String,Status>, Double> 				minimumBudgetPatronages;
+	Map<Pair<String,Status>, Double> 				maximumBudgetPatronages;
 	
 
 	// Derived attributes -----------------------------------------------------
