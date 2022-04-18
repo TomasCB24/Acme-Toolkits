@@ -63,7 +63,7 @@ master.menu.consumer.favourite-link = Enlace favorito
 
 master.menu.patron = Patrocinador
 master.menu.patron.patronage-report = Reportes de Patrocinios
-
+master.menu.patron.patronage.list = Mis patrocinios
 
 # master.menu.inventor ##########################################################
 
@@ -82,9 +82,11 @@ master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
 
 
+
 # master.menu.any ####################################################
 
 master.menu.any.user-account-list = Lista de Cuentas de Usuario
 master.menu.any.chirp.list-recent = Ver Chirps recientes
 master.menu.any.item-list = Listado de objetos
+
 
