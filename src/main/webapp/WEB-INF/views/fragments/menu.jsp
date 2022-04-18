@@ -49,7 +49,7 @@
 	</acme:menu-left>
 	
 	<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
-			<acme:menu-suboption code="master.menu.patron.patronage.list" action="/patron/patronage/list"/>
+			<acme:menu-suboption code="master.menu.patron.patronage.list" action="/patron/patronage/list-mine"/>
 	</acme:menu-option>
 
 	<acme:menu-right>

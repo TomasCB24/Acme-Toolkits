@@ -16,9 +16,7 @@
 	<acme:input-moment code="patron.patronage.form.label.initial-period-date" path="initialPeriodDate"/>
 	<acme:input-moment code="patron.patronage.form.label.final-period-date" path="finalPeriodDate"/>
 	<acme:input-url code="patron.patronage.form.label.link" path="link"/>
-
-	<!-- 
-	TO-DO: Será algo similar para enlazar esta vista con la del perfil del user-account del patrón
-	<acme:button code="any.user-account.form.button.patron" action="/any/user-account/list?masterId=${id}"/>
-	-->
+	<acme:input-textbox code="patron.patronage.form.label.company" path="company"/>
+	<acme:input-textarea code="patron.patronage.form.label.statement" path="statement"/>
+	<acme:input-url code="patron.patronage.form.label.inventorLink" path="inventorLink"/>
 </acme:form> 

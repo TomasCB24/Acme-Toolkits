@@ -21,3 +21,8 @@ patron.patronage.form.label.creation-date = Creation Date
 patron.patronage.form.label.initial-period-date = Initial Period Date
 patron.patronage.form.label.final-period-date = Final Period Date
 patron.patronage.form.label.link = Link for more info 
+
+
+patron.patronage.form.label.company = Inventor's Company
+patron.patronage.form.label.statement = Inventor's Statement 
+patron.patronage.form.label.inventorLink = Link for more info about the Inventor: (Optional)

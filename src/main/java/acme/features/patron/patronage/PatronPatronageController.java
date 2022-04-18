@@ -24,6 +24,6 @@ public class PatronPatronageController extends AbstractController<Patron, Patron
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("show", this.showService);
-		super.addCommand("list", this.listService);
+		super.addCommand("list-mine","list", this.listService);
 	}
 }

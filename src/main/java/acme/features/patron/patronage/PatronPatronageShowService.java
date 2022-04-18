@@ -6,7 +6,9 @@ import org.springframework.stereotype.Service;
 import acme.entities.patronages.Patronage;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
+import acme.roles.Inventor;
 import acme.roles.Patron;
 
 
@@ -18,7 +20,20 @@ public class PatronPatronageShowService implements AbstractShowService<Patron, P
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
 		assert request != null;
-		return true;
+		boolean result;
+		int masterId;
+		Patronage patronage;
+		Patron patron;
+		Principal principal;
+		
+		masterId = request.getModel().getInteger("id");
+		patronage = this.repository.findOnePatronageById(masterId);
+		patron = patronage.getPatron();
+		principal = request.getPrincipal();
+		result = (
+			patron.getUserAccount().getId()==principal.getAccountId());
+			
+		return result;
 	}
 
 	@Override
@@ -39,6 +54,18 @@ public class PatronPatronageShowService implements AbstractShowService<Patron, P
 		assert entity != null;
 		assert model != null;
 		request.unbind(entity, model, "code", "legalStuff", "budget", "creationDate", "initialPeriodDate", "finalPeriodDate", "link");
+		
+
+		//Patron details:
+		final Patronage patronage = this.repository.findOnePatronageById(entity.getId());
+		final Inventor inventor = patronage.getInventor();
+		final String company = inventor.getCompany();
+		final String statement = inventor.getStatement();
+		final String inventorLink = inventor.getLink();
+		
+		model.setAttribute("company", company);
+		model.setAttribute("statement", statement); 
+		model.setAttribute("inventorLink", inventorLink);
 		
 	}
 	
