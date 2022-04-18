@@ -24,7 +24,6 @@ public class AnyItemShowService implements AbstractShowService<Any, Item> {
 	@Override
 	public boolean authorise(final Request<Item> request) {
 		assert request != null;
-		//TODO: solamente puedo ver las que estén publicadas
 		
 		final Collection<Item> res = this.repository.findItemsPublished();
 		
