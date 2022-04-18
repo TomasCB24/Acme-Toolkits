@@ -49,19 +49,11 @@ master.menu.authenticated = Autenticado
 master.menu.authenticated.list-recent = Anuncios Recientes
 
 
-# master.menu.provider ########################################################
 
-master.menu.provider = Proveedor
-master.menu.provider.favourite-link = Enlace favorito
-
-# master.menu.consumer ##########################################################
-
-master.menu.consumer = Consumidor
-master.menu.consumer.favourite-link = Enlace favorito
-
-# master.menu.patron ##########################################################
+# master.menu.patron ####################################################
 
 master.menu.patron = Patrocinador
+master.menu.patron.patron-dashboard = Panel de métricas
 master.menu.patron.patronage-report = Reportes de Patrocinios
 master.menu.patron.patronage.list = Mis patrocinios
 
@@ -70,6 +62,7 @@ master.menu.patron.patronage.list = Mis patrocinios
 master.menu.inventor = Inventor
 master.menu.inventor.patronage.list = Mis patrocinios
 master.menu.inventor.toolkit = Listar mis Toolkits
+
 
 
 # master.menu.user-account ####################################################

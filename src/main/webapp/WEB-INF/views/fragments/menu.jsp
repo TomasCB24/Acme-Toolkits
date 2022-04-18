@@ -45,6 +45,7 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-separator/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.populate-initial" action="/administrator/populate-initial"/>
 			<acme:menu-suboption code="master.menu.administrator.populate-sample" action="/administrator/populate-sample"/>	
 			<acme:menu-separator/>																	
@@ -55,6 +56,7 @@
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
 			<acme:menu-suboption code="master.menu.patron.patronage-report" action="/patron/patronage-report/list-mine"/>
       <acme:menu-suboption code="master.menu.patron.patronage.list" action="/patron/patronage/list-mine"/>
+      <acme:menu-suboption code="master.menu.patron.patron-dashboard" action="/patron/patron-dashboard/show"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
@@ -62,7 +64,8 @@
       	<acme:menu-suboption code="master.menu.inventor.toolkit" action="/inventor/toolkit/list-mine"/>
         <acme:menu-suboption code="master.menu.inventor.patronage.list" action="/inventor/patronage/list-mine"/>
 		</acme:menu-option>
-    
+
+		
 	</acme:menu-left>
 	
 
