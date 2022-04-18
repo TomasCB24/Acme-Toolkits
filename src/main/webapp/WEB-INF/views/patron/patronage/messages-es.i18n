@@ -1,0 +1,26 @@
+# i18n-es.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+patron.patronage.list.label.code = Código
+patron.patronage.list.label.creation-date = Fecha de Creación
+patron.patronage.list.label.legal-stuff = Asuntos Legales
+
+patron.patronage.form.label.status = Estado
+patron.patronage.form.label.code = Código
+patron.patronage.form.label.legal-stuff = Asuntos Legales
+patron.patronage.form.label.budget = Presupuesto
+patron.patronage.form.label.creation-date = Fecha de Creación
+patron.patronage.form.label.initial-period-date = Fecha de Inicio
+patron.patronage.form.label.final-period-date = Fecha de Fin
+patron.patronage.form.label.link = Link para más información 
+
+patron.patronage.form.label.company = Compañía del Inventor
+patron.patronage.form.label.statement = Declaración del Inventor
+patron.patronage.form.label.inventorLink = Link para más información del Inventor: (Opcional)

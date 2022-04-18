@@ -26,9 +26,16 @@ master.menu.anonymous.favourite-link-pablo = 49135627Z: Rivera Jiménez, Pablo
 master.menu.anonymous.favourite-link-miguel = 48192767Q: Romero Arjona, Miguel
 master.menu.anonymous.favourite-link-juan = 30697250R: Salado Jurado, Juan
 
+
+# master.menu.authenticated ###################################################
+
+master.menu.authenticated = Authenticated
+master.menu.authenticated.currency-system = Currency System Configuration 
+ 
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
+master.menu.administrator.system-configuration = System configuration
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.populate-initial = Populate DB (initial)
@@ -36,10 +43,12 @@ master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shut-down = Shut down
 
 
+
 # master.menu.authenticated ###################################################
 
 master.menu.authenticated = Authenticated
 master.menu.authenticated.list-recent = List recent announcements
+
 
 
 # master.menu.provider ########################################################
@@ -53,13 +62,16 @@ master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
 
 # master.menu.patron ##########################################################
-
 master.menu.patron = Patron
+master.menu.patron.patronage-report = Patronage Report
+master.menu.patron.patronage.list = My patronages
 
 
 # master.menu.inventor ##########################################################
 
 master.menu.inventor = Inventor
+master.menu.inventor.toolkit = List my Toolkits
+master.menu.inventor.patronage.list = My patronages
 
 
 # master.menu.user-account ####################################################
@@ -72,10 +84,13 @@ master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
 
 
-# master.menu.patron ########################################################
-master.menu.patron = Patron
-master.menu.patron.patronage-report = Patronage Report
 
-
-# master.menu.any.chirp ####################################################
+# master.menu.any ####################################################
+master.menu.any.user-account-list = User Accounts List
 master.menu.any.chirp.list-recent = List recents chirps
+master.menu.any.item-list = Items list
+
+
+
+
+
