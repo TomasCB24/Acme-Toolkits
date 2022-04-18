@@ -71,6 +71,7 @@ master.menu.patron = Patron
 master.menu.inventor = Inventor
 master.menu.inventor.toolkit = List my Toolkits
 
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
@@ -81,6 +82,10 @@ master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
 
 
+# master.menu.any.user-account ####################################################
+master.menu.any.user-account-list = User Accounts List
+
+
 # master.menu.patron ########################################################
 master.menu.patron = Patron
 master.menu.patron.patronage-report = Patronage Report
@@ -88,3 +93,4 @@ master.menu.patron.patronage-report = Patronage Report
 
 # master.menu.any.chirp ####################################################
 master.menu.any.chirp.list-recent = List recents chirps
+
