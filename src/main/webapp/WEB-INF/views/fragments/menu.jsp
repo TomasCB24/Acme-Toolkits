@@ -19,13 +19,15 @@
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
-      		<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
-      		<acme:menu-suboption code="master.menu.anonymous.favourite-link-tomas" action="https://www3.animeflv.net"/>
+      <acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
+      <acme:menu-suboption code="master.menu.anonymous.favourite-link-tomas" action="https://www3.animeflv.net"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-ezequiel" action="https://github.com/ezegonmac/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-ismael" action="https://gdg.community.dev/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-pablo" action="https://www.mangatigre.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-miguel" action="https://developer.android.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-juan" action="https://www.youtube.com/"/>
+
+    	<acme:menu-suboption code="master.menu.any.item-list" action="/any/item/list"/>
 			<acme:menu-suboption code="master.menu.any.chirp.list-recent" action="/any/chirp/list-recent"/>
     	
 
@@ -47,6 +49,7 @@
 			<acme:menu-suboption code="master.menu.administrator.populate-sample" action="/administrator/populate-sample"/>	
 			<acme:menu-separator/>																	
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
+			<acme:menu-suboption code="master.menu.any.item-list" action="/any/item/list"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
@@ -82,6 +85,7 @@
 			<acme:menu-suboption code="master.menu.user-account.provider" action="/authenticated/provider/update" access="hasRole('Provider')"/>
 			<acme:menu-suboption code="master.menu.user-account.become-consumer" action="/authenticated/consumer/create" access="!hasRole('Consumer')"/>
 			<acme:menu-suboption code="master.menu.user-account.consumer" action="/authenticated/consumer/update" access="hasRole('Consumer')"/>
+			
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.sign-out" action="/master/sign-out" access="isAuthenticated()"/>
