@@ -29,11 +29,11 @@ administrator.dashboard.form.label.minTitle = Informaciones sobre mínimos
 administrator.dashboard.form.label.and-technology = y tecnología
 administrator.dashboard.form.label.colon = :
 
-administrator.dashboard.form.label.patronage-average-sentence-status = Média del presupuesto de los patrocinios por estado
+administrator.dashboard.form.label.patronage-average-sentence-status = y estado
 administrator.dashboard.form.label.patronage-deviation-sentence-status = Deviation del presupuesto de los patrocinios por estado
 administrator.dashboard.form.label.patronage-min-sentence-status = Mínimum del presupuesto de los patrocinios por estado
 administrator.dashboard.form.label.patronage-max-sentence-status = Maximum del presupuesto de los patrocinios por estado
 
-administrator.dashboard.form.label.patronages = --Patroncinios--
+administrator.dashboard.form.label.patronages = --Patrocinios--
 administrator.dashboard.form.label.components = --Componentes--
 administrator.dashboard.form.label.tools = --Herramientas--

@@ -39,10 +39,10 @@ public class AdminDashboard implements Serializable {
 	int								totalNumberOfDeniedPatronages;
 	
 	//The strings are "proposed", "accepted" or "denied"
-	Map<Status,Double> 				averageBudgetPatronages;
-	Map<Status,Double> 				deviationBudgetPatronages;
-	Map<Status,Double> 				minimumBudgetPatronages;
-	Map<Status,Double> 				maximumBudgetPatronages;
+	Map<Pair<String,Status>, Double>				averageBudgetPatronages;
+	Map<Pair<String,Status>, Double> 				deviationBudgetPatronages;
+	Map<Pair<String,Status>, Double> 				minimumBudgetPatronages;
+	Map<Pair<String,Status>, Double> 				maximumBudgetPatronages;
 	
 
 	// Derived attributes -----------------------------------------------------

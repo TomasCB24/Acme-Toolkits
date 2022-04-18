@@ -69,10 +69,11 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		final Map<String,Double> deviationRetailPriceOfTools= new HashMap<String, Double>();
 		final Map<String,Double> minRetailPriceOfTools= new HashMap<String, Double>();
 		final Map<String,Double> maxRetailPriceOfTools= new HashMap<String, Double>();
-		final Map<Status,Double> averageBudgetByStatus= new HashMap<Status, Double>();
-		final Map<Status,Double> deviationBudgetByStatus= new HashMap<Status, Double>();
-		final Map<Status,Double> minBudgetByStatus= new HashMap<Status, Double>();
-		final Map<Status,Double> maxBudgetByStatus= new HashMap<Status, Double>();
+		final Map<Pair<String,Status>, Double> averageBudgetByStatus= new HashMap<Pair<String, Status>, Double>();
+		final Map<Pair<String,Status>, Double> deviationBudgetByStatus= new HashMap<Pair<String, Status>, Double>();
+		final Map<Pair<String,Status>, Double> minBudgetByStatus= new HashMap<Pair<String, Status>, Double>();
+		final Map<Pair<String,Status>, Double> maxBudgetByStatus= new HashMap<Pair<String, Status>, Double>();
+		
 		
 		int i = 0;
 		int tamaño = this.repository.averageOfComponentsRetailPrice().size();
@@ -164,71 +165,51 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			maxRetailPriceOfTools.put(divisa, key);
 			i++;
 		 }
-		i=0;
-		tamaño = this.repository.averageBudgetPatronages().size();
-		while(i<tamaño) {
-			final String linea= this.repository.averageBudgetPatronages().get(i);
-			final String[] sub=linea.split(",");
-			final Double key=Double.parseDouble(sub[1]);
-			final String status=sub[2];
-			if(status.equals(acme.entities.patronages.Status.ACCEPTED.toString())) {
-				averageBudgetByStatus.put(acme.entities.patronages.Status.ACCEPTED, key);
-			}else if(status.equals(acme.entities.patronages.Status.PROPOSED.toString())){
-				averageBudgetByStatus.put(acme.entities.patronages.Status.PROPOSED, key);
-			}else {
-				averageBudgetByStatus.put(acme.entities.patronages.Status.DENIED, key);
-			}
-			i++;
-		 }
-		i=0;
+		
+		tamaño = this.repository.averageBudgetPatronages().size();		
+		for(int j=0; j<tamaño; j++) {
+			final String queryRes = this.repository.averageBudgetPatronages().get(j);
+			final String[] subs = queryRes.split(",");
+			final Double key = Double.parseDouble(subs[1]);
+			final String currency = subs[0];
+			final Status status = Status.valueOf(subs[2]);
+			final Pair<String, Status> res = Pair.of(currency, status);
+			averageBudgetByStatus.put(res, key);
+		}		
+		
 		tamaño = this.repository.deviationBudgetPatronages().size();
-		while(i<tamaño) {
-			final String linea= this.repository.deviationBudgetPatronages().get(i);
-			final String[] sub=linea.split(",");
-			final Double key=Double.parseDouble(sub[1]);
-			final String status=sub[2];
-			if(status.equals(acme.entities.patronages.Status.ACCEPTED.toString())) {
-				deviationBudgetByStatus.put(acme.entities.patronages.Status.ACCEPTED, key);
-			}else if(status.equals(acme.entities.patronages.Status.PROPOSED.toString())){
-				deviationBudgetByStatus.put(acme.entities.patronages.Status.PROPOSED, key);
-			}else {
-				deviationBudgetByStatus.put(acme.entities.patronages.Status.DENIED, key);
-			}
-			
-			i++;
-		 }
-		i=0;
+		for(int j=0; j<tamaño; j++) {
+			final String queryRes = this.repository.deviationBudgetPatronages().get(j);
+			final String[] subs = queryRes.split(",");
+			final Double key = Double.parseDouble(subs[1]);
+			final String currency = subs[0];
+			final Status status = Status.valueOf(subs[2]);
+			final Pair<String, Status> res = Pair.of(currency, status);
+			deviationBudgetByStatus.put(res, key);
+		}
+		
+		
 		tamaño = this.repository.minimumBudgetPatronages().size();
-		while(i<tamaño) {
-			final String linea= this.repository.minimumBudgetPatronages().get(i);
-			final String[] sub=linea.split(",");
-			final Double key=Double.parseDouble(sub[1]);
-			final String status=sub[2];
-			if(status.equals(acme.entities.patronages.Status.ACCEPTED.toString())) {
-				minBudgetByStatus.put(acme.entities.patronages.Status.ACCEPTED, key);
-			}else if(status.equals(acme.entities.patronages.Status.PROPOSED.toString())){
-				minBudgetByStatus.put(acme.entities.patronages.Status.PROPOSED, key);
-			}else {
-				minBudgetByStatus.put(acme.entities.patronages.Status.DENIED, key);
-			}
-			i++;
-		 }
-		i=0;
+		for(int j=0; j<tamaño; j++) {
+			final String queryRes = this.repository.minimumBudgetPatronages().get(j);
+			final String[] subs = queryRes.split(",");
+			final Double key = Double.parseDouble(subs[1]);
+			final String currency = subs[0];
+			final Status status = Status.valueOf(subs[2]);
+			final Pair<String, Status> res = Pair.of(currency, status);
+			minBudgetByStatus.put(res, key);
+		}
+		
 		tamaño = this.repository.maximumBudgetPatronages().size();
-		while(i<tamaño) {
-			final String linea= this.repository.maximumBudgetPatronages().get(i);
-			final String[] sub=linea.split(",");
-			final Double key=Double.parseDouble(sub[1]);
-			final String status=sub[2];
-			if(status.equals(acme.entities.patronages.Status.ACCEPTED.toString())) {
-				maxBudgetByStatus.put(acme.entities.patronages.Status.ACCEPTED, key);
-			}else if(status.equals(acme.entities.patronages.Status.PROPOSED.toString())){
-				maxBudgetByStatus.put(acme.entities.patronages.Status.PROPOSED, key);
-			}else {
-				maxBudgetByStatus.put(acme.entities.patronages.Status.DENIED, key);
-			}
-			i++;
-		 }		
+		for(int j=0; j<tamaño; j++) {
+			final String queryRes = this.repository.maximumBudgetPatronages().get(j);
+			final String[] subs = queryRes.split(",");
+			final Double key = Double.parseDouble(subs[1]);
+			final String currency = subs[0];
+			final Status status = Status.valueOf(subs[2]);
+			final Pair<String, Status> res = Pair.of(currency, status);
+			maxBudgetByStatus.put(res, key);
+		}	
 		
 		
 		result = new AdminDashboard();

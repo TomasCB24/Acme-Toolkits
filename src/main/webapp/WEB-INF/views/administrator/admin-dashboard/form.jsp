@@ -117,20 +117,21 @@
 		</tr>
 		
 		<c:forEach items="${averageBudgetPatronages}" var="entry"> 	
-		<tr>	
-			<th>	
-			<acme:message code="administrator.dashboard.form.label.patronage-average-sentence-status"/>		
-			<c:set var = "string1" value = "${entry.key}"/>
-			<c:set var = "string2" value = "${fn:split(string1, '->')}" />
-
-			<acme:print value="${string2[0]}"/>
-			<acme:message code="administrator.dashboard.form.label.colon"/>
-			</th>
-			<td>
-				<acme:print value="${entry.value}"/>
-				
-			</td>		
-		</tr>
+			<tr>	
+				<th>	
+				<acme:message code="administrator.dashboard.form.label.average-sentence"/>		
+				<c:set var = "string1" value = "${entry.key}"/>
+				<c:set var = "string2" value = "${fn:split(string1, '->')}" />
+				<acme:print value="${string2[0]}"/>
+				<acme:message code="administrator.dashboard.form.label.patronage-average-sentence-status"/>
+				<acme:print value="${string2[1]}"/>
+				<acme:message code="administrator.dashboard.form.label.colon"/>
+				</th>
+				<td>
+					<acme:print value="${entry.value}"/>
+					
+				</td>		
+			</tr>
 		</c:forEach>
 </table>
 
@@ -188,19 +189,20 @@
 		</tr>
 		<c:forEach items="${deviationBudgetPatronages}" var="entry"> 	
 		<tr>	
-			<th>	
-			<acme:message code="administrator.dashboard.form.label.patronage-deviation-sentence-status"/>		
-			<c:set var = "string1" value = "${entry.key}"/>
-			<c:set var = "string2" value = "${fn:split(string1, '->')}" />
-
-			<acme:print value="${string2[0]}"/>
-			<acme:message code="administrator.dashboard.form.label.colon"/>
-			</th>
-			<td>
-				<acme:print value="${entry.value}"/>
-				
-			</td>		
-		</tr>
+				<th>	
+				<acme:message code="administrator.dashboard.form.label.average-sentence"/>		
+				<c:set var = "string1" value = "${entry.key}"/>
+				<c:set var = "string2" value = "${fn:split(string1, '->')}" />
+				<acme:print value="${string2[0]}"/>
+				<acme:message code="administrator.dashboard.form.label.patronage-average-sentence-status"/>
+				<acme:print value="${string2[1]}"/>
+				<acme:message code="administrator.dashboard.form.label.colon"/>
+				</th>
+				<td>
+					<acme:print value="${entry.value}"/>
+					
+				</td>		
+			</tr>
 		</c:forEach>
 	</table>
 	<acme:message code="administrator.dashboard.form.label.minTitle"/>	
@@ -258,19 +260,20 @@
 		</tr>
 		<c:forEach items="${minimumBudgetPatronages}" var="entry"> 	
 		<tr>	
-			<th>	
-			<acme:message code="administrator.dashboard.form.label.patronage-min-sentence-status"/>		
-			<c:set var = "string1" value = "${entry.key}"/>
-			<c:set var = "string2" value = "${fn:split(string1, '->')}" />
-
-			<acme:print value="${string2[0]}"/>
-			<acme:message code="administrator.dashboard.form.label.colon"/>
-			</th>
-			<td>
-				<acme:print value="${entry.value}"/>
-				
-			</td>		
-		</tr>
+				<th>	
+				<acme:message code="administrator.dashboard.form.label.average-sentence"/>		
+				<c:set var = "string1" value = "${entry.key}"/>
+				<c:set var = "string2" value = "${fn:split(string1, '->')}" />
+				<acme:print value="${string2[0]}"/>
+				<acme:message code="administrator.dashboard.form.label.patronage-average-sentence-status"/>
+				<acme:print value="${string2[1]}"/>
+				<acme:message code="administrator.dashboard.form.label.colon"/>
+				</th>
+				<td>
+					<acme:print value="${entry.value}"/>
+					
+				</td>		
+			</tr>
 		</c:forEach>
 	</table>
 	
@@ -330,19 +333,20 @@
 		</tr>
 		<c:forEach items="${maximumBudgetPatronages}" var="entry"> 	
 		<tr>	
-			<th>	
-			<acme:message code="administrator.dashboard.form.label.patronage-max-sentence-status"/>		
-			<c:set var = "string1" value = "${entry.key}"/>
-			<c:set var = "string2" value = "${fn:split(string1, '->')}" />
-
-			<acme:print value="${string2[0]}"/>
-			<acme:message code="administrator.dashboard.form.label.colon"/>
-			</th>
-			<td>
-				<acme:print value="${entry.value}"/>
-				
-			</td>		
-		</tr>
+				<th>	
+				<acme:message code="administrator.dashboard.form.label.average-sentence"/>		
+				<c:set var = "string1" value = "${entry.key}"/>
+				<c:set var = "string2" value = "${fn:split(string1, '->')}" />
+				<acme:print value="${string2[0]}"/>
+				<acme:message code="administrator.dashboard.form.label.patronage-average-sentence-status"/>
+				<acme:print value="${string2[1]}"/>
+				<acme:message code="administrator.dashboard.form.label.colon"/>
+				</th>
+				<td>
+					<acme:print value="${entry.value}"/>
+					
+				</td>		
+			</tr>
 		</c:forEach>
 	</table>
 	

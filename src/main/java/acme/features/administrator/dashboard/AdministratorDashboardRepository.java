@@ -68,16 +68,16 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	
 	//Patronages
 	
-	@Query("select p.budget.currency, avg(p), p.status from Patronage p group by p.status")
+	@Query("select p.budget.currency, avg(p.budget.amount), p.status from Patronage p group by p.budget.currency, p.status")
 	List<String> averageBudgetPatronages();
 	
-	@Query("select p.budget.currency, stddev(p), p.status from Patronage p group by p.status")
+	@Query("select p.budget.currency, stddev(p.budget.amount), p.status from Patronage p group by p.budget.currency, p.status")
 	List<String> deviationBudgetPatronages();
 	
-	@Query("select p.budget.currency, min(p.budget.amount), p.status from Patronage p group by p.status")
+	@Query("select p.budget.currency, min(p.budget.amount), p.status from Patronage p group by p.budget.currency, p.status")
 	List<String> minimumBudgetPatronages();
 	
-	@Query("select p.budget.currency, min(p.budget.amount), p.status from Patronage p group by p.status")
+	@Query("select p.budget.currency, max(p.budget.amount), p.status from Patronage p group by p.budget.currency, p.status")
 	List<String> maximumBudgetPatronages();
 	
 	

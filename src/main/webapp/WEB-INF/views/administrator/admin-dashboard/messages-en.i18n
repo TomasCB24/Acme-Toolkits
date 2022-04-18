@@ -28,7 +28,7 @@ administrator.dashboard.form.label.minTitle = Minimus Information
 administrator.dashboard.form.label.and-technology = y technology
 administrator.dashboard.form.label.colon = :
 
-administrator.dashboard.form.label.patronage-average-sentence-status = Average retail price of patronages by status
+administrator.dashboard.form.label.patronage-average-sentence-status = and status
 administrator.dashboard.form.label.patronage-deviation-sentence-status = Deviation retail price of patronages by status
 administrator.dashboard.form.label.patronage-min-sentence-status = Mínimum retail price of patronages by status
 administrator.dashboard.form.label.patronage-max-sentence-status = Maximum retail price of patronages by status
