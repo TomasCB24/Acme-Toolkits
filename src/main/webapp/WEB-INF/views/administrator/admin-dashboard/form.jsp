@@ -34,7 +34,7 @@
 			<acme:message code="administrator.dashboard.form.label.total-number-of-tools"/>
 		</th>
 		<td>
-			<acme:print value="${totalNumberOfTools}"/>
+			<acme:print value="${tools}"/>
 		</td>
 	</tr>
 	<tr>
@@ -356,7 +356,48 @@
 	<canvas id="canvas"></canvas>
 </div>
 
-
+<script type="text/javascript">
+	$(document).ready(function() {
+		var data = {			
+			scales : {
+				yAxes : [
+					{
+						ticks : {
+							suggestedMin : 0.0
+						}
+					}
+				]
+			},
+			labels : [
+					"PROPOSED", "ACCEPTED", "DENIED"
+			],
+			datasets : [
+				{
+					data : [
+						<c:out value="${totalNumberOfProposedPatronages}"/>, 
+						<c:out value="${totalNumberOfAcceptedPatronages}"/>, 
+						<c:out value="${totalNumberOfDeniedPatronages}"/>
+					]
+				}
+			]
+		};
+		var options = {
+			legend : {
+				display : false
+			}
+		};
+	
+		var canvas, context;
+	
+		canvas = document.getElementById("canvas");
+		context = canvas.getContext("2d");
+		new Chart(context, {
+			type : "bar",
+			data : data,
+			options : options
+		});
+	});
+</script>
 
 <acme:return/>
 

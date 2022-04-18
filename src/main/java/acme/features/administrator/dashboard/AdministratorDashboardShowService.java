@@ -50,7 +50,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 
 		final AdminDashboard result;
 		int totalNumberOfComponents;
-		int totalNumberOfTools;
+		final int totalNumberOfTools;
 		int totalNumberOfProposedPatronages;
 		int totalNumberOfAcceptedPatronages;
 		int totalNumberOfDeniedPatronages;
@@ -69,10 +69,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		final Map<String,Double> deviationRetailPriceOfTools= new HashMap<String, Double>();
 		final Map<String,Double> minRetailPriceOfTools= new HashMap<String, Double>();
 		final Map<String,Double> maxRetailPriceOfTools= new HashMap<String, Double>();
-		final Map<Status,Double> averageBudgetByStatus=new HashMap<Status, Double>();
-		final Map<Status,Double> deviationBudgetByStatus=new HashMap<Status, Double>();
-		final Map<Status,Double> minBudgetByStatus=new HashMap<Status, Double>();
-		final Map<Status,Double> maxBudgetByStatus=new HashMap<Status, Double>();
+		final Map<Status,Double> averageBudgetByStatus= new HashMap<Status, Double>();
+		final Map<Status,Double> deviationBudgetByStatus= new HashMap<Status, Double>();
+		final Map<Status,Double> minBudgetByStatus= new HashMap<Status, Double>();
+		final Map<Status,Double> maxBudgetByStatus= new HashMap<Status, Double>();
 		
 		int i = 0;
 		int tamaño = this.repository.averageOfComponentsRetailPrice().size();
@@ -263,10 +263,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, //
-			"totalNumberOfComponents", "totalNumberOfTools", "averageOfComponentsRetailPrice","deviationOfComponentsRetailPrice","maximumOfComponentsRetailPrice","minimumOfComponentsRetailPrice", // 
-			"totalNumberOfProposedPatronages", "totalNumberOfAcceptedPatronages","averageOfToolsRetailPrice", "deviationOfToolsRetailPrice","minimumOfToolsRetailPrice","maximumOfToolsRetailPrice",//
+		request.unbind(entity, model,"totalNumberOfComponents","averageOfComponentsRetailPrice","deviationOfComponentsRetailPrice","maximumOfComponentsRetailPrice","minimumOfComponentsRetailPrice", // 
+			"totalNumberOfProposedPatronages","totalNumberOfAcceptedPatronages","averageOfToolsRetailPrice", "deviationOfToolsRetailPrice","minimumOfToolsRetailPrice","maximumOfToolsRetailPrice",//
 			"totalNumberOfDeniedPatronages","averageBudgetPatronages","deviationBudgetPatronages","minimumBudgetPatronages","maximumBudgetPatronages");
+		model.setAttribute("tools",entity.getTotalNumberOftools());
 	}
 
 }
