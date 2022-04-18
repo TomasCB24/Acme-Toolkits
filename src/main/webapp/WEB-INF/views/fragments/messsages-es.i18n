@@ -31,3 +31,6 @@ master.panic.label.status = Estado:
 master.panic.label.exceptions = Excepciones:
 master.panic.text.consult-log = Por favor, consulte el log para ver más detalles.
 
+# master.menu.employer ########################################################
+master.menu.inventor = Inventor
+master.menu.inventor.patronage-report = Reportes de Patrocinios
