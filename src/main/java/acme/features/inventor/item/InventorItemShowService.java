@@ -74,6 +74,13 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
 		request.unbind(entity, model, "type", "name","code",
 			"technology","description","retailPrice","link");
 		
+		// Inventor full name
+		
+		String inventor;
+		inventor = entity.getInventor().getIdentity().getFullName();
+		
+		model.setAttribute("inventor", inventor);
+		
 	}
 
 }
