@@ -17,7 +17,7 @@ inventor.item.form.label.technology = Technology:
 inventor.item.form.label.description = Description:
 inventor.item.form.label.retail-price = Retail Price:
 inventor.item.form.label.link = Link: (Optional)
-inventor.item.form.label.inventor-full-name = Inventor of the Toolkit
+inventor.item.form.label.inventor-full-name = Inventor of the Item:
 
 inventor.item.list.label.type = Type
 inventor.item.list.label.name = Name
