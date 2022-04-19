@@ -14,6 +14,7 @@ any.toolkit.form.label.description = Description:
 any.toolkit.form.label.assembly-notes = Assembly Notes:
 any.toolkit.form.label.retail-price = Retail Price:
 any.toolkit.form.label.link = Link: (Optional)
+any.toolkit.form.label.inventor-full-name = Inventor of the Toolkit
 
 any.toolkit.list.label.code = Code
 any.toolkit.list.label.title = Title
