@@ -17,7 +17,7 @@ any.item.form.label.technology = Tecnología:
 any.item.form.label.description = Descripción:
 any.item.form.label.retail-price = Precio al por menor:
 any.item.form.label.link = Enlace: (Opcional)
-any.item.form.label.inventor-full-name = Inventor de la Toolkit
+any.item.form.label.inventor-full-name = Inventor del elemento:
 
 any.item.list.label.type = Tipo
 any.item.list.label.name = Nombre
