@@ -50,7 +50,7 @@ master.menu.administrator.shut-down = Parar el sistema
 
 master.menu.patron = Patrocinador
 master.menu.patron.patron-dashboard = Panel de métricas
-master.menu.patron.patronage-report = Reportes de Patrocinios
+master.menu.patron.patronage-report = Mis reportes de patrocinios
 master.menu.patron.patronage.list = Mis patrocinios
 
 # master.menu.inventor ##########################################################
