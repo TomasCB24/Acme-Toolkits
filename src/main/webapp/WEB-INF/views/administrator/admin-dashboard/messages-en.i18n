@@ -25,7 +25,7 @@ administrator.dashboard.form.label.averageTitle = Averages Information
 administrator.dashboard.form.label.deviationTitle = Deviations Information
 administrator.dashboard.form.label.maxTitle = Maximus Information
 administrator.dashboard.form.label.minTitle = Minimus Information
-administrator.dashboard.form.label.and-technology = y technology
+administrator.dashboard.form.label.and-technology = and technology
 administrator.dashboard.form.label.colon = :
 
 administrator.dashboard.form.label.patronage-average-sentence-status = and status
