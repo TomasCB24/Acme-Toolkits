@@ -36,6 +36,7 @@ public class AnyUserAccountShowService implements AbstractShowService<Any, UserA
 		
 		id = request.getModel().getInteger("id");
 		result = this.repository.findOneUserAccountById(id);
+		result.getRoles().forEach(r -> {});
 		
 		return result;
 	}
@@ -53,6 +54,8 @@ public class AnyUserAccountShowService implements AbstractShowService<Any, UserA
 		model.setAttribute("surname", surname);
 		final String email = entity.getIdentity().getEmail();
 		model.setAttribute("email", email);
+		final String roles = entity.getAuthorityString();
+		model.setAttribute("roles", roles);
 		
 		request.unbind(entity, model, "username");
 	}
