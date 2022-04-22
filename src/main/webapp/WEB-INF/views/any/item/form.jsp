@@ -27,10 +27,9 @@
 	<acme:input-textarea code="any.item.form.label.technology" path="technology"/>
 	<acme:input-textarea code="any.item.form.label.description" path="description"/>
 	<acme:input-money code="any.item.form.label.retail-price" path="retailPrice"/>
-
 	<acme:input-url code="any.item.form.label.link" path="link"/>
-
 	<acme:input-textbox code="any.item.form.label.inventor-full-name" path="inventor"/>
+
 	
 </acme:form>
 

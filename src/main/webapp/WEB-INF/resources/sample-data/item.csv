@@ -24,3 +24,4 @@ item-22,inventor-05,AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 item-23,inventor-05,Item name 3,AAA-002-E,T,<script>alert("hi!")<script>,EUR 99.00,null,COMPONENT
 item-24,inventor-05,Item name 4,AAA-003-E,technology4,This is description 4,EUR 29.99,https://www.google.com/,COMPONENT
 item-25,inventor-05,Item name 5,AAA-004-E,t,This is description 5,EUR 40.05,null,TOOL
+
