@@ -1,0 +1,38 @@
+# i18n-en.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.dashboard.form.title.general-indicators = General indicators
+administrator.dashboard.form.title.application-statuses = Application statuses  
+
+administrator.dashboard.form.label.total-number-of-components =  Total number of components
+administrator.dashboard.form.label.total-number-of-tools = Total number of tools
+administrator.dashboard.form.label.total-number-of-proposed-patronages = Total number of proposed patronages
+administrator.dashboard.form.label.total-number-of-accepted-patronages = Total number of accepted patronages
+administrator.dashboard.form.label.total-number-of-denied-patronages = Total number of denied patronages
+
+administrator.dashboard.form.label.average-sentence = Average retail price by currency
+administrator.dashboard.form.label.deviation-sentence = Deviation retail price by currency
+administrator.dashboard.form.label.min-sentence = Mínimum retail price by currency
+administrator.dashboard.form.label.max-sentence = Maximum retail price by currency
+administrator.dashboard.form.label.averageTitle = Averages Information
+administrator.dashboard.form.label.deviationTitle = Deviations Information
+administrator.dashboard.form.label.maxTitle = Maximus Information
+administrator.dashboard.form.label.minTitle = Minimus Information
+administrator.dashboard.form.label.and-technology = and technology
+administrator.dashboard.form.label.colon = :
+
+administrator.dashboard.form.label.patronage-average-sentence-status = and status
+administrator.dashboard.form.label.patronage-deviation-sentence-status = Deviation retail price of patronages by status
+administrator.dashboard.form.label.patronage-min-sentence-status = Mínimum retail price of patronages by status
+administrator.dashboard.form.label.patronage-max-sentence-status = Maximum retail price of patronages by status
+
+administrator.dashboard.form.label.patronages = --Patronages--
+administrator.dashboard.form.label.components = --Components--
+administrator.dashboard.form.label.tools = --Tools--
