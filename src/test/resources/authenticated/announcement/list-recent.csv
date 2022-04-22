@@ -1,0 +1,4 @@
+recordIndex,key,creation-moment,title,body,flag,link
+1,announcement-01,2022/04/18 00:59,title1,This is body 1,true,null
+2,announcement-03,2022/04/12 09:45,title3,This is body 3,true,null
+3,announcement-04,2022/04/11 10:10,title4,This is body 4,true,https://www.google.com/
