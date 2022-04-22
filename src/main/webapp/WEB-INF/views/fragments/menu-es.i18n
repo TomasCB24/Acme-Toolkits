@@ -8,12 +8,13 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-﻿# master.menu #################################################################
+# master.menu #################################################################
 
 master.menu.home = Inicio
 master.menu.sign-up = Registrarse
 master.menu.sign-in = Entrar
 master.menu.sign-out = Salir
+
 
 # master.menu.anonymous #######################################################
 
@@ -26,36 +27,56 @@ master.menu.anonymous.favourite-link-pablo = 49135627Z: Rivera Jiménez, Pablo
 master.menu.anonymous.favourite-link-miguel = 48192767Q: Romero Arjona, Miguel
 master.menu.anonymous.favourite-link-juan = 30697250R: Salado Jurado, Juan
 
+
+# master.menu.authenticated ###################################################
+
+master.menu.authenticated = Autenticado
+master.menu.authenticated.currency-system = Sistema de Configuración de la Moneda 
+master.menu.authenticated.list-recent = Anuncios Recientes
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
+master.menu.administrator.system-configuration = Configuración del sistema
 master.menu.administrator.dashboard = Panel de indicadores
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
+master.menu.administrator.dashboard = Panel de indicadores
 master.menu.administrator.shut-down = Parar el sistema
 
-# master.menu.provider ########################################################
 
-master.menu.provider = Proveedor
-master.menu.provider.favourite-link = Enlace favorito
 
-# master.menu.consumer ##########################################################
+# master.menu.patron ####################################################
 
-master.menu.consumer = Consumidor
-master.menu.consumer.favourite-link = Enlace favorito
+master.menu.patron = Patrocinador
+master.menu.patron.patron-dashboard = Panel de métricas
+master.menu.patron.patronage-report = Reportes de Patrocinios
+master.menu.patron.patronage.list = Mis patrocinios
+
+# master.menu.inventor ##########################################################
+
+master.menu.inventor = Inventor
+master.menu.inventor.patronage.list = Mis patrocinios
+master.menu.inventor.toolkit = Listar mis Toolkits
+master.menu.inventor.item.list-mine = Listar mis elementos
+
+
 
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
 master.menu.user-account.general-data = Datos generales
-master.menu.user-account.provider = Datos de proveedor
-master.menu.user-account.become-provider = Hazte proveedor
-master.menu.user-account.consumer = Datos de consumidor
-master.menu.user-account.become-consumer = Hazte consumidor
 
 
-# master.menu.inventor ##########################################################
 
-master.menu.inventor = Inventor
-master.menu.inventor.item = Listar mis Items
+
+
+# master.menu.any ####################################################
+
+master.menu.any.user-account-list = Lista de Cuentas de Usuario
+master.menu.any.chirp.list-recent = Ver Chirps recientes
+master.menu.any.item.list-published = Listado de objetos públicos
+master.menu.any.toolkit = Listar Toolkits Publicadas
+
+

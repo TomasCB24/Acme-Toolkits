@@ -1,0 +1,39 @@
+# i18n-es.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.dashboard.form.title.general-indicators = Indicadores generales
+administrator.dashboard.form.title.application-statuses = Estados de solicitud
+
+administrator.dashboard.form.label.total-number-of-components =  Número total de componentes
+administrator.dashboard.form.label.total-number-of-tools =  Número total de herramientas
+administrator.dashboard.form.label.total-number-of-proposed-patronages = Número total de patrocinios propuestos
+administrator.dashboard.form.label.total-number-of-accepted-patronages = Número total de patrocinios aceptados
+administrator.dashboard.form.label.total-number-of-denied-patronages = Número total de patrocinios denegados
+
+administrator.dashboard.form.label.average-sentence = Média del presupuesto por divisa
+administrator.dashboard.form.label.deviation-sentence = Desviación del presupuesto por divisa
+administrator.dashboard.form.label.min-sentence = Mínimo del presupuesto por divisa
+administrator.dashboard.form.label.max-sentence = Máximo del presupuesto por divisa
+
+administrator.dashboard.form.label.averageTitle = Informaciones sobre médias
+administrator.dashboard.form.label.deviationTitle = Informaciones sobre desviaciones
+administrator.dashboard.form.label.maxTitle = Informaciones sobre máximos
+administrator.dashboard.form.label.minTitle = Informaciones sobre mínimos
+administrator.dashboard.form.label.and-technology = y tecnología
+administrator.dashboard.form.label.colon = :
+
+administrator.dashboard.form.label.patronage-average-sentence-status = y estado
+administrator.dashboard.form.label.patronage-deviation-sentence-status = Deviation del presupuesto de los patrocinios por estado
+administrator.dashboard.form.label.patronage-min-sentence-status = Mínimum del presupuesto de los patrocinios por estado
+administrator.dashboard.form.label.patronage-max-sentence-status = Maximum del presupuesto de los patrocinios por estado
+
+administrator.dashboard.form.label.patronages = --Patrocinios--
+administrator.dashboard.form.label.components = --Componentes--
+administrator.dashboard.form.label.tools = --Herramientas--
