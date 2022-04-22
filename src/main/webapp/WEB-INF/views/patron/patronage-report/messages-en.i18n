@@ -8,11 +8,11 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-patron.patronage-report.list.label.serial-number = Serial Number
+patron.patronage-report.list.label.sequence-number = Sequence Number
 patron.patronage-report.list.label.memorandum = memorandum
 
 
-patron.patronage-report.form.label.serial-number = Serial Number:
+patron.patronage-report.form.label.sequence-number = Sequence Number:
 patron.patronage-report.form.label.memorandum = Memorandum:
 patron.patronage-report.form.label.creation-moment = Creation Moment:
 patron.patronage-report.form.label.link = Link for more info: (Optional)

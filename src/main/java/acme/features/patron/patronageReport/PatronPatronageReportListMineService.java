@@ -42,6 +42,9 @@ public class PatronPatronageReportListMineService implements AbstractListService
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "serialNumber", "memorandum");
+		request.unbind(entity, model, "memorandum");
+		final PatronageReport patronageReport = this.repository.findOnePatronageReportById(entity.getId());
+		final String sequenceNumber = patronageReport.sequenceNumber();
+		model.setAttribute("sequenceNumber", sequenceNumber);
 	}
 }

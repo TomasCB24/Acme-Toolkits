@@ -23,8 +23,8 @@ public class PatronDashboard implements Serializable {
 	int							totalNumberOfDeniedPatronages;
 	Map<Pair<String,Status>, Double>			averageBudgetOfPatronages;
 	Map<Pair<String,Status>, Double>			deviationBudgetOfPatronages;
-	Map<Pair<String,Status>, Double>			minimumBudgetOfPatronages;
-	Map<Pair<String,Status>, Double>			maximumBudgetOfPatronages;
+	Map<Pair<String,Status>, Double>			minBudgetOfPatronages;
+	Map<Pair<String,Status>, Double>			maxBudgetOfPatronages;
 
 
 	// Derived attributes -----------------------------------------------------

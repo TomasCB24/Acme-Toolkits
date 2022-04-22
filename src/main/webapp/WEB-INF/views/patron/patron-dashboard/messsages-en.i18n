@@ -1,0 +1,20 @@
+# i18n-en.i18n
+
+patron.patron-dashboard.form.label.and-status = and status
+patron.patron-dashboard.form.label.colon = :
+
+patron.patron-dashboard.form.label.average-sentence = Average budget by currency 
+patron.patron-dashboard.form.label.deviation-sentence = Deviation budget by currency 
+patron.patron-dashboard.form.label.max-sentence = Maximum budget by currency
+patron.patron-dashboard.form.label.min-sentence = Minimum budget by currency
+
+patron.patron-dashboard.form.label.avg-title = Averages
+patron.patron-dashboard.form.label.deviationTitle= Deviations
+patron.patron-dashboard.form.label.maxTitle= Maximums
+patron.patron-dashboard.form.label.minTitle= Minimums
+patron.patron-dashboard.form.label.absoluteTitle = Totals
+
+patron.patron-dashboard.form.label.totalNumberOfProposedPatronages = Total number of proposed patronages:
+patron.patron-dashboard.form.label.totalNumberOfAcceptedPatronages = Total number of accepted patronages:
+patron.patron-dashboard.form.label.totalNumberOfDeniedPatronages = Total number of denied patronages:
+

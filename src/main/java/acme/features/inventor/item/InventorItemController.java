@@ -1,5 +1,4 @@
 package acme.features.inventor.item;
-
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,21 +11,24 @@ import acme.roles.Inventor;
 @Controller
 public class InventorItemController extends AbstractController<Inventor, Item>{
 
-	// Internal state ---------------------------------------------------------
-
-	@Autowired
+  @Autowired
 	protected InventorItemListService				listService;
+  
+	@Autowired
+	protected InventorItemListMineService listMineService;
 	
 	@Autowired
-	protected InventorItemShowService				showService;
-	
-	// Constructors -----------------------------------------------------------
-
+	protected InventorItemShowService showService;
 	
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("list", this.listService);
 		super.addCommand("show", this.showService);
+		super.addCommand("list-mine","list", this.listMineService);
+    super.addCommand("list", this.listService);
+    
 	}
-	
 }
+
+
+
+

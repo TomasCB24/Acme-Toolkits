@@ -1,5 +1,6 @@
 package acme.features.inventor.item;
 
+
 import java.util.Collection;
 import java.util.stream.Collectors;
 
@@ -7,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.items.Item;
+
 import acme.entities.toolkits.Toolkit;
+
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.entities.Principal;
@@ -29,27 +32,49 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
 		assert request != null;
 		
 		boolean result;
-		int itemId;
-		Collection<Toolkit> publishedToolkits;
-		Collection<Toolkit> toolkits;
+    
+    String s;
+		s = request.getServletRequest().getRequestURI();
+    
+    if(s.contains("/inventor/item/list-mine")){
+     
+      int masterId;
+      Item item;
+      Inventor inventor;
+      Principal principal;
 
-		itemId = request.getModel().getInteger("id");
-		publishedToolkits = this.repository.findManyPublishedToolkitsByItemId(itemId);
-		toolkits = this.repository.findManyToolkitsByItemId(itemId);
-		
-		Principal principal;
-		principal = request.getPrincipal();
-		
-		Item item;
-		item = this.repository.findOneItemById(itemId);
-		
-		result = (!publishedToolkits.isEmpty() || 
-				!(toolkits.stream().filter(t->t.getInventor().getUserAccount().getId() == principal.getAccountId())
-									.collect(Collectors.toList()).isEmpty()) ||
-				(item.getInventor().getUserAccount().getId() == principal.getAccountId())
-		);
-		
-		return result;
+      masterId = request.getModel().getInteger("id");
+      item = this.repository.findOneItemById(masterId);
+      inventor = item.getInventor();
+      principal = request.getPrincipal();
+      result = (
+        inventor.getUserAccount().getId() == principal.getAccountId()
+      
+    } else {
+      int itemId;
+      Collection<Toolkit> publishedToolkits;
+      Collection<Toolkit> toolkits;
+
+      itemId = request.getModel().getInteger("id");
+      publishedToolkits = this.repository.findManyPublishedToolkitsByItemId(itemId);
+      toolkits = this.repository.findManyToolkitsByItemId(itemId);
+
+      Principal principal;
+      principal = request.getPrincipal();
+
+      Item item;
+      item = this.repository.findOneItemById(itemId);
+
+      result = (!publishedToolkits.isEmpty() || 
+          !(toolkits.stream().filter(t->t.getInventor().getUserAccount().getId() == principal.getAccountId())
+                    .collect(Collectors.toList()).isEmpty()) ||
+          (item.getInventor().getUserAccount().getId() == principal.getAccountId())
+
+      );
+
+      return result;
+      
+    }
 	}
 
 	@Override

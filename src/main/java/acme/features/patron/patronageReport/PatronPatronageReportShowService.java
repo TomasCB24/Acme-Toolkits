@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import acme.entities.patronages.PatronageReport;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 import acme.roles.Patron;
 
@@ -17,7 +18,18 @@ public class PatronPatronageReportShowService implements AbstractShowService<Pat
 	@Override
 	public boolean authorise(final Request<PatronageReport> request) {
 		assert request != null;
-		return true;
+		boolean result;
+		int masterId;
+		PatronageReport patronageReport;
+		Patron patron;
+		Principal principal;
+		
+		masterId = request.getModel().getInteger("id");
+		patronageReport = this.repository.findOnePatronageReportById(masterId);
+		patron = patronageReport.getPatronage().getPatron();
+		principal = request.getPrincipal();
+		result = patron.getUserAccount().getId()==principal.getAccountId();
+		return result;
 	}
 
 	@Override
@@ -36,7 +48,10 @@ public class PatronPatronageReportShowService implements AbstractShowService<Pat
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "serialNumber", "memorandum", "creationMoment", "link");
+		request.unbind(entity, model, "memorandum", "creationMoment", "link");
+		final PatronageReport patronageReport = this.repository.findOnePatronageReportById(entity.getId());
+		final String sequenceNumber = patronageReport.sequenceNumber();
+		model.setAttribute("sequenceNumber", sequenceNumber);
 		
 	}
 

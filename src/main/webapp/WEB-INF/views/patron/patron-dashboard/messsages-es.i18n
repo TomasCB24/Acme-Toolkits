@@ -1,0 +1,19 @@
+# i18n-en.i18n
+
+patron.patron-dashboard.form.label.and-status = y estado
+patron.patron-dashboard.form.label.colon = :
+
+patron.patron-dashboard.form.label.average-sentence = Presupuesto medio del presupuesto por divisa 
+patron.patron-dashboard.form.label.deviation-sentence = Desviación típica del presupuesto por divisa 
+patron.patron-dashboard.form.label.max-sentence = Presupuesto máximo por divisa
+patron.patron-dashboard.form.label.min-sentence = Presupuesto mínimo por divisa
+
+patron.patron-dashboard.form.label.avg-title = Medias
+patron.patron-dashboard.form.label.deviationTitle= Desviaciones típicas
+patron.patron-dashboard.form.label.maxTitle= Máximos
+patron.patron-dashboard.form.label.minTitle= Mínimos
+patron.patron-dashboard.form.label.absoluteTitle = Totales
+
+patron.patron-dashboard.form.label.totalNumberOfProposedPatronages = Total de mecenazgos propuestos:
+patron.patron-dashboard.form.label.totalNumberOfAcceptedPatronages = Total de mecenazgos aceptados:
+patron.patron-dashboard.form.label.totalNumberOfDeniedPatronages = Total de mecenazgos rechazados:
