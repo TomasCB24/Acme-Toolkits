@@ -18,7 +18,7 @@ public class PatronPatronageReportListMineTest extends TestHarness{
 	@Order(10)
 	public void positiveTest(final int recordIndex, final String sequenceNumber, final String memorandum) {
 		super.signIn("patron1", "patron1");
-		super.clickOnMenu("Patron", "Patronage Report");
+		super.clickOnMenu("Patron", "My patronage reports");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		

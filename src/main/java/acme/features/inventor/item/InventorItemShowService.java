@@ -8,9 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.items.Item;
-
 import acme.entities.toolkits.Toolkit;
-
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.entities.Principal;
@@ -48,7 +46,9 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
       inventor = item.getInventor();
       principal = request.getPrincipal();
       result = (
-        inventor.getUserAccount().getId() == principal.getAccountId()
+        inventor.getUserAccount().getId() == principal.getAccountId());
+      
+      return result;
       
     } else {
       int itemId;
