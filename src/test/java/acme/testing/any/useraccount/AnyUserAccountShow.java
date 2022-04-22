@@ -1,4 +1,4 @@
-package acme.testing.any;
+package acme.testing.any.useraccount;
 
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -12,7 +12,7 @@ public class AnyUserAccountShow extends TestHarness  {
 		@ParameterizedTest
 		@CsvFileSource(resources = "/any/user-account/list-user-account.csv", encoding = "utf-8", numLinesToSkip = 1)
 		@Order(10)
-		public void positiveTestAnonymous(final int recordIndex, final String username, final String name, final String surname, final String email) {
+		public void positiveTestAnonymous(final int recordIndex, final String username, final String name, final String surname, final String email,final String roles) {
 			super.clickOnMenu("Anonymous", "User Accounts List");
 			super.checkListingExists();
 			super.sortListing(0, "asc");
@@ -23,6 +23,7 @@ public class AnyUserAccountShow extends TestHarness  {
 			super.checkInputBoxHasValue("name", name);
 			super.checkInputBoxHasValue("surname", surname);
 			super.checkInputBoxHasValue("email", email);
+			super.checkInputBoxHasValue("roles", roles);
 			
 			
 		}
@@ -30,7 +31,7 @@ public class AnyUserAccountShow extends TestHarness  {
 		@ParameterizedTest
 		@CsvFileSource(resources = "/any/user-account/list-user-account.csv", encoding = "utf-8", numLinesToSkip = 1)
 		@Order(10)
-		public void positiveTestAuthenticated(final int recordIndex, final String username, final String name, final String surname, final String email) {
+		public void positiveTestAuthenticated(final int recordIndex, final String username, final String name, final String surname, final String email,final String roles) {
 			super.signIn("patron1", "patron1");
 			super.clickOnMenu("Authenticated", "User Accounts List");
 			super.checkListingExists();
@@ -42,6 +43,7 @@ public class AnyUserAccountShow extends TestHarness  {
 			super.checkInputBoxHasValue("name", name);
 			super.checkInputBoxHasValue("surname", surname);
 			super.checkInputBoxHasValue("email", email);
+			super.checkInputBoxHasValue("roles", roles);
 			
 			
 		}
