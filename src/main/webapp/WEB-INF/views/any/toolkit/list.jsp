@@ -1,5 +1,5 @@
 <%--
-- list.jsp
+- form.jsp
 -
 - Copyright (C) 2012-2022 Rafael Corchuelo.
 -
@@ -16,13 +16,6 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:list>
-
-    <acme:list-column code="any.item.list.label.type" path="type" width="30%"/>
-    <acme:list-column code="any.item.list.label.name" path="name" width="30%"/>
-    <acme:list-column code="any.item.list.label.retailPrice" path="retailPrice" width="25%"/> 
-    <acme:list-column code="any.item.list.label.quantity" path="quantity" width="15%"/>  
-
-		
-    
-
+	<acme:list-column code="any.toolkit.list.label.code" path="code" width="40%"/>
+	<acme:list-column code="any.toolkit.list.label.title" path="title" width="60%"/>
 </acme:list>

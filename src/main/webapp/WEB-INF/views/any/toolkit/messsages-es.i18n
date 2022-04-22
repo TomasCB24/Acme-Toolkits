@@ -1,0 +1,22 @@
+# i18n-es.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+any.toolkit.form.label.code = Código:
+any.toolkit.form.label.title = Título:
+any.toolkit.form.label.description = Descripción:
+any.toolkit.form.label.assembly-notes = Notas de Montaje:
+any.toolkit.form.label.retail-price = Precio de Venta:
+any.toolkit.form.label.link = Enlace: (Opcional)
+any.toolkit.form.label.inventor-full-name = Inventor de la Toolkit:
+
+any.toolkit.list.label.code = Código
+any.toolkit.list.label.title = Título
+
+any.toolkit.form.label.items = Elementos

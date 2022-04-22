@@ -48,6 +48,8 @@ public class AnyItemListPublishedService implements AbstractListService<Any, Ite
 		assert model != null;
 		
 		request.unbind(entity, model, "type", "name","retailPrice");
+
+		model.setAttribute("quantity", "-");
 		
 	}
 

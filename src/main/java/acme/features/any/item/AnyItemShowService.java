@@ -1,3 +1,4 @@
+
 package acme.features.any.item;
 
 import java.util.Collection;
@@ -6,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.items.Item;
+import acme.entities.toolkits.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Any;
@@ -13,7 +15,7 @@ import acme.framework.services.AbstractShowService;
 
 @Service
 public class AnyItemShowService implements AbstractShowService<Any, Item> {
-	
+
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
@@ -23,27 +25,34 @@ public class AnyItemShowService implements AbstractShowService<Any, Item> {
 	
 	@Override
 	public boolean authorise(final Request<Item> request) {
-		
-		final String s = request.getServletRequest().getRequestURI();
-		
+		assert request != null;
+		String s;
+		s = request.getServletRequest().getRequestURI();
+		int id;
+		id = request.getModel().getInteger("id");
+  
 		if(s.contains("/any/item/show")) {
-			assert request != null;
 			
-			final Collection<Item> res = this.repository.findItemsPublished();
+	      Collection<Item> items;
+	      Item item;
 			
-			final Integer id = request.getModel().getInteger("id");
-			final Item item = this.repository.findOneItemById(id);
+			items = this.repository.findItemsPublished();
 			
-			return res.contains(item)?true:false;
+			item = this.repository.findOneItemById(id);
+			
+			return items.contains(item);
 			
 		} else {
 			
-			return true;
+	      Collection<Toolkit> toolkits;
+	
+	      
+	      toolkits = this.repository.findManyPublishedToolkitsByItemId(id);
+	      return (!toolkits.isEmpty());
+
 			
 			
 		}
-		
-		
 		
 	}
 
@@ -69,9 +78,17 @@ public class AnyItemShowService implements AbstractShowService<Any, Item> {
 		request.unbind(entity, model, "type", "name","code",
 			"technology","description","retailPrice","link");
 		
+		// Inventor full name
+
+		String inventor;
+		inventor = entity.getInventor().getIdentity().getFullName();
+
+		model.setAttribute("inventor", inventor);
+		
 	}
 
+
 	
-	
+
 
 }
