@@ -60,6 +60,7 @@ master.menu.patron.patronage.list = My patronages
 master.menu.inventor = Inventor
 master.menu.inventor.toolkit = List my Toolkits
 master.menu.inventor.patronage.list = My patronages
+master.menu.inventor.item.list-mine = List my Items
 
 
 
@@ -70,12 +71,12 @@ master.menu.user-account.general-data = General data
 
 
 
+
 # master.menu.any ####################################################
 master.menu.any.user-account-list = User Accounts List
 master.menu.any.chirp.list-recent = List recents chirps
 master.menu.any.item.list-published = Published Items list
 master.menu.any.toolkit = List Published Toolkits
-
 
 
 

@@ -56,16 +56,18 @@
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
 		</acme:menu-option>
 
+
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
-			<acme:menu-suboption code="master.menu.patron.patronage-report" action="/patron/patronage-report/list-mine"/>
-		    <acme:menu-suboption code="master.menu.patron.patronage.list" action="/patron/patronage/list-mine"/>
-		    <acme:menu-suboption code="master.menu.patron.patron-dashboard" action="/patron/patron-dashboard/show"/>
+      <acme:menu-suboption code="master.menu.patron.patronage-report" action="/patron/patronage-report/list-mine"/>
+      <acme:menu-suboption code="master.menu.patron.patronage.list" action="/patron/patronage/list-mine"/>
+      <acme:menu-suboption code="master.menu.patron.patron-dashboard" action="/patron/patron-dashboard/show"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
     		<acme:menu-suboption code="master.menu.inventor.patronage-report" action="/inventor/patronage-report/list-mine"/>
-      		<acme:menu-suboption code="master.menu.inventor.toolkit" action="/inventor/toolkit/list-mine"/>
-        	<acme:menu-suboption code="master.menu.inventor.patronage.list" action="/inventor/patronage/list-mine"/>
+        <acme:menu-suboption code="master.menu.inventor.toolkit" action="/inventor/toolkit/list-mine"/>
+        <acme:menu-suboption code="master.menu.inventor.patronage.list" action="/inventor/patronage/list-mine"/>
+      <acme:menu-suboption code="master.menu.inventor.item.list-mine" action="/inventor/item/list-mine"/>
 		</acme:menu-option>
 
 		
