@@ -27,7 +27,7 @@ public interface AnyItemRepository extends AbstractRepository {
 	@Query("select t from Toolkit t where t.id = :toolkitId")
 	Toolkit findOneToolkitById(int toolkitId);
   
-  @Query("select q.item from Quantity q where q.toolkit.draftMode = 0")
+	@Query("select DISTINCT q.item from Quantity q where q.toolkit.draftMode = 0")
 	Collection<Item> findItemsPublished();
 
 

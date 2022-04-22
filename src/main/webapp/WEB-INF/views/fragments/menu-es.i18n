@@ -15,9 +15,6 @@ master.menu.sign-up = Registrarse
 master.menu.sign-in = Entrar
 master.menu.sign-out = Salir
 
-# master.menu.any #######################################################
-
-master.menu.any.toolkit = Listar Toolkits Publicadas
 
 # master.menu.anonymous #######################################################
 
@@ -76,5 +73,5 @@ master.menu.user-account.general-data = Datos generales
 master.menu.any.user-account-list = Lista de Cuentas de Usuario
 master.menu.any.chirp.list-recent = Ver Chirps recientes
 master.menu.any.item.list-published = Listado de objetos públicos
-
+master.menu.any.toolkit = Listar Toolkits Publicadas
 

@@ -18,10 +18,10 @@ public class AnyItemController extends AbstractController<Any, Item> {
 
 	@Autowired
 	protected AnyItemListService				listService;
-  
-  @Autowired
-  protected AnyItemListPublishedService				listPublishedService;
 	
+	@Autowired
+	protected AnyItemListPublishedService		listPublishedService;
+		
 	@Autowired
 	protected AnyItemShowService				showService;
 
@@ -30,8 +30,8 @@ public class AnyItemController extends AbstractController<Any, Item> {
 
 	@PostConstruct
 	protected void initialise() {
+		super.addCommand("list-published",  "list", this.listPublishedService);
 		super.addCommand("list", this.listService);
-    super.addCommand("list-published", "list", this.listPublishedService);
 		super.addCommand("show", this.showService);
 	}
 

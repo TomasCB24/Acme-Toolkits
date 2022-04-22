@@ -7,9 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.items.Item;
-
 import acme.entities.toolkits.Toolkit;
-
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Any;
@@ -28,29 +26,29 @@ public class AnyItemShowService implements AbstractShowService<Any, Item> {
 	@Override
 	public boolean authorise(final Request<Item> request) {
 		assert request != null;
-    String s;
+		String s;
 		s = request.getServletRequest().getRequestURI();
 		int id;
-    id = request.getModel().getInteger("id");
+		id = request.getModel().getInteger("id");
   
 		if(s.contains("/any/item/show")) {
 			
-      Collection<Item> items;
-      Item item;
+	      Collection<Item> items;
+	      Item item;
 			
 			items = this.repository.findItemsPublished();
 			
 			item = this.repository.findOneItemById(id);
 			
-			return items.contains(item)?true:false;
+			return items.contains(item);
 			
 		} else {
 			
-      Collection<Toolkit> toolkits;
-
-      
-      toolkits = this.repository.findManyPublishedToolkitsByItemId(id);
-      return (!toolkits.isEmpty());
+	      Collection<Toolkit> toolkits;
+	
+	      
+	      toolkits = this.repository.findManyPublishedToolkitsByItemId(id);
+	      return (!toolkits.isEmpty());
 
 			
 			
