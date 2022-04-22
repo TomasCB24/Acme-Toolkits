@@ -28,7 +28,7 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-juan" action="https://www.youtube.com/"/>
 			<acme:menu-separator/>
     		<acme:menu-suboption code="master.menu.any.user-account-list" action="/any/user-account/list"/>
-    		<acme:menu-suboption code="master.menu.any.item-list" action="/any/item/list"/>
+    		<acme:menu-suboption code="master.menu.any.item.list-published" action="/any/item/list-published"/>
 			<acme:menu-suboption code="master.menu.any.chirp.list-recent" action="/any/chirp/list-recent"/>
 
 		</acme:menu-option>
@@ -38,7 +38,7 @@
 			<acme:menu-suboption code="master.menu.authenticated.list-recent" action="/authenticated/announcement/list-recent"/>
 			<acme:menu-suboption code="master.menu.any.chirp.list-recent" action="/any/chirp/list-recent"/>
 		    <acme:menu-suboption code="master.menu.any.user-account-list" action="/any/user-account/list"/>
-		    <acme:menu-suboption code="master.menu.any.item-list" action="/any/item/list"/>
+		    <acme:menu-suboption code="master.menu.any.item.list-published" action="/any/item/list-published"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">

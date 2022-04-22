@@ -23,18 +23,28 @@ public class AnyItemShowService implements AbstractShowService<Any, Item> {
 	
 	@Override
 	public boolean authorise(final Request<Item> request) {
-		assert request != null;
 		
-		final Collection<Item> res = this.repository.findItemsPublished();
+		final String s = request.getServletRequest().getRequestURI();
 		
-		final Integer id = request.getModel().getInteger("id");
-		final Item item = this.repository.findOneItemById(id);
+		if(s.contains("/any/item/show")) {
+			assert request != null;
+			
+			final Collection<Item> res = this.repository.findItemsPublished();
+			
+			final Integer id = request.getModel().getInteger("id");
+			final Item item = this.repository.findOneItemById(id);
+			
+			return res.contains(item)?true:false;
+			
+		} else {
+			
+			return true;
+			
+			
+		}
 		
-		return res.contains(item)?true:false;
 		
 		
-		
-//		return true;
 	}
 
 	@Override
