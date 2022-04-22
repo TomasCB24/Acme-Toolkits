@@ -44,7 +44,9 @@ public class AnyItemListService implements AbstractListService<Any, Item> {
 
 		masterId = request.getModel().getInteger("masterId");
 		toolkit = this.repository.findOneToolkitById(masterId);
-		result = (toolkit != null && (!toolkit.isDraftMode() || request.isPrincipal(toolkit.getInventor())));
+		result = (toolkit != null && 
+				(!toolkit.isDraftMode() || request.isPrincipal(toolkit.getInventor()))
+		);
 
 		return result;
 	}

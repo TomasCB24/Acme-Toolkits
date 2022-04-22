@@ -9,7 +9,6 @@ import acme.entities.toolkits.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.datatypes.Money;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 import acme.roles.Inventor;
 
@@ -31,15 +30,13 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		int masterId;
 		Toolkit toolkit;
 		Inventor inventor;
-		Principal principal;
 
 		masterId = request.getModel().getInteger("id");
 		toolkit = this.repository.findOneToolkitById(masterId);
 		inventor = toolkit.getInventor();
-		principal = request.getPrincipal();
 		result = (
-			inventor.getUserAccount().getId() == principal.getAccountId() ||
-			!toolkit.isDraftMode() 
+			!toolkit.isDraftMode() ||
+			request.isPrincipal(inventor)
 		);
 		
 		return result;
@@ -67,6 +64,7 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		request.unbind(entity, model, "code", "title","description",
 						"assemblyNotes","link");
 		
+		//FIXME Create helper class
 		//Retail Price
 		
 		final Money retailPrice = new Money();

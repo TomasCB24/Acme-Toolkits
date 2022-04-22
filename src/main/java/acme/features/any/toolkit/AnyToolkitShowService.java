@@ -66,6 +66,7 @@ public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
 
 		model.setAttribute("inventor", inventor);
 		
+		//FIXME Create helper class
 		//Retail Price
 		
 		final Money retailPrice = new Money();
