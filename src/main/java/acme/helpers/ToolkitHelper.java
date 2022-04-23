@@ -1,4 +1,4 @@
-package acme.features.any.toolkit;
+package acme.helpers;
 
 import java.util.HashSet;
 import java.util.List;
@@ -12,6 +12,7 @@ import acme.entities.configuration.SystemConfiguration;
 import acme.entities.items.Item;
 import acme.entities.toolkits.Toolkit;
 import acme.features.any.item.AnyItemRepository;
+import acme.features.any.toolkit.AnyToolkitRepository;
 import acme.features.authenticated.moneyExchange.AuthenticatedMoneyExchangePerformService;
 import acme.framework.datatypes.Money;
 import acme.framework.roles.Any;
@@ -19,7 +20,7 @@ import acme.framework.services.AbstractService;
 
 
 @Service
-public class AnyToolkitHelper implements AbstractService<Any, Toolkit>  {
+public class ToolkitHelper implements AbstractService<Any, Toolkit>  {
 	
 	// Internal state ---------------------------------------------------------
 

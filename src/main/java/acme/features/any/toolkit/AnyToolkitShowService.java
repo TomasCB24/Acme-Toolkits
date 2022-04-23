@@ -10,6 +10,7 @@ import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Any;
 import acme.framework.services.AbstractShowService;
+import acme.helpers.ToolkitHelper;
 
 @Service
 public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
@@ -26,7 +27,7 @@ public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
 	protected AnyItemRepository anyItemRepository;
 	
 	@Autowired
-	protected AnyToolkitHelper helper;
+	protected ToolkitHelper helper;
 	
 	
 	
