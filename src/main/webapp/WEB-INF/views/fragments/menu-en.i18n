@@ -33,6 +33,7 @@ master.menu.anonymous.favourite-link-juan = 30697250R: Salado Jurado, Juan
 master.menu.authenticated = Authenticated
 master.menu.authenticated.currency-system = Currency System Configuration 
 master.menu.authenticated.list-recent = List recent announcements
+master.menu.authenticated.money-exchange = Money exchange
  
 # master.menu.administrator ###################################################
 
@@ -77,6 +78,7 @@ master.menu.any.user-account-list = User Accounts List
 master.menu.any.chirp.list-recent = List recents chirps
 master.menu.any.item.list-published = Published Items list
 master.menu.any.toolkit = List Published Toolkits
+
 
 
 
