@@ -1,14 +1,13 @@
 package acme.features.any.toolkit;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.toolkits.Toolkit;
+import acme.features.any.item.AnyItemRepository;
+import acme.features.authenticated.moneyExchange.AuthenticatedMoneyExchangePerformService;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.datatypes.Money;
 import acme.framework.roles.Any;
 import acme.framework.services.AbstractShowService;
 
@@ -19,7 +18,18 @@ public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
 
 	@Autowired
 	protected AnyToolkitRepository repository;
+	
+	@Autowired
+	protected AuthenticatedMoneyExchangePerformService moneyExchangeService;
 
+	@Autowired
+	protected AnyItemRepository anyItemRepository;
+	
+	@Autowired
+	protected AnyToolkitHelper helper;
+	
+	
+	
 	// AbstractShowService<Any, Toolkit> ---------------------------
 	
 	@Override
@@ -67,25 +77,10 @@ public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
 		model.setAttribute("inventor", inventor);
 		
 		//Retail Price
+	
+		model.setAttribute("retailPrice", this.helper.getToolkitRetailPrice(entity));
 		
-		final Money retailPrice = new Money();
-		Double amount;
-		String currency;
 		
-		amount = this.repository.computeRetailPriceByToolkitId(entity.getId());
-		
-		currency = null;
-		
-		final Optional<String> scOpt = this.repository.findSystemCurrency().stream().findFirst();
-		
-		if(scOpt.isPresent()) {
-			currency = scOpt.get();
-		}
-		
-		retailPrice.setAmount(amount);
-		retailPrice.setCurrency(currency);
-		
-		model.setAttribute("retailPrice", retailPrice);
 		
 		
 	}
