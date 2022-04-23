@@ -17,8 +17,12 @@ import java.util.Collection;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.entities.configuration.SystemConfiguration;
+import acme.entities.items.Item;
 import acme.entities.toolkits.Toolkit;
+import acme.framework.datatypes.Money;
 import acme.framework.repositories.AbstractRepository;
+
 
 @Repository
 public interface AnyToolkitRepository extends AbstractRepository {
@@ -32,7 +36,15 @@ public interface AnyToolkitRepository extends AbstractRepository {
 	@Query("select sum(q.item.retailPrice.amount*q.number) from Quantity q where q.toolkit.id = :toolkitId")
 	Double computeRetailPriceByToolkitId(int toolkitId);
 	
-	@Query("select sc.systemCurrency from SystemConfiguration sc")
-	Collection<String> findSystemCurrency();
+//	TODO: devolver lista de precios de los elementos de un toolkit
+	@Query("Select q.item.retailPrice from Quantity q where q.toolkit.id = :toolkitId")
+	Collection<Money> getRetailPricesByToolkitId(int toolkitId);
+	
+	// TODO: query para devolver la cantidad de un determinado itemId
+	@Query("Select q.item from Quantity q where q.toolkit.id = :toolkitId")
+	Collection<Item> findItemsByToolkitId(int toolkitId);
+	
+	@Query("select sc from SystemConfiguration sc")
+	SystemConfiguration findSystemConfiguration();
 
 }

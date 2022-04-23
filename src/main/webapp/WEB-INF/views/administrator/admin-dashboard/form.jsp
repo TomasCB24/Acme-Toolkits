@@ -190,11 +190,11 @@
 		<c:forEach items="${deviationBudgetPatronages}" var="entry"> 	
 		<tr>	
 				<th>	
-				<acme:message code="administrator.dashboard.form.label.average-sentence"/>		
+				<acme:message code="administrator.dashboard.form.label.deviation-sentence"/>		
 				<c:set var = "string1" value = "${entry.key}"/>
 				<c:set var = "string2" value = "${fn:split(string1, '->')}" />
 				<acme:print value="${string2[0]}"/>
-				<acme:message code="administrator.dashboard.form.label.patronage-average-sentence-status"/>
+				<acme:message code="administrator.dashboard.form.label.patronage-deviation-sentence-status"/>
 				<acme:print value="${string2[1]}"/>
 				<acme:message code="administrator.dashboard.form.label.colon"/>
 				</th>
@@ -261,11 +261,11 @@
 		<c:forEach items="${minimumBudgetPatronages}" var="entry"> 	
 		<tr>	
 				<th>	
-				<acme:message code="administrator.dashboard.form.label.average-sentence"/>		
+				<acme:message code="administrator.dashboard.form.label.min-sentence"/>		
 				<c:set var = "string1" value = "${entry.key}"/>
 				<c:set var = "string2" value = "${fn:split(string1, '->')}" />
 				<acme:print value="${string2[0]}"/>
-				<acme:message code="administrator.dashboard.form.label.patronage-average-sentence-status"/>
+				<acme:message code="administrator.dashboard.form.label.patronage-min-sentence-status"/>
 				<acme:print value="${string2[1]}"/>
 				<acme:message code="administrator.dashboard.form.label.colon"/>
 				</th>
@@ -334,11 +334,11 @@
 		<c:forEach items="${maximumBudgetPatronages}" var="entry"> 	
 		<tr>	
 				<th>	
-				<acme:message code="administrator.dashboard.form.label.average-sentence"/>		
+				<acme:message code="administrator.dashboard.form.label.max-sentence"/>		
 				<c:set var = "string1" value = "${entry.key}"/>
 				<c:set var = "string2" value = "${fn:split(string1, '->')}" />
 				<acme:print value="${string2[0]}"/>
-				<acme:message code="administrator.dashboard.form.label.patronage-average-sentence-status"/>
+				<acme:message code="administrator.dashboard.form.label.patronage-max-sentence-status"/>
 				<acme:print value="${string2[1]}"/>
 				<acme:message code="administrator.dashboard.form.label.colon"/>
 				</th>

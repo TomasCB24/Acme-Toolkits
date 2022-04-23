@@ -43,7 +43,10 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "username", "roles", "identity.email", "identity.name", "identity.surname");
+		request.unbind(entity, model, "username", "identity.email", "identity.name", "identity.surname");
+	
+		final String roles = entity.getAuthorityString();
+		model.setAttribute("roles", roles);
 	}
 
 }
