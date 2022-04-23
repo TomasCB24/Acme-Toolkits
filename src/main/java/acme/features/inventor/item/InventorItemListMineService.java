@@ -42,6 +42,10 @@ public class InventorItemListMineService implements AbstractListService<Inventor
 		assert entity != null;
 		assert model != null;
 		request.unbind(entity, model, "type", "name","retailPrice");
+		
+		//Quantity
+		
+		model.setAttribute("quantity", "-");
 	}
 
 }
