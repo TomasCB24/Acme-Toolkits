@@ -1,0 +1,2 @@
+key,accepted-currencies,system-currency,strong-spam-words,strong-spam-threshold,weak-spam-words,weak-spam-threshold
+system-configuration-01,"EUR,USD,GBP",EUR, "sex, sexo, hard core, viagra, cialis", 0.10, "sexy, nigeria, you've won, has ganado, one million, un millón", 0.25
