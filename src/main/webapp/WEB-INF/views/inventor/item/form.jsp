@@ -17,11 +17,10 @@
 
 <acme:form>
 	
-	<acme:input-select code="inventor.item.form.label.item-type" path="itemType">
-		<acme:input-option code="inventor.item.form.label.item-type.tool" value="TOOL" selected="${itemType == 'TOOL'}"/>
-		<acme:input-option code="inventor.item.form.label.item-type.component" value="COMPONENT" selected="${itemType == 'COMPONENT'}"/>
+	<acme:input-select code="inventor.item.form.label.item-type" path="type">
+		<acme:input-option code="inventor.item.form.label.item-type.tool" value="TOOL" selected="${type eq 'TOOL'}"/>
+		<acme:input-option code="inventor.item.form.label.item-type.component" value="COMPONENT" selected="${type eq 'COMPONENT'}"/>
 	</acme:input-select>
-	
 	<acme:input-textbox code="inventor.item.form.label.name" path="name"/>
 	<acme:input-textbox code="inventor.item.form.label.code" path="code"/>
 	<acme:input-textarea code="inventor.item.form.label.technology" path="technology"/>
