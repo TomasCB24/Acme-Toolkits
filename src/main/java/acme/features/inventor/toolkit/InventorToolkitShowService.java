@@ -6,9 +6,6 @@ import org.springframework.stereotype.Service;
 import acme.entities.toolkits.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.datatypes.Money;
-import acme.framework.entities.Principal;
-
 import acme.framework.services.AbstractShowService;
 import acme.helpers.ToolkitHelper;
 import acme.roles.Inventor;
@@ -67,8 +64,7 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		
 		request.unbind(entity, model, "code", "title","description",
 						"assemblyNotes","link");
-		
-		//FIXME Create helper class
+	
 		//Retail Price
 	
 		model.setAttribute("retailPrice", this.helper.getToolkitRetailPrice(entity));

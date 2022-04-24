@@ -13,7 +13,7 @@ public class AuthenticatedAnnouncementListTest extends TestHarness  {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/authenticated/announcement/list-recent.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positiveTest(final int recordIndex, final String creationMoment, final String title, final String body, final String flag, final String link) {
+	public void positiveTest(final int recordIndex, final String creationMoment, final String title, final String body, final String link) {
 		
 		super.signIn("inventor1", "inventor1");
 		super.clickOnMenu("Authenticated", "List recent announcements");
@@ -22,16 +22,14 @@ public class AuthenticatedAnnouncementListTest extends TestHarness  {
 
 		super.checkColumnHasValue(recordIndex, 0, creationMoment);
 		super.checkColumnHasValue(recordIndex, 1, title);
-		super.checkColumnHasValue(recordIndex, 2, body);
-		super.checkColumnHasValue(recordIndex, 3, flag);
-		super.checkColumnHasValue(recordIndex, 4, link);
 		super.signOut();
 		
 	}
 	
+	
 	@Test
 	@Order(20)
-	public void negativeTestAnonymous(final int recordIndex, final String creationMoment, final String title, final String body, final String flag, final String link) {
+	public void negativeTestAnonymous() {
 		super.navigate("/inventor/announcement/list-recent");
 
 		super.checkPanicExists();
