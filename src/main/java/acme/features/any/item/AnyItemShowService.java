@@ -27,6 +27,7 @@ public class AnyItemShowService implements AbstractShowService<Any, Item> {
 		boolean result;
 		int itemId;
 		Item item;
+	
 		
 		itemId = request.getModel().getInteger("id");
   
