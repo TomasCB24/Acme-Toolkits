@@ -1,6 +1,7 @@
 package acme.testing.patron.patronage;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -37,6 +38,35 @@ public class PatronPatronageListMineTest  extends TestHarness {
 		super.checkInputBoxHasValue("statement", statement);
 		super.checkInputBoxHasValue("inventorLink", inventorLink);
 		
+		super.signOut();
+	}
+	
+	@Test
+	@Order(20)
+	public void negativeTestAnonymous() {
+
+		super.navigate("/patron/patronage-report/list-mine");
+
+		super.checkPanicExists();
+	}
+
+	@Test
+	@Order(30)
+	public void negativeTestAdministrator() {
+		super.signIn("administrator", "administrator");
+		super.navigate("/patron/patronage-report/list-mine");
+
+		super.checkPanicExists();
+		super.signOut();
+	}
+
+	@Test
+	@Order(40)
+	public void negativeTestPatron() {
+		super.signIn("inventor1", "inventor1");
+		super.navigate("/patron/patronage-report/list-mine");
+
+		super.checkPanicExists();
 		super.signOut();
 	}
 }

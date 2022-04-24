@@ -12,3 +12,4 @@ any.chirp.list.label.creationMoment = Momento De Creación
 any.chirp.list.label.title = Título
 any.chirp.list.label.author = Author
 any.chirp.form.label.body = Cuerpo
+any.chirp.list.label.email = Correo
