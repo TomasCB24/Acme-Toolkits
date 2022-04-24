@@ -17,19 +17,19 @@
 
 <acme:form>
 	
-	<acme:input-select code="inventor.item.form.label.item-type" path="itemType">
-		<acme:input-option code="inventor.item.form.label.item-type.tool" value="TOOL" selected="${itemType == 'TOOL'}"/>
-		<acme:input-option code="inventor.item.form.label.item-type.component" value="COMPONENT" selected="${itemType == 'COMPONENT'}"/>
+	<acme:input-select code="inventor.item.form.label.item-type" path="type">
+		<acme:input-option code="inventor.item.form.label.item-type.tool" value="TOOL" selected="${type eq 'TOOL'}"/>
+		<acme:input-option code="inventor.item.form.label.item-type.component" value="COMPONENT" selected="${type eq 'COMPONENT'}"/>
 	</acme:input-select>
-	
 	<acme:input-textbox code="inventor.item.form.label.name" path="name"/>
 	<acme:input-textbox code="inventor.item.form.label.code" path="code"/>
 	<acme:input-textarea code="inventor.item.form.label.technology" path="technology"/>
 	<acme:input-textarea code="inventor.item.form.label.description" path="description"/>
 	<acme:input-money code="inventor.item.form.label.retail-price" path="retailPrice"/>
 
-	
 	<acme:input-url code="inventor.item.form.label.link" path="link"/>
+
+	<acme:input-textbox code="inventor.item.form.label.inventor-full-name" path="inventor"/>
 	
 </acme:form>
 

@@ -1,0 +1,8 @@
+recordIndex,code,title,description,assembly-notes,link,retail-price
+0,AAA-000-A,1,1,1,https://www.google.com/,"EUR 17,242.00"
+1,AAA-001-A,Title 1,1,1,https://www.google.com/,"EUR 954.00"
+2,AAA-002-A,Title 2,Description,N,http://www.acme.com/a?b,"EUR 930.83"
+3,AAA-003-A,Title 3,Description, 1,null,"EUR 2,649.90"
+4,AAA-004-A,Title 4,1,1,https://www.google.com/,"EUR 40.99"
+5,AAA-005-A,<script>alert("hi!")<script>,1,1,null,"EUR 380.00"
+6,AAA-006-A,!·$%&(/)=?¿¡ª!|@#~€¬,<h1>This is description</h1>,1,http://www.acme.com/a?b,"EUR 208.83"

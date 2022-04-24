@@ -16,7 +16,13 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="any.item.list.label.name" path="name" width="47%"/>
-	<acme:list-column code="any.item.list.label.type" path="type" width="20%"/>
-	<acme:list-column code="any.item.list.label.retailPrice" path="retailPrice" width="33%"/>
+
+    <acme:list-column code="any.item.list.label.type" path="type" width="30%"/>
+    <acme:list-column code="any.item.list.label.name" path="name" width="30%"/>
+    <acme:list-column code="any.item.list.label.retailPrice" path="retailPrice" width="25%"/> 
+    <acme:list-column code="any.item.list.label.quantity" path="quantity" width="15%"/>  
+
+		
+    
+
 </acme:list>

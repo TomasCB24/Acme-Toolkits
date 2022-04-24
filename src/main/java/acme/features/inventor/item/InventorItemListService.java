@@ -32,7 +32,9 @@ public class InventorItemListService implements AbstractListService<Inventor, It
 
 		masterId = request.getModel().getInteger("masterId");
 		toolkit = this.repository.findOneToolkitById(masterId);
-		result = (toolkit != null && (!toolkit.isDraftMode() || request.isPrincipal(toolkit.getInventor())));
+		result = (toolkit != null && 
+			(!toolkit.isDraftMode() || request.isPrincipal(toolkit.getInventor()))
+			);
 
 		return result;
 	}
