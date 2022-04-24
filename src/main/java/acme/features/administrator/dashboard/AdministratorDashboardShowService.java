@@ -13,6 +13,7 @@
 package acme.features.administrator.dashboard;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +44,119 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 
 		return true;
 	}
+	
+	private Map<Pair<String, Status>, Double> calculateComplexMetric(final List<String> metricByCurrency) {
+		final Map<Pair<String, Status>, Double> r = new HashMap<Pair<String, Status>, Double>();
+
+		for(int i=0; i<metricByCurrency.size(); i++) {
+			final String queryRes = metricByCurrency.get(i);
+			final String[] subs = queryRes.split(",");
+			final Double key = Double.parseDouble(subs[1]);
+			final String currency = subs[0];
+			final Status status = Status.valueOf(subs[2]);
+			final Pair<String, Status> res = Pair.of(currency, status);
+			r.put(res, key);
+		}
+
+		return r;
+	}
+	
+	private Map<String, Double> calculateComplexMetricSimple(final List<String> metricByCurrency) {
+		final Map<String, Double> r = new HashMap<String,Double>();
+
+		
+		for(int j=0; j<metricByCurrency.size(); j++) {
+			final String linea= metricByCurrency.get(j);
+			final String[] sub=linea.split(",");
+			final Double key=Double.parseDouble(sub[1]);
+			final String divisa=sub[0];
+			r.put(divisa, key);
+			
+		 }
+
+		return r;
+	}
+	
+	private Map<Pair<String, String>, Double> calculateComplexMetricDouble(final List<String> metricByCurrency) {
+		final Map<Pair<String, String>, Double> r = new HashMap<Pair<String, String>, Double>();
+
+		for(int j=0; j<metricByCurrency.size(); j++) {
+			final String linea= metricByCurrency.get(j);
+			final String[] sub=linea.split(",");
+			final Double key=Double.parseDouble(sub[2]);
+			final String divisa=sub[0];
+			final String tecnologia= sub[1];
+			final Pair<String, String> res=Pair.of(divisa, tecnologia);
+			r.put(res, key);
+		}
+
+		return r;
+	}
+	
+	//PATRONAGES
+	public Map<Pair<String, Status>, Double> calculateAverageBudgetOfPatronages() {
+		final List<String> averageBudgetByCurrency = this.repository.averageBudgetPatronages();
+		return this.calculateComplexMetric(averageBudgetByCurrency);
+	}
+
+	public Map<Pair<String, Status>, Double> calculateDeviationBudgetOfPatronages() {
+		final List<String> deviationBudgetByCurrency = this.repository.deviationBudgetPatronages();
+		return this.calculateComplexMetric(deviationBudgetByCurrency);
+	}
+
+	public Map<Pair<String, Status>, Double> calculateMinBudgetOfPatronages() {
+		final List<String> minBudgetByCurrency = this.repository.minimumBudgetPatronages();
+		return this.calculateComplexMetric(minBudgetByCurrency);
+	}
+	
+	public Map<Pair<String, Status>, Double> calculateMaxBudgetOfPatronages() {
+		final List<String> maxBudgetByCurrency = this.repository.maximumBudgetPatronages();
+		return this.calculateComplexMetric(maxBudgetByCurrency);
+	}
+	
+	//TOOLS
+	
+	public Map<String, Double> calculateAverageOfToolsRetailPrice() {
+		final List<String> averageOfToolsRetailPrice = this.repository.averageOfToolsRetailPrice();
+		return this.calculateComplexMetricSimple(averageOfToolsRetailPrice);
+	}
+	
+	public Map<String, Double> calculateDeviationOfToolsRetailPrice() {
+		final List<String> deviationOfToolsRetailPrice = this.repository.deviationOfToolsRetailPrice();
+		return this.calculateComplexMetricSimple(deviationOfToolsRetailPrice);
+	}
+	
+	public Map<String, Double> calculateMinimumOfToolsRetailPrice() {
+		final List<String> minOfToolsRetailPrice = this.repository.minimumOfToolsRetailPrice();
+		return this.calculateComplexMetricSimple(minOfToolsRetailPrice);
+	}
+	
+	public Map<String, Double> calculateMaxOfToolsRetailPrice() {
+		final List<String> maxOfToolsRetailPrice = this.repository.maximumOfToolsRetailPrice();
+		return this.calculateComplexMetricSimple(maxOfToolsRetailPrice);
+	}
+	
+	//COMPONENTS
+	
+	public Map<Pair<String, String>, Double> calculateAverageOfComponentsRetailPrice() {
+		final List<String> averageOfComponentsRetailPrice = this.repository.averageOfComponentsRetailPrice();
+		return this.calculateComplexMetricDouble(averageOfComponentsRetailPrice);
+	}
+	
+	public Map<Pair<String, String>, Double> calculateDeviationOfComponentsRetailPrice() {
+		final List<String> deviationOfComponentsRetailPrice = this.repository.deviationOfComponentsRetailPrice();
+		return this.calculateComplexMetricDouble(deviationOfComponentsRetailPrice);
+	}
+	
+	public Map<Pair<String, String>, Double> calculateMinimumOfComponentsRetailPrice() {
+		final List<String> minOfComponentsRetailPrice = this.repository.minimumOfComponentsRetailPrice();
+		return this.calculateComplexMetricDouble(minOfComponentsRetailPrice);
+	}
+	
+	public Map<Pair<String, String>, Double> calculateMaxOfComponentsRetailPrice() {
+		final List<String> maxOfComponentsRetailPrice = this.repository.maximumOfComponentsRetailPrice();
+		return this.calculateComplexMetricDouble(maxOfComponentsRetailPrice);
+	}
 
 	@Override
 	public AdminDashboard findOne(final Request<AdminDashboard> request) {
@@ -60,180 +174,32 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		totalNumberOfProposedPatronages = this.repository.totalNumberOfProposedPatronages();
 		totalNumberOfAcceptedPatronages = this.repository.totalNumberOfAcceptedPatronages();
 		totalNumberOfDeniedPatronages = this.repository.totalNumberOfDeniedPatronages();
-
-		final Map<Pair<String, String>, Double> averageOfComponentsRetailPrice =  new HashMap<Pair<String, String>, Double>();	
-		final Map<Pair<String, String>, Double> deviationOfComponentsRetailPrice =  new HashMap<Pair<String, String>, Double>();		
-		final Map<Pair<String, String>, Double> minimumOfComponentsRetailPrice =  new HashMap<Pair<String, String>, Double>();		
-		final Map<Pair<String, String>, Double> maximumOfComponentsRetailPrice =  new HashMap<Pair<String, String>, Double>();
-		final Map<String,Double> averageRetailPriceOfTools= new HashMap<String, Double>();
-		final Map<String,Double> deviationRetailPriceOfTools= new HashMap<String, Double>();
-		final Map<String,Double> minRetailPriceOfTools= new HashMap<String, Double>();
-		final Map<String,Double> maxRetailPriceOfTools= new HashMap<String, Double>();
-		final Map<Pair<String,Status>, Double> averageBudgetByStatus= new HashMap<Pair<String, Status>, Double>();
-		final Map<Pair<String,Status>, Double> deviationBudgetByStatus= new HashMap<Pair<String, Status>, Double>();
-		final Map<Pair<String,Status>, Double> minBudgetByStatus= new HashMap<Pair<String, Status>, Double>();
-		final Map<Pair<String,Status>, Double> maxBudgetByStatus= new HashMap<Pair<String, Status>, Double>();
 		
-		
-		int i = 0;
-		int tamaño = this.repository.averageOfComponentsRetailPrice().size();
-		while(i<tamaño) {
-			final String linea= this.repository.averageOfComponentsRetailPrice().get(i);
-			final String[] sub=linea.split(",");
-			final Double key=Double.parseDouble(sub[2]);
-			final String divisa=sub[0];
-			final String tecnologia= sub[1];
-			final Pair<String, String> res=Pair.of(divisa, tecnologia);
-			averageOfComponentsRetailPrice.put(res, key);
-			i++;
-		}
-		i=0;
-		tamaño = this.repository.deviationOfComponentsRetailPrice().size();
-		while(i<tamaño) {
-			final String linea= this.repository.deviationOfComponentsRetailPrice().get(i);
-			final String[] sub=linea.split(",");
-			final Double key=Double.parseDouble(sub[2]);
-			final String divisa=sub[0];
-			final String tecnologia= sub[1];
-			final Pair<String, String> res=Pair.of(divisa, tecnologia);
-			deviationOfComponentsRetailPrice.put(res, key);
-			i++;
-		}
-		i=0;
-		tamaño = this.repository.minimumOfComponentsRetailPrice().size();
-		while(i<tamaño) {
-			final String linea= this.repository.minimumOfComponentsRetailPrice().get(i);
-			final String[] sub=linea.split(",");
-			final Double key=Double.parseDouble(sub[2]);
-			final String divisa=sub[0];
-			final String tecnologia= sub[1];
-			final Pair<String, String> res=Pair.of(divisa, tecnologia);
-			minimumOfComponentsRetailPrice.put(res, key);
-			i++;
-		}
-		i=0;
-		tamaño = this.repository.maximumOfComponentsRetailPrice().size();
-		while(i<tamaño) {
-			final String linea= this.repository.maximumOfComponentsRetailPrice().get(i);
-			final String[] sub=linea.split(",");
-			final Double key=Double.parseDouble(sub[2]);
-			final String divisa=sub[0];
-			final String tecnologia= sub[1];
-			final Pair<String, String> res=Pair.of(divisa, tecnologia);
-			maximumOfComponentsRetailPrice.put(res, key);
-			i++;
-		 }
-		i=0;
-		tamaño = this.repository.averageOfToolsRetailPrice().size();
-		while(i<tamaño) {
-			final String linea= this.repository.averageOfToolsRetailPrice().get(i);
-			final String[] sub=linea.split(",");
-			final Double key=Double.parseDouble(sub[1]);
-			final String divisa=sub[0];
-			averageRetailPriceOfTools.put(divisa, key);
-			i++;
-		 }
-	i=0;
-	tamaño = this.repository.deviationOfToolsRetailPrice().size();
-		while(i<tamaño) {
-			final String linea= this.repository.deviationOfToolsRetailPrice().get(i);
-			final String[] sub=linea.split(",");
-			final Double key=Double.parseDouble(sub[1]);
-			final String divisa=sub[0];
-			deviationRetailPriceOfTools.put(divisa, key);
-			i++;
-		 }
-		i=0;
-		
-		tamaño = this.repository.minimumOfToolsRetailPrice().size();
-		while(i<tamaño) {
-			final String linea= this.repository.minimumOfToolsRetailPrice().get(i);
-			final String[] sub=linea.split(",");
-			final Double key=Double.parseDouble(sub[1]);
-			final String divisa=sub[0];
-			minRetailPriceOfTools.put(divisa, key);
-			i++;
-		 }
-		i=0;
-		
-		tamaño = this.repository.maximumOfToolsRetailPrice().size();
-		while(i<tamaño) {
-			final String linea= this.repository.maximumOfToolsRetailPrice().get(i);
-			final String[] sub=linea.split(",");
-			final Double key=Double.parseDouble(sub[1]);
-			final String divisa=sub[0];
-			maxRetailPriceOfTools.put(divisa, key);
-			i++;
-		 }
-		
-		tamaño = this.repository.averageBudgetPatronages().size();		
-		for(int j=0; j<tamaño; j++) {
-			final String queryRes = this.repository.averageBudgetPatronages().get(j);
-			final String[] subs = queryRes.split(",");
-			final Double key = Double.parseDouble(subs[1]);
-			final String currency = subs[0];
-			final Status status = Status.valueOf(subs[2]);
-			final Pair<String, Status> res = Pair.of(currency, status);
-			averageBudgetByStatus.put(res, key);
-		}		
-		
-		tamaño = this.repository.deviationBudgetPatronages().size();
-		for(int j=0; j<tamaño; j++) {
-			final String queryRes = this.repository.deviationBudgetPatronages().get(j);
-			final String[] subs = queryRes.split(",");
-			final Double key = Double.parseDouble(subs[1]);
-			final String currency = subs[0];
-			final Status status = Status.valueOf(subs[2]);
-			final Pair<String, Status> res = Pair.of(currency, status);
-			deviationBudgetByStatus.put(res, key);
-		}
-		
-		
-		tamaño = this.repository.minimumBudgetPatronages().size();
-		for(int j=0; j<tamaño; j++) {
-			final String queryRes = this.repository.minimumBudgetPatronages().get(j);
-			final String[] subs = queryRes.split(",");
-			final Double key = Double.parseDouble(subs[1]);
-			final String currency = subs[0];
-			final Status status = Status.valueOf(subs[2]);
-			final Pair<String, Status> res = Pair.of(currency, status);
-			minBudgetByStatus.put(res, key);
-		}
-		
-		tamaño = this.repository.maximumBudgetPatronages().size();
-		for(int j=0; j<tamaño; j++) {
-			final String queryRes = this.repository.maximumBudgetPatronages().get(j);
-			final String[] subs = queryRes.split(",");
-			final Double key = Double.parseDouble(subs[1]);
-			final String currency = subs[0];
-			final Status status = Status.valueOf(subs[2]);
-			final Pair<String, Status> res = Pair.of(currency, status);
-			maxBudgetByStatus.put(res, key);
-		}	
-		
-		
+	
 		result = new AdminDashboard();
 		
+		//TOOLS
 		result.setTotalNumberOftools(totalNumberOfTools);
-		result.setAverageOfToolsRetailPrice(averageRetailPriceOfTools);
-		result.setDeviationOfToolsRetailPrice(deviationRetailPriceOfTools);
-		result.setMinimumOfToolsRetailPrice(minRetailPriceOfTools);
-		result.setMaximumOfToolsRetailPrice(maxRetailPriceOfTools);
+		result.setAverageOfToolsRetailPrice(this.calculateAverageOfToolsRetailPrice());
+		result.setDeviationOfToolsRetailPrice(this.calculateDeviationOfToolsRetailPrice());
+		result.setMinimumOfToolsRetailPrice(this.calculateMinimumOfToolsRetailPrice());
+		result.setMaximumOfToolsRetailPrice(this.calculateMaxOfToolsRetailPrice());
 		
-		
+		//COMPONENTS
 		result.setTotalNumberOfComponents(totalNumberOfComponents);
-		result.setAverageOfComponentsRetailPrice(averageOfComponentsRetailPrice);
-		result.setDeviationOfComponentsRetailPrice(deviationOfComponentsRetailPrice);
-		result.setMaximumOfComponentsRetailPrice(maximumOfComponentsRetailPrice);
-		result.setMinimumOfComponentsRetailPrice(minimumOfComponentsRetailPrice);
+		result.setAverageOfComponentsRetailPrice(this.calculateAverageOfComponentsRetailPrice());
+		result.setDeviationOfComponentsRetailPrice(this.calculateDeviationOfComponentsRetailPrice());
+		result.setMaximumOfComponentsRetailPrice(this.calculateMinimumOfComponentsRetailPrice());
+		result.setMinimumOfComponentsRetailPrice(this.calculateMaxOfComponentsRetailPrice());
 		
+		//PATRONAGE
 		result.setTotalNumberOfAcceptedPatronages(totalNumberOfAcceptedPatronages);
 		result.setTotalNumberOfDeniedPatronages(totalNumberOfDeniedPatronages);
 		result.setTotalNumberOfProposedPatronages(totalNumberOfProposedPatronages);
-		result.setAverageBudgetPatronages(averageBudgetByStatus);
-		result.setDeviationBudgetPatronages(deviationBudgetByStatus);
-		result.setMinimumBudgetPatronages(maxBudgetByStatus);
-		result.setMaximumBudgetPatronages(minBudgetByStatus);
+		result.setAverageBudgetPatronages(this.calculateAverageBudgetOfPatronages());
+		result.setDeviationBudgetPatronages(this.calculateDeviationBudgetOfPatronages());
+		result.setMinimumBudgetPatronages(this.calculateMinBudgetOfPatronages());
+		result.setMaximumBudgetPatronages(this.calculateMaxBudgetOfPatronages());
 
 		return result;
 	}

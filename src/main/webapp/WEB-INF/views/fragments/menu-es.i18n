@@ -15,6 +15,7 @@ master.menu.sign-up = Registrarse
 master.menu.sign-in = Entrar
 master.menu.sign-out = Salir
 
+
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
@@ -32,6 +33,7 @@ master.menu.anonymous.favourite-link-juan = 30697250R: Salado Jurado, Juan
 master.menu.authenticated = Autenticado
 master.menu.authenticated.currency-system = Sistema de Configuración de la Moneda 
 master.menu.authenticated.list-recent = Anuncios Recientes
+master.menu.authenticated.money-exchange = Cambio de dinero
 
 # master.menu.administrator ###################################################
 
@@ -50,7 +52,7 @@ master.menu.administrator.shut-down = Parar el sistema
 
 master.menu.patron = Patrocinador
 master.menu.patron.patron-dashboard = Panel de métricas
-master.menu.patron.patronage-report = Reportes de Patrocinios
+master.menu.patron.patronage-report = Mis reportes de patrocinios
 master.menu.patron.patronage.list = Mis patrocinios
 
 # master.menu.inventor ##########################################################
@@ -58,6 +60,7 @@ master.menu.patron.patronage.list = Mis patrocinios
 master.menu.inventor = Inventor
 master.menu.inventor.patronage.list = Mis patrocinios
 master.menu.inventor.toolkit = Listar mis Toolkits
+master.menu.inventor.item.list-mine = Listar mis elementos
 
 
 
@@ -67,10 +70,14 @@ master.menu.user-account = Cuenta
 master.menu.user-account.general-data = Datos generales
 
 
+
+
+
 # master.menu.any ####################################################
 
 master.menu.any.user-account-list = Lista de Cuentas de Usuario
 master.menu.any.chirp.list-recent = Ver Chirps recientes
-master.menu.any.item-list = Listado de objetos
+master.menu.any.item.list-published = Listado de objetos públicos
+master.menu.any.toolkit = Listar Toolkits Publicadas
 
 

@@ -49,7 +49,7 @@ public class AnyChirpListRecentService implements AbstractListService<Any, Chirp
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "creationMoment", "title","author", "body");
+		request.unbind(entity, model, "creationMoment", "title","author", "body", "email");
 		
 	}
 

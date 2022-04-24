@@ -1,0 +1,18 @@
+# i18n-es.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+authenticated.money-exchange.form.label.source = Cantidad origen:
+authenticated.money-exchange.form.label.target-currency = Moneda destino:
+authenticated.money-exchange.form.label.date = Fecha del cambio:
+authenticated.money-exchange.form.label.target = Cantidad destino:
+	
+authenticated.money-exchange.form.button.perform = Realizar cambio
+
+authenticated.money-exchange.form.label.api-error = Lo sentimos, no se pudo hacer este cambio
