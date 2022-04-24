@@ -9,8 +9,8 @@
 # they accept any liabilities with respect to them.
 
 authenticated.announcement.form.label.title = Título:
-authenticated.announcement.form.label.text = Texto:
-authenticated.announcement.form.label.info = Información: (Opcional)
+authenticated.announcement.form.label.body = Cuerpo:
+authenticated.announcement.form.label.link = Enlace: (Opcional)
 authenticated.announcement.form.label.creation-moment = Momento Creación:
  
 authenticated.announcement.list.label.creationMoment = Momento Creación
