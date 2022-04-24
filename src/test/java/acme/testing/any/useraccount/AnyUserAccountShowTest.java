@@ -6,7 +6,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.TestHarness;
 
-public class AnyUserAccountShow extends TestHarness  {
+public class AnyUserAccountShowTest extends TestHarness  {
 	
 	// Test cases -------------------------------------------------------------
 		@ParameterizedTest

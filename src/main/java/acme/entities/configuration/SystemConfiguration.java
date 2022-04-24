@@ -16,6 +16,9 @@ import lombok.Setter;
 @Setter
 public class SystemConfiguration extends AbstractEntity{
 	
+	private static final String SPAM_WORDS_PATTERN = "^[a-zñáéíóú\\\\s']+(,[a-zñáéíóú\\\\s']+)*$";
+	
+	
 	// Serialisation identifier -----------------------------------------------
 
 	protected static final long		serialVersionUID	= 1L;
@@ -31,7 +34,7 @@ public class SystemConfiguration extends AbstractEntity{
 	protected String				acceptedCurrencies;
 	
 	@NotBlank
-	@Pattern(regexp = "^[a-zñáéíóú\\s']+(,[a-zñáéíóú\\s']+)*$")
+	@Pattern(regexp = SystemConfiguration.SPAM_WORDS_PATTERN)
 	protected String				strongSpamWords;
 	
 	@Range(min = 0, max = 1)
@@ -39,7 +42,7 @@ public class SystemConfiguration extends AbstractEntity{
 	protected double				strongSpamThreshold;
 	
 	@NotBlank
-	@Pattern(regexp = "^[a-zñáéíóú\\s']+(,[a-zñáéíóú\\s']+)*$")
+	@Pattern(regexp = SystemConfiguration.SPAM_WORDS_PATTERN)
 	protected String				weakSpamWords;
 
 	@Range(min = 0, max = 1)

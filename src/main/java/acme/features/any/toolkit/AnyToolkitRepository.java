@@ -36,11 +36,9 @@ public interface AnyToolkitRepository extends AbstractRepository {
 	@Query("select sum(q.item.retailPrice.amount*q.number) from Quantity q where q.toolkit.id = :toolkitId")
 	Double computeRetailPriceByToolkitId(int toolkitId);
 	
-//	TODO: devolver lista de precios de los elementos de un toolkit
 	@Query("Select q.item.retailPrice from Quantity q where q.toolkit.id = :toolkitId")
 	Collection<Money> getRetailPricesByToolkitId(int toolkitId);
 	
-	// TODO: query para devolver la cantidad de un determinado itemId
 	@Query("Select q.item from Quantity q where q.toolkit.id = :toolkitId")
 	Collection<Item> findItemsByToolkitId(int toolkitId);
 	
