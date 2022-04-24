@@ -18,6 +18,6 @@
 <acme:form readonly="${readonly}">
 	<acme:input-textbox code="authenticated.announcement.form.label.title" path="title"/>	
 	<acme:input-textbox code="authenticated.announcement.form.label.creation-moment" path="creationMoment"/>
-	<acme:input-textarea code="authenticated.announcement.form.label.text" path="text"/>
-	<acme:input-url code="authenticated.announcement.form.label.info" path="info"/>
+	<acme:input-textarea code="authenticated.announcement.form.label.body" path="body"/>
+	<acme:input-url code="authenticated.announcement.form.label.link" path="link"/>
 </acme:form>

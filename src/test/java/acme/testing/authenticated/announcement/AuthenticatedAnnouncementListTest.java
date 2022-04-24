@@ -13,7 +13,7 @@ public class AuthenticatedAnnouncementListTest extends TestHarness  {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/authenticated/announcement/list-recent.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positiveTest(final int recordIndex, final String creationMoment, final String title, final String body, final String link) {
+	public void positiveTest(final int recordIndex, final String creationMoment, final String title) {
 		
 		super.signIn("inventor1", "inventor1");
 		super.clickOnMenu("Authenticated", "List recent announcements");
