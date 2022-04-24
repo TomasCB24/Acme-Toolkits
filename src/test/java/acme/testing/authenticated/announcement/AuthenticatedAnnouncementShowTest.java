@@ -24,7 +24,13 @@ public class AuthenticatedAnnouncementShowTest extends TestHarness{
 		super.checkInputBoxHasValue("creationMoment", creationMoment);
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("body", body);
-		super.checkInputBoxHasValue("link", link);
+		
+		if(!link.equals("null")) {
+			super.checkInputBoxHasValue("link", link);
+		} else {
+			super.checkInputBoxHasValue("link", "");
+		}
+
 
 		super.signOut();
 		
