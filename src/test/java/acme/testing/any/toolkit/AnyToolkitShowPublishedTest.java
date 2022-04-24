@@ -6,13 +6,13 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.TestHarness;
 
-public class InventorToolkitShowPublishedTest extends TestHarness{
+public class AnyToolkitShowPublishedTest extends TestHarness{
 
 	// Test cases -------------------------------------------------------------
 	@ParameterizedTest
 	@CsvFileSource(resources = "/any/toolkit/show-published.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positiveTestShowToolkits(final int recordIndex, final String code, final String title, final String description, final String assemblyNotes, final String link, final String retailPrice) {
+	public void positiveTestShowToolkits(final int recordIndex, final String code, final String title, final String description, final String assemblyNotes, final String link, final String retailPrice, final String inventor) {
 
 		super.clickOnMenu("Anonymous", "List Published Toolkits");
 		super.checkListingExists();
@@ -36,6 +36,7 @@ public class InventorToolkitShowPublishedTest extends TestHarness{
 		}
 		
 		super.checkInputBoxHasValue("retailPrice", retailPrice);
+		super.checkInputBoxHasValue("inventor", inventor);
 
 		
 		
@@ -75,7 +76,7 @@ public class InventorToolkitShowPublishedTest extends TestHarness{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/any/toolkit/show-items-second-toolkit.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(30)
-	public void positiveTestShowingItemsOfToolkits(final int recordIndex, final String type, final String name, final String retailPrice, final String code, final String technology, final String description, final String link) {
+	public void positiveTestShowingItemsOfToolkits(final int recordIndex, final String type, final String name, final String retailPrice, final String code, final String technology, final String description, final String link, final String inventor) {
 		
 		super.clickOnMenu("Anonymous", "List Published Toolkits");
 		super.checkListingExists();
@@ -95,6 +96,7 @@ public class InventorToolkitShowPublishedTest extends TestHarness{
 		super.checkInputBoxHasValue("technology", technology);
 		super.checkInputBoxHasValue("description", description);
 		super.checkInputBoxHasValue("retailPrice", retailPrice);
+		super.checkInputBoxHasValue("inventor", inventor);
 		
 		if(!link.equals("null")) {
 			super.checkInputBoxHasValue("link", link);

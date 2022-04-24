@@ -6,9 +6,10 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.TestHarness;
 
-public class InventorToolkitListPublishedTest extends TestHarness{
+public class AnyToolkitListPublishedTest extends TestHarness{
 	
 	// Test cases -------------------------------------------------------------
+	
 	@ParameterizedTest
 	@CsvFileSource(resources = "/any/toolkit/list-published.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)

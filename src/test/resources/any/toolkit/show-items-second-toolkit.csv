@@ -1,2 +1,2 @@
-recordIndex,type,name,retail-price,code,technology,description,link
-0,Tool,Item name 5,"EUR 40.50",AAA-004-B,T,!·$%&(/)=?¿¡ª!|@#~€¬,null
+recordIndex,type,name,retail-price,code,technology,description,link,inventor
+0,Tool,Item name 5,"EUR 40.50",AAA-004-B,T,!·$%&(/)=?¿¡ª!|@#~€¬,null,"Acme, Inventor2"
