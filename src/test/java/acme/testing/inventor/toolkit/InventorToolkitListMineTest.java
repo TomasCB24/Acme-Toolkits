@@ -1,6 +1,7 @@
 package acme.testing.inventor.toolkit;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -28,10 +29,9 @@ public class InventorToolkitListMineTest extends TestHarness{
 		super.signOut();
 	}
 	
-	@ParameterizedTest
-	@CsvFileSource(resources = "/inventor/toolkit/list-mine.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Test
 	@Order(20)
-	public void negativeTestAnonymous(final int recordIndex, final String code, final String title) {
+	public void negativeTestAnonymous() {
 
 		super.navigate("/inventor/toolkit/list-mine");
 		super.checkPanicExists();
@@ -39,20 +39,18 @@ public class InventorToolkitListMineTest extends TestHarness{
 	}
 	
 	
-	@ParameterizedTest
-	@CsvFileSource(resources = "/inventor/toolkit/list-mine.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Test
 	@Order(30)
-	public void negativeTestAdministrator(final int recordIndex, final String code, final String title) {
+	public void negativeTestAdministrator() {
 		super.signIn("administrator", "administrator");
 		super.navigate("/inventor/toolkit/list-mine");
 		super.checkPanicExists();
 		super.signOut();
 	}
 	
-	@ParameterizedTest
-	@CsvFileSource(resources = "/inventor/toolkit/list-mine.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Test
 	@Order(40)
-	public void negativeTestPatron(final int recordIndex, final String code, final String title) {
+	public void negativeTestPatron() {
 		super.signIn("patron1", "patron1");
 		super.navigate("/inventor/toolkit/list-mine");
 		super.checkPanicExists();
