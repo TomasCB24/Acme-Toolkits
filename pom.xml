@@ -23,7 +23,7 @@
 
 	<groupId>Acme</groupId>	
 	<artifactId>Acme-Toolkits</artifactId>
-	<version>22.3</version>
+	<version>22.0</version>
 	<packaging>war</packaging>
 
 	<parent>
