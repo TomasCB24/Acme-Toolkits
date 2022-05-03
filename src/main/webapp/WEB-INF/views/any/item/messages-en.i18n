@@ -17,7 +17,10 @@ any.item.form.label.technology = Technology:
 any.item.form.label.description = Description:
 any.item.form.label.retail-price = Retail Price:
 any.item.form.label.link = Link: (Optional)
+any.item.form.label.inventor-full-name = Inventor of the Item:
 
 any.item.list.label.type = Type
+any.item.list.label.code = Code
 any.item.list.label.name = Name
 any.item.list.label.retailPrice = Retail Price
+any.item.list.label.quantity = Quantity

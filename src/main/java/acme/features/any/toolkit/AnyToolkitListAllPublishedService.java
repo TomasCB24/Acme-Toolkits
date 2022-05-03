@@ -17,6 +17,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.items.Item;
 import acme.entities.toolkits.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -58,6 +59,30 @@ public class AnyToolkitListAllPublishedService implements AbstractListService<An
 		assert model != null;
 		
 		request.unbind(entity, model, "code", "title");
+		
+		String payload;
+		final StringBuilder  names = new StringBuilder();
+		final StringBuilder  codes = new StringBuilder();
+		final StringBuilder  descriptions = new StringBuilder();
+		final StringBuilder  technologies = new StringBuilder();
+
+		final int toolkitId = entity.getId(); 
+		final Collection<Item> items = this.repository.findItemsByToolkitId(toolkitId);
+
+		for(final Item i: items) {
+
+			names.append(i.getName() + " ");
+			codes.append(i.getCode() + " ");
+			descriptions.append(i.getDescription() + " ");
+			technologies.append(i.getTechnology() + " ");
+			
+		}
+
+		payload = String.format(
+			"%s; %s; %s; %s", 
+			names.toString(), codes.toString(), descriptions.toString(), technologies.toString());
+
+		model.setAttribute("payload", payload);
 		
 	}
 
