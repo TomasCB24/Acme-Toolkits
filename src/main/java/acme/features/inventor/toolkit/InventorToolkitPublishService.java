@@ -5,19 +5,20 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.toolkits.Toolkit;
 import acme.framework.components.models.Model;
+import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
-import acme.framework.services.AbstractShowService;
+import acme.framework.services.AbstractUpdateService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorToolkitShowService implements AbstractShowService<Inventor, Toolkit>{
+public class InventorToolkitPublishService implements AbstractUpdateService<Inventor, Toolkit>{
 
 	// Internal state ---------------------------------------------------------
-
+	
 	@Autowired
 	protected InventorToolkitRepository repository;
 
-	// AbstractShowService<Inventor, Toolkit> ---------------------------
+	// AbstractUpdateService<Inventor, Toolkit> ---------------------------
 	
 	@Override
 	public boolean authorise(final Request<Toolkit> request) {
@@ -32,35 +33,63 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		toolkit = this.repository.findOneToolkitById(masterId);
 		inventor = toolkit.getInventor();
 		result = (
-			!toolkit.isDraftMode() ||
+			toolkit.isDraftMode() &&
 			request.isPrincipal(inventor)
 		);
 		
 		return result;
 	}
-
+	
 	@Override
 	public Toolkit findOne(final Request<Toolkit> request) {
 		assert request != null;
-		
-		Toolkit result=null;
+
+		Toolkit result;
 		int id;
-		
+
 		id = request.getModel().getInteger("id");
 		result = this.repository.findOneToolkitById(id);
-		
+
 		return result;
 	}
 
+	@Override
+	public void bind(final Request<Toolkit> request, final Toolkit entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+
+		request.bind(entity, errors, "code", "title","description","assemblyNotes","link");
+		
+	}
+
+	@Override
+	public void validate(final Request<Toolkit> request, final Toolkit entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+		
+	}
+	
 	@Override
 	public void unbind(final Request<Toolkit> request, final Toolkit entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		
-		request.unbind(entity, model, "code", "title","description",
-						"assemblyNotes","link","draftMode");
+
+		request.unbind(entity, model, "code", "title","description","assemblyNotes","link", "draftMode");
 		
 	}
 
+	@Override
+	public void update(final Request<Toolkit> request, final Toolkit entity) {
+		assert request != null;
+		assert entity != null;
+
+		entity.setDraftMode(false);
+		this.repository.save(entity);
+		
+	}
+	
+	
 }
