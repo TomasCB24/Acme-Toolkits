@@ -13,6 +13,7 @@ administrator.announcement.form.label.status = Status:
 administrator.announcement.form.label.text = Text:
 administrator.announcement.form.label.info = Info:
 administrator.announcement.form.label.confirmation = Confirm that the announcement is correct
+authenticated.announcement.form.label.flag = Flag:
 
 administrator.announcement.form.button.create = Create
  

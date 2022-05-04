@@ -12,6 +12,7 @@ authenticated.announcement.form.label.title = Title:
 authenticated.announcement.form.label.body = Body:
 authenticated.announcement.form.label.link = Link: (Optional)
 authenticated.announcement.form.label.creation-moment = Creation Moment:
+authenticated.announcement.form.label.flag = Flag:
 
 authenticated.announcement.list.label.creationMoment = Creation Moment
 authenticated.announcement.list.label.title = Title

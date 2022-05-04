@@ -53,9 +53,10 @@ public class AdministratorAnnouncementShowService implements AbstractShowService
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "creationMoment", "title", "body", "link");
+		request.unbind(entity, model, "creationMoment", "title", "body","link");
 		model.setAttribute("confirmation", false);
-		model.setAttribute("readonly", true);
+		model.setAttribute("flag", entity.isFlag());
+	
 	}
 
 }
