@@ -7,6 +7,7 @@ import acme.entities.toolkits.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractShowService;
+import acme.helpers.ToolkitHelper;
 import acme.roles.Inventor;
 
 @Service
@@ -16,6 +17,9 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 
 	@Autowired
 	protected InventorToolkitRepository repository;
+	
+	@Autowired
+	protected ToolkitHelper helper;
 
 	// AbstractShowService<Inventor, Toolkit> ---------------------------
 	
@@ -60,6 +64,10 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		
 		request.unbind(entity, model, "code", "title","description",
 						"assemblyNotes","link","draftMode");
+		
+		//Retail Price
+		
+		model.setAttribute("retailPrice", this.helper.getToolkitRetailPrice(entity));
 		
 	}
 

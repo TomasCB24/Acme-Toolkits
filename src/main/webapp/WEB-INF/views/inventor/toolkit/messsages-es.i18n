@@ -13,6 +13,7 @@ inventor.toolkit.form.label.title = Título:
 inventor.toolkit.form.label.description = Descripción:
 inventor.toolkit.form.label.assembly-notes = Notas de Montaje:
 inventor.toolkit.form.label.link = Enlace: (Opcional)
+inventor.toolkit.form.label.retail-price = Precio de Venta:
 
 inventor.toolkit.form.button.items = Elementos
 inventor.toolkit.form.button.update = Actualizar
