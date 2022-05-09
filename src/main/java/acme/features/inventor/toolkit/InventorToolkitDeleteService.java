@@ -87,15 +87,6 @@ public class InventorToolkitDeleteService implements AbstractDeleteService<Inven
 		assert request != null;
 		assert entity != null;
 
-		// TODO Borrar una toolkit no implica borrar los items
-		//final Collection<Item> items;
-
-		//items = this.repository.findManyItemsByToolkitId(entity.getId());
-		//for (final Item item : items) {
-		//	this.repository.delete(item);
-		//}
-		
-		
 		this.repository.delete(entity);
 		
 	}	
