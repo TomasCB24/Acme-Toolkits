@@ -26,3 +26,13 @@ patron.patronage.form.label.link = Link for more info
 patron.patronage.form.label.company = Inventor's Company
 patron.patronage.form.label.statement = Inventor's Statement 
 patron.patronage.form.label.inventorLink = Link for more info about the Inventor: (Optional)
+
+patron.patronage.form.button.update = Update
+patron.patronage.form.button.publish = Publish
+patron.patronage.list.button.create = Create
+patron.patronage.form.button.create = Create
+patron.patronage.form.button.delete = Delete
+
+patron.patronage.form.error.duplicated-code = The entered code already belongs to an existing Patronage
+patron.patronage.form.error.too-close-initial = The entered initial period date must be at least one month after the patronage's creation date
+patron.patronage.form.error.too-close-final = The entered final period date must be at least one month after the patronage's initial period date

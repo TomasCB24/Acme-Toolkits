@@ -19,4 +19,18 @@
 	<acme:input-textbox code="patron.patronage.form.label.company" path="company"/>
 	<acme:input-textarea code="patron.patronage.form.label.statement" path="statement"/>
 	<acme:input-url code="patron.patronage.form.label.inventorLink" path="inventorLink"/>
+	<acme:input-textbox code="patron.patronage.form.label.inventor" path="inventor"/>
+	
+	
+	<jstl:choose>
+	<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish') && draftMode == 'true'}">
+		<acme:submit code="patron.patronage.form.button.update" action="/patron/patronage/update"/>
+		<acme:submit code="patron.patronage.form.button.delete" action="/patron/patronage/delete"/>
+		<acme:submit code="patron.patronage.form.button.publish" action="/patron/patronage/publish"/>
+	</jstl:when>
+	<jstl:when test="${command == 'create'}">
+		<acme:submit code="patron.patronage.form.button.create" action="/patron/patronage/create"/>
+	</jstl:when>	
+
+	</jstl:choose>
 </acme:form> 
