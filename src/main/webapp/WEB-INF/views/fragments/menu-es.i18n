@@ -68,10 +68,10 @@ master.menu.inventor.item.list-mine = Listar mis elementos
 
 master.menu.user-account = Cuenta
 master.menu.user-account.general-data = Datos generales
-
-
-
-
+master.menu.user-account.patron = Datos de patrocinador
+master.menu.user-account.become-patron = Conviértete en patron
+master.menu.user-account.inventor = Datos de inventor
+master.menu.user-account.become-inventor = Conviértete en inventor
 
 # master.menu.any ####################################################
 
