@@ -109,8 +109,4 @@ public class InventorToolkitShowMineTest extends TestHarness{
 		
 	}
 
-	
-	
-	
-
 }

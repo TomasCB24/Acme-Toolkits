@@ -33,7 +33,7 @@ public class AuthenticatedAnnouncementListTest extends TemporalAwareTestHarness 
 	
 	@Test
 	@Order(20)
-	public void negativeTestAnonymous() {
+	public void hackingTestAnonymous() {
 		super.navigate("/inventor/announcement/list-recent");
 
 		super.checkPanicExists();
