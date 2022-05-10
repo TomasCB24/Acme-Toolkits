@@ -1,4 +1,4 @@
-recordIndex,creation-moment,title,body,link
-0,2022/04/23 09:45,title3,This is body 3,null
-1,2022/04/23 10:10,title4,This is body 4,https://www.google.com/
-2,2022/04/24 00:59,1,1,null
+recordIndex,delta-days,title,body,link
+0,-3,title4,This is body 4,https://www.google.com/
+1,-2,title3,This is body 3,null
+2,-1,1,1,null
