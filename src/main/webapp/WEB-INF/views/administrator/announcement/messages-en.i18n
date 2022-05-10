@@ -9,16 +9,13 @@
 # they accept any liabilities with respect to them.
 
 administrator.announcement.form.label.title = Title:
-administrator.announcement.form.label.status = Status:
-administrator.announcement.form.label.text = Text:
-administrator.announcement.form.label.info = Info:
+administrator.announcement.form.label.body = Body:
+administrator.announcement.form.label.link = Link (Optional):
 administrator.announcement.form.label.confirmation = Confirm that the announcement is correct
-authenticated.announcement.form.label.flag = Flag:
-
+administrator.announcement.form.label.flag = Flag:
+administrator.announcement.form.label.is-not-critical = Is not Critical
+administrator.announcement.form.label.is-critical = Is Critical
+administrator.announcement.form.label.creation-moment = Creation Moment:
 administrator.announcement.form.button.create = Create
  
-administrator.announcement.list.label.moment = Moment
-administrator.announcement.list.label.status = Status
-administrator.announcement.list.label.title = Title
-
 administrator.announcement.list.button.create = Create

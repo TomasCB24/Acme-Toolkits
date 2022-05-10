@@ -16,13 +16,18 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-		<acme:input-textbox code="authenticated.announcement.form.label.title" path="title"/>	
-		<acme:input-textarea code="authenticated.announcement.form.label.body" path="body"/>
-		<acme:input-url code="authenticated.announcement.form.label.link" path="link"/>
-		<acme:input-textbox code="authenticated.announcement.form.label.flag" path="flag"/>
+		<acme:input-textbox code="administrator.announcement.form.label.title" path="title"/>	
+		<acme:input-textarea code="administrator.announcement.form.label.body" path="body"/>
+		<acme:input-url code="administrator.announcement.form.label.link" path="link"/>
+		
+		<acme:input-select code="administrator.announcement.form.label.flag" path="flag">
+			<acme:input-option code="administrator.announcement.form.label.is-critical" value="TRUE" selected="${flag eq 'TRUE'}"/>
+			<acme:input-option code="administrator.announcement.form.label.is-not-critical" value="FALSE" selected="${flag eq 'FALSE'}"/>
+		</acme:input-select>
+		
 				
 	<jstl:if test="${command == 'show'}">
-			<acme:input-textbox code="authenticated.announcement.form.label.creation-moment" path="creationMoment"/>	
+			<acme:input-textbox code="administrator.announcement.form.label.creation-moment" path="creationMoment"/>	
 	</jstl:if>
 	
 	<jstl:if test="${command == 'create'}">
