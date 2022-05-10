@@ -70,7 +70,7 @@ public class AnyItemListService implements AbstractListService<Any, Item> {
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "type", "name","retailPrice");
+		request.unbind(entity, model, "type", "name","retailPrice","code");
 		
 		//Quantity
 		

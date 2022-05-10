@@ -1,0 +1,11 @@
+# i18n-en.i18n
+
+authenticated.inventor.inventor.form.title.create = Become a inventor
+authenticated.inventor.inventor.form.title.update = Update your inventor data
+
+authenticated.inventor.inventor.form.label.company = Company
+authenticated.inventor.inventor.form.label.statement = Statement
+authenticated.inventor.inventor.form.label.link = Link
+
+authenticated.inventor.inventor.form.button.create = Register
+authenticated.inventor.inventor.form.button.update = Update
