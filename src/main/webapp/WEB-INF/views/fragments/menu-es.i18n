@@ -45,6 +45,7 @@ master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.dashboard = Panel de indicadores
 master.menu.administrator.shut-down = Parar el sistema
+master.menu.administrator.announcement.list-recent = Anuncios Recientes
 
 
 

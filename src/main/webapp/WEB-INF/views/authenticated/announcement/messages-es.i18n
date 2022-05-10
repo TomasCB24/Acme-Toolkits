@@ -10,8 +10,11 @@
 
 authenticated.announcement.form.label.title = Título:
 authenticated.announcement.form.label.body = Cuerpo:
-authenticated.announcement.form.label.link = Enlace: (Opcional)
+authenticated.announcement.form.label.link = Enlace (Opcional):
 authenticated.announcement.form.label.creation-moment = Momento Creación:
+authenticated.announcement.form.label.flag = Estado:
+authenticated.announcement.form.label.is-not-critical = No es Crítico
+authenticated.announcement.form.label.is-critical = Es Crítico
  
 authenticated.announcement.list.label.creationMoment = Momento Creación
 authenticated.announcement.list.label.title = Título
