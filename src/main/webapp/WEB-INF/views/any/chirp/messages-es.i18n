@@ -21,4 +21,6 @@ any.chirp.form.label.author = Author
 any.chirp.form.label.body = Cuerpo
 any.chirp.form.label.email = Correo
 any.chirp.form.button.create = Crear
+any.chirp.form.label.confirmation = Confirmación
+any.chirp.confirmation.error = Es necesario marcar el checkbox para poder crear el chirp
 
