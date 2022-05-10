@@ -10,6 +10,7 @@ import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
+import acme.helpers.ToolkitHelper;
 import acme.roles.Inventor;
 
 @Service
@@ -19,6 +20,9 @@ public class InventorToolkitListMineService implements AbstractListService<Inven
 
 	@Autowired
 	protected InventorToolkitRepository repository;
+	
+	@Autowired
+	protected ToolkitHelper helper;
 
 	// AbstractListService<Inventor, Toolkit> ---------------------------
 	
@@ -49,6 +53,10 @@ public class InventorToolkitListMineService implements AbstractListService<Inven
 		assert model != null;
 		
 		request.unbind(entity, model, "code", "title");
+		
+		//Retail Price
+		
+		model.setAttribute("retailPrice", this.helper.getToolkitRetailPrice(entity));
 		
 	}
 

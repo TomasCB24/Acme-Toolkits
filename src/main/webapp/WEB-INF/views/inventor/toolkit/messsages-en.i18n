@@ -12,10 +12,19 @@ inventor.toolkit.form.label.code = Code:
 inventor.toolkit.form.label.title = Title:
 inventor.toolkit.form.label.description = Description:
 inventor.toolkit.form.label.assembly-notes = Assembly Notes:
-inventor.toolkit.form.label.retail-price = Retail Price:
 inventor.toolkit.form.label.link = Link: (Optional)
+inventor.toolkit.form.label.retail-price = Retail Price:
+
+inventor.toolkit.form.button.items = Items
+inventor.toolkit.form.button.update = Update
+inventor.toolkit.form.button.delete = Delete
+inventor.toolkit.form.button.publish = Publish
+inventor.toolkit.form.button.create = Create
 
 inventor.toolkit.list.label.code = Code
 inventor.toolkit.list.label.title = Title
+inventor.toolkit.list.label.retail-price = Retail Price
 
-inventor.toolkit.form.label.items = Items
+inventor.toolkit.list.button.create = Create
+
+inventor.toolkit.form.error.duplicated-code = The entered code already belongs to an existing Toolkit
