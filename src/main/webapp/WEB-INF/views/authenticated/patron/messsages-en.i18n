@@ -1,0 +1,11 @@
+# i18n-en.i18n
+
+authenticated.patron.patron.form.title.create = Become a Patron
+authenticated.patron.patron.form.title.update = Update your patron data
+
+authenticated.patron.patron.form.label.company = Company
+authenticated.patron.patron.form.label.statement = Statement
+authenticated.patron.patron.form.label.link = Link
+
+authenticated.patron.patron.form.button.create = Register
+authenticated.patron.patron.form.button.update = Update
