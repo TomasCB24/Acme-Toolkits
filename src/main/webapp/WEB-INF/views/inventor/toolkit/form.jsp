@@ -31,6 +31,7 @@
 		</jstl:when>
 		<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish') && draftMode == 'true'}">
 			<acme:button code="inventor.toolkit.form.button.items" action="/inventor/item/list?masterId=${id}"/>
+			<acme:button code="inventor.quantity.form.button.list" action="/inventor/quantity/list?masterId=${id}"/>
 			<acme:submit code="inventor.toolkit.form.button.update" action="/inventor/toolkit/update"/>
 			<acme:submit code="inventor.toolkit.form.button.delete" action="/inventor/toolkit/delete"/>
 			<acme:submit code="inventor.toolkit.form.button.publish" action="/inventor/toolkit/publish"/>
