@@ -16,10 +16,8 @@
 	<acme:input-moment code="patron.patronage.form.label.initial-period-date" path="initialPeriodDate"/>
 	<acme:input-moment code="patron.patronage.form.label.final-period-date" path="finalPeriodDate"/>
 	<acme:input-url code="patron.patronage.form.label.link" path="link"/>
-	<acme:input-textbox code="patron.patronage.form.label.company" path="company"/>
-	<acme:input-textarea code="patron.patronage.form.label.statement" path="statement"/>
-	<acme:input-url code="patron.patronage.form.label.inventorLink" path="inventorLink"/>
 	<acme:input-textbox code="patron.patronage.form.label.inventor" path="inventor"/>
+	
 	
 	
 	<jstl:choose>
@@ -30,7 +28,13 @@
 	</jstl:when>
 	<jstl:when test="${command == 'create'}">
 		<acme:submit code="patron.patronage.form.button.create" action="/patron/patronage/create"/>
-	</jstl:when>	
+	</jstl:when>
+	<jstl:when test="${draftMode == 'false'}">	
+		<acme:input-textbox code="patron.patronage.form.label.company" path="company"/>
+		<acme:input-textarea code="patron.patronage.form.label.statement" path="statement"/>
+		<acme:input-url code="patron.patronage.form.label.inventorLink" path="inventorLink"/>
+	</jstl:when>
+		
 
 	</jstl:choose>
 </acme:form> 

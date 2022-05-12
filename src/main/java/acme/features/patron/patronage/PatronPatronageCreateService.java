@@ -2,11 +2,14 @@ package acme.features.patron.patronage;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.patronages.Patronage;
+import acme.features.any.toolkit.AnyToolkitRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -19,6 +22,9 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 
 	@Autowired
 	protected PatronPatronageRepository repository;
+	
+	@Autowired
+	protected AnyToolkitRepository anyToolKitRepository;
 	
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
@@ -47,7 +53,9 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		final Inventor inventor = this.repository.findOneInventorByUserName("inventor");
+		final String inventorUsername = String.valueOf(request.getModel().getAttribute("inventor"));
+		final Inventor inventor = this.repository.findOneInventorByUserName(inventorUsername);
+		errors.state(request, inventor!=null, "inventor", "patron.patronage.form.error.inventor-not-found");
 		entity.setInventor(inventor);
 		
 		request.bind(entity, errors, "code", "status","legalStuff","budget","creationDate", "initialPeriodDate", "finalPeriodDate", "link");
@@ -98,6 +106,19 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 			calendar.add(Calendar.MONTH, 1);
 			minimumFinalDate = calendar.getTime();
 			errors.state(request, entity.getFinalPeriodDate().after(minimumFinalDate), "finalPeriodDate", "patron.patronage.form.error.too-close-final");
+		}
+		
+		if(!errors.hasErrors("budget")) {
+			errors.state(request, entity.getBudget().getAmount() > 0, "budget", "patron.patronage.form.error.negative-amount");
+			final String currency = entity.getBudget().getCurrency();
+			final String[] currencies = this.anyToolKitRepository.findSystemConfiguration().getAcceptedCurrencies().split(",");
+			final Set<String> set = new HashSet<>();
+			for(final String r:currencies) {
+				set.add(r);
+			}
+			final boolean res = set.contains(currency);
+			
+			errors.state(request, res, "budget", "patron.patronage.form.error.unknown-currency");
 		}
 		
 	}

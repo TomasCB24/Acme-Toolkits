@@ -2,15 +2,19 @@ package acme.features.patron.patronage;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.patronages.Patronage;
+import acme.features.any.toolkit.AnyToolkitRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractUpdateService;
+import acme.roles.Inventor;
 import acme.roles.Patron;
 
 @Service
@@ -18,6 +22,9 @@ public class PatronPatronageUpdateService  implements AbstractUpdateService<Patr
 	
 	@Autowired
 	protected PatronPatronageRepository repository;
+	
+	@Autowired
+	protected AnyToolkitRepository anyToolKitRepository;
 	
 
 	@Override
@@ -46,6 +53,11 @@ public class PatronPatronageUpdateService  implements AbstractUpdateService<Patr
 		assert entity != null;
 		assert errors != null;
 		
+		final String inventorUsername = String.valueOf(request.getModel().getAttribute("inventor"));
+		final Inventor inventor = this.repository.findOneInventorByUserName(inventorUsername);
+		errors.state(request, inventor!=null, "inventor", "patron.patronage.form.error.inventor-not-found");
+		entity.setInventor(inventor);
+		
 		request.bind(entity, errors, "code", "status","legalStuff","budget","creationDate", "initialPeriodDate", "finalPeriodDate", "link");
 		
 	}
@@ -56,8 +68,12 @@ public class PatronPatronageUpdateService  implements AbstractUpdateService<Patr
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "code", "status","legalStuff","budget","creationDate", "initialPeriodDate", "finalPeriodDate", "link");
 		
+		request.unbind(entity, model, "code", "status","legalStuff","budget","creationDate", "initialPeriodDate", "finalPeriodDate", "link", "draftMode");
+		final Patronage patronage = this.repository.findOnePatronageById(entity.getId());
+		final Inventor inventor = patronage.getInventor();
+		final String inventorUsername = inventor.getUserAccount().getUsername();
+		model.setAttribute("inventor", inventorUsername);
 	}
 
 	@Override
@@ -106,6 +122,19 @@ public class PatronPatronageUpdateService  implements AbstractUpdateService<Patr
 			calendar.add(Calendar.MONTH, 1);
 			minimumFinalDate = calendar.getTime();
 			errors.state(request, entity.getFinalPeriodDate().after(minimumFinalDate), "finalPeriodDate", "patron.patronage.form.error.too-close-final");
+		}
+		
+		if(!errors.hasErrors("budget")) {
+			errors.state(request, entity.getBudget().getAmount() > 0, "budget", "patron.patronage.form.error.negative-amount");
+			final String currency = entity.getBudget().getCurrency();
+			final String[] currencies = this.anyToolKitRepository.findSystemConfiguration().getAcceptedCurrencies().split(",");
+			final Set<String> set = new HashSet<>();
+			for(final String r:currencies) {
+				set.add(r);
+			}
+			final boolean res = set.contains(currency);
+			
+			errors.state(request, res, "budget", "patron.patronage.form.error.unknown-currency");
 		}
 		
 	}
