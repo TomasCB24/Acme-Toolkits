@@ -23,3 +23,7 @@
 	<acme:list-column code="inventor.item.list.label.quantity" path="quantity" width="15%"/>
 
 </acme:list>
+
+<jstl:if test="${command == 'list-mine'}">
+	<acme:button code="inventor.item.list.button.create" action="/inventor/item/create"/>
+</jstl:if>
