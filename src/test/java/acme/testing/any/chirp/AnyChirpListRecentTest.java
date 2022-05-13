@@ -32,13 +32,5 @@ public class AnyChirpListRecentTest  extends TemporalAwareTestHarness {
 		
 	}
 	
-	@ParameterizedTest
-	@CsvFileSource(resources = "/any/chirp/list-recent.csv", encoding = "utf-8", numLinesToSkip = 1)
-	@Order(10)
-	public void hackingTest(final int recordIndex, final String creationMoment, final String title, final String author, final String body) {
-		super.clickOnMenu("Anonymous", "List recents chirps");
-		super.clickOnListingRecord(0);
-		super.checkPanicExists();
-	}
 
 }

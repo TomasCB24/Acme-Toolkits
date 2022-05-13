@@ -36,7 +36,6 @@ public class InventorToolkitShowMineTest extends TestHarness{
 			super.checkInputBoxHasValue("link", "");
 		}
 		
-		super.checkInputBoxHasValue("retailPrice", retailPrice);
 
 		
 		
@@ -98,7 +97,6 @@ public class InventorToolkitShowMineTest extends TestHarness{
 		super.checkInputBoxHasValue("code", code);
 		super.checkInputBoxHasValue("technology", technology);
 		super.checkInputBoxHasValue("description", description);
-		super.checkInputBoxHasValue("retailPrice", retailPrice);
 		
 		if(!link.equals("null")) {
 			super.checkInputBoxHasValue("link", link);
