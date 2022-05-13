@@ -22,7 +22,20 @@ patron.patronage.form.label.initial-period-date = Initial Period Date
 patron.patronage.form.label.final-period-date = Final Period Date
 patron.patronage.form.label.link = Link for more info 
 
-
+patron.patronage.form.label.inventor = Inventor's Username
 patron.patronage.form.label.company = Inventor's Company
 patron.patronage.form.label.statement = Inventor's Statement 
 patron.patronage.form.label.inventorLink = Link for more info about the Inventor: (Optional)
+
+patron.patronage.form.button.update = Update
+patron.patronage.form.button.publish = Publish
+patron.patronage.list.button.create = Create
+patron.patronage.form.button.create = Create
+patron.patronage.form.button.delete = Delete
+
+patron.patronage.form.error.duplicated-code = The entered code already belongs to an existing Patronage
+patron.patronage.form.error.too-close-initial = The entered initial period date must be at least one month after the patronage's creation date
+patron.patronage.form.error.too-close-final = The entered final period date must be at least one month after the patronage's initial period date
+patron.patronage.form.error.inventor-not-found = The inventor's username was not found
+patron.patronage.form.error.negative-amount = The budget's amount can not be negative
+patron.patronage.form.error.unknown-currency = The budget's currency is not accepted by the system
