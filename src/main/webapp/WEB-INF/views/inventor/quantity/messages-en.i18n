@@ -1,0 +1,24 @@
+ # i18n-en.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+inventor.quantity.list.label.number = Quantity
+inventor.quantity.list.label.item-code = Item Code
+
+inventor.quantity.form.button.create = Add Item
+inventor.quantity.form.button.update = Update Item
+inventor.quantity.form.button.delete = Delete Item
+
+inventor.quantity.form.label.number = Quantity:
+inventor.quantity.form.label.item-code = Item Code:
+
+inventor.quantity.form.error.invalid-item = There is no element with that code
+inventor.quantity.form.error.duplicated-code = The element belongs to the Toolkit
+inventor.quantity.form.error.draft-mode = The item is not published
+inventor.quantity.form.error.tool = Tools can only have a quantity equal to 1

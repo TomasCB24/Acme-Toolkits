@@ -45,6 +45,7 @@ master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.shut-down = Shut down
+master.menu.administrator.announcement.list-recent = List recent announcements
 
 
 
@@ -69,9 +70,10 @@ master.menu.inventor.item.list-mine = List my Items
 
 master.menu.user-account = Account
 master.menu.user-account.general-data = General data
-
-
-
+master.menu.user-account.patron = Patron data
+master.menu.user-account.become-patron = Become a patron
+master.menu.user-account.inventor = Inventor data
+master.menu.user-account.become-inventor = Become an inventor
 
 # master.menu.any ####################################################
 master.menu.any.user-account-list = User Accounts List

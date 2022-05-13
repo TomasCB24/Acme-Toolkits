@@ -53,7 +53,7 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "code", "legalStuff", "budget", "creationDate", "initialPeriodDate", "finalPeriodDate", "link");
+		request.unbind(entity, model, "code", "legalStuff", "budget", "creationDate", "initialPeriodDate", "finalPeriodDate", "link", "draftMode", "status");
 		
 		//Patron details:
 		final Patronage patronage = this.repository.findOnePatronageById(entity.getId());
