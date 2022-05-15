@@ -72,7 +72,6 @@ public class InventorQuantityCreateService implements AbstractCreateService<Inve
 
 		final String itemCode = String.valueOf(request.getModel().getAttribute("item-code"));
 		final Item item = this.repository.findOneItemByCode(itemCode);
-		errors.state(request, item!=null, "item-code", "inventor.quantity.form.error.invalid-item");
 		entity.setItem(item);
 		
 		request.bind(entity, errors, "number", "item-code");
@@ -85,25 +84,17 @@ public class InventorQuantityCreateService implements AbstractCreateService<Inve
 		assert entity != null;
 		assert errors != null;
 		
-		if(!errors.hasErrors("item-code")) {
-			
-			Collection<Quantity> existing;
-			int toolkitId;
-			final Collection<String> codes;
-			
-			toolkitId = request.getModel().getInteger("masterId");
-			existing = this.repository.findManyQuantitiesByToolkitId(toolkitId);
-			
-			codes = existing.stream().map(x->x.getItem().getCode()).collect(Collectors.toList());
-				
-			errors.state(request, !codes.contains(entity.getItem().getCode()), "item-code", "inventor.quantity.form.error.duplicated-code");
-			errors.state(request, !entity.getItem().isDraftMode(), "item-code", "inventor.quantity.form.error.draft-mode");
-		
-		}
-		
 		if(!errors.hasErrors("number")) {
+			
+			final int toolkitId;			
+			toolkitId = request.getModel().getInteger("masterId");
+			
+			Quantity quantity;
+			quantity = this.repository.findOneQuantityByItemId(toolkitId, entity.getItem().getCode());
+			
 			errors.state(request,entity.getItem().getType().equals(ItemType.COMPONENT) || 
-								 (entity.getNumber()==1 && entity.getItem().getType().equals(ItemType.TOOL)), "number", "inventor.quantity.form.error.tool");
+								 (entity.getNumber()==1 && entity.getItem().getType().equals(ItemType.TOOL) && quantity == null),
+								 "number", "inventor.quantity.form.error.tool");
 		}
 		
 	}
@@ -116,6 +107,7 @@ public class InventorQuantityCreateService implements AbstractCreateService<Inve
 
 		request.unbind(entity, model, "number", "item-code");
 		model.setAttribute("masterId", request.getModel().getAttribute("masterId"));
+		model.setAttribute("items", this.repository.findManyPublishedItems());
 		
 	}
 
@@ -124,8 +116,31 @@ public class InventorQuantityCreateService implements AbstractCreateService<Inve
 		assert request != null;
 		assert entity != null;
 
-		this.repository.save(entity);
+		Collection<Quantity> existing;
+		int toolkitId;
+		final Collection<String> codes;
 		
+		toolkitId = request.getModel().getInteger("masterId");
+		existing = this.repository.findManyQuantitiesByToolkitId(toolkitId);
+		
+		codes = existing.stream().map(x->x.getItem().getCode()).collect(Collectors.toList());
+		
+		if(codes.contains(entity.getItem().getCode())) {
+			
+			int number;
+			Quantity quantity;
+
+			number = entity.getNumber();
+			quantity = this.repository.findOneQuantityByItemId(toolkitId, entity.getItem().getCode());
+			
+			quantity.setNumber(quantity.getNumber()+number);
+			
+			this.repository.save(quantity);
+			
+		}else {
+		
+			this.repository.save(entity);
+		
+		}
 	}
-	
 }

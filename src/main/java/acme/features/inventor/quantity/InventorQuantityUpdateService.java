@@ -1,14 +1,12 @@
 package acme.features.inventor.quantity;
 
-import java.util.Collection;
-import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.items.Item;
 import acme.entities.items.ItemType;
 import acme.entities.items.Quantity;
+import acme.entities.toolkits.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -30,12 +28,12 @@ public class InventorQuantityUpdateService implements AbstractUpdateService<Inve
 		assert request != null;
 		
 		boolean result;
-		int masterId;
+		int id;
 		Quantity quantity;
 		Inventor inventor;
 
-		masterId = request.getModel().getInteger("id");
-		quantity = this.repository.findOneQuantityById(masterId);
+		id = request.getModel().getInteger("id");
+		quantity = this.repository.findOneQuantityById(id);
 		inventor = quantity.getToolkit().getInventor();
 		result = (
 			quantity.getToolkit().isDraftMode() &&
@@ -66,7 +64,6 @@ public class InventorQuantityUpdateService implements AbstractUpdateService<Inve
 
 		final String itemCode = String.valueOf(request.getModel().getAttribute("item-code"));
 		final Item item = this.repository.findOneItemByCode(itemCode);
-		errors.state(request, item!=null, "item-code", "inventor.quantity.form.error.invalid-item");
 		entity.setItem(item);
 		
 		request.bind(entity, errors, "number", "item-code");
@@ -79,28 +76,19 @@ public class InventorQuantityUpdateService implements AbstractUpdateService<Inve
 		assert entity != null;
 		assert errors != null;
 		
-		if(!errors.hasErrors("item-code")) {
-			
-			Collection<Quantity> existing;
-			final int quantityId;
-			final int toolkitId;
-			final Collection<String> codes;
-			
-			quantityId = request.getModel().getInteger("id");
-			toolkitId = this.repository.findOneToolkitByQuantityId(quantityId).getId();
-			
-			existing = this.repository.findManyQuantitiesByToolkitId(toolkitId);
-			
-			codes = existing.stream().map(x->x.getItem().getCode()).collect(Collectors.toList());
-				
-			errors.state(request, !codes.contains(entity.getItem().getCode()), "item-code", "inventor.quantity.form.error.duplicated-code");
-			errors.state(request, !entity.getItem().isDraftMode(), "item-code", "inventor.quantity.form.error.draft-mode");
-		
-		}
-		
 		if(!errors.hasErrors("number")) {
+			
+			int id;
+			Quantity quantity;
+			Toolkit toolkit;
+
+			id = request.getModel().getInteger("id");
+			toolkit = this.repository.findOneQuantityById(id).getToolkit();
+			quantity = this.repository.findOneQuantityByItemId(toolkit.getId(), entity.getItem().getCode());
+
 			errors.state(request,entity.getItem().getType().equals(ItemType.COMPONENT) || 
-						         (entity.getNumber()==1 && entity.getItem().getType().equals(ItemType.TOOL)), "number", "inventor.quantity.form.error.tool");
+						         (entity.getNumber()==1 && entity.getItem().getType().equals(ItemType.TOOL) && quantity == null), 
+						         "number", "inventor.quantity.form.error.tool");
 		}
 		
 	}
@@ -112,6 +100,7 @@ public class InventorQuantityUpdateService implements AbstractUpdateService<Inve
 		assert model != null;
 
 		request.unbind(entity, model, "number", "item-code");
+		model.setAttribute("items", this.repository.findManyPublishedItems());
 		
 	}	
 

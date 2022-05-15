@@ -61,6 +61,7 @@ public class InventorQuantityShowService implements AbstractShowService<Inventor
 		request.unbind(entity, model, "number");
 		
 		model.setAttribute("item-code", entity.getItem().getCode());
+		model.setAttribute("items", this.repository.findManyPublishedItems());
 
 		
 	}

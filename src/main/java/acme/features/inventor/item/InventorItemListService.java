@@ -60,15 +60,11 @@ public class InventorItemListService implements AbstractListService<Inventor, It
 		assert model != null;
 
 		int masterId;
-		final Toolkit toolkit;
-		final boolean showCreate;
 
 		masterId = request.getModel().getInteger("masterId");
-		toolkit = this.repository.findOneToolkitById(masterId);
-		showCreate = (toolkit.isDraftMode() && request.isPrincipal(toolkit.getInventor()));
 
 		model.setAttribute("masterId", masterId);
-		model.setAttribute("showCreate", showCreate);
+		
 	}
 
 	@Override

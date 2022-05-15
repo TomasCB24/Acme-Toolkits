@@ -30,4 +30,4 @@ inventor.toolkit.list.button.create = Create
 inventor.toolkit.form.error.duplicated-code = The entered code already belongs to an existing Toolkit
 inventor.toolkit.form.error.no-item = Cannot publish toolkits that have no elements
 
-inventor.quantity.form.button.list = Manage Items
+inventor.quantity.form.button.list = Items
