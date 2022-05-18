@@ -55,7 +55,6 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		assert errors != null;
 		final String inventorUsername = String.valueOf(request.getModel().getAttribute("inventor"));
 		final Inventor inventor = this.repository.findOneInventorByUserName(inventorUsername);
-		errors.state(request, inventor!=null, "inventor", "patron.patronage.form.error.inventor-not-found");
 		entity.setInventor(inventor);
 		
 		request.bind(entity, errors, "code", "status","legalStuff","budget","creationDate", "initialPeriodDate", "finalPeriodDate", "link");
@@ -119,6 +118,12 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 			final boolean res = set.contains(currency);
 			
 			errors.state(request, res, "budget", "patron.patronage.form.error.unknown-currency");
+		}
+		
+		if(!errors.hasErrors("inventor")) {
+			final String inventorUsername = String.valueOf(request.getModel().getAttribute("inventor"));
+			final Inventor inventor = this.repository.findOneInventorByUserName(inventorUsername);
+			errors.state(request, inventor!=null, "inventor", "patron.patronage.form.error.inventor-not-found");
 		}
 		
 	}

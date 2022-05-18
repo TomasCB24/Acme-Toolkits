@@ -37,5 +37,5 @@ patron.patronage.form.error.duplicated-code = The entered code already belongs t
 patron.patronage.form.error.too-close-initial = The entered initial period date must be at least one month after the patronage's creation date
 patron.patronage.form.error.too-close-final = The entered final period date must be at least one month after the patronage's initial period date
 patron.patronage.form.error.inventor-not-found = The inventor's username was not found
-patron.patronage.form.error.negative-amount = The budget's amount can not be negative
+patron.patronage.form.error.negative-amount = The budget's amount can not lower or equal than 0
 patron.patronage.form.error.unknown-currency = The budget's currency is not accepted by the system
