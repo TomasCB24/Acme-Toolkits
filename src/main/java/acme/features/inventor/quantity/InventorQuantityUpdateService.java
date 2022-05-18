@@ -99,8 +99,8 @@ public class InventorQuantityUpdateService implements AbstractUpdateService<Inve
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "number", "item-code");
-		model.setAttribute("items", this.repository.findManyPublishedItems());
+		request.unbind(entity, model, "number");
+		model.setAttribute("item-code", entity.getItem().getCode());
 		
 	}	
 
@@ -108,7 +108,7 @@ public class InventorQuantityUpdateService implements AbstractUpdateService<Inve
 	public void update(final Request<Quantity> request, final Quantity entity) {
 		assert request != null;
 		assert entity != null;
-
+		
 		this.repository.save(entity);
 		
 	}

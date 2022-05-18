@@ -10,6 +10,8 @@
 
 inventor.quantity.list.label.number = Quantity
 inventor.quantity.list.label.item-code = Item Code
+inventor.quantity.list.label.item-name = Item Name
+inventor.quantity.list.label.item-type = Item Type
 
 inventor.quantity.form.button.create = Add Item
 inventor.quantity.form.button.update = Update Item
