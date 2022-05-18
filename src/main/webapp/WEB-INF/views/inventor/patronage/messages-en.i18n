@@ -25,3 +25,5 @@ inventor.patronage.form.label.link = Link for more info: (Optional)
 inventor.patronage.form.label.company = Patron's Company
 inventor.patronage.form.label.statement = Patron's Statement 
 inventor.patronage.form.label.patronLink = Link for more info about the Patron: (Optional)
+
+inventor.patronage.form.button.update = Update
