@@ -36,5 +36,5 @@ patron.patronage.form.error.duplicated-code = El código introducido pertenece a
 patron.patronage.form.error.too-close-initial = La fecha inicial del periodo debe ser al menos un mes posterior a la fecha de creación del patrocinio
 patron.patronage.form.error.too-close-final = La fecha final del periodo debe ser al menos un mes posterior a la fecha inicial de periodo del patrocinio
 patron.patronage.form.error.inventor-not-found = El username del inventor no fue encontrado
-patron.patronage.form.error.negative-amount = La cantidad del presupuesto no puede ser negativa
+patron.patronage.form.error.negative-amount = La cantidad del presupuesto no puede ser menor o igual que 0
 patron.patronage.form.error.unknown-currency = La moneda del presupuesto no está aceptada por el sistema
