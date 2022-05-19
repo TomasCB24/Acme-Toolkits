@@ -10,6 +10,8 @@
 
 inventor.quantity.list.label.number = Cantidad
 inventor.quantity.list.label.item-code = Código del Elemento
+inventor.quantity.list.label.item-name = Nombre del Elemento
+inventor.quantity.list.label.item-type = Tipo de Elemento
 
 inventor.quantity.form.button.create = Añadir elemento
 inventor.quantity.form.button.update = Actualizar elemento
@@ -18,7 +20,4 @@ inventor.quantity.form.button.delete = Eliminar elemento
 inventor.quantity.form.label.number = Cantidad:
 inventor.quantity.form.label.item-code = Código del Elemento:
 
-inventor.quantity.form.error.invalid-item = No existe ningún elemento con ese código
-inventor.quantity.form.error.duplicated-code = El elemento pertenece a la Toolkit
-inventor.quantity.form.error.draft-mode = El elemento no está publicado
 inventor.quantity.form.error.tool = Las herramientas solo pueden tener cantidad igual a 1

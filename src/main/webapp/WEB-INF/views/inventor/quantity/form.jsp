@@ -17,13 +17,24 @@
 
 <acme:form>
 	
-	<acme:input-textarea code="inventor.quantity.form.label.number" path="number"/>
-	<acme:input-textbox code="inventor.quantity.form.label.item-code" path="item-code"/>
+	<acme:input-integer code="inventor.quantity.form.label.number" path="number"/>
 	
+	<jstl:choose>
+		<jstl:when test="${command == 'create'}">
+			<acme:input-select code="inventor.quantity.form.label.item-code" path="item-code">
+				<jstl:forEach var="item" items="${items}">	
+					<acme:input-option code="${item.code}" value="${item.code}"/>
+				</jstl:forEach>
+			</acme:input-select>
+		</jstl:when>
+		<jstl:otherwise>
+			<acme:input-textbox readonly='true' code="inventor.quantity.form.label.item-code" path="item-code"/>
+		</jstl:otherwise>
+	</jstl:choose>
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(command, 'show, update, delete')}">
 			<acme:submit code="inventor.quantity.form.button.update" action="/inventor/quantity/update"/>
-		<acme:submit code="inventor.quantity.form.button.delete" action="/inventor/quantity/delete"/>
+			<acme:submit code="inventor.quantity.form.button.delete" action="/inventor/quantity/delete"/>
 		</jstl:when>
 		<jstl:when test="${command == 'create'}">
 			<acme:submit code="inventor.quantity.form.button.create" action="/inventor/quantity/create"/>
