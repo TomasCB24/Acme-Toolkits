@@ -45,6 +45,7 @@ master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.shut-down = Shut down
 master.menu.administrator.announcement.list-recent = List recent announcements
+master.menu.administrator.create = Create new Announcement
 
 
 

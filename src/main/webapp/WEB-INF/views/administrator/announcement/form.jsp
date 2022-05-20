@@ -24,11 +24,6 @@
 			<acme:input-option code="administrator.announcement.form.label.is-critical" value="TRUE" selected="${flag eq 'TRUE'}"/>
 			<acme:input-option code="administrator.announcement.form.label.is-not-critical" value="FALSE" selected="${flag eq 'FALSE'}"/>
 		</acme:input-select>
-		
-				
-	<jstl:if test="${command == 'show'}">
-			<acme:input-textbox code="administrator.announcement.form.label.creation-moment" path="creationMoment"/>	
-	</jstl:if>
 	
 	<jstl:if test="${command == 'create'}">
 		<acme:input-checkbox code="administrator.announcement.form.label.confirmation" path="confirmation"/>
