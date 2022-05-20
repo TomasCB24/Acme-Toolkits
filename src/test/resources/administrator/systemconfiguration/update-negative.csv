@@ -1,0 +1,10 @@
+key,accepted-currencies,system-currency,strong-spam-words,strong-spam-threshold,weak-spam-words,weak-spam-threshold
+system-configuration-01,"ASDF,USD,GBP,PLN",ASDF, "sex, sexo, hard core, viagra, cialis, bitch", 0.20, "sexy, nigeria, you've won, has ganado, one million, un millón, two million", 0.35
+system-configuration-01,"ASDF,USD,GBP,PLN",EUR, "sex, sexo, hard core, viagra, cialis, bitch", 0.20, "sexy, nigeria, you've won, has ganado, one million, un millón, two million", 0.35
+system-configuration-01,"USD,USD,GBP,PLN",ASDF, "sex, sexo, hard core, viagra, cialis, bitch", 0.20, "sexy, nigeria, you've won, has ganado, one million, un millón, two million", 0.35
+system-configuration-01,"123,USD,GBP,PLN",123, "sex, sexo, hard core, viagra, cialis, bitch", 0.20, "sexy, nigeria, you've won, has ganado, one million, un millón, two million", 0.35
+system-configuration-01,"123,USD,GBP,PLN",EUR, "sex, sexo, hard core, viagra, cialis, bitch", 0.20, "sexy, nigeria, you've won, has ganado, one million, un millón, two million", 0.35
+system-configuration-01,"EUR,USD,GBP,PLN",EUR, "sex, sexo, hard core, viagra, cialis, bitch", 1.20, "sexy, nigeria, you've won, has ganado, one million, un millón, two million", 0.35
+system-configuration-01,"EUR,USD,GBP,PLN",EUR, "sex, sexo, hard core, viagra, cialis, bitch", 0.20, "sexy, nigeria, you've won, has ganado, one million, un millón, two million", 1000000000000000000000.0
+system-configuration-01,"EUR,USD,GBP,PLN",EUR, "sex, sexo, hard core, viagra, cialis, bitch", asdf, "sexy, nigeria, you've won, has ganado, one million, un millón, two million", 1
+system-configuration-01,"EUR,USD,GBP,PLN",EUR, "sex, sexo, hard core, viagra, cialis, bitch", asdf, "sexy, nigeria, you've won, has ganado, one million, un millón, two million", asdf
