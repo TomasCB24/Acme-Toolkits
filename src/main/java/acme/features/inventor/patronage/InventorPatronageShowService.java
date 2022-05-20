@@ -8,6 +8,7 @@ import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
+import acme.helpers.PatronageHelper;
 import acme.roles.Inventor;
 import acme.roles.Patron;
 
@@ -16,6 +17,9 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 
 	@Autowired
 	protected InventorPatronageRepository repository;
+	
+	@Autowired
+	protected PatronageHelper helper;
 
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
@@ -53,7 +57,7 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "code", "legalStuff", "budget", "creationDate", "initialPeriodDate", "finalPeriodDate", "link", "draftMode", "status");
+		request.unbind(entity, model, "code", "legalStuff", "creationDate", "initialPeriodDate", "finalPeriodDate", "link", "draftMode", "status");
 		
 		//Patron details:
 		final Patronage patronage = this.repository.findOnePatronageById(entity.getId());
@@ -65,6 +69,9 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		model.setAttribute("company", company);
 		model.setAttribute("statement", statement);
 		model.setAttribute("patronLink", patronLink);
+		
+		// Budget
+		model.setAttribute("budget", this.helper.getPatronageBudget(entity));
 		
 	}
 	

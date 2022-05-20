@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.configuration.SystemConfiguration;
-import acme.entities.items.Item;
+import acme.entities.patronages.Patronage;
 import acme.features.authenticated.systemconfiguration.AuthenticatedSystemConfigurationRepository;
 import acme.framework.datatypes.Money;
 import acme.framework.roles.Any;
@@ -12,7 +12,7 @@ import acme.framework.services.AbstractService;
 
 
 @Service
-public class ItemHelper implements AbstractService<Any, Item> {
+public class PatronageHelper implements AbstractService<Any, Patronage> {
 	
 	// Internal state ---------------------------------------------------------
 	
@@ -21,42 +21,38 @@ public class ItemHelper implements AbstractService<Any, Item> {
 	
 	@Autowired
 	protected AuthenticatedSystemConfigurationRepository authSystemConfigRepo;
-
 	
-	
-	public Money getItemRetailPrice(final Item item) {
+	public Money getPatronageBudget(final Patronage patronage) {
 		final Money retailPrice = new Money();
 		final Double amount;
 		final String currency;
-		final String itemCurrency;
-
-		
+		final String patronageCurrency;
 
 		final SystemConfiguration sc = this.authSystemConfigRepo.findSystemConfiguration();
 		currency = sc.getSystemCurrency();
 		
-		itemCurrency = item.getRetailPrice().getCurrency();
-		amount = item.getRetailPrice().getAmount();
-		if(!itemCurrency.equals(currency)) {
+		patronageCurrency = patronage.getBudget().getCurrency();
+		amount = patronage.getBudget().getAmount();
+		if(!patronageCurrency.equals(currency)) {
 			
 			
 			final Money m = new Money();
 			m.setAmount(amount);
-			m.setCurrency(itemCurrency);
+			m.setCurrency(patronageCurrency);
 			
 			final Money res;
 			res = this.moneyExchangeService.computeMoneyExchange(m, currency).target;
 			retailPrice.setAmount(res.getAmount());
 			
-			
-			
-			
 		} else {
+			
 			retailPrice.setAmount(amount);
+		
 		}
+		
 		retailPrice.setCurrency(currency);
 		
 		return retailPrice;
+		
 	}
-
 }
