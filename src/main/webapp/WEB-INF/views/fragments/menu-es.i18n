@@ -33,7 +33,6 @@ master.menu.anonymous.favourite-link-juan = 30697250R: Salado Jurado, Juan
 master.menu.authenticated = Autenticado
 master.menu.authenticated.currency-system = Sistema de Configuración de la Moneda 
 master.menu.authenticated.list-recent = Anuncios Recientes
-master.menu.authenticated.money-exchange = Cambio de dinero
 
 # master.menu.administrator ###################################################
 

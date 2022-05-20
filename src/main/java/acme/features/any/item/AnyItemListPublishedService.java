@@ -10,6 +10,7 @@ import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Any;
 import acme.framework.services.AbstractListService;
+import acme.helpers.ItemHelper;
 
 @Service
 public class AnyItemListPublishedService implements AbstractListService<Any, Item> {
@@ -18,6 +19,9 @@ public class AnyItemListPublishedService implements AbstractListService<Any, Ite
 
 	@Autowired
 	protected AnyItemRepository repository;
+	
+	@Autowired
+	protected ItemHelper helper;
 
 	// AbstractShowService<Any, Item> ---------------------------
 	
@@ -47,9 +51,10 @@ public class AnyItemListPublishedService implements AbstractListService<Any, Ite
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "type", "name","retailPrice","code");
+		request.unbind(entity, model, "type", "name","code");
 
-		model.setAttribute("quantity", "-");
+		// Retail price
+		model.setAttribute("retailPrice", this.helper.getItemRetailPrice(entity));
 		
 	}
 

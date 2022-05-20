@@ -20,7 +20,9 @@
 	<acme:list-column code="inventor.item.list.label.type" path="type" width="30%"/>
 	<acme:list-column code="inventor.item.list.label.name" path="name" width="30%"/>
 	<acme:list-column code="inventor.item.list.label.retailPrice" path="retailPrice" width="25%"/>
-	<acme:list-column code="inventor.item.list.label.quantity" path="quantity" width="15%"/>
+	<jstl:if test="${command != 'list-mine'}">
+		<acme:list-column code="inventor.item.list.label.quantity" path="quantity" width="15%"/>
+	</jstl:if>
 
 </acme:list>
 
