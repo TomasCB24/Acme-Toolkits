@@ -9,6 +9,7 @@ import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Any;
 import acme.framework.services.AbstractShowService;
+import acme.helpers.ItemHelper;
 
 @Service
 public class AnyItemShowService implements AbstractShowService<Any, Item> {
@@ -17,6 +18,9 @@ public class AnyItemShowService implements AbstractShowService<Any, Item> {
 
 	@Autowired
 	protected AnyItemRepository repository;
+	
+	@Autowired
+	protected ItemHelper helper;
 
 	// AbstractShowService<Any, Toolkit> ---------------------------
 	
@@ -59,7 +63,7 @@ public class AnyItemShowService implements AbstractShowService<Any, Item> {
 		assert model != null;
 		
 		request.unbind(entity, model, "type", "name","code",
-			"technology","description","retailPrice","link");
+			"technology","description","link");
 		
 		// Inventor full name
 
@@ -67,6 +71,9 @@ public class AnyItemShowService implements AbstractShowService<Any, Item> {
 		inventor = entity.getInventor().getIdentity().getFullName();
 
 		model.setAttribute("inventor", inventor);
+		
+		// Retail price
+		model.setAttribute("retailPrice", this.helper.getItemRetailPrice(entity));
 		
 	}
 

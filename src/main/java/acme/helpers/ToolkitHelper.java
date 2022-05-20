@@ -48,10 +48,10 @@ public class ToolkitHelper implements AbstractService<Any, Toolkit>  {
 			
 			final SystemConfiguration sc = this.repository.findSystemConfiguration();
 			currency = sc.getSystemCurrency();
+			amount = this.repository.computeRetailPriceByToolkitId(entity.getId());
 			
-			
-			if(currencies.size()==1 && !currencies.contains(currency)) {	// si tienen la misma moneda los sumo y multiplico (no tiene por qué ser la moneda de mi systemconfiguration
-				amount = this.repository.computeRetailPriceByToolkitId(entity.getId());
+			if(currencies.size()==1 && !currencies.contains(currency)) {
+				
 				
 				final Money m = new Money();
 				m.setAmount(amount);
@@ -87,6 +87,8 @@ public class ToolkitHelper implements AbstractService<Any, Toolkit>  {
 				
 				
 				
+			} else {
+				retailPrice.setAmount(amount);
 			}
 			retailPrice.setCurrency(currency);
 			

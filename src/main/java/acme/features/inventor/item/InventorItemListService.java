@@ -11,6 +11,7 @@ import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.helpers.CollectionHelper;
 import acme.framework.services.AbstractListService;
+import acme.helpers.ItemHelper;
 import acme.roles.Inventor;
 
 @Service
@@ -20,6 +21,9 @@ public class InventorItemListService implements AbstractListService<Inventor, It
 
 	@Autowired
 	protected InventorItemRepository repository;
+	
+	@Autowired
+	protected ItemHelper helper;
 
 	// AbstractListService<Inventor, Item> ---------------------------
 	
@@ -73,7 +77,7 @@ public class InventorItemListService implements AbstractListService<Inventor, It
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "type", "name","retailPrice");
+		request.unbind(entity, model, "type", "name");
 		
 		//Quantity
 		
@@ -87,6 +91,9 @@ public class InventorItemListService implements AbstractListService<Inventor, It
 		quantity = this.repository.findQuantityForItemInToolkit(toolkitId, itemId);
 		
 		model.setAttribute("quantity", quantity);
+		
+		// Retail price
+		model.setAttribute("retailPrice", this.helper.getItemRetailPrice(entity));
 		
 	}
 

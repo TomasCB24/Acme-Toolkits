@@ -23,6 +23,7 @@ import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Any;
 import acme.framework.services.AbstractListService;
+import acme.helpers.ItemHelper;
 
 @Service
 public class AnyItemListService implements AbstractListService<Any, Item> {
@@ -32,6 +33,9 @@ public class AnyItemListService implements AbstractListService<Any, Item> {
 	@Autowired
 	protected AnyItemRepository repository;
 
+	@Autowired
+	protected ItemHelper helper;
+	
 	// AbstractListService<Any, Item> ---------------------------
 	
 	@Override
@@ -70,7 +74,7 @@ public class AnyItemListService implements AbstractListService<Any, Item> {
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "type", "name","retailPrice","code");
+		request.unbind(entity, model, "type", "name","code");
 		
 		//Quantity
 		
@@ -84,6 +88,9 @@ public class AnyItemListService implements AbstractListService<Any, Item> {
 		quantity = this.repository.findQuantityForItemInToolkit(toolkitId, itemId);
 		
 		model.setAttribute("quantity", quantity);
+		
+		// RetailPrice
+		model.setAttribute("retailPrice", this.helper.getItemRetailPrice(entity));
 		
 	}
 
