@@ -21,10 +21,10 @@
 	<acme:input-textarea readonly='true' code="inventor.patronage.form.label.statement" path="statement"/>
 	<acme:input-url readonly='true' code="inventor.patronage.form.label.patronLink" path="patronLink"/>
 	
-		<jstl:choose>
-	<jstl:when test="${acme:anyOf(command, 'show, update') && draftMode == 'true' && status=='PROPOSED'}">
-		<acme:submit code="inventor.patronage.form.button.update" action="/inventor/patronage/update"/>
-	</jstl:when>
+	<jstl:choose>
+		<jstl:when test="${acme:anyOf(command, 'show, update') && draftMode == 'false' && status=='PROPOSED'}">
+			<acme:submit code="inventor.patronage.form.button.update" action="/inventor/patronage/update"/>
+		</jstl:when>
 
 	</jstl:choose>
 </acme:form>
