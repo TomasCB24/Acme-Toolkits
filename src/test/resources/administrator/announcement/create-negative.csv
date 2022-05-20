@@ -1,5 +1,5 @@
-record-index,title,body,creationMoment,flag,link
-0,Hola1,Body 1,2040/12/11 23:59,true,ffffff
-1,Hola2,Body 2,2040/12/11 00:00,fallo,http://www.example.com
-2,,Body 3,2040/02/28 10:00,true,http://www.acme.com/master/welcome
-3,Hola4,,2040/03/01 11:00,true,http://www.acme.org
+record-index,title,body,flag,link
+0,Hola1,Body 1,true,ffffff
+1,Hola2,Body 2,fallo,http://www.example.com
+2,,Body 3,true,http://www.acme.com/master/welcome
+3,Hola4,,true,http://www.acme.org

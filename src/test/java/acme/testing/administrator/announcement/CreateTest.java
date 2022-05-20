@@ -14,25 +14,23 @@ public class CreateTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/administrator/announcement/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positiveTest(final int recordIndex, final String title, final String body, final String creationMoment,final String flag,final String link) {
+	public void positiveTest(final int recordIndex, final String title, final String body,final String flag,final String link) {
 		super.signIn("administrator", "administrator");
 
-		super.clickOnMenu("Administrator", "List recent announcements");
-		super.checkListingExists();
+		super.clickOnMenu("Administrator", "Create new Announcement");
+		super.checkFormExists();
 
-		super.clickOnButton("Create");
+		
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("body", body);		
 		super.fillInputBoxIn("link", link);
 		super.fillInputBoxIn("flag", flag);
-		//super.fillInputBoxIn("creationMoment", creationMoment);
-		//TENGO QUE ESPERAR A PONER ALGO AQUI PARA PULSAR EL BOTON DE "ESTOY DE ACUERDO"
+		super.fillInputBoxIn("confirmation", "true");
 		super.clickOnSubmit("Create");
 
-		super.clickOnMenu("Administrator", "List recent announcements");
+		super.clickOnMenu("Authenticated", "List recent announcements");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
-		super.checkColumnHasValue(recordIndex, 0, creationMoment);
 		super.checkColumnHasValue(recordIndex, 1, title);
 		super.clickOnListingRecord(recordIndex);
 
@@ -40,22 +38,20 @@ public class CreateTest extends TestHarness {
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("body", body);
 		super.checkInputBoxHasValue("link", link);
-		super.checkInputBoxHasValue("flag", flag);
-		//super.checkInputBoxHasValue("creationMoment", creationMoment);
+		
 
 		super.signOut();
 	}
 
 	
 	@ParameterizedTest
-	@CsvFileSource(resources = "/employer/job/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/administrator/announcement/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
-	public void negativeTest(final int recordIndex, final String title, final String body, final String creationMoment,final String flag,final String link) {
+	public void negativeTest(final int recordIndex, final String title, final String body,final String flag,final String link) {
 
 		super.signIn("administrator", "administrator");
 
-		super.clickOnMenu("Administrator", "List recent announcements");
-		super.clickOnButton("Create");
+		super.clickOnMenu("Administrator", "Create new Announcement");
 		super.checkFormExists();
 
 		super.fillInputBoxIn("title", title);
@@ -68,16 +64,21 @@ public class CreateTest extends TestHarness {
 
 		super.signOut();
 	}
-
+	
 	@Test
 	@Order(30)
 	public void hackingTest() {
 		super.checkNotLinkExists("Account");
-		super.navigate("/administrator/list-recent");
+		super.navigate("/administrator/announcement/create");
 		super.checkPanicExists();
 
 		super.signIn("patron1", "patron1");
-		super.navigate("/employer/job/create");
+		super.navigate("/administrator/announcement/create");
+		super.checkPanicExists();
+		super.signOut();
+		
+		super.signIn("inventor1", "inventor1");
+		super.navigate("/administrator/announcement/create");
 		super.checkPanicExists();
 		super.signOut();
 	}

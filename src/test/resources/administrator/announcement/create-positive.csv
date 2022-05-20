@@ -1,6 +1,6 @@
-record-index,title,body,creationMoment,flag,link
-0,Hola1,Body 1,2040/12/11 23:59,true,http://www.example.com
-1,Hola2,Body 2,2040/12/11 00:00,true,http://www.example.com
-2,Hola3,Body 3,2040/02/28 10:00,true,http://www.acme.com/master/welcome
-3,Hola4,Body 4,2040/03/01 11:00,true,http://www.acme.org
+record-index,title,body,flag,link
+3,Hola1,Body 1,true,http://www.example.com
+4,Hola2,Body 2,true,http://www.example.com
+5,Hola3,Body 3,true,http://www.acme.com/master/welcome
+6,Hola4,Body 4,true,http://www.acme.org
 
