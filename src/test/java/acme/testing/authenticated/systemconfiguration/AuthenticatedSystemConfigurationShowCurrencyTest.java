@@ -27,7 +27,7 @@ public class AuthenticatedSystemConfigurationShowCurrencyTest extends TestHarnes
 	@ParameterizedTest
 	@CsvFileSource(resources = "/authenticated/systemconfiguration/show-currency.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
-	public void NegativeTestAnonymous(final String recordIndex, final String acceptedCurrencies, final String systemCurrency) {
+	public void hackingTestAnonymous(final String recordIndex, final String acceptedCurrencies, final String systemCurrency) {
 		
 		super.navigate("/authenticated/system-configuration/show");
 		super.checkPanicExists();

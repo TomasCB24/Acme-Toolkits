@@ -63,12 +63,11 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		assert model != null;
 		
 		request.unbind(entity, model, "code", "title","description",
-						"assemblyNotes","link");
-	
-		//Retail Price
-	
-		model.setAttribute("retailPrice", this.helper.getToolkitRetailPrice(entity));
+						"assemblyNotes","link","draftMode");
 		
+		//Retail Price
+		
+		model.setAttribute("retailPrice", this.helper.getToolkitRetailPrice(entity));
 		
 	}
 

@@ -12,10 +12,22 @@ inventor.toolkit.form.label.code = Código:
 inventor.toolkit.form.label.title = Título:
 inventor.toolkit.form.label.description = Descripción:
 inventor.toolkit.form.label.assembly-notes = Notas de Montaje:
-inventor.toolkit.form.label.retail-price = Precio de Venta:
 inventor.toolkit.form.label.link = Enlace: (Opcional)
+inventor.toolkit.form.label.retail-price = Precio de Venta:
+
+inventor.toolkit.form.button.items = Elementos
+inventor.toolkit.form.button.update = Actualizar
+inventor.toolkit.form.button.delete = Borrar
+inventor.toolkit.form.button.publish = Publicar
+inventor.toolkit.form.button.create = Crear
 
 inventor.toolkit.list.label.code = Código
 inventor.toolkit.list.label.title = Título
+inventor.toolkit.list.label.retail-price = Precio de Venta
 
-inventor.toolkit.form.label.items = Elementos
+inventor.toolkit.list.button.create = Crear
+
+inventor.toolkit.form.error.duplicated-code = El código introducido ya pertenece a una Toolkit existente
+inventor.toolkit.form.error.no-item = No se pueden publicar toolkits que no tienen elementos
+
+inventor.quantity.form.button.list = Elementos

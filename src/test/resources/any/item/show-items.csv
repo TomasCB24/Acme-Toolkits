@@ -1,6 +1,6 @@
 recordIndex,type,name,retail-price,code,technology,description,link,inventor
-0,Tool,1,"EUR 22.90",AAA-000-E,1,1,null,"Acme, Inventor5"
-1,Tool,1,"EUR 30.00",AAA-000-A,1,1,null,"Acme, Inventor1"
-2,Tool,1,"EUR 39.00",AAA-000-B,1,1,null,"Acme, Inventor2"
-10,Component,Item name 3,"EUR 6.00",AAA-002-D,tech,This is description 3,null,"Acme, Inventor4"
-11,Component,Item name 3,"EUR 99.00",AAA-002-E,T,<script>alert("hi!")<script>,null,"Acme, Inventor5"
+0,Tool,1,"EUR 30.00",AAA-000-A,1,1,null,"Acme, Inventor1"
+1,Tool,1,"EUR 39.00",AAA-000-B,1,1,null,"Acme, Inventor2"
+2,Tool,1,"EUR 99.00",AAA-000-C,1,1,null,"Acme, Inventor3"
+10,Component,Item name 3,"EUR 230.00",AAA-002-A,Technology,!·$%&(/)=?¿¡ª!|@#~€¬,null,"Acme, Inventor1"
+11,Component,Item name 3,"EUR 27.00",AAA-002-B,T,<script>alert("hi!")<script>,null,"Acme, Inventor2"
