@@ -20,8 +20,9 @@
     <acme:list-column code="any.item.list.label.type" path="type" width="30%"/>
     <acme:list-column code="any.item.list.label.name" path="name" width="30%"/>
     <acme:list-column code="any.item.list.label.retailPrice" path="retailPrice" width="25%"/> 
-    <acme:list-column code="any.item.list.label.quantity" path="quantity" width="15%"/>  
-
+    <jstl:if test="${command != 'list-published'}">
+    	<acme:list-column code="any.item.list.label.quantity" path="quantity" width="15%"/>  
+	</jstl:if>
 		
     
 

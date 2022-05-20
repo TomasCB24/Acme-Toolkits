@@ -30,5 +30,6 @@ inventor.item.list.label.quantity = Quantity
 inventor.item.list.button.create = Create
 
 inventor.item.form.error.duplicated-code = The entered code already belongs to an existing Item
-inventor.item.form.error.invalid-money = The amount of money must be positive
+inventor.item.form.error.invalid-money = The currency must be accepted by the system
+inventor.item.form.error.negative-money = The amount of money must be positive
 

@@ -13,7 +13,6 @@ import acme.entities.items.Item;
 import acme.entities.toolkits.Toolkit;
 import acme.features.any.item.AnyItemRepository;
 import acme.features.any.toolkit.AnyToolkitRepository;
-import acme.features.authenticated.moneyExchange.AuthenticatedMoneyExchangePerformService;
 import acme.framework.datatypes.Money;
 import acme.framework.roles.Any;
 import acme.framework.services.AbstractService;
@@ -28,7 +27,7 @@ public class ToolkitHelper implements AbstractService<Any, Toolkit>  {
 		protected AnyToolkitRepository repository;
 		
 		@Autowired
-		protected AuthenticatedMoneyExchangePerformService moneyExchangeService;
+		protected MoneyExchangeHelper moneyExchangeService;
 		
 		@Autowired
 		protected AnyItemRepository anyItemRepository;
@@ -51,7 +50,7 @@ public class ToolkitHelper implements AbstractService<Any, Toolkit>  {
 			currency = sc.getSystemCurrency();
 			
 			
-			if(currencies.size()==1) {	// si tienen la misma moneda los sumo y multiplico (no tiene por qué ser la moneda de mi systemconfiguration
+			if(currencies.size()==1 && !currencies.contains(currency)) {	// si tienen la misma moneda los sumo y multiplico (no tiene por qué ser la moneda de mi systemconfiguration
 				amount = this.repository.computeRetailPriceByToolkitId(entity.getId());
 				
 				final Money m = new Money();
@@ -65,7 +64,7 @@ public class ToolkitHelper implements AbstractService<Any, Toolkit>  {
 				
 				
 				
-			} else {  // si no, tengo que convertir CADA retailPrice de CADA item al currency del SystemConfiguration, y luego multiplicar por las cantidades y sumar
+			} else if(currencies.size()>1){  // si no, tengo que convertir CADA retailPrice de CADA item al currency del SystemConfiguration, y luego multiplicar por las cantidades y sumar
 				
 				final List<Item> itemsOnToolkit = this.repository.findItemsByToolkitId(entity.getId()).stream().collect(Collectors.toSet()).stream().collect(Collectors.toList());
 				

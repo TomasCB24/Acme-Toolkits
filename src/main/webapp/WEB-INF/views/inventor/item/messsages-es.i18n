@@ -30,4 +30,5 @@ inventor.item.list.label.quantity = Cantidad
 inventor.item.list.button.create = Crear
 
 inventor.item.form.error.duplicated-code = El código introducido ya pertenece a un elemento existente
-inventor.item.form.error.invalid-money = La cantidad del precio al por menor debe ser positiva
+inventor.item.form.error.invalid-money = La moneda debe estar aceptada por el sistema
+inventor.item.form.error.negative-money = La cantidad del precio al por menor debe ser positiva
