@@ -25,13 +25,6 @@ import acme.framework.roles.Administrator;
 public class AdministratorAnnouncementController extends AbstractController<Administrator, Announcement> {
 
 	// Internal state ---------------------------------------------------------
-
-	@Autowired
-	protected AdministratorAnnouncementListRecentService	listRecentService;
-
-	@Autowired
-	protected AdministratorAnnouncementShowService			showService;
-
 	@Autowired
 	protected AdministratorAnnouncementCreateService		createService;
 
@@ -40,9 +33,7 @@ public class AdministratorAnnouncementController extends AbstractController<Admi
 
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("show", this.showService);
 		super.addCommand("create", this.createService);
-		super.addCommand("list-recent", "list", this.listRecentService);
 	}
 
 }
