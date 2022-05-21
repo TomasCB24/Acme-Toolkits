@@ -39,6 +39,7 @@ public class PatronPatronageUpdateService  implements AbstractUpdateService<Patr
 		masterId = request.getModel().getInteger("id");
 		patronage = this.repository.findOnePatronageById(masterId);
 		patron = patronage.getPatron();
+		assert patron != null;
 		result = (
 			patronage.isDraftMode() &&
 			request.isPrincipal(patron)
@@ -55,10 +56,9 @@ public class PatronPatronageUpdateService  implements AbstractUpdateService<Patr
 		
 		final String inventorUsername = String.valueOf(request.getModel().getAttribute("inventor"));
 		final Inventor inventor = this.repository.findOneInventorByUserName(inventorUsername);
-		errors.state(request, inventor!=null, "inventor", "patron.patronage.form.error.inventor-not-found");
 		entity.setInventor(inventor);
 		
-		request.bind(entity, errors, "code", "status","legalStuff","budget","creationDate", "initialPeriodDate", "finalPeriodDate", "link");
+		request.bind(entity, errors, "code","legalStuff","budget", "initialPeriodDate", "finalPeriodDate", "link");
 		
 	}
 
@@ -114,7 +114,7 @@ public class PatronPatronageUpdateService  implements AbstractUpdateService<Patr
 			errors.state(request, entity.getInitialPeriodDate().after(minimumInitialDate), "initialPeriodDate", "patron.patronage.form.error.too-close-initial");
 		}
 		
-		if (!errors.hasErrors("finalPeriodDate")) {
+		if (!errors.hasErrors("finalPeriodDate") && !errors.hasErrors("initialPeriodDate")) {
 			Date minimumFinalDate;
 
 			final Calendar calendar = Calendar.getInstance();
@@ -135,6 +135,12 @@ public class PatronPatronageUpdateService  implements AbstractUpdateService<Patr
 			final boolean res = set.contains(currency);
 			
 			errors.state(request, res, "budget", "patron.patronage.form.error.unknown-currency");
+		}
+		
+		if(!errors.hasErrors("inventor")) {
+			final String inventorUsername = String.valueOf(request.getModel().getAttribute("inventor"));
+			final Inventor inventor = this.repository.findOneInventorByUserName(inventorUsername);
+			errors.state(request, inventor!=null, "inventor", "patron.patronage.form.error.inventor-not-found");
 		}
 		
 	}

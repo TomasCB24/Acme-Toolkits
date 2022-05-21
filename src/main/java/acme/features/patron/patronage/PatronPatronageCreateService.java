@@ -1,5 +1,7 @@
 package acme.features.patron.patronage;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashSet;
@@ -9,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.patronages.Patronage;
+import acme.entities.patronages.Status;
 import acme.features.any.toolkit.AnyToolkitRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
@@ -44,6 +47,8 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		result = new Patronage();
 		result.setDraftMode(true);
 		result.setPatron(patron);
+		result.setCreationDate(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()));
+		result.setStatus(Status.PROPOSED);
 
 		return result;
 	}
@@ -57,7 +62,7 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		final Inventor inventor = this.repository.findOneInventorByUserName(inventorUsername);
 		entity.setInventor(inventor);
 		
-		request.bind(entity, errors, "code", "status","legalStuff","budget","creationDate", "initialPeriodDate", "finalPeriodDate", "link");
+		request.bind(entity, errors, "code","legalStuff","budget", "initialPeriodDate", "finalPeriodDate", "link");
 		
 	}
 
@@ -67,7 +72,7 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "code", "status","legalStuff","budget","creationDate", "initialPeriodDate", "finalPeriodDate", "link");
+		request.unbind(entity, model, "code", "status","legalStuff","budget", "initialPeriodDate", "finalPeriodDate", "link");
 		
 	}
 
@@ -97,7 +102,7 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 			errors.state(request, entity.getInitialPeriodDate().after(minimumInitialDate), "initialPeriodDate", "patron.patronage.form.error.too-close-initial");
 		}
 		
-		if (!errors.hasErrors("finalPeriodDate")) {
+		if (!errors.hasErrors("finalPeriodDate") && !errors.hasErrors("initialPeriodDate")) {
 			Date minimumFinalDate;
 
 			final Calendar calendar = Calendar.getInstance();
