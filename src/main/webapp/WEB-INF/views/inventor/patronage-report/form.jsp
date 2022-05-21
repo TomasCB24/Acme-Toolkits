@@ -4,8 +4,21 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:input-textbox code="inventor.patronage-report.form.label.sequence-number" path="sequenceNumber"/>
-	<acme:input-moment code="inventor.patronage-report.form.label.creation-moment" path="creationMoment"/>
+
+	<jstl:if test="${command == 'show'}">
+		<acme:input-textbox code="inventor.patronage-report.form.label.sequence-number" path="sequenceNumber"/>
+		<acme:input-moment code="inventor.patronage-report.form.label.creation-moment" path="creationMoment"/>
+	</jstl:if>
+	
 	<acme:input-textarea code="inventor.patronage-report.form.label.memorandum" path="memorandum"/>
 	<acme:input-textbox code="inventor.patronage-report.form.label.link" path="link"/>	
+
+	<jstl:if test="${command == 'create'}">
+		<acme:input-textbox code="inventor.patronage-report.form.label.serial-number" path="serialNumber"/>
+				<acme:input-textbox code="inventor.patronage-report.form.label.patronage-code" path="patronageCode"/>
+		<acme:input-checkbox code="inventor.patronage-report.list.label.confirmation" path="confirmation"/>
+
+		<acme:submit code="inventor.patronage-report.form.button.create" action="/inventor/patronage-report/create"/>
+	</jstl:if>
+
 </acme:form>
