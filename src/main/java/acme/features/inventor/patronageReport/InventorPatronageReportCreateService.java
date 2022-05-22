@@ -52,7 +52,6 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		
 		final String code = String.valueOf(request.getModel().getAttribute("patronageCode"));
 		final Patronage patronage = this.repository.findOnePatronageByCode(code);
-		errors.state(request, patronage!=null, "code", "inventor.patronage-report.form.error.invalid-code");
 		entity.setPatronage(patronage);
 
 		request.bind(entity, errors, "memorandum", "link", "serialNumber", "patronageCode");
@@ -77,6 +76,11 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 
 			errors.state(request, existing == null || existing.getId() == entity.getId(), "serialNumber", "inventor.patronage-report.form.error.duplicated-code");
 
+		}
+		if(!errors.hasErrors("patronageCode")) {
+			final String code = String.valueOf(request.getModel().getAttribute("patronageCode"));
+			final Patronage patronage = this.repository.findOnePatronageByCode(code);
+			errors.state(request, patronage!=null, "patronageCode", "inventor.patronage-report.form.error.invalid-code");
 		}
 
 	}
