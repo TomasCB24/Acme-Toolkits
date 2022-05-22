@@ -5,11 +5,11 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.toolkits.Toolkit;
 import acme.features.any.item.AnyItemRepository;
-import acme.features.authenticated.moneyExchange.AuthenticatedMoneyExchangePerformService;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Any;
 import acme.framework.services.AbstractShowService;
+import acme.helpers.MoneyExchangeHelper;
 import acme.helpers.ToolkitHelper;
 
 @Service
@@ -21,7 +21,7 @@ public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
 	protected AnyToolkitRepository repository;
 	
 	@Autowired
-	protected AuthenticatedMoneyExchangePerformService moneyExchangeService;
+	protected MoneyExchangeHelper moneyExchangeService;
 
 	@Autowired
 	protected AnyItemRepository anyItemRepository;

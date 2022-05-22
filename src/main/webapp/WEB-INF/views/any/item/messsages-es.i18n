@@ -20,6 +20,7 @@ any.item.form.label.link = Enlace: (Opcional)
 any.item.form.label.inventor-full-name = Inventor del elemento:
 
 any.item.list.label.type = Tipo
+any.item.list.label.code = Código
 any.item.list.label.name = Nombre
 any.item.list.label.retailPrice = Precio al por menor
 any.item.list.label.quantity = Cantidad

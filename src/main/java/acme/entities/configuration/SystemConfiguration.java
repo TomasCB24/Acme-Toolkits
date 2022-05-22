@@ -16,7 +16,7 @@ import lombok.Setter;
 @Setter
 public class SystemConfiguration extends AbstractEntity{
 	
-	private static final String SPAM_WORDS_PATTERN = "^[a-zñáéíóú\\s']+(,[a-zñáéíóú\\s']+)*$";
+	private static final String SPAM_WORDS_PATTERN = "^[\\pL\\s']+(,[\\pL\\s']+)*$";
 	
 	
 	// Serialisation identifier -----------------------------------------------

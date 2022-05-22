@@ -11,5 +11,16 @@
 any.chirp.list.label.creationMoment = Momento De Creación
 any.chirp.list.label.title = Título
 any.chirp.list.label.author = Author
-any.chirp.form.label.body = Cuerpo
+any.chirp.list.label.body = Cuerpo
 any.chirp.list.label.email = Correo
+any.chirp.list.button.create = Crear
+
+
+any.chirp.form.label.title = Título
+any.chirp.form.label.author = Author
+any.chirp.form.label.body = Cuerpo
+any.chirp.form.label.email = Correo
+any.chirp.form.button.create = Crear
+any.chirp.form.label.confirmation = Confirmación
+any.chirp.confirmation.error = Es necesario marcar el checkbox para poder crear el chirp
+

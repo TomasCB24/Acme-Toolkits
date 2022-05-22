@@ -14,3 +14,6 @@ administrator.system-configuration.form.label.strong-spam-words = Palabras Fuert
 administrator.system-configuration.form.label.strong-spam-threshold = Umbral de Spam Fuerte:
 administrator.system-configuration.form.label.weak-spam-words = Palabras Débiles de Spam:
 administrator.system-configuration.form.label.weak-spam-threshold = Umbral de Spam Débil:
+
+administrator.system-configuration.form.button.update = Actualizar
+administrator.system-configuration.form.error.system-currency = La moneda del sistema debe ser una moneda aceptada

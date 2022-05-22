@@ -9,6 +9,7 @@ import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
+import acme.helpers.ItemHelper;
 import acme.roles.Inventor;
 
 @Service
@@ -16,6 +17,9 @@ public class InventorItemListMineService implements AbstractListService<Inventor
 
 	@Autowired
 	protected InventorItemRepository repository;
+	
+	@Autowired
+	protected ItemHelper helper;
 	
 	@Override
 	public boolean authorise(final Request<Item> request) {
@@ -41,11 +45,11 @@ public class InventorItemListMineService implements AbstractListService<Inventor
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "type", "name","retailPrice");
+		request.unbind(entity, model, "type", "name");
 		
-		//Quantity
 		
-		model.setAttribute("quantity", "-");
+		// Retail price
+		model.setAttribute("retailPrice", this.helper.getItemRetailPrice(entity));
 	}
 
 }

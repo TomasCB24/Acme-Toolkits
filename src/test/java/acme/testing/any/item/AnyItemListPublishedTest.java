@@ -20,9 +20,9 @@ public class AnyItemListPublishedTest extends TestHarness{
 		super.sortListing(1, "asc");
 
 		super.checkColumnHasValue(recordIndex, 0, type);
-		super.checkColumnHasValue(recordIndex, 1, name);
-		super.checkColumnHasValue(recordIndex, 2, retailPrice);
-		super.checkColumnHasValue(recordIndex, 3, quantity);
+		super.checkColumnHasValue(recordIndex, 2, name);
+		super.checkColumnHasValue(recordIndex, 3, retailPrice);
+		super.checkColumnHasValue(recordIndex, 4, quantity);
 		
 	}
 	

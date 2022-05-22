@@ -1,0 +1,4 @@
+record-index,title,body,flag,link
+0,Hola1,Body 1,TRUE,ffffff
+1,,Body 3,TRUE,http://www.acme.com/master/welcome
+2,Hola4,,TRUE,http://www.acme.org

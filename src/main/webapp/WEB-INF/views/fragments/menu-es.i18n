@@ -33,7 +33,6 @@ master.menu.anonymous.favourite-link-juan = 30697250R: Salado Jurado, Juan
 master.menu.authenticated = Autenticado
 master.menu.authenticated.currency-system = Sistema de Configuración de la Moneda 
 master.menu.authenticated.list-recent = Anuncios Recientes
-master.menu.authenticated.money-exchange = Cambio de dinero
 
 # master.menu.administrator ###################################################
 
@@ -45,6 +44,8 @@ master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.dashboard = Panel de indicadores
 master.menu.administrator.shut-down = Parar el sistema
+master.menu.administrator.announcement.list-recent = Anuncios Recientes
+master.menu.administrator.create = Crear Nuevo Anuncio
 
 
 
@@ -68,10 +69,10 @@ master.menu.inventor.item.list-mine = Listar mis elementos
 
 master.menu.user-account = Cuenta
 master.menu.user-account.general-data = Datos generales
-
-
-
-
+master.menu.user-account.patron = Datos de patrocinador
+master.menu.user-account.become-patron = Conviértete en patron
+master.menu.user-account.inventor = Datos de inventor
+master.menu.user-account.become-inventor = Conviértete en inventor
 
 # master.menu.any ####################################################
 
