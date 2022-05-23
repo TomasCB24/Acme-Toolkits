@@ -52,7 +52,7 @@ public class InventorToolkitShowMineTest extends TestHarness{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/inventor/toolkit/list-items-first-toolkit.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
-	public void positiveTestListingItemsOfToolkits(final int recordIndex, final String type, final String name, final String retailPrice, final String quantity) {
+	public void positiveTestListingItemsOfToolkits(final int recordIndex, final String type, final String name, final String code, final String quantity) {
 		super.signIn("inventor1", "inventor1");
 		
 		super.clickOnMenu("Inventor", "List my Toolkits");
@@ -63,18 +63,18 @@ public class InventorToolkitShowMineTest extends TestHarness{
 		super.clickOnButton("Items");
 		
 		super.checkListingExists();
-		super.sortListing(0, "asc");
+		super.sortListing(1, "asc");
 
-		super.checkColumnHasValue(recordIndex, 0, type);
-		super.checkColumnHasValue(recordIndex, 1, name);
-		super.checkColumnHasValue(recordIndex, 2, retailPrice);
-		super.checkColumnHasValue(recordIndex, 3, quantity);
+		super.checkColumnHasValue(recordIndex, 0,quantity);
+		super.checkColumnHasValue(recordIndex, 1, code);
+		super.checkColumnHasValue(recordIndex, 2, name);
+		super.checkColumnHasValue(recordIndex, 3, type);
 		
 	}
 	
 	
 	@ParameterizedTest
-	@CsvFileSource(resources = "/inventor/toolkit/show-items-first-toolkit.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/inventor/toolkit/show-items-second-toolkit.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(30)
 	public void positiveTestShowingItemsOfToolkits(final int recordIndex, final String type, final String name, final String retailPrice, final String code, final String technology, final String description, final String link) {
 		super.signIn("inventor1", "inventor1");
@@ -82,7 +82,7 @@ public class InventorToolkitShowMineTest extends TestHarness{
 		super.clickOnMenu("Inventor", "List my Toolkits");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
-		super.clickOnListingRecord(0);	// first toolkit
+		super.clickOnListingRecord(1);	// second toolkit
 		super.checkButtonExists("Items");
 		super.clickOnButton("Items");
 		

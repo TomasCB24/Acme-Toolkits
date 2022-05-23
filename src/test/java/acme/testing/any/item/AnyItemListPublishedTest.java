@@ -13,7 +13,7 @@ public class AnyItemListPublishedTest extends TestHarness{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/any/item/list-items.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positiveTestListingItemsOfToolkits(final int recordIndex, final String type, final String name, final String retailPrice, final String quantity) {
+	public void positiveTestListingItemsOfToolkits(final int recordIndex, final String type, final String name, final String retailPrice) {
 		
 		super.clickOnMenu("Anonymous", "Published Items list");
 		super.checkListingExists();
@@ -22,7 +22,6 @@ public class AnyItemListPublishedTest extends TestHarness{
 		super.checkColumnHasValue(recordIndex, 0, type);
 		super.checkColumnHasValue(recordIndex, 2, name);
 		super.checkColumnHasValue(recordIndex, 3, retailPrice);
-		super.checkColumnHasValue(recordIndex, 4, quantity);
 		
 	}
 	
