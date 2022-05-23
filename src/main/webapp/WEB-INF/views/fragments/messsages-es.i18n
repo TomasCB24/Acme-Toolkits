@@ -34,3 +34,6 @@ master.panic.text.consult-log = Por favor, consulte el log para ver más detalle
 # master.menu.employer ########################################################
 master.menu.inventor = Inventor
 master.menu.inventor.patronage-report = Reportes de Patrocinios
+
+# form.error ##################################################################
+form.error.spam = El texto introducido contiene spam. Por favor, cuide su lenguaje.

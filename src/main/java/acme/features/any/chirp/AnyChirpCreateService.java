@@ -11,6 +11,7 @@ import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Any;
 import acme.framework.services.AbstractCreateService;
+import acme.helpers.SpamHelper;
 
 @Service
 public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> {
@@ -19,6 +20,9 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> 
 
 	@Autowired
 	protected AnyChirpRepository repository;
+	
+	@Autowired
+	protected SpamHelper helper;
 
 	// AbstractCreateService<Administrator, Shout> interface --------------
 
@@ -63,6 +67,18 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> 
 
         confirmation = request.getModel().getBoolean("confirmation");
         errors.state(request, confirmation, "confirmation", "any.chirp.confirmation.error");
+        
+		if(!errors.hasErrors("title")) {
+			final boolean spamFree = this.helper.spamChecker(entity.getTitle());
+			errors.state(request, spamFree, "title", "form.error.spam");
+		}
+		
+		if(!errors.hasErrors("body")) {
+			final boolean spamFree = this.helper.spamChecker(entity.getBody());
+			errors.state(request, spamFree, "body", "form.error.spam");
+		}
+		
+
 
 	}
 

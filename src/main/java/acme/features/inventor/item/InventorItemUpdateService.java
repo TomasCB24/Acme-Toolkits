@@ -12,6 +12,7 @@ import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractUpdateService;
+import acme.helpers.SpamHelper;
 import acme.roles.Inventor;
 
 @Service
@@ -21,6 +22,9 @@ public class InventorItemUpdateService implements AbstractUpdateService<Inventor
 	
 	@Autowired
 	protected InventorItemRepository repository;
+	
+	@Autowired
+	protected SpamHelper helper;
 
 	// AbstractUpdateService<Inventor, Item> ---------------------------
 	
@@ -91,6 +95,16 @@ public class InventorItemUpdateService implements AbstractUpdateService<Inventor
 			
 			errors.state(request, entity.getRetailPrice().getAmount()>0, "retailPrice", "inventor.item.form.error.negative-money");
 			errors.state(request, systemCurrencies.contains(entity.getRetailPrice().getCurrency()), "retailPrice", "inventor.item.form.error.invalid-money");
+		}
+		
+		if(!errors.hasErrors("name")) {
+			final boolean spamFree = this.helper.spamChecker(entity.getName());
+			errors.state(request, spamFree, "name", "form.error.spam");
+		}
+		
+		if(!errors.hasErrors("description")) {
+			final boolean spamFree = this.helper.spamChecker(entity.getDescription());
+			errors.state(request, spamFree, "description", "form.error.spam");
 		}
 		
 	}

@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.entities.configuration.SystemConfiguration;
 import acme.entities.items.Item;
 import acme.entities.toolkits.Toolkit;
 import acme.framework.repositories.AbstractRepository;
@@ -29,6 +30,9 @@ public interface AnyItemRepository extends AbstractRepository {
   
 	@Query("select i from Item i where i.draftMode = false")
 	Collection<Item> findItemsPublished();
+	
+	@Query("select sc from SystemConfiguration sc")
+	SystemConfiguration findSystemConfiguration();
 
 
 }
