@@ -49,6 +49,8 @@ public class MoneyExchangeHelper implements AbstractService<Authenticated, Money
 			
 			if(lastValidDate.after(lastUpdate)) {	//No valid db entry
 				
+				this.repository.delete(cache);
+				
 				result= this.getMoneyExchange(source, targetCurrency);
 	
 				return result;
