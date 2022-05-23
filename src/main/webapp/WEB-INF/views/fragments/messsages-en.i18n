@@ -35,3 +35,6 @@ master.panic.text.consult-log = Please, consult the log to see them full stack t
 # master.menu.employer ########################################################
 master.menu.inventor = Inventor
 master.menu.inventor.patronage-report = Patronage Report
+
+# form.error ##################################################################
+form.error.spam = The text entered contains spam words. Please, watch your language.

@@ -24,6 +24,7 @@ import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Administrator;
 import acme.framework.services.AbstractCreateService;
+import acme.helpers.SpamHelper;
 
 
 @Service
@@ -31,6 +32,9 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 
 	@Autowired
 	protected AuthenticatedAnnouncementRepository repository;
+	
+	@Autowired
+	protected SpamHelper helper;
 
 
 	@Override
@@ -83,6 +87,17 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+		if(!errors.hasErrors("title")) {
+			final boolean spamFree = this.helper.spamChecker(entity.getTitle());
+			errors.state(request, spamFree, "title", "form.error.spam");
+		}
+		
+		if(!errors.hasErrors("body")) {
+			final boolean spamFree = this.helper.spamChecker(entity.getBody());
+			errors.state(request, spamFree, "body", "form.error.spam");
+		}
+		
 
 		boolean confirmation;
 

@@ -8,6 +8,7 @@ import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractCreateService;
+import acme.helpers.SpamHelper;
 import acme.roles.Inventor;
 
 @Service
@@ -17,6 +18,9 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 
 	@Autowired
 	protected InventorToolkitRepository repository;
+	
+	@Autowired
+	protected SpamHelper helper; 
 	
 	// AbstractCreateService<Inventor, Toolkit> ---------------------------
 
@@ -66,6 +70,23 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 			
 			errors.state(request, existing == null || existing.getId() == entity.getId(), "code", "inventor.toolkit.form.error.duplicated-code");
 		}
+		
+		if(!errors.hasErrors("title")) {
+			final boolean spamFree = this.helper.spamChecker(entity.getTitle());
+			errors.state(request, spamFree, "title", "form.error.spam");
+		}
+		
+		if(!errors.hasErrors("description")) {
+			final boolean spamFree = this.helper.spamChecker(entity.getDescription());
+			errors.state(request, spamFree, "description", "form.error.spam");
+		}
+		
+		if(!errors.hasErrors("assemblyNotes")) {
+			final boolean spamFree = this.helper.spamChecker(entity.getAssemblyNotes());
+			errors.state(request, spamFree, "assemblyNotes", "form.error.spam");
+		}
+		
+		
 		
 	}
 	
