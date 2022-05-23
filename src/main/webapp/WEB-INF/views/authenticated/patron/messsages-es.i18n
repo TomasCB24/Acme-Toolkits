@@ -1,0 +1,11 @@
+# i18n-es.i18n
+
+authenticated.patron.patron.form.title.create = Hazte patrocinador
+authenticated.patron.patron.form.title.update = Actualiza tus datos de patrocinador
+
+authenticated.patron.patron.form.label.company = Compañía
+authenticated.patron.patron.form.label.statement = Declaración
+authenticated.patron.patron.form.label.link = Enlace
+
+authenticated.patron.patron.form.button.create = Registrar
+authenticated.patron.patron.form.button.update = Actualizar

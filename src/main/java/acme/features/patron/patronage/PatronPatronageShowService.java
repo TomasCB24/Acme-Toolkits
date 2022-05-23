@@ -8,14 +8,19 @@ import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
+import acme.helpers.PatronageHelper;
 import acme.roles.Inventor;
 import acme.roles.Patron;
 
 
 @Service
 public class PatronPatronageShowService implements AbstractShowService<Patron, Patronage>{
+	
 	@Autowired
 	protected PatronPatronageRepository repository;
+	
+	@Autowired
+	protected PatronageHelper helper;
 
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
@@ -53,12 +58,13 @@ public class PatronPatronageShowService implements AbstractShowService<Patron, P
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "code", "legalStuff", "budget", "creationDate", "initialPeriodDate", "finalPeriodDate", "link");
+		request.unbind(entity, model, "code", "legalStuff", "creationDate", "initialPeriodDate", "finalPeriodDate", "link", "draftMode");
 		
 
 		//Patron details:
 		final Patronage patronage = this.repository.findOnePatronageById(entity.getId());
 		final Inventor inventor = patronage.getInventor();
+		final String inventorUsername = inventor.getUserAccount().getUsername();
 		final String company = inventor.getCompany();
 		final String statement = inventor.getStatement();
 		final String inventorLink = inventor.getLink();
@@ -66,6 +72,11 @@ public class PatronPatronageShowService implements AbstractShowService<Patron, P
 		model.setAttribute("company", company);
 		model.setAttribute("statement", statement); 
 		model.setAttribute("inventorLink", inventorLink);
+		model.setAttribute("inventor", inventorUsername);
+		
+		// Budget
+		model.setAttribute("budget", this.helper.getPatronageBudget(entity));
+		
 		
 	}
 	

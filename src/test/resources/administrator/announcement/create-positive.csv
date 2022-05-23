@@ -1,0 +1,6 @@
+record-index,title,body,flag,link
+3,Hola1,Body 1,TRUE,http://www.example.com
+4,Hola2,Body 2,TRUE,http://www.example.com
+5,Hola3,Body 3,TRUE,http://www.acme.com/master/welcome
+6,Hola4,Body 4,TRUE,http://www.acme.org
+

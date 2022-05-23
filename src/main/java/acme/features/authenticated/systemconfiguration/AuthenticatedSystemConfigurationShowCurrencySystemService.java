@@ -1,7 +1,5 @@
 package acme.features.authenticated.systemconfiguration;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,15 +30,8 @@ public class AuthenticatedSystemConfigurationShowCurrencySystemService implement
 	public SystemConfiguration findOne(final Request<SystemConfiguration> request) {
 		assert request != null;
 		
-		SystemConfiguration result=null;
+		return  this.repository.findSystemConfiguration();
 		
-		final Optional<SystemConfiguration> scOpt = this.repository.findSystemConfiguration().stream().findFirst();
-		
-		if(scOpt.isPresent()) {
-			result = scOpt.get();
-		}
-		
-		return result;
 	}
 
 	@Override

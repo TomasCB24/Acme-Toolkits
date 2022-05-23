@@ -9,7 +9,9 @@ import acme.entities.items.Item;
 import acme.entities.toolkits.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.helpers.CollectionHelper;
 import acme.framework.services.AbstractListService;
+import acme.helpers.ItemHelper;
 import acme.roles.Inventor;
 
 @Service
@@ -19,6 +21,9 @@ public class InventorItemListService implements AbstractListService<Inventor, It
 
 	@Autowired
 	protected InventorItemRepository repository;
+	
+	@Autowired
+	protected ItemHelper helper;
 
 	// AbstractListService<Inventor, Item> ---------------------------
 	
@@ -35,7 +40,7 @@ public class InventorItemListService implements AbstractListService<Inventor, It
 		result = (toolkit != null && 
 			(!toolkit.isDraftMode() || request.isPrincipal(toolkit.getInventor()))
 			);
-
+		
 		return result;
 	}
 
@@ -51,6 +56,20 @@ public class InventorItemListService implements AbstractListService<Inventor, It
 		
 		return result;
 	}
+	
+	@Override
+	public void unbind(final Request<Item> request, final Collection<Item> entities, final Model model) {
+		assert request != null;
+		assert !CollectionHelper.someNull(entities);
+		assert model != null;
+
+		int masterId;
+
+		masterId = request.getModel().getInteger("masterId");
+
+		model.setAttribute("masterId", masterId);
+		
+	}
 
 	@Override
 	public void unbind(final Request<Item> request, final Item entity, final Model model) {
@@ -58,7 +77,7 @@ public class InventorItemListService implements AbstractListService<Inventor, It
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "type", "name","retailPrice");
+		request.unbind(entity, model, "type", "name");
 		
 		//Quantity
 		
@@ -72,6 +91,9 @@ public class InventorItemListService implements AbstractListService<Inventor, It
 		quantity = this.repository.findQuantityForItemInToolkit(toolkitId, itemId);
 		
 		model.setAttribute("quantity", quantity);
+		
+		// Retail price
+		model.setAttribute("retailPrice", this.helper.getItemRetailPrice(entity));
 		
 	}
 

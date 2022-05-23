@@ -18,8 +18,17 @@ inventor.item.form.label.description = Descripción:
 inventor.item.form.label.retail-price = Precio al por menor:
 inventor.item.form.label.link = Enlace: (Opcional)
 inventor.item.form.label.inventor-full-name = Inventor del elemento:
+inventor.item.form.button.create = Crear
+inventor.item.form.button.update = Actualizar
+inventor.item.form.button.delete = Eliminar
+inventor.item.form.button.publish = Publicar
 
 inventor.item.list.label.type = Tipo
 inventor.item.list.label.name = Nombre
 inventor.item.list.label.retailPrice = Precio al por menor
 inventor.item.list.label.quantity = Cantidad
+inventor.item.list.button.create = Crear
+
+inventor.item.form.error.duplicated-code = El código introducido ya pertenece a un elemento existente
+inventor.item.form.error.invalid-money = La moneda debe estar aceptada por el sistema
+inventor.item.form.error.negative-money = La cantidad del precio al por menor debe ser positiva
