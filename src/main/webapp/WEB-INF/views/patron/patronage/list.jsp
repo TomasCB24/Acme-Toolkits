@@ -8,3 +8,7 @@
 	<acme:list-column code="patron.patronage.list.label.creation-date" path="creationDate" width="10%"/>
 	<acme:list-column code="patron.patronage.list.label.legal-stuff" path="legalStuff" width="80%"/>
 </acme:list> 
+
+<jstl:if test="${command == 'list-mine'}">
+	<acme:button code="patron.patronage.list.button.create" action="/patron/patronage/create"/>
+</jstl:if>	

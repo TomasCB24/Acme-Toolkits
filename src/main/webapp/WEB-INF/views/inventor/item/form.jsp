@@ -29,7 +29,26 @@
 
 	<acme:input-url code="inventor.item.form.label.link" path="link"/>
 
-	<acme:input-textbox code="inventor.item.form.label.inventor-full-name" path="inventor"/>
+
+	
+
+	<jstl:choose>
+		<jstl:when test="${command == 'show' && draftMode == 'false'}">
+			<acme:input-textbox code="inventor.item.form.label.inventor-full-name" path="inventor"/>
+		</jstl:when>
+	
+		<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish') && draftMode == 'true'}">
+			<acme:submit code="inventor.item.form.button.update" action="/inventor/item/update"/>
+			<acme:submit code="inventor.item.form.button.delete" action="/inventor/item/delete"/>
+			<acme:submit code="inventor.item.form.button.publish" action="/inventor/item/publish"/>
+		</jstl:when>
+	
+
+		<jstl:when test="${command == 'create'}">
+			<acme:submit code="inventor.item.form.button.create" action="/inventor/item/create"/>
+		</jstl:when>	
+
+	</jstl:choose>
 	
 </acme:form>
 

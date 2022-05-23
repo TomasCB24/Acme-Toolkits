@@ -15,3 +15,8 @@ administrator.system-configuration.form.label.strong-spam-words = Strong Spam Wo
 administrator.system-configuration.form.label.strong-spam-threshold = Strong Spam Threshold:
 administrator.system-configuration.form.label.weak-spam-words = Weak Spam Words:
 administrator.system-configuration.form.label.weak-spam-threshold = Weak Spam Threshold:
+
+administrator.system-configuration.form.button.update = Update
+administrator.system-configuration.form.error.system-currency = The system currency must be an accepted currency
+administrator.system-configuration.form.error.repeated-currency = The currencies accepted by the system cannot be repeated
+administrator.system-configuration.form.error.repeated-word = Spam words cannot be repeated

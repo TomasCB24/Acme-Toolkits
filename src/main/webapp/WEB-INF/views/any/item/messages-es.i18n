@@ -1,4 +1,4 @@
-# i18n-en.i18n
+# i18n-es.i18n
 #
 # Copyright (C) 2012-2022 Rafael Corchuelo.
 #
@@ -17,7 +17,10 @@ any.item.form.label.technology = Tecnología:
 any.item.form.label.description = Descripción:
 any.item.form.label.retail-price = Precio al por menor:
 any.item.form.label.link = Enlace: (Opcional)
+any.item.form.label.inventor-full-name = Inventor del elemento:
 
 any.item.list.label.type = Tipo
+any.item.list.label.code = Código
 any.item.list.label.name = Nombre
 any.item.list.label.retailPrice = Precio al por menor
+any.item.list.label.quantity = Cantidad

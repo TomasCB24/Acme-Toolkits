@@ -42,7 +42,7 @@ public class PatronPatronageListMineTest  extends TestHarness {
 	
 	@Test
 	@Order(20)
-	public void negativeTestAnonymous() {
+	public void hackingTestAnonymous() {
 
 		super.navigate("/patron/patronage-report/list-mine");
 
@@ -51,7 +51,7 @@ public class PatronPatronageListMineTest  extends TestHarness {
 
 	@Test
 	@Order(30)
-	public void negativeTestAdministrator() {
+	public void hackingTestAdministrator() {
 		super.signIn("administrator", "administrator");
 		super.navigate("/patron/patronage-report/list-mine");
 
@@ -61,7 +61,7 @@ public class PatronPatronageListMineTest  extends TestHarness {
 
 	@Test
 	@Order(40)
-	public void negativeTestPatron() {
+	public void hackingTestPatron() {
 		super.signIn("inventor1", "inventor1");
 		super.navigate("/patron/patronage-report/list-mine");
 

@@ -57,7 +57,6 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 
 		request.unbind(entity, model, "title", "body", "flag", "link");
 		model.setAttribute("confirmation", false);
-		model.setAttribute("readonly", false);
 	}
 
 	@Override

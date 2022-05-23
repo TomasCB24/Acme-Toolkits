@@ -1,4 +1,4 @@
-recordIndex,creation-moment,title
-0,2022/04/23 09:45,title3
-1,2022/04/23 10:10,title4
-2,2022/04/24 00:59,1
+recordIndex,delta-days,title
+0,-3,title4
+1,-2,title3
+2,-1,1

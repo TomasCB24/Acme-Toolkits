@@ -61,6 +61,8 @@ public class Patronage extends AbstractEntity{
     @Temporal(TemporalType.DATE)
     @NotNull
     protected Date    finalPeriodDate;
+    
+    protected boolean			draftMode;
 
     @URL
     protected String link;

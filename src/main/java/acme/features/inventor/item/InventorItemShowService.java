@@ -8,6 +8,7 @@ import acme.entities.items.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractShowService;
+import acme.helpers.ItemHelper;
 import acme.roles.Inventor;
 
 @Service
@@ -17,6 +18,9 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
 
 	@Autowired
 	protected InventorItemRepository repository;
+	
+	@Autowired
+	protected ItemHelper helper;
 
 	// AbstractShowService<Inventor, Item> ---------------------------
 	
@@ -59,7 +63,7 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
 		assert model != null;
 		
 		request.unbind(entity, model, "type", "name","code",
-			"technology","description","retailPrice","link");
+			"technology","description","link", "draftMode");
 		
 		// Inventor full name
 		
@@ -67,6 +71,9 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
 		inventor = entity.getInventor().getIdentity().getFullName();
 		
 		model.setAttribute("inventor", inventor);
+		
+		// Retail price
+		model.setAttribute("retailPrice", this.helper.getItemRetailPrice(entity));
 		
 	}
 

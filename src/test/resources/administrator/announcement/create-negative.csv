@@ -1,5 +1,4 @@
 record-index,title,body,flag,link
-0,Hola1,Body 1,true,ffffff
-1,Hola2,Body 2,fallo,http://www.example.com
-2,,Body 3,true,http://www.acme.com/master/welcome
-3,Hola4,,true,http://www.acme.org
+0,Hola1,Body 1,TRUE,ffffff
+1,,Body 3,TRUE,http://www.acme.com/master/welcome
+2,Hola4,,TRUE,http://www.acme.org

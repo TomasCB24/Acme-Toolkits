@@ -18,8 +18,18 @@ inventor.item.form.label.description = Description:
 inventor.item.form.label.retail-price = Retail Price:
 inventor.item.form.label.link = Link: (Optional)
 inventor.item.form.label.inventor-full-name = Inventor of the Item:
+inventor.item.form.button.create = Create
+inventor.item.form.button.update = Update
+inventor.item.form.button.delete = Delete
+inventor.item.form.button.publish = Publish
 
 inventor.item.list.label.type = Type
 inventor.item.list.label.name = Name
 inventor.item.list.label.retailPrice = Retail Price
 inventor.item.list.label.quantity = Quantity
+inventor.item.list.button.create = Create
+
+inventor.item.form.error.duplicated-code = The entered code already belongs to an existing Item
+inventor.item.form.error.invalid-money = The currency must be accepted by the system
+inventor.item.form.error.negative-money = The amount of money must be positive
+

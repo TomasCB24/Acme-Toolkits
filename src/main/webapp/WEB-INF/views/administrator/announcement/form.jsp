@@ -15,25 +15,18 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
-<jstl:choose>
-	<jstl:when test="${readonly}">
-		<acme:form>
-			<acme:input-textbox code="authenticated.announcement.form.label.title" path="title"/>	
-			<acme:input-textbox code="authenticated.announcement.form.label.creation-moment" path="creationMoment"/>
-			<acme:input-textarea code="authenticated.announcement.form.label.body" path="body"/>
-			<acme:input-url code="authenticated.announcement.form.label.link" path="link"/>
-		</acme:form>
-	</jstl:when>
-	<jstl:when test="${!readonly}">
-		<acme:form>
-			<acme:input-textbox code="authenticated.announcement.form.label.title" path="title"/>	
-			<acme:input-textbox code="authenticated.announcement.form.label.flag" path="flag"/>
-			<acme:input-textarea code="authenticated.announcement.form.label.body" path="body"/>
-			<acme:input-url code="authenticated.announcement.form.label.link" path="link"/>
-			<acme:input-checkbox code="administrator.announcement.form.label.confirmation" path="confirmation"/>
-			<acme:submit code="administrator.announcement.form.button.create" action="/administrator/announcement/create"/>
-		</acme:form>
-	</jstl:when>
-
-
-</jstl:choose>
+<acme:form>
+		<acme:input-textbox code="administrator.announcement.form.label.title" path="title"/>	
+		<acme:input-textarea code="administrator.announcement.form.label.body" path="body"/>
+		<acme:input-url code="administrator.announcement.form.label.link" path="link"/>
+		
+		<acme:input-select code="administrator.announcement.form.label.flag" path="flag">
+			<acme:input-option code="administrator.announcement.form.label.is-critical" value="TRUE" selected="${flag eq 'TRUE'}"/>
+			<acme:input-option code="administrator.announcement.form.label.is-not-critical" value="FALSE" selected="${flag eq 'FALSE'}"/>
+		</acme:input-select>
+	
+	<jstl:if test="${command == 'create'}">
+		<acme:input-checkbox code="administrator.announcement.form.label.confirmation" path="confirmation"/>
+		<acme:submit code="administrator.announcement.form.button.create" action="/administrator/announcement/create"/>
+	</jstl:if>
+</acme:form>
