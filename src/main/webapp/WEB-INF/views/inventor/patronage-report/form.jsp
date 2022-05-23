@@ -8,6 +8,7 @@
 	<jstl:if test="${command == 'show'}">
 		<acme:input-textbox code="inventor.patronage-report.form.label.sequence-number" path="sequenceNumber"/>
 		<acme:input-moment code="inventor.patronage-report.form.label.creation-moment" path="creationMoment"/>
+		<acme:input-textbox readonly='true' code="inventor.patronage-report.form.label.patronage-code" path="patronage-code"/>
 	</jstl:if>
 	
 	<acme:input-textarea code="inventor.patronage-report.form.label.memorandum" path="memorandum"/>
@@ -15,9 +16,12 @@
 
 	<jstl:if test="${command == 'create'}">
 		<acme:input-textbox code="inventor.patronage-report.form.label.serial-number" path="serialNumber"/>
-				<acme:input-textbox code="inventor.patronage-report.form.label.patronage-code" path="patronageCode"/>
+		<acme:input-select code="inventor.patronage-report.form.label.patronage-code" path="patronage-code">
+			<jstl:forEach var="patronage" items="${patronages}">	
+				<acme:input-option code="${patronage.code}" value="${patronage.code}"/>
+			</jstl:forEach>
+		</acme:input-select>
 		<acme:input-checkbox code="inventor.patronage-report.list.label.confirmation" path="confirmation"/>
-
 		<acme:submit code="inventor.patronage-report.form.button.create" action="/inventor/patronage-report/create"/>
 	</jstl:if>
 

@@ -1,6 +1,4 @@
 recordIndex,status,code,legal-stuff,budget,creation-date,initial-period-date,final-period-date,link,company,statement,patronLink
-0,PROPOSED,AAA-000-A,legal Stuff 1,EUR 0.00,"2022/03/18 00:00","2022/05/10 00:00","2022/07/11 00:00",https://ev.us.es,1,1,https://www.google.com/
-1,PROPOSED,AAA-000-F,legal Stuff 1,EUR 100.00,"2021/05/06 00:00","2022/06/10 00:00","2022/07/03 00:00",https://www.google.com/,1,1,https://www.google.com/
-2,PROPOSED,AAA-000-K,legal Stuff 1,EUR 100.00,"2021/05/06 00:00","2022/06/10 00:00","2022/07/03 00:00",https://www.google.com/,1,1,https://www.google.com/
-3,ACCEPTED,AAA-000-P,legal Stuff 1,EUR 100.00,"2021/05/06 00:00","2022/06/10 00:00","2022/07/03 00:00",https://www.google.com/,1,1,https://www.google.com/
-4,DENIED,AAA-000-U,legal Stuff 1,EUR 100.00,"2021/05/06 00:00","2022/06/10 00:00","2022/07/03 00:00",https://www.google.com/,1,1,https://www.google.com/
+0,PROPOSED,AAA-000-K,legal Stuff 1,EUR 100.00,"2021/05/06 00:00","2022/06/10 00:00","2022/07/03 00:00",https://www.google.com/,1,1,https://www.google.com/
+1,ACCEPTED,AAA-000-P,legal Stuff 1,EUR 100.00,"2021/05/06 00:00","2022/06/10 00:00","2022/07/03 00:00",https://www.google.com/,1,1,https://www.google.com/
+2,DENIED,AAA-000-U,legal Stuff 1,EUR 100.00,"2021/05/06 00:00","2022/06/10 00:00","2022/07/03 00:00",https://www.google.com/,1,1,https://www.google.com/

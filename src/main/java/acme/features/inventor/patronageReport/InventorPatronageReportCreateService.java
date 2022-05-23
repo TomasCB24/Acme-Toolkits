@@ -50,11 +50,11 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		assert entity != null;
 		assert errors != null;
 		
-		final String code = String.valueOf(request.getModel().getAttribute("patronageCode"));
+		final String code = String.valueOf(request.getModel().getAttribute("patronage-code"));
 		final Patronage patronage = this.repository.findOnePatronageByCode(code);
 		entity.setPatronage(patronage);
 
-		request.bind(entity, errors, "memorandum", "link", "serialNumber", "patronageCode");
+		request.bind(entity, errors, "memorandum", "link", "serialNumber", "patronage-code");
 	}
 
 	@Override
@@ -77,11 +77,6 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 			errors.state(request, existing == null || existing.getId() == entity.getId(), "serialNumber", "inventor.patronage-report.form.error.duplicated-code");
 
 		}
-		if(!errors.hasErrors("patronageCode")) {
-			final String code = String.valueOf(request.getModel().getAttribute("patronageCode"));
-			final Patronage patronage = this.repository.findOnePatronageByCode(code);
-			errors.state(request, patronage!=null, "patronageCode", "inventor.patronage-report.form.error.invalid-code");
-		}
 
 	}
 
@@ -90,8 +85,11 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		
+		final int inventorId = request.getPrincipal().getActiveRoleId();
 
-		request.unbind(entity, model, "memorandum", "link", "serialNumber", "patronageCode");
+		request.unbind(entity, model, "memorandum", "link", "serialNumber");
+		model.setAttribute("patronages", this.repository.findManyPublishedPatronagesByInventorId(inventorId));
 		model.setAttribute("confirmation", false);
 	}
 

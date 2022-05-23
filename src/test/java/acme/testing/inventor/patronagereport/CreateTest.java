@@ -12,7 +12,7 @@ public class CreateTest extends TestHarness {
 
 		@ParameterizedTest
 		@CsvFileSource(resources = "/inventor/patronage-report/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-		@Order(20)
+		@Order(10)
 		public void positiveTest(final int recordIndex, final String serialNumber, final String patronageCode,final String memorandum,final String link) {
 			super.signIn("inventor1", "inventor1");
 			super.clickOnMenu("Inventor", "Patronage Report");
@@ -24,7 +24,7 @@ public class CreateTest extends TestHarness {
 			super.fillInputBoxIn("memorandum", memorandum);
 			super.fillInputBoxIn("serialNumber", serialNumber);		
 			super.fillInputBoxIn("link", link);
-			super.fillInputBoxIn("patronageCode", patronageCode);
+			super.fillInputBoxIn("patronage-code", patronageCode);
 			super.fillInputBoxIn("confirmation", "true");
 			super.clickOnSubmit("Create");
 			
@@ -44,7 +44,7 @@ public class CreateTest extends TestHarness {
 		
 		@ParameterizedTest
 		@CsvFileSource(resources = "/inventor/patronage-report/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-		@Order(10)
+		@Order(20)
 		public void negativeTest(final int recordIndex, final String serialNumber, final String patronageCode,final String memorandum,final String link) {
 
 			super.signIn("inventor1", "inventor1");
@@ -57,7 +57,7 @@ public class CreateTest extends TestHarness {
 			super.fillInputBoxIn("memorandum", memorandum);
 			super.fillInputBoxIn("serialNumber", serialNumber);		
 			super.fillInputBoxIn("link", link);
-			super.fillInputBoxIn("patronageCode", patronageCode);
+			super.fillInputBoxIn("patronage-code", patronageCode);
 			super.fillInputBoxIn("confirmation", "true");
 			super.clickOnSubmit("Create");
 			super.checkErrorsExist();

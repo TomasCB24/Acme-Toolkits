@@ -17,12 +17,11 @@
 	
 	<jstl:choose>
 	<jstl:when test="${command == 'show' && draftMode == 'false'}">
-		<acme:input-select readonly='true' code="patron.patronage.form.label.status" path="status">
-			<acme:input-option code="PROPOSED" value="PROPOSED" selected="${status == 'PROPOSED'}"/>
-			<acme:input-option code="ACCEPTED" value="ACCEPTED" selected="${status == 'ACCEPTED'}"/>
-			<acme:input-option code="DENIED" value="DENIED" selected="${status == 'DENIED'}"/>
-		</acme:input-select>
-		<acme:input-moment code="patron.patronage.form.label.creation-date" path="creationDate"/>
+		<acme:input-textbox readonly='true' code="patron.patronage.form.label.status" path="status"/>
+		<acme:input-textbox readonly='true' code="patron.patronage.form.label.company" path="company"/>
+		<acme:input-textarea readonly='true' code="patron.patronage.form.label.statement" path="statement"/>
+		<acme:input-url readonly='true' code="patron.patronage.form.label.inventorLink" path="inventorLink"/>
+		<acme:input-moment readonly='true' code="patron.patronage.form.label.creation-date" path="creationDate"/>
 	</jstl:when>
 	<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish') && draftMode == 'true'}">
 		<acme:submit code="patron.patronage.form.button.update" action="/patron/patronage/update"/>
@@ -32,11 +31,7 @@
 	<jstl:when test="${command == 'create'}">
 		<acme:submit code="patron.patronage.form.button.create" action="/patron/patronage/create"/>
 	</jstl:when>
-	<jstl:when test="${draftMode == 'false'}">	
-		<acme:input-textbox code="patron.patronage.form.label.company" path="company"/>
-		<acme:input-textarea code="patron.patronage.form.label.statement" path="statement"/>
-		<acme:input-url code="patron.patronage.form.label.inventorLink" path="inventorLink"/>
-	</jstl:when>
+
 		
 
 	</jstl:choose>

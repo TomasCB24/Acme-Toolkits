@@ -74,6 +74,7 @@ public class PatronPatronageShowService implements AbstractShowService<Patron, P
 		model.setAttribute("statement", statement); 
 		model.setAttribute("inventorLink", inventorLink);
 		model.setAttribute("inventor", inventorUsername);
+		model.setAttribute("status", entity.getStatus().toString());
 		
 		// Budget
 		model.setAttribute("budget", this.helper.getPatronageBudget(entity));

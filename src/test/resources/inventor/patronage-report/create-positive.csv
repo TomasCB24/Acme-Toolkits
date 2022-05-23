@@ -1,6 +1,6 @@
 recordIndex,serial-number,patronage-code,memorandum,link
-0,0111,AAA-000-A,ZZZ9,https://ev.us.es
-1,0112,AAA-000-A,ZZZ8 This is the memorandum 6,https://ev.us.es
-2,0113,AAA-000-A,ZZZ7 This is the memorandum 11,https://ev.us.es
-3,0114,AAA-000-A,ZZZ6 This is the memorandum 16,https://ev.us.es
-4,0115,AAA-000-A,ZZZ5 This is the memorandum 21,https://ev.us.es
+0,0111,AAA-000-U,ZZZ9,https://ev.us.es
+1,0112,AAA-000-P,ZZZ8 This is the memorandum 6,https://ev.us.es
+2,0113,AAA-000-K,ZZZ7 This is the memorandum 11,https://ev.us.es
+3,0114,AAA-000-U,ZZZ6 This is the memorandum 16,https://ev.us.es
+4,0115,AAA-000-P,ZZZ5 This is the memorandum 21,https://ev.us.es

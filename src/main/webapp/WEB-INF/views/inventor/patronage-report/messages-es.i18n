@@ -23,3 +23,4 @@ inventor.patronage-report.list.button.create = Crear
 inventor.patronage-report.list.label.confirmation = Confirmación
 inventor.patronage-report.confirmation.error = Es necesario marcar el checkbox para poder crear el reporte del patrocinio
 inventor.patronage-report.form.error.invalid-code = El código introducido no es válido
+inventor.patronage-report.form.error.duplicated-code = El código introducido está duplicado

@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import acme.entities.patronages.PatronageReport;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 import acme.roles.Inventor;
 
@@ -23,13 +22,13 @@ public class InventorPatronageReportShowService implements AbstractShowService<I
 		int masterId;
 		PatronageReport patronageReport;
 		Inventor inventor;
-		Principal principal;
 		
 		masterId = request.getModel().getInteger("id");
 		patronageReport = this.repository.findOnePatronageReportById(masterId);
 		inventor = patronageReport.getPatronage().getInventor();
-		principal = request.getPrincipal();
-		result = inventor.getUserAccount().getId()==principal.getAccountId();
+		result = (
+			request.isPrincipal(inventor)
+		);
 		return result;
 	}
 
@@ -49,9 +48,10 @@ public class InventorPatronageReportShowService implements AbstractShowService<I
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "memorandum", "creationMoment", "link");
+		request.unbind(entity, model, "memorandum", "creationMoment", "link", "code");
 		final PatronageReport patronageReport = this.repository.findOnePatronageReportById(entity.getId());
 		final String sequenceNumber = patronageReport.sequenceNumber();
+		model.setAttribute("patronage-code", entity.getPatronage().getCode());
 		model.setAttribute("sequenceNumber", sequenceNumber);
 		
 	}
