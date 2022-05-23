@@ -30,11 +30,11 @@ public class SpamHelper {
 		
 		final List<List<String>> multipleStrongSpamWordsLists = new ArrayList<>();
 		for(int i = 0; i<strongSpamWordsList.size(); i++) {
-			String aux = strongSpamWordsList.get(i);
-			aux = aux.trim();
-			if(aux.contains(" ")) {	// contiene más de una 
-				multipleStrongSpamWordsLists.add(this.getListGivenArray(aux.split(" ")));
-				strongSpamWordsList.remove(i);
+			final String aux = strongSpamWordsList.get(i);
+			
+			if(aux.trim().contains(" ")) {	// contiene más de una 
+				multipleStrongSpamWordsLists.add(this.getListGivenArray(aux.trim().split(" ")));
+				strongSpamWordsList.remove(aux);
 			}
 		}
 	
@@ -46,11 +46,11 @@ public class SpamHelper {
 		
 		final List<List<String>> multipleWeakSpamWordsLists = new ArrayList<>();
 		for(int i = 0; i<weakSpamWordsList.size(); i++) {
-			String aux = weakSpamWordsList.get(i);
-			aux = aux.trim();
-			if(aux.contains(" ")) {	// contiene más de una 
-				multipleWeakSpamWordsLists.add(this.getListGivenArray(aux.split(" ")));
-				weakSpamWordsList.remove(i);
+			final String aux = weakSpamWordsList.get(i);
+
+			if(aux.trim().contains(" ")) {	// contiene más de una 
+				multipleWeakSpamWordsLists.add(this.getListGivenArray(aux.trim().split(" ")));
+				weakSpamWordsList.remove(aux);
 			}
 		}
 
