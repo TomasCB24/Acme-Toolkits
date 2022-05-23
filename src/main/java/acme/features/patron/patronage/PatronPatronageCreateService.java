@@ -1,6 +1,7 @@
 package acme.features.patron.patronage;
 
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -112,9 +113,9 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 			final String currency = entity.getBudget().getCurrency();
 			final String[] currencies = this.anyToolKitRepository.findSystemConfiguration().getAcceptedCurrencies().split(",");
 			final Set<String> set = new HashSet<>();
-			for(final String r:currencies) {
-				set.add(r);
-			}
+
+			Collections.addAll(set, currencies);
+			
 			final boolean res = set.contains(currency);
 			
 			errors.state(request, res, "budget", "patron.patronage.form.error.unknown-currency");
