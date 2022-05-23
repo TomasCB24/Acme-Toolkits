@@ -16,4 +16,12 @@ inventor.patronage-report.form.label.sequence-number = Sequence Number:
 inventor.patronage-report.form.label.memorandum = Memorandum:
 inventor.patronage-report.form.label.creation-moment = Creation Moment:
 inventor.patronage-report.form.label.link = Link for more info: (Optional)
+inventor.patronage-report.form.label.serial-number = Serial Number:
+inventor.patronage-report.form.label.patronage-code = Patronage Code:
+
+inventor.patronage-report.list.button.create = Create
+inventor.patronage-report.form.button.create = Create
+inventor.patronage-report.list.label.confirmation = Confirmation
+inventor.patronage-report.confirmation.error = You need to check the checkbox to create the patronage report
+inventor.patronage-report.form.error.invalid-code = The given code is invalid
 
