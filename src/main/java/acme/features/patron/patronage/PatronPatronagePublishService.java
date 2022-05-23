@@ -29,6 +29,7 @@ public class PatronPatronagePublishService  implements AbstractUpdateService<Pat
 		masterId = request.getModel().getInteger("id");
 		patronage = this.repository.findOnePatronageById(masterId);
 		patron = patronage.getPatron();
+		assert patron != null;
 		result = (
 			patronage.isDraftMode() &&
 			request.isPrincipal(patron)
@@ -43,7 +44,7 @@ public class PatronPatronagePublishService  implements AbstractUpdateService<Pat
 		assert entity != null;
 		assert errors != null;
 		
-		request.bind(entity, errors, "code", "status","legalStuff","budget","creationDate", "initialPeriodDate", "finalPeriodDate", "link");
+		request.bind(entity, errors, "code","legalStuff","budget", "initialPeriodDate", "finalPeriodDate", "link");
 		
 	}
 

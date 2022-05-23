@@ -4,16 +4,10 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form> 
-	<acme:input-select readonly='true' code="patron.patronage.form.label.status" path="status">
-		<acme:input-option code="PROPOSED" value="PROPOSED" selected="${status == 'PROPOSED'}"/>
-		<acme:input-option code="ACCEPTED" value="ACCEPTED" selected="${status == 'ACCEPTED'}"/>
-		<acme:input-option code="DENIED" value="DENIED" selected="${status == 'DENIED'}"/>
-	</acme:input-select>
 	
 	<acme:input-textbox code="patron.patronage.form.label.code" path="code"/>
 	<acme:input-textbox code="patron.patronage.form.label.legal-stuff" path="legalStuff"/>
 	<acme:input-money code="patron.patronage.form.label.budget" path="budget"/>
-	<acme:input-moment code="patron.patronage.form.label.creation-date" path="creationDate"/>
 	<acme:input-moment code="patron.patronage.form.label.initial-period-date" path="initialPeriodDate"/>
 	<acme:input-moment code="patron.patronage.form.label.final-period-date" path="finalPeriodDate"/>
 	<acme:input-url code="patron.patronage.form.label.link" path="link"/>
@@ -22,6 +16,14 @@
 	
 	
 	<jstl:choose>
+	<jstl:when test="${command == 'show' && draftMode == 'false'}">
+		<acme:input-select readonly='true' code="patron.patronage.form.label.status" path="status">
+			<acme:input-option code="PROPOSED" value="PROPOSED" selected="${status == 'PROPOSED'}"/>
+			<acme:input-option code="ACCEPTED" value="ACCEPTED" selected="${status == 'ACCEPTED'}"/>
+			<acme:input-option code="DENIED" value="DENIED" selected="${status == 'DENIED'}"/>
+		</acme:input-select>
+		<acme:input-moment code="patron.patronage.form.label.creation-date" path="creationDate"/>
+	</jstl:when>
 	<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish') && draftMode == 'true'}">
 		<acme:submit code="patron.patronage.form.button.update" action="/patron/patronage/update"/>
 		<acme:submit code="patron.patronage.form.button.delete" action="/patron/patronage/delete"/>
