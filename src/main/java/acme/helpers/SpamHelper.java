@@ -73,17 +73,17 @@ public class SpamHelper {
 					final List<String> copy = this.checkMultiple(aux, i, wordsList);
 
 					if(copy.isEmpty()) {
-						strongCont++;
+						strongCont+= aux.size();
 					}
 	
 				}
 							
-				for(final List<String> aux : multipleWeakSpamWordsLists) { // [son, of, a, bitch]
+				for(final List<String> aux : multipleWeakSpamWordsLists) { 
 	
 					final List<String> copy = this.checkMultiple(aux, i, wordsList);
 						
 					if(copy.isEmpty()) {
-						weakCont++;
+						weakCont+= aux.size();
 					}
 		
 				}
@@ -101,7 +101,7 @@ public class SpamHelper {
 	public List<String> getListGivenArray(final String[] array) {
 		final List<String> res = new ArrayList<>();
 		for(final String s : array) {
-			res.add(s);
+			res.add(s.trim());
 		}
 		
 		return res;
