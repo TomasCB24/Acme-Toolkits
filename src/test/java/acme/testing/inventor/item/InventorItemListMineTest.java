@@ -10,7 +10,7 @@ public class InventorItemListMineTest extends TestHarness{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/inventor/item/list-mine.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positiveTestListingItems(final int recordIndex, final String type, final String name, final String retailPrice, final String quantity, final String code, final String technology, final String description, final String link, final String inventor) {
+	public void positiveTestListingItems(final int recordIndex, final String type, final String name, final String retailPrice, final String code, final String technology, final String description, final String link, final String inventor) {
 		
 		super.signIn("inventor1", "inventor1");
 		super.clickOnMenu("Inventor", "List my Items");
@@ -20,8 +20,6 @@ public class InventorItemListMineTest extends TestHarness{
 		super.checkColumnHasValue(recordIndex, 0, type);
 		super.checkColumnHasValue(recordIndex, 1, name);
 		super.checkColumnHasValue(recordIndex, 2, retailPrice);
-		super.checkColumnHasValue(recordIndex, 3, quantity);
-		
 
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();

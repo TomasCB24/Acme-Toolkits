@@ -41,7 +41,7 @@ public class PatronageReport extends AbstractEntity {
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	protected Date	creationMoment;
+	protected Date creationMoment;
 	
 	@NotBlank
 	@Length(min=1, max=255)

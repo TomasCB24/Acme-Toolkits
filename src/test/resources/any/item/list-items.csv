@@ -1,11 +1,11 @@
-recordIndex,type,name,retail-price,quantity
-0,TOOL,1,"EUR 30.00",-
-1,TOOL,1,"EUR 39.00",-
-2,TOOL,1,"EUR 99.00",-
-3,TOOL,1,"EUR 19.99",-
-4,TOOL,1,"EUR 22.90",-
-10,COMPONENT,Item name 3,"EUR 230.00",-
-11,COMPONENT,Item name 3,"EUR 27.00",-
-12,COMPONENT,Item name 3,"EUR 23.85",-
-13,COMPONENT,Item name 3,"EUR 6.00",-
-14,COMPONENT,Item name 3,"EUR 99.00",-
+recordIndex,type,name,retail-price
+0,TOOL,1,"EUR 30.00"
+1,TOOL,1,"EUR 39.00"
+2,TOOL,1,"EUR 99.00"
+3,TOOL,1,"EUR 19.99"
+4,TOOL,1,"EUR 22.90"
+10,COMPONENT,Item name 3,"EUR 230.00"
+11,COMPONENT,Item name 3,"EUR 27.00"
+12,COMPONENT,Item name 3,"EUR 23.85"
+13,COMPONENT,Item name 3,"EUR 6.00"
+14,COMPONENT,Item name 3,"EUR 99.00"

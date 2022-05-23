@@ -49,16 +49,16 @@ public class Patronage extends AbstractEntity{
     @Valid
     protected Money budget;
 
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     @NotNull
     @Past
     protected Date    creationDate;
 
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     @NotNull
     protected Date    initialPeriodDate;
 
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     @NotNull
     protected Date    finalPeriodDate;
     

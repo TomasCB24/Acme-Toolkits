@@ -1,5 +1,5 @@
 key,key:patron,key:inventor,draft-mode,status,code,legal-stuff,budget,creation-date,initial-period-date,final-period-date,link
-patronage-01,patron-01,inventor-01,true,PROPOSED,AAA-000-A,legal Stuff 1,EUR 0.00,"2022/03/18 00:00","2022/05/10 00:00","2022/07/11 00:00",https://ev.us.es
+patronage-01,patron-01,inventor-01,true,PROPOSED,AAA-000-A,legal Stuff 1,EUR 1.00,"2022/03/18 00:00","2022/05/10 00:00","2022/07/11 00:00",https://ev.us.es
 patronage-02,patron-02,inventor-02,false,PROPOSED,AAA-000-B,legal Stuff 1,EUR 100.00,"2021/02/06 10:00","2022/03/10 20:00","2022/04/12 10:00",null
 patronage-03,patron-03,inventor-03,false,PROPOSED,AAA-000-C,legal Stuff 1,EUR 100.00,"2021/03/06 00:00","2022/04/10 00:00","2022/05/01 00:00",null
 patronage-04,patron-04,inventor-04,false,PROPOSED,AAA-000-D,legal Stuff 1,EUR 100.00,"2021/04/06 00:00","2022/05/10 00:00","2022/06/03 00:00",null

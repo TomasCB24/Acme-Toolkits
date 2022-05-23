@@ -20,7 +20,7 @@
 	<acme:message code="administrator.dashboard.form.title.general-indicators"/>
 </h2>
 
-<table class="table table-sm">
+<table class="table table-sm" aria-describedby="Administrator dashboard - Total Number">
 	<tr>
 		<th scope="row">
 			<acme:message code="administrator.dashboard.form.label.total-number-of-components"/>
@@ -64,15 +64,15 @@
 </table>
 
 <acme:message code="administrator.dashboard.form.label.averageTitle"/>
-<table class="table table-sm">
+<table class="table table-sm" aria-describedby="Administrator dashboard - Average">
 		<tr>
-			<th>
+			<th scope="row">
 				<acme:message code ="administrator.dashboard.form.label.components"/>
 			</th>	
 		</tr>
 	<c:forEach items="${averageOfComponentsRetailPrice}" var="entry"> 	
 		<tr>	
-			<th>	
+			<th scope="row">	
 			<acme:message code="administrator.dashboard.form.label.average-sentence"/>		
 			<c:set var = "string1" value = "${entry.key}"/>
 			<c:set var = "string2" value = "${fn:split(string1, '->')}" />
@@ -88,14 +88,14 @@
 		</tr>
 	</c:forEach>
 		<tr>
-			<th>
+			<th scope="row">
 				<acme:message code ="administrator.dashboard.form.label.tools"/>
 			</th>	
 		</tr>
 	
 	<c:forEach items="${averageOfToolsRetailPrice}" var="entry"> 	
 		<tr>	
-			<th>	
+			<th scope="row">	
 			<acme:message code="administrator.dashboard.form.label.average-sentence"/>		
 			<c:set var = "string1" value = "${entry.key}"/>
 			<c:set var = "string2" value = "${fn:split(string1, '->')}" />
@@ -111,14 +111,14 @@
 		</c:forEach>
 		
 		<tr>
-			<th>
+			<th scope="row">
 				<acme:message code ="administrator.dashboard.form.label.patronages"/>
 			</th>	
 		</tr>
 		
 		<c:forEach items="${averageBudgetPatronages}" var="entry"> 	
 			<tr>	
-				<th>	
+				<th scope="row">	
 				<acme:message code="administrator.dashboard.form.label.average-sentence"/>		
 				<c:set var = "string1" value = "${entry.key}"/>
 				<c:set var = "string2" value = "${fn:split(string1, '->')}" />
@@ -136,15 +136,15 @@
 </table>
 
 <acme:message code="administrator.dashboard.form.label.deviationTitle"/>	
-	<table class="table table-sm">	
+	<table class="table table-sm" aria-describedby="Administrator dashboard - Desviation">	
 		<tr>
-			<th>
+			<th scope="row">
 				<acme:message code ="administrator.dashboard.form.label.components"/>
 			</th>	
 		</tr>	
 		<c:forEach items="${deviationOfComponentsRetailPrice}" var="entry"> 	
 		<tr>	
-			<th>	
+			<th scope="row">	
 			<acme:message code="administrator.dashboard.form.label.deviation-sentence"/>		
 			<c:set var = "string1" value = "${entry.key}"/>
 			<c:set var = "string2" value = "${fn:split(string1, '->')}" />
@@ -161,13 +161,13 @@
 		</c:forEach>
 		
 		<tr>
-			<th>
+			<th scope="row">
 				<acme:message code ="administrator.dashboard.form.label.tools"/>
 			</th>	
 		</tr>
 		<c:forEach items="${deviationOfToolsRetailPrice}" var="entry"> 	
 		<tr>	
-			<th>	
+			<th scope="row">	
 			<acme:message code="administrator.dashboard.form.label.deviation-sentence"/>		
 			<c:set var = "string1" value = "${entry.key}"/>
 			<c:set var = "string2" value = "${fn:split(string1, '->')}" />
@@ -183,13 +183,13 @@
 		</c:forEach>
 		
 		<tr>
-			<th>
+			<th scope="row">
 				<acme:message code ="administrator.dashboard.form.label.patronages"/>
 			</th>	
 		</tr>
 		<c:forEach items="${deviationBudgetPatronages}" var="entry"> 	
 		<tr>	
-				<th>	
+				<th scope="row">	
 				<acme:message code="administrator.dashboard.form.label.deviation-sentence"/>		
 				<c:set var = "string1" value = "${entry.key}"/>
 				<c:set var = "string2" value = "${fn:split(string1, '->')}" />
@@ -206,16 +206,16 @@
 		</c:forEach>
 	</table>
 	<acme:message code="administrator.dashboard.form.label.minTitle"/>	
-	<table class="table table-sm">	
+	<table class="table table-sm" aria-describedby="Administrator dashboard - Minimum">	
 	
 		<tr>
-			<th>
+			<th scope="row">
 				<acme:message code ="administrator.dashboard.form.label.components"/>
 			</th>	
 		</tr>
 		<c:forEach items="${minimumOfComponentsRetailPrice}" var="entry"> 	
 		<tr>	
-			<th>	
+			<th scope="row">	
 			<acme:message code="administrator.dashboard.form.label.min-sentence"/>		
 			<c:set var = "string1" value = "${entry.key}"/>
 			<c:set var = "string2" value = "${fn:split(string1, '->')}" />
@@ -232,13 +232,13 @@
 		</c:forEach>
 		
 		<tr>
-			<th>
+			<th scope="row">
 				<acme:message code ="administrator.dashboard.form.label.tools"/>
 			</th>	
 		</tr>
 		<c:forEach items="${minimumOfToolsRetailPrice}" var="entry"> 	
 		<tr>	
-			<th>	
+			<th scope="row">	
 			<acme:message code="administrator.dashboard.form.label.min-sentence"/>		
 			<c:set var = "string1" value = "${entry.key}"/>
 			<c:set var = "string2" value = "${fn:split(string1, '->')}" />
@@ -254,13 +254,13 @@
 		</c:forEach>
 		
 		<tr>
-			<th>
+			<th scope="row">
 				<acme:message code ="administrator.dashboard.form.label.patronages"/>
 			</th>	
 		</tr>
 		<c:forEach items="${minimumBudgetPatronages}" var="entry"> 	
 		<tr>	
-				<th>	
+				<th scope="row">	
 				<acme:message code="administrator.dashboard.form.label.min-sentence"/>		
 				<c:set var = "string1" value = "${entry.key}"/>
 				<c:set var = "string2" value = "${fn:split(string1, '->')}" />
@@ -280,15 +280,15 @@
 	<acme:message code="administrator.dashboard.form.label.maxTitle"/>
 	
 			
-	<table class="table table-sm">
+	<table class="table table-sm" aria-describedby="Administrator dashboard - Maximum">
 		<tr>
-			<th>
+			<th scope="row">
 				<acme:message code ="administrator.dashboard.form.label.components"/>
 			</th>	
 		</tr>	
 		<c:forEach items="${maximumOfComponentsRetailPrice}" var="entry"> 	
 		<tr>	
-			<th>	
+			<th scope="row">	
 			<acme:message code="administrator.dashboard.form.label.max-sentence"/>		
 			<c:set var = "string1" value = "${entry.key}"/>
 			<c:set var = "string2" value = "${fn:split(string1, '->')}" />
@@ -305,13 +305,13 @@
 		</c:forEach>
 		
 		<tr>
-			<th>
+			<th scope="row">
 				<acme:message code ="administrator.dashboard.form.label.tools"/>
 			</th>	
 		</tr>
 		<c:forEach items="${maximumOfToolsRetailPrice}" var="entry"> 	
 		<tr>	
-			<th>	
+			<th scope="row">	
 			<acme:message code="administrator.dashboard.form.label.max-sentence"/>		
 			<c:set var = "string1" value = "${entry.key}"/>
 			<c:set var = "string2" value = "${fn:split(string1, '->')}" />
@@ -327,13 +327,13 @@
 		</c:forEach>
 		
 		<tr>
-			<th>
+			<th scope="row">
 				<acme:message code ="administrator.dashboard.form.label.patronages"/>
 			</th>	
 		</tr>
 		<c:forEach items="${maximumBudgetPatronages}" var="entry"> 	
 		<tr>	
-				<th>	
+				<th scope="row">	
 				<acme:message code="administrator.dashboard.form.label.max-sentence"/>		
 				<c:set var = "string1" value = "${entry.key}"/>
 				<c:set var = "string2" value = "${fn:split(string1, '->')}" />

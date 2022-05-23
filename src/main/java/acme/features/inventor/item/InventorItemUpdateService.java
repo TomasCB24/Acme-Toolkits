@@ -1,5 +1,6 @@
 package acme.features.inventor.item;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -89,9 +90,9 @@ public class InventorItemUpdateService implements AbstractUpdateService<Inventor
 		if(!errors.hasErrors("retailPrice")) {
 			final String[] currencies = this.repository.findSystemConfiguration().getAcceptedCurrencies().split(",");
 			final Set<String> systemCurrencies = new HashSet<>();
-			for(final String currency:currencies) {
-				systemCurrencies.add(currency);
-			} 
+			
+			Collections.addAll(systemCurrencies, currencies);
+			
 			errors.state(request, entity.getRetailPrice().getAmount()>0, "retailPrice", "inventor.item.form.error.negative-money");
 			errors.state(request, systemCurrencies.contains(entity.getRetailPrice().getCurrency()), "retailPrice", "inventor.item.form.error.invalid-money");
 		}

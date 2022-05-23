@@ -58,6 +58,7 @@ public class CreateTest extends TestHarness {
 		super.fillInputBoxIn("body", body);		
 		super.fillInputBoxIn("link", link);
 		super.fillInputBoxIn("flag", flag);
+		super.fillInputBoxIn("confirmation", "true");
 		super.clickOnSubmit("Create");
 
 		super.checkErrorsExist();
