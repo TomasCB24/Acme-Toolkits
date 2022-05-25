@@ -38,7 +38,7 @@
 		<link>
 			<name>acme-framework</name>
 			<type>2</type>
-			<locationURI>WORKSPACE_LOC/Frameworks/Acme-Framework-22.6/target/classes</locationURI>
+			<locationURI>WORKSPACE_LOC/Frameworks/Acme-Framework-22.7/target/classes</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
