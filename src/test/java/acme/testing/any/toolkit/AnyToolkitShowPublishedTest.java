@@ -1,6 +1,7 @@
 package acme.testing.any.toolkit;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -106,6 +107,15 @@ public class AnyToolkitShowPublishedTest extends TestHarness{
 		
 		
 	}
+	
+	@Test
+	@Order(40)
+	public void hackingTest() {
+		// HINT: the framework doesn't provide enough support to implement this test case,
+		// HINT+ so it must be performed manually:
+		// HINT+ a) show a toolkit that isn't published;
+	}
+	
 	
 
 }

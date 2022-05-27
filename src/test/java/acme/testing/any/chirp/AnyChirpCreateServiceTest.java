@@ -7,11 +7,6 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 import acme.testing.TestHarness;
 
 public class AnyChirpCreateServiceTest extends TestHarness{
-	/*
-	 * Casos positivos: campos comprobando mínimo y máximo
-	 * Casos negativos: campos que superen el máximo
-	 */
-	
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/any/chirp/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)

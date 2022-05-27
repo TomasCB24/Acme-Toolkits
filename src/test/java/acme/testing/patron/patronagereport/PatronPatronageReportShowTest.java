@@ -1,6 +1,7 @@
 package acme.testing.patron.patronagereport;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -29,6 +30,15 @@ public class PatronPatronageReportShowTest extends TestHarness{
 		super.checkInputBoxHasValue("link", link);
 		
 		super.signOut();
+	}
+	
+	@Test
+	@Order(20)
+	public void hackingTest() {
+		// HINT: the framework doesn't provide enough support to implement this test case,
+		// HINT+ so it must be performed manually:
+		// HINT+ a) show a patronage with a role other than "Patron";
+		// HINT+ b) as a patron, show a patronage report of another patron, other than the one logged in;
 	}
 	
 	// Ancillary methods ------------------------------------------------------

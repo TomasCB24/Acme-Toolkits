@@ -1,6 +1,7 @@
 package acme.testing.authenticated.announcement;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -39,6 +40,14 @@ public class AuthenticatedAnnouncementShowTest extends TemporalAwareTestHarness{
 
 		super.signOut();
 		
+	}
+	
+	@Test
+	@Order(20)
+	public void hackingTest() {
+		// HINT: the framework doesn't provide enough support to implement this test case,
+		// HINT+ so it must be performed manually:
+		// HINT+ a) show an announcement with an unauthenticated user;
 	}
 
 	// Ancillary methods ------------------------------------------------------

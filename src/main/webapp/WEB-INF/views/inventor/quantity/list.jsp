@@ -18,9 +18,9 @@
 <acme:list>
 
 	<acme:list-column code="inventor.quantity.list.label.number" path="number" width="20%"/>
-	<acme:list-column code="inventor.quantity.list.label.item-code" path="item-code" width="30%"/>
-	<acme:list-column code="inventor.quantity.list.label.item-name" path="item-name" width="30%"/>
-	<acme:list-column code="inventor.quantity.list.label.item-type" path="item-type" width="20%"/>
+	<acme:list-column code="inventor.quantity.list.label.item-code" path="itemCode" width="30%"/>
+	<acme:list-column code="inventor.quantity.list.label.item-name" path="itemName" width="30%"/>
+	<acme:list-column code="inventor.quantity.list.label.item-type" path="itemType" width="20%"/>
 
 </acme:list>
 

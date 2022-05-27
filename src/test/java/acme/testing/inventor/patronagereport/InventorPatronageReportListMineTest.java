@@ -31,31 +31,24 @@ public class InventorPatronageReportListMineTest extends TestHarness{
 
 	@Test
 	@Order(20)
-	public void hackingTestAnonymous() {
+	public void hackingTest() {
 
 		super.navigate("/inventor/patronage-report/list-mine");
 
 		super.checkPanicExists();
-	}
-
-	@Test
-	@Order(30)
-	public void hackingTestAdministrator() {
+		
 		super.signIn("administrator", "administrator");
 		super.navigate("/inventor/patronage-report/list-mine");
 
 		super.checkPanicExists();
 		super.signOut();
-	}
-
-	@Test
-	@Order(40)
-	public void hackingTestPatron() {
+		
 		super.signIn("patron1", "patron1");
 		super.navigate("/inventor/patronage-report/list-mine");
 
 		super.checkPanicExists();
 		super.signOut();
+		
 	}
 
 }

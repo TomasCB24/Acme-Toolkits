@@ -1,6 +1,7 @@
 package acme.testing.any.item;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -35,6 +36,14 @@ public class AnyItemShowTest extends TestHarness{
 			super.checkInputBoxHasValue("link", "");
 		}
 			
+	}
+	
+	@Test
+	@Order(20)
+	public void hackingTest() {
+		// HINT: the framework doesn't provide enough support to implement this test case,
+		// HINT+ so it must be performed manually:
+		// HINT+ a) show an item that isn't published;
 	}
 	
 }

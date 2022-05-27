@@ -77,9 +77,9 @@ public class InventorQuantityListService implements AbstractListService<Inventor
 		
 		request.unbind(entity, model, "number");
 		
-		model.setAttribute("item-code", entity.getItem().getCode());
-		model.setAttribute("item-name", entity.getItem().getName());
-		model.setAttribute("item-type", entity.getItem().getType());
+		model.setAttribute("itemCode", entity.getItem().getCode());
+		model.setAttribute("itemName", entity.getItem().getName());
+		model.setAttribute("itemType", entity.getItem().getType());
 		
 		
 	}
