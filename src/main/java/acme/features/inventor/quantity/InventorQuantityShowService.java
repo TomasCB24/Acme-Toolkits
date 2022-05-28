@@ -30,6 +30,7 @@ public class InventorQuantityShowService implements AbstractShowService<Inventor
 
 		masterId = request.getModel().getInteger("id");
 		quantity = this.repository.findOneQuantityById(masterId);
+		assert quantity != null;
 		inventor = quantity.getToolkit().getInventor();
 		result = (
 			quantity.getToolkit().isDraftMode() &&

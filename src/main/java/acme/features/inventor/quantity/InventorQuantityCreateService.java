@@ -37,6 +37,7 @@ public class InventorQuantityCreateService implements AbstractCreateService<Inve
 
 		masterId = request.getModel().getInteger("masterId");
 		toolkit = this.repository.findOneToolkitById(masterId);
+		assert toolkit != null;
 		inventor = toolkit.getInventor();
 		result = (
 			toolkit.isDraftMode() &&

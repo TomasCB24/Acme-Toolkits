@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import acme.entities.patronages.Patronage;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 import acme.helpers.PatronageHelper;
 import acme.roles.Inventor;
@@ -28,14 +27,13 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		int masterId;
 		Patronage patronage;
 		Inventor inventor;
-		Principal principal;
-		
+
 		masterId = request.getModel().getInteger("id");
 		patronage = this.repository.findOnePatronageById(masterId);
+		assert patronage != null;
 		inventor = patronage.getInventor();
-		principal = request.getPrincipal();
 		result = (
-			inventor.getUserAccount().getId()==principal.getAccountId());
+			request.isPrincipal(inventor));
 			
 		return result;
 	}

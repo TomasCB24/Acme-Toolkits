@@ -43,6 +43,7 @@ public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
 
 		masterId = request.getModel().getInteger("id");
 		toolkit = this.repository.findOneToolkitById(masterId);
+		assert toolkit !=null;
 		result = (!toolkit.isDraftMode());
 		
 		return result;
