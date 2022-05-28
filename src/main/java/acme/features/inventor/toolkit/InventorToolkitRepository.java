@@ -26,7 +26,7 @@ public interface InventorToolkitRepository extends AbstractRepository{
 	Double computeRetailPriceByToolkitId(int toolkitId);
 	
 	@Query("select sc.systemCurrency from SystemConfiguration sc")
-	Collection<String> findSystemCurrency();
+	String findSystemCurrency();
 	
 	@Query("select i from Inventor i where i.id = :id")
 	Inventor findOneInventorById(int id);

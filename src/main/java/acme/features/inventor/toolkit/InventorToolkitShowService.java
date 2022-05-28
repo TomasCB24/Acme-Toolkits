@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import acme.entities.toolkits.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.datatypes.Money;
 import acme.framework.services.AbstractShowService;
 import acme.helpers.ToolkitHelper;
 import acme.roles.Inventor;
@@ -68,7 +69,14 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		
 		//Retail Price
 		
-		model.setAttribute("retailPrice", this.helper.getToolkitRetailPrice(entity));
+		final String sc = this.repository.findSystemCurrency();
+		
+		final Money price = new Money();
+		price.setAmount(0.0);
+		price.setCurrency(sc);
+		
+		
+		model.setAttribute("retailPrice", this.helper.getToolkitRetailPrice(entity).getAmount()==null?price:this.helper.getToolkitRetailPrice(entity));
 		
 	}
 
