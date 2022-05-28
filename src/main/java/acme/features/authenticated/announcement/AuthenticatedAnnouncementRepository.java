@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.announcements.Announcement;
+import acme.entities.configuration.SystemConfiguration;
 import acme.framework.entities.UserAccount;
 import acme.framework.repositories.AbstractRepository;
 
@@ -24,5 +25,8 @@ public interface AuthenticatedAnnouncementRepository extends AbstractRepository 
 	
 	@Query("select ua from UserAccount ua where ua.id = :id")
 	UserAccount findOneUserAccountById(int id);
+	
+	@Query("select sc from SystemConfiguration sc")
+	SystemConfiguration findSystemConfiguration();
 
 }
