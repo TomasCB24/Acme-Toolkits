@@ -38,8 +38,10 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 
 		result = new PatronageReport();
 		
-		final Date creationMoment = new Date();
-		result.setCreationMoment(creationMoment);
+		Date moment;
+
+		moment = new Date(System.currentTimeMillis() - 1);
+		result.setCreationMoment(moment);
 
 		return result;
 	}
@@ -68,7 +70,11 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
         confirmation = request.getModel().getBoolean("confirmation");
         errors.state(request, confirmation, "confirmation", "inventor.patronage-report.confirmation.error");
 
-		if(!errors.hasErrors("serialNumber")) {
+        if(!errors.hasErrors("patronageCode")) {
+			
+			errors.state(request,entity.getPatronage()!=null,"patronageCode", "inventor.quantity.form.error.patronage-can-not-be-null");
+		
+		}else if(!errors.hasErrors("serialNumber")) {
 
 			PatronageReport existing;
 

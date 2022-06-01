@@ -36,4 +36,4 @@ master.menu.inventor = Inventor
 master.menu.inventor.patronage-report = Reportes de Patrocinios
 
 # form.error ##################################################################
-form.error.spam = El texto introducido contiene spam. Por favor, cuide su lenguaje.
+form.error.spam = El texto introducido contiene spam. Por favor, cuide su lenguaje

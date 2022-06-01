@@ -21,8 +21,9 @@ inventor.patronage.form.label.initial-period-date = Fecha de Inicio:
 inventor.patronage.form.label.final-period-date = Fecha de Fin:
 inventor.patronage.form.label.link = Link para más información: (Opcional)
 
-inventor.patronage.form.label.company = Compañía del Patrocinador
-inventor.patronage.form.label.statement = Declaración del Patrocinador
+inventor.patronage.form.label.username = Nombre de usuario del patrocinador:
+inventor.patronage.form.label.company = Compañía del Patrocinador:
+inventor.patronage.form.label.statement = Declaración del Patrocinador:
 inventor.patronage.form.label.patronLink = Link para más información del Patrocinador: (Opcional)
 
 inventor.patronage.form.button.update = Actualizar

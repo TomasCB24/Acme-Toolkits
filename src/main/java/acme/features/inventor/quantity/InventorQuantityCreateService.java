@@ -71,11 +71,11 @@ public class InventorQuantityCreateService implements AbstractCreateService<Inve
 		assert entity != null;
 		assert errors != null;
 
-		final String itemCode = String.valueOf(request.getModel().getAttribute("item-code"));
+		final String itemCode = String.valueOf(request.getModel().getAttribute("itemCode"));
 		final Item item = this.repository.findOneItemByCode(itemCode);
 		entity.setItem(item);
 		
-		request.bind(entity, errors, "number", "item-code");
+		request.bind(entity, errors, "number", "itemCode");
 		
 	}
 
@@ -85,7 +85,11 @@ public class InventorQuantityCreateService implements AbstractCreateService<Inve
 		assert entity != null;
 		assert errors != null;
 		
-		if(!errors.hasErrors("number")) {
+		if(!errors.hasErrors("itemCode")) {
+			
+			errors.state(request,entity.getItem()!=null,"itemCode", "inventor.quantity.form.error.item-can-not-be-null");
+		
+		}else if(!errors.hasErrors("number")) {
 			
 			final int toolkitId;			
 			toolkitId = request.getModel().getInteger("masterId");
@@ -106,7 +110,7 @@ public class InventorQuantityCreateService implements AbstractCreateService<Inve
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "number", "item-code");
+		request.unbind(entity, model, "number");
 		model.setAttribute("masterId", request.getModel().getAttribute("masterId"));
 		model.setAttribute("items", this.repository.findManyPublishedItems());
 		

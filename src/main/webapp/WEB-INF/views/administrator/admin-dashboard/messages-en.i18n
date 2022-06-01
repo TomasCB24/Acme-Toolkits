@@ -23,8 +23,8 @@ administrator.dashboard.form.label.min-sentence = Mínimum retail price by curre
 administrator.dashboard.form.label.max-sentence = Maximum retail price by currency
 administrator.dashboard.form.label.averageTitle = Averages Information
 administrator.dashboard.form.label.deviationTitle = Deviations Information
-administrator.dashboard.form.label.maxTitle = Maximus Information
-administrator.dashboard.form.label.minTitle = Minimus Information
+administrator.dashboard.form.label.maxTitle = Maximum Information
+administrator.dashboard.form.label.minTitle = Minimum Information
 administrator.dashboard.form.label.and-technology = and technology
 administrator.dashboard.form.label.colon = :
 

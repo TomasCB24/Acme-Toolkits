@@ -40,10 +40,10 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	
 	//Component
 	
-	@Query("select i.retailPrice.currency, i.technology, avg(i), i.type from Item i where i.type=acme.entities.items.ItemType.COMPONENT group by i.retailPrice.currency, i.technology")
+	@Query("select i.retailPrice.currency, i.technology, avg(i.retailPrice.amount), i.type from Item i where i.type=acme.entities.items.ItemType.COMPONENT group by i.retailPrice.currency, i.technology")
 	List<String> averageOfComponentsRetailPrice();
 	
-	@Query("select i.retailPrice.currency, i.technology, stddev(i), i.type from Item i where i.type=acme.entities.items.ItemType.COMPONENT group by i.retailPrice.currency, i.technology")
+	@Query("select i.retailPrice.currency, i.technology, stddev(i.retailPrice.amount), i.type from Item i where i.type=acme.entities.items.ItemType.COMPONENT group by i.retailPrice.currency, i.technology")
 	List<String> deviationOfComponentsRetailPrice();
 	
 	@Query("select i.retailPrice.currency, i.technology, min(i.retailPrice.amount), i.type from Item i where i.type=acme.entities.items.ItemType.COMPONENT group by i.retailPrice.currency, i.technology")
@@ -54,16 +54,16 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	
 	//Tool
 	
-	@Query("select i.retailPrice.currency, avg(i), i.type from Item i where i.type=acme.entities.items.ItemType.TOOL group by i.retailPrice.currency")
+	@Query("select i.retailPrice.currency, avg(i.retailPrice.amount), i.type from Item i where i.type=acme.entities.items.ItemType.TOOL group by i.retailPrice.currency")
 	List<String> averageOfToolsRetailPrice();
 	
-	@Query("select i.retailPrice.currency, stddev(i), i.type from Item i where i.type=acme.entities.items.ItemType.TOOL group by i.retailPrice.currency")
+	@Query("select i.retailPrice.currency, stddev(i.retailPrice.amount), i.type from Item i where i.type=acme.entities.items.ItemType.TOOL group by i.retailPrice.currency")
 	List<String> deviationOfToolsRetailPrice();
 	
 	@Query("select i.retailPrice.currency, min(i.retailPrice.amount), i.type from Item i where i.type=acme.entities.items.ItemType.TOOL group by i.retailPrice.currency")
 	List<String> minimumOfToolsRetailPrice();
 	
-	@Query("select i.retailPrice.currency, min(i.retailPrice.amount), i.type from Item i where i.type=acme.entities.items.ItemType.TOOL group by i.retailPrice.currency")
+	@Query("select i.retailPrice.currency, max(i.retailPrice.amount), i.type from Item i where i.type=acme.entities.items.ItemType.TOOL group by i.retailPrice.currency")
 	List<String> maximumOfToolsRetailPrice();
 	
 	//Patronages

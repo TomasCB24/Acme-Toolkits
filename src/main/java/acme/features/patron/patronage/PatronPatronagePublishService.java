@@ -64,7 +64,7 @@ public class PatronPatronagePublishService  implements AbstractUpdateService<Pat
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "code", "status","legalStuff","budget","creationDate", "initialPeriodDate", "finalPeriodDate", "link");
+		request.unbind(entity, model, "code", "status","legalStuff","budget","creationDate", "initialPeriodDate", "finalPeriodDate", "link","draftMode");
 		
 	}
 
@@ -88,7 +88,7 @@ public class PatronPatronagePublishService  implements AbstractUpdateService<Pat
 		assert entity != null;
 		assert errors != null;
 		
-if(!errors.hasErrors("code")) {
+		if(!errors.hasErrors("code")) {
 			
 			Patronage existing;
 			

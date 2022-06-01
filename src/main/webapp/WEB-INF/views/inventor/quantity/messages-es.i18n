@@ -21,3 +21,4 @@ inventor.quantity.form.label.number = Cantidad:
 inventor.quantity.form.label.item-code = Código del Elemento:
 
 inventor.quantity.form.error.tool = Las herramientas solo pueden tener cantidad igual a 1
+inventor.quantity.form.error.item-can-not-be-null = El elemento no puede ser nulo

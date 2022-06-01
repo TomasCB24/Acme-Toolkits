@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import acme.entities.patronages.Patronage;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 import acme.helpers.PatronageHelper;
 import acme.roles.Inventor;
@@ -29,15 +28,13 @@ public class PatronPatronageShowService implements AbstractShowService<Patron, P
 		int masterId;
 		Patronage patronage;
 		Patron patron;
-		Principal principal;
 		
 		masterId = request.getModel().getInteger("id");
 		patronage = this.repository.findOnePatronageById(masterId);
 		patron = patronage.getPatron();
 		assert patron != null;
-		principal = request.getPrincipal();
 		result = (
-			patron.getUserAccount().getId()==principal.getAccountId());
+			request.isPrincipal(patron));
 			
 		return result;
 	}

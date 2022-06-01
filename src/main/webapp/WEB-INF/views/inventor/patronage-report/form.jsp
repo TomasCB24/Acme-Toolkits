@@ -9,8 +9,8 @@
 		<acme:input-textbox code="inventor.patronage-report.form.label.sequence-number" path="sequenceNumber"/>
 		<acme:input-moment code="inventor.patronage-report.form.label.creation-moment" path="creationMoment"/>
 		<acme:input-textbox readonly='true' code="inventor.patronage-report.form.label.patronage-code" path="patronageCode"/>
+		<acme:input-textbox code="inventor.patronage-report.form.label.serial-number" path="serialNumber"/>
 	</jstl:if>
-	
 	<acme:input-textarea code="inventor.patronage-report.form.label.memorandum" path="memorandum"/>
 	<acme:input-textbox code="inventor.patronage-report.form.label.link" path="link"/>	
 

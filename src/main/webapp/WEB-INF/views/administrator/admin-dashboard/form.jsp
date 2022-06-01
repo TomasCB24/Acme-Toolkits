@@ -136,7 +136,7 @@
 </table>
 
 <acme:message code="administrator.dashboard.form.label.deviationTitle"/>	
-	<table class="table table-sm" aria-describedby="Administrator dashboard - Desviation">	
+	<table class="table table-sm" aria-describedby="Administrator dashboard - Deviation">	
 		<tr>
 			<th scope="row">
 				<acme:message code ="administrator.dashboard.form.label.components"/>

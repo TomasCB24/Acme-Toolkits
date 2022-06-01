@@ -37,4 +37,4 @@ master.menu.inventor = Inventor
 master.menu.inventor.patronage-report = Patronage Report
 
 # form.error ##################################################################
-form.error.spam = The text entered contains spam words. Please, watch your language.
+form.error.spam = The text entered contains spam words. Please, watch your language

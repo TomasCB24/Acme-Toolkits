@@ -20,3 +20,4 @@ administrator.system-configuration.form.button.update = Update
 administrator.system-configuration.form.error.system-currency = The system currency must be an accepted currency
 administrator.system-configuration.form.error.repeated-currency = The currencies accepted by the system cannot be repeated
 administrator.system-configuration.form.error.repeated-word = Spam words cannot be repeated
+administrator.system-configuration.form.error.not-accepted-currency = Not all currencies you have entered are not accepted by the application

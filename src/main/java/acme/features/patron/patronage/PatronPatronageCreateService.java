@@ -1,7 +1,5 @@
 package acme.features.patron.patronage;
 
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
@@ -48,7 +46,12 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		result = new Patronage();
 		result.setDraftMode(true);
 		result.setPatron(patron);
-		result.setCreationDate(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()));
+		
+		Date moment;
+
+		moment = new Date(System.currentTimeMillis() - 1);
+		
+		result.setCreationDate(moment);
 		result.setStatus(Status.PROPOSED);
 
 		return result;

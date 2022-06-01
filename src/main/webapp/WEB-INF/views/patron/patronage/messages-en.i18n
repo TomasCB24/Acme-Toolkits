@@ -13,18 +13,18 @@ patron.patronage.list.label.code = Code
 patron.patronage.list.label.creation-date = Creation Date
 patron.patronage.list.label.legal-stuff = Legal Stuff
 
-patron.patronage.form.label.status = Status
-patron.patronage.form.label.code = Code
-patron.patronage.form.label.legal-stuff = Legal Stuff
-patron.patronage.form.label.budget = Budget
-patron.patronage.form.label.creation-date = Creation Date
-patron.patronage.form.label.initial-period-date = Initial Period Date
-patron.patronage.form.label.final-period-date = Final Period Date
-patron.patronage.form.label.link = Link for more info 
+patron.patronage.form.label.status = Status:
+patron.patronage.form.label.code = Code:
+patron.patronage.form.label.legal-stuff = Legal Stuff:
+patron.patronage.form.label.budget = Budget:
+patron.patronage.form.label.creation-date = Creation Date:
+patron.patronage.form.label.initial-period-date = Initial Period Date:
+patron.patronage.form.label.final-period-date = Final Period Date:
+patron.patronage.form.label.link = Link for more info: (Optional)
 
-patron.patronage.form.label.inventor = Inventor's Username
-patron.patronage.form.label.company = Inventor's Company
-patron.patronage.form.label.statement = Inventor's Statement 
+patron.patronage.form.label.inventor = Inventor's Username:
+patron.patronage.form.label.company = Inventor's Company:
+patron.patronage.form.label.statement = Inventor's Statement:
 patron.patronage.form.label.inventorLink = Link for more info about the Inventor: (Optional)
 
 patron.patronage.form.button.update = Update

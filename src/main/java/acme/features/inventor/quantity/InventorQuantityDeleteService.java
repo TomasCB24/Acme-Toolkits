@@ -48,9 +48,9 @@ public class InventorQuantityDeleteService implements AbstractDeleteService<Inve
 		assert entity != null;
 		assert errors != null;
 		
-		final String itemCode = String.valueOf(request.getModel().getAttribute("item-code"));
+		final String itemCode = String.valueOf(request.getModel().getAttribute("itemCode"));
 		final Item item = this.repository.findOneItemByCode(itemCode);
-		errors.state(request, item!=null, "item-code", "inventor.quantity.form.error.invalid-item");
+		errors.state(request, item!=null, "itemCode", "inventor.quantity.form.error.invalid-item");
 		entity.setItem(item);
 
 		request.bind(entity, errors, "number", "item","toolkit");

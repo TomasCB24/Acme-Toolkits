@@ -12,7 +12,7 @@ public class SpamHelper {
 	
 	public boolean spamChecker(final String text, final String strongSpamW, final String weakSpamW, final Double strongThreshold,final Double weakThreshold) {	
 		
-		final String[] words = text.split(" ");
+		final String[] words = text.split("\\s+");
 		final List<String> wordsListText = this.getListGivenArray(words);
 		final List<String> wordsList = wordsListText.stream().map(String::toLowerCase).collect(Collectors.toList());
 		

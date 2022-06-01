@@ -19,3 +19,4 @@ administrator.system-configuration.form.button.update = Actualizar
 administrator.system-configuration.form.error.system-currency = La moneda del sistema debe ser una moneda aceptada
 administrator.system-configuration.form.error.repeated-currency = Las monedas aceptadas por el sistema no se pueden repetir
 administrator.system-configuration.form.error.repeated-word = Las palabras de spam no se pueden repetir
+administrator.system-configuration.form.error.not-accepted-currency = No todas las monedas que ha introducido no son aceptadas por la aplicación

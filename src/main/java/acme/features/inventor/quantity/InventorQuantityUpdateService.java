@@ -63,11 +63,11 @@ public class InventorQuantityUpdateService implements AbstractUpdateService<Inve
 		assert entity != null;
 		assert errors != null;
 
-		final String itemCode = String.valueOf(request.getModel().getAttribute("item-code"));
+		final String itemCode = String.valueOf(request.getModel().getAttribute("itemCode"));
 		final Item item = this.repository.findOneItemByCode(itemCode);
 		entity.setItem(item);
 		
-		request.bind(entity, errors, "number", "item-code");
+		request.bind(entity, errors, "number", "itemCode");
 		
 	}
 	
@@ -101,7 +101,7 @@ public class InventorQuantityUpdateService implements AbstractUpdateService<Inve
 		assert model != null;
 
 		request.unbind(entity, model, "number");
-		model.setAttribute("item-code", entity.getItem().getCode());
+		model.setAttribute("itemCode", entity.getItem().getCode());
 		
 	}	
 

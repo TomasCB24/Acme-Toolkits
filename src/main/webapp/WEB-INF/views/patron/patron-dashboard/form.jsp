@@ -26,7 +26,7 @@
 </table>
 
 <acme:message code="patron.patron-dashboard.form.label.deviationTitle"/>		
-<table class="table table-sm" aria-describedby="Patron dashboard - Desviation">
+<table class="table table-sm" aria-describedby="Patron dashboard - Deviation">
 	<jstl:forEach items="${deviationBudgetOfPatronages}" var="entry"> 
 	<tr>	
 		<th scope="row">

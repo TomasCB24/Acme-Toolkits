@@ -11,12 +11,13 @@
 	</acme:input-select>
 
 	<acme:input-textbox readonly='true' code="inventor.patronage.form.label.code" path="code"/>
-	<acme:input-textbox readonly='true' code="inventor.patronage.form.label.legal-stuff" path="legalStuff"/>
+	<acme:input-textarea readonly='true' code="inventor.patronage.form.label.legal-stuff" path="legalStuff"/>
 	<acme:input-money readonly='true' code="inventor.patronage.form.label.budget" path="budget"/>
 	<acme:input-moment readonly='true' code="inventor.patronage.form.label.creation-date" path="creationDate"/>
 	<acme:input-moment readonly='true' code="inventor.patronage.form.label.initial-period-date" path="initialPeriodDate"/>
 	<acme:input-moment readonly='true' code="inventor.patronage.form.label.final-period-date" path="finalPeriodDate"/>
 	<acme:input-url readonly='true' code="inventor.patronage.form.label.link" path="link"/>
+	<acme:input-textbox readonly='true' code="inventor.patronage.form.label.username" path="patronUsername"/>
 	<acme:input-textbox readonly='true' code="inventor.patronage.form.label.company" path="company"/>
 	<acme:input-textarea readonly='true' code="inventor.patronage.form.label.statement" path="statement"/>
 	<acme:input-url readonly='true' code="inventor.patronage.form.label.patronLink" path="patronLink"/>

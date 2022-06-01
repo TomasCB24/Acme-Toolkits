@@ -6,7 +6,7 @@
 <acme:form> 
 	
 	<acme:input-textbox code="patron.patronage.form.label.code" path="code"/>
-	<acme:input-textbox code="patron.patronage.form.label.legal-stuff" path="legalStuff"/>
+	<acme:input-textarea code="patron.patronage.form.label.legal-stuff" path="legalStuff"/>
 	<acme:input-money code="patron.patronage.form.label.budget" path="budget"/>
 	<acme:input-moment code="patron.patronage.form.label.initial-period-date" path="initialPeriodDate"/>
 	<acme:input-moment code="patron.patronage.form.label.final-period-date" path="finalPeriodDate"/>

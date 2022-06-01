@@ -13,6 +13,7 @@ patron.patronage-report.list.label.memorandum = Memorándum
 
 
 patron.patronage-report.form.label.sequence-number = Número de Secuencia:
+patron.patronage-report.form.label.serial-number = Número de Serie:
 patron.patronage-report.form.label.memorandum = Memorándum:
 patron.patronage-report.form.label.creation-moment = Fecha de Creación:
 patron.patronage-report.form.label.link = Link para más información: (Opcional)

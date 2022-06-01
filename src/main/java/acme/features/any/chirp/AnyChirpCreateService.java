@@ -40,9 +40,13 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> 
 		assert request != null;
 
 		Chirp result;
+		Date moment;
 
-		result = new Chirp();
+		moment = new Date(System.currentTimeMillis() - 1);
 
+		result = new Chirp();		
+		result.setCreationMoment(moment);
+		
 		return result;
 	}
 
@@ -52,10 +56,7 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> 
 		assert entity != null;
 		assert errors != null;
 
-		Date moment;
-		moment = new Date(System.currentTimeMillis() - 1);
 		request.bind(entity, errors, "title", "author", "body", "email");
-		entity.setCreationMoment(moment);
 	}
 
 	@Override

@@ -37,7 +37,7 @@
 			<acme:submit code="inventor.quantity.form.button.delete" action="/inventor/quantity/delete"/>
 		</jstl:when>
 		<jstl:when test="${command == 'create'}">
-			<acme:submit code="inventor.quantity.form.button.create" action="/inventor/quantity/create"/>
+			<acme:submit code="inventor.quantity.form.button.create" action="/inventor/quantity/create?masterId=${masterId}"/>
 		</jstl:when>	
 	</jstl:choose>
 	

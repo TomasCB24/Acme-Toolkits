@@ -14,6 +14,6 @@ patron.patron-dashboard.form.label.maxTitle= Máximos
 patron.patron-dashboard.form.label.minTitle= Mínimos
 patron.patron-dashboard.form.label.absoluteTitle = Totales
 
-patron.patron-dashboard.form.label.totalNumberOfProposedPatronages = Total de mecenazgos propuestos:
-patron.patron-dashboard.form.label.totalNumberOfAcceptedPatronages = Total de mecenazgos aceptados:
-patron.patron-dashboard.form.label.totalNumberOfDeniedPatronages = Total de mecenazgos rechazados:
+patron.patron-dashboard.form.label.totalNumberOfProposedPatronages = Total de patrocinios propuestos:
+patron.patron-dashboard.form.label.totalNumberOfAcceptedPatronages = Total de patrocinios aceptados:
+patron.patron-dashboard.form.label.totalNumberOfDeniedPatronages = Total de patrocinios rechazados:

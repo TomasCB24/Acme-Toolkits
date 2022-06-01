@@ -60,10 +60,12 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		//Patron details:
 		final Patronage patronage = this.repository.findOnePatronageById(entity.getId());
 		final Patron patron = patronage.getPatron();
+		final String patronUsername = patron.getUserAccount().getUsername();
 		final String company = patron.getCompany();
 		final String statement = patron.getStatement();
 		final String patronLink = patron.getLink();
 		
+		model.setAttribute("patronUsername", patronUsername);
 		model.setAttribute("company", company);
 		model.setAttribute("statement", statement);
 		model.setAttribute("patronLink", patronLink);
