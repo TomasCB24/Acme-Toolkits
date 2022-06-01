@@ -21,6 +21,7 @@ public class AuthenticatedSystemConfigurationShowCurrencyTest extends TestHarnes
 		super.checkInputBoxHasValue("acceptedCurrencies", acceptedCurrencies);
 		super.checkInputBoxHasValue("systemCurrency", systemCurrency);
 		
+		super.signOut();
 		
 	}
 	

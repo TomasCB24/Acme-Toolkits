@@ -38,6 +38,7 @@ public class InventorToolkitPublishService implements AbstractUpdateService<Inve
 
 		masterId = request.getModel().getInteger("id");
 		toolkit = this.repository.findOneToolkitById(masterId);
+		assert toolkit != null;
 		inventor = toolkit.getInventor();
 		result = (
 			toolkit.isDraftMode() &&

@@ -1,6 +1,7 @@
 package acme.testing.inventor.toolkit;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -21,6 +22,7 @@ public class InventorToolkitShowMineTest extends TestHarness{
 
 		super.checkColumnHasValue(recordIndex, 0, code);
 		super.checkColumnHasValue(recordIndex, 1, title);
+		super.checkColumnHasValue(recordIndex, 2, retailPrice);
 		
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
@@ -28,6 +30,7 @@ public class InventorToolkitShowMineTest extends TestHarness{
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("description", description);
 		super.checkInputBoxHasValue("assemblyNotes", assemblyNotes);
+		super.checkInputBoxHasValue("retailPrice", retailPrice);
 		
 		
 		if(!link.equals("null")) {
@@ -36,14 +39,11 @@ public class InventorToolkitShowMineTest extends TestHarness{
 			super.checkInputBoxHasValue("link", "");
 		}
 		
-
-		
-		
 		super.checkButtonExists("Items");
 		super.clickOnButton("Items");
 		
 		super.checkListingExists();
-		super.sortListing(0, "asc");
+		super.signOut();
 	
 		
 	}
@@ -69,6 +69,8 @@ public class InventorToolkitShowMineTest extends TestHarness{
 		super.checkColumnHasValue(recordIndex, 1, code);
 		super.checkColumnHasValue(recordIndex, 2, name);
 		super.checkColumnHasValue(recordIndex, 3, type);
+		
+		super.signOut();
 		
 	}
 	
@@ -97,6 +99,7 @@ public class InventorToolkitShowMineTest extends TestHarness{
 		super.checkInputBoxHasValue("code", code);
 		super.checkInputBoxHasValue("technology", technology);
 		super.checkInputBoxHasValue("description", description);
+		super.checkInputBoxHasValue("retailPrice", retailPrice);
 		
 		if(!link.equals("null")) {
 			super.checkInputBoxHasValue("link", link);
@@ -104,7 +107,16 @@ public class InventorToolkitShowMineTest extends TestHarness{
 			super.checkInputBoxHasValue("link", "");
 		}
 		
-		
+		super.signOut();
+	}
+	
+	@Test
+	@Order(40)
+	public void hackingTest() {
+		// HINT: the framework doesn't provide enough support to implement this test case,
+		// HINT+ so it must be performed manually:
+		// HINT+ a) show a toolkit with a role other than "Inventor";
+		// HINT+ b) as a inventor, show a toolkit of another inventor, other than the one logged in;
 	}
 
 }

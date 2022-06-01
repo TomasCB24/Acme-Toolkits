@@ -25,6 +25,7 @@ public class InventorPatronageReportShowService implements AbstractShowService<I
 		
 		masterId = request.getModel().getInteger("id");
 		patronageReport = this.repository.findOnePatronageReportById(masterId);
+		assert patronageReport != null;
 		inventor = patronageReport.getPatronage().getInventor();
 		result = (
 			request.isPrincipal(inventor)
@@ -48,10 +49,10 @@ public class InventorPatronageReportShowService implements AbstractShowService<I
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "memorandum", "creationMoment", "link", "code");
+		request.unbind(entity, model, "memorandum", "creationMoment", "link");
 		final PatronageReport patronageReport = this.repository.findOnePatronageReportById(entity.getId());
 		final String sequenceNumber = patronageReport.sequenceNumber();
-		model.setAttribute("patronage-code", entity.getPatronage().getCode());
+		model.setAttribute("patronageCode", entity.getPatronage().getCode());
 		model.setAttribute("sequenceNumber", sequenceNumber);
 		
 	}

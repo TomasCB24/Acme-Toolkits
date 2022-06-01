@@ -13,7 +13,7 @@ public class InventorToolkitListMineTest extends TestHarness{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/inventor/toolkit/list-mine.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positiveTest(final int recordIndex, final String code, final String title) {
+	public void positiveTest(final int recordIndex, final String code, final String title, final String retailPrice) {
 
 		super.signIn("inventor1", "inventor1");
 
@@ -23,6 +23,7 @@ public class InventorToolkitListMineTest extends TestHarness{
 
 		super.checkColumnHasValue(recordIndex, 0, code);
 		super.checkColumnHasValue(recordIndex, 1, title);
+		super.checkColumnHasValue(recordIndex, 2, retailPrice);
 		
 
 
@@ -31,35 +32,25 @@ public class InventorToolkitListMineTest extends TestHarness{
 	
 	@Test
 	@Order(20)
-	public void hackingTestAnonymous() {
+	public void hackingTest() {
 
 		super.navigate("/inventor/toolkit/list-mine");
 		super.checkPanicExists();
-	
-	}
-	
-	
-	@Test
-	@Order(30)
-	public void hackingTestAdministrator() {
+		
 		super.signIn("administrator", "administrator");
 		super.navigate("/inventor/toolkit/list-mine");
 		super.checkPanicExists();
 		super.signOut();
-	}
 	
-	@Test
-	@Order(40)
-	public void hackingTestPatron() {
 		super.signIn("patron1", "patron1");
 		super.navigate("/inventor/toolkit/list-mine");
 		super.checkPanicExists();
 		super.signOut();
+		
+		// HINT: the framework doesn't provide enough support to implement this test case,
+		// HINT+ so it must be performed manually:
+		// HINT+ a) as an inventor, list the toolkits of another inventor, other than the one logged in;
+		
 	}
-		
-		
-		
-
-		
 		
 }

@@ -1,12 +1,14 @@
 package acme.testing.inventor.item;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.TestHarness;
 
 public class InventorItemListMineTest extends TestHarness{
+	
 	@ParameterizedTest
 	@CsvFileSource(resources = "/inventor/item/list-mine.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
@@ -37,6 +39,17 @@ public class InventorItemListMineTest extends TestHarness{
 			super.checkInputBoxHasValue("link", "");
 		}
 		
+		super.signOut();
+		
+	}
+	
+	@Test
+	@Order(20)
+	public void hackingTest() {
+		// HINT: the framework doesn't provide enough support to implement this test case,
+		// HINT+ so it must be performed manually:
+		// HINT+ a) list the items with a role other than "Inventor";
+		// HINT+ b) as an inventor, list the items of another inventor, other than the one logged in;
 	}
 
 }

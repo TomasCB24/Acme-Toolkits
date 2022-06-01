@@ -7,7 +7,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.TestHarness;
 
-public class CreateTest extends TestHarness {
+public class AdministratorAnnouncementCreateTest extends TestHarness {
 
 	// Test cases -------------------------------------------------------------
 

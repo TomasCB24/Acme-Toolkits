@@ -7,7 +7,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.TestHarness;
 
-public class CreateTest extends TestHarness {
+public class InventorPatronageReportCreateTest extends TestHarness {
 	// Test cases -------------------------------------------------------------
 
 		@ParameterizedTest
@@ -24,7 +24,7 @@ public class CreateTest extends TestHarness {
 			super.fillInputBoxIn("memorandum", memorandum);
 			super.fillInputBoxIn("serialNumber", serialNumber);		
 			super.fillInputBoxIn("link", link);
-			super.fillInputBoxIn("patronage-code", patronageCode);
+			super.fillInputBoxIn("patronageCode", patronageCode);
 			super.fillInputBoxIn("confirmation", "true");
 			super.clickOnSubmit("Create");
 			
@@ -57,7 +57,7 @@ public class CreateTest extends TestHarness {
 			super.fillInputBoxIn("memorandum", memorandum);
 			super.fillInputBoxIn("serialNumber", serialNumber);		
 			super.fillInputBoxIn("link", link);
-			super.fillInputBoxIn("patronage-code", patronageCode);
+			super.fillInputBoxIn("patronageCode", patronageCode);
 			super.fillInputBoxIn("confirmation", "true");
 			super.clickOnSubmit("Create");
 			super.checkErrorsExist();

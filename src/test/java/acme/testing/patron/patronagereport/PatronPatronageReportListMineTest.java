@@ -31,31 +31,28 @@ public class PatronPatronageReportListMineTest extends TestHarness{
 	
 	@Test
 	@Order(20)
-	public void hackingTestAnonymous() {
+	public void hackingTest() {
 
 		super.navigate("/patron/patronage-report/list-mine");
 
 		super.checkPanicExists();
-	}
-	
-	@Test
-	@Order(30)
-	public void hackingTestAdministrator() {
+		
 		super.signIn("administrator", "administrator");
 		super.navigate("/patron/patronage-report/list-mine");
 
 		super.checkPanicExists();
 		super.signOut();
-	}
-	
-	@Test
-	@Order(40)
-	public void hackingTestInventor() {
+		
 		super.signIn("inventor1", "inventor1");
 		super.navigate("/patron/patronage-report/list-mine");
 
 		super.checkPanicExists();
 		super.signOut();
+		
+		// HINT: the framework doesn't provide enough support to implement this test case,
+		// HINT+ so it must be performed manually:
+		// HINT+ a) as a patron, list the patronage reports of another patron, other than the one logged in;
+		
 	}
 	
 	// Ancillary methods ------------------------------------------------------

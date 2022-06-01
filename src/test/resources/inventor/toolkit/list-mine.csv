@@ -1,8 +1,8 @@
-recordIndex,code,title
-0,AAA-000-A,1
-1,AAA-001-A,Toolkit title 1
-2,AAA-002-A,Toolkit title 2
-3,AAA-003-A,Toolkit title 3
-4,AAA-004-A,Toolkit title 4
-5,AAA-005-A,<script>alert("hi!")<script>
-6,AAA-006-A,!·$%&(/)=?¿¡ª!|@#~€¬
+recordIndex,code,title,retail-price
+0,AAA-000-A,1,"EUR 7,995.49"
+1,AAA-001-A,Toolkit title 1,"EUR 756.99"
+2,AAA-002-A,Toolkit title 2,"EUR 90.49"
+3,AAA-003-A,Toolkit title 3,"EUR 1,706.79"
+4,AAA-004-A,Toolkit title 4,"EUR 30.49"
+5,AAA-005-A,<script>alert("hi!")<script>,"EUR 170.00"
+6,AAA-006-A,!·$%&(/)=?¿¡ª!|@#~€¬,"EUR 189.33"

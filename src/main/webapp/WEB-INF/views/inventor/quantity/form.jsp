@@ -21,14 +21,14 @@
 	
 	<jstl:choose>
 		<jstl:when test="${command == 'create'}">
-			<acme:input-select code="inventor.quantity.form.label.item-code" path="item-code">
+			<acme:input-select code="inventor.quantity.form.label.item-code" path="itemCode">
 				<jstl:forEach var="item" items="${items}">	
 					<acme:input-option code="${item.code}" value="${item.code}"/>
 				</jstl:forEach>
 			</acme:input-select>
 		</jstl:when>
 		<jstl:otherwise>
-			<acme:input-textbox readonly='true' code="inventor.quantity.form.label.item-code" path="item-code"/>
+			<acme:input-textbox readonly='true' code="inventor.quantity.form.label.item-code" path="itemCode"/>
 		</jstl:otherwise>
 	</jstl:choose>
 	<jstl:choose>

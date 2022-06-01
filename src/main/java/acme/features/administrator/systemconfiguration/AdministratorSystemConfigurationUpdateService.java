@@ -3,7 +3,6 @@ package acme.features.administrator.systemconfiguration;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -38,13 +37,9 @@ public class AdministratorSystemConfigurationUpdateService implements AbstractUp
 	public SystemConfiguration findOne(final Request<SystemConfiguration> request) {
 		assert request != null;
 		
-		SystemConfiguration result=null;
+		SystemConfiguration result;
 		
-		final Optional<SystemConfiguration> scOpt = this.repository.findSystemConfiguration().stream().findFirst();
-		
-		if(scOpt.isPresent()) {
-			result = scOpt.get();
-		}
+		result = this.repository.findSystemConfiguration();
 		
 		return result;
 	}

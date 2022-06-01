@@ -24,7 +24,7 @@ public class AdministratorSystemConfigurationShowCurrencyTest extends TestHarnes
 		super.checkInputBoxHasValue("weakSpamWords", weakSpamWords);
 		super.checkInputBoxHasValue("weakSpamThreshold", weakSpamThreshold);
 		
-		
+		super.signOut();
 		
 		
 	}

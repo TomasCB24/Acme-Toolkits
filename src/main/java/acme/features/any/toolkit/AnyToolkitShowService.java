@@ -7,6 +7,7 @@ import acme.entities.toolkits.Toolkit;
 import acme.features.any.item.AnyItemRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.datatypes.Money;
 import acme.framework.roles.Any;
 import acme.framework.services.AbstractShowService;
 import acme.helpers.MoneyExchangeHelper;
@@ -43,6 +44,7 @@ public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
 
 		masterId = request.getModel().getInteger("id");
 		toolkit = this.repository.findOneToolkitById(masterId);
+		assert toolkit !=null;
 		result = (!toolkit.isDraftMode());
 		
 		return result;
@@ -78,8 +80,15 @@ public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
 		model.setAttribute("inventor", inventor);
 		
 		//Retail Price
-	
-		model.setAttribute("retailPrice", this.helper.getToolkitRetailPrice(entity));
+		
+		final String sc = this.repository.findSystemConfiguration().getSystemCurrency();
+		
+		final Money price = new Money();
+		price.setAmount(0.0);
+		price.setCurrency(sc);
+		
+		
+		model.setAttribute("retailPrice", this.helper.getToolkitRetailPrice(entity).getAmount()==null?price:this.helper.getToolkitRetailPrice(entity));
 		
 		
 		
