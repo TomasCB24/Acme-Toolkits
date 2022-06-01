@@ -4,28 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Service;
-
-import acme.entities.configuration.SystemConfiguration;
-import acme.features.any.item.AnyItemRepository;
 
 @Service
 public class SpamHelper {
 	
-	@Autowired
-	protected AnyItemRepository anyItemRepository;
-	
-	public boolean spamChecker(final String text) {	
+	public boolean spamChecker(final String text, final String strongSpamW, final String weakSpamW, final Double strongThreshold,final Double weakThreshold) {	
 		
 		final String[] words = text.split(" ");
 		final List<String> wordsListText = this.getListGivenArray(words);
 		final List<String> wordsList = wordsListText.stream().map(String::toLowerCase).collect(Collectors.toList());
 		
-		final SystemConfiguration sc = this.anyItemRepository.findSystemConfiguration();
-		
-		final String[] strongSpamWords = sc.getStrongSpamWords().split(",");
+		final String[] strongSpamWords = strongSpamW.split(",");
 		final List<String> strongSpamWordsList = this.getListGivenArray(strongSpamWords); // solo terms que sean palabras únicas
 		
 		final List<List<String>> multipleStrongSpamWordsLists = new ArrayList<>();
@@ -41,7 +32,7 @@ public class SpamHelper {
 		
 	
 		
-;		final String[] weakSpamWords = sc.getWeakSpamWords().split(",");
+;		final String[] weakSpamWords = weakSpamW.split(",");
 		final List<String> weakSpamWordsList = this.getListGivenArray(weakSpamWords);  // solo terms que sean palabras únicas
 		
 		final List<List<String>> multipleWeakSpamWordsLists = new ArrayList<>();
@@ -93,7 +84,7 @@ public class SpamHelper {
 		}
 		
 
-		final Pair<Boolean, Boolean> res = this.isSpam(text, sc, weakCont, strongCont);
+		final Pair<Boolean, Boolean> res = this.isSpam(text, strongThreshold,weakThreshold, weakCont, strongCont);
 		
 		return !res.getFirst() && !res.getSecond();
 	}
@@ -107,12 +98,10 @@ public class SpamHelper {
 		return res;
 	}
 	
-	public Pair<Boolean, Boolean> isSpam(final String origin, final SystemConfiguration sc, final Integer weakCont, final Integer strongCont) {
+	public Pair<Boolean, Boolean> isSpam(final String origin, final double strongThreshold,final double weakThreshold, final Integer weakCont, final Integer strongCont) {
 		final Integer size = origin.split(" ").length;
 		final double weakRatio = (double) weakCont/size;
 		final double strongRatio = (double) strongCont/size;
-		final double weakThreshold = sc.getWeakSpamThreshold();
-		final double strongThreshold = sc.getStrongSpamThreshold();
 		Boolean isWeakSpam = false;
 		Boolean isStrongSpam = false;
 		if(weakRatio > weakThreshold) isWeakSpam = true;
@@ -144,12 +133,4 @@ public class SpamHelper {
 		return copy;
 	}
 	
-	
-	
-	 
-	 
-	
-	
-	
-
 }

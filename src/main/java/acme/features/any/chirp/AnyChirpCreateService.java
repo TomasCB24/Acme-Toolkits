@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.chirps.Chirp;
+import acme.entities.configuration.SystemConfiguration;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -69,12 +70,14 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> 
         errors.state(request, confirmation, "confirmation", "any.chirp.confirmation.error");
         
 		if(!errors.hasErrors("title")) {
-			final boolean spamFree = this.helper.spamChecker(entity.getTitle());
+			final SystemConfiguration sc = this.repository.findSystemConfiguration();
+			final boolean spamFree = this.helper.spamChecker(entity.getTitle(),sc.getStrongSpamWords(),sc.getWeakSpamWords(),sc.getStrongSpamThreshold(),sc.getWeakSpamThreshold());
 			errors.state(request, spamFree, "title", "form.error.spam");
 		}
 		
 		if(!errors.hasErrors("body")) {
-			final boolean spamFree = this.helper.spamChecker(entity.getBody());
+			final SystemConfiguration sc = this.repository.findSystemConfiguration();
+			final boolean spamFree = this.helper.spamChecker(entity.getBody(),sc.getStrongSpamWords(),sc.getWeakSpamWords(),sc.getStrongSpamThreshold(),sc.getWeakSpamThreshold());
 			errors.state(request, spamFree, "body", "form.error.spam");
 		}
 		

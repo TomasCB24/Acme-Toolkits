@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.announcements.Announcement;
+import acme.entities.configuration.SystemConfiguration;
 import acme.features.authenticated.announcement.AuthenticatedAnnouncementRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
@@ -89,12 +90,14 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 		assert errors != null;
 		
 		if(!errors.hasErrors("title")) {
-			final boolean spamFree = this.helper.spamChecker(entity.getTitle());
+			final SystemConfiguration sc = this.repository.findSystemConfiguration();
+			final boolean spamFree = this.helper.spamChecker(entity.getTitle(), sc.getStrongSpamWords(),sc.getWeakSpamWords(),sc.getStrongSpamThreshold(),sc.getWeakSpamThreshold());
 			errors.state(request, spamFree, "title", "form.error.spam");
 		}
 		
 		if(!errors.hasErrors("body")) {
-			final boolean spamFree = this.helper.spamChecker(entity.getBody());
+			final SystemConfiguration sc = this.repository.findSystemConfiguration();
+			final boolean spamFree = this.helper.spamChecker(entity.getBody(), sc.getStrongSpamWords(),sc.getWeakSpamWords(),sc.getStrongSpamThreshold(),sc.getWeakSpamThreshold());
 			errors.state(request, spamFree, "body", "form.error.spam");
 		}
 		

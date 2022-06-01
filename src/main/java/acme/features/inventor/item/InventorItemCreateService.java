@@ -7,6 +7,7 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.configuration.SystemConfiguration;
 import acme.entities.items.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
@@ -88,12 +89,14 @@ public class InventorItemCreateService implements AbstractCreateService<Inventor
 		}
 		
 		if(!errors.hasErrors("name")) {
-			final boolean spamFree = this.helper.spamChecker(entity.getName());
+			final SystemConfiguration sc = this.repository.findSystemConfiguration();
+			final boolean spamFree = this.helper.spamChecker(entity.getName(),sc.getStrongSpamWords(),sc.getWeakSpamWords(),sc.getStrongSpamThreshold(),sc.getWeakSpamThreshold());
 			errors.state(request, spamFree, "name", "form.error.spam");
 		}
 		
 		if(!errors.hasErrors("description")) {
-			final boolean spamFree = this.helper.spamChecker(entity.getDescription());
+			final SystemConfiguration sc = this.repository.findSystemConfiguration();
+			final boolean spamFree = this.helper.spamChecker(entity.getDescription(),sc.getStrongSpamWords(),sc.getWeakSpamWords(),sc.getStrongSpamThreshold(),sc.getWeakSpamThreshold());
 			errors.state(request, spamFree, "description", "form.error.spam");
 		}
 		

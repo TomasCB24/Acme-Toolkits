@@ -3,6 +3,7 @@ package acme.features.inventor.toolkit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.configuration.SystemConfiguration;
 import acme.entities.toolkits.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
@@ -84,17 +85,20 @@ public class InventorToolkitUpdateService implements AbstractUpdateService<Inven
 		}
 		
 		if(!errors.hasErrors("title")) {
-			final boolean spamFree = this.helper.spamChecker(entity.getTitle());
+			final SystemConfiguration sc = this.repository.findSystemConfiguration();
+			final boolean spamFree = this.helper.spamChecker(entity.getTitle(),sc.getStrongSpamWords(),sc.getWeakSpamWords(),sc.getStrongSpamThreshold(),sc.getWeakSpamThreshold());
 			errors.state(request, spamFree, "title", "form.error.spam");
 		}
 		
 		if(!errors.hasErrors("description")) {
-			final boolean spamFree = this.helper.spamChecker(entity.getDescription());
+			final SystemConfiguration sc = this.repository.findSystemConfiguration();
+			final boolean spamFree = this.helper.spamChecker(entity.getDescription(),sc.getStrongSpamWords(),sc.getWeakSpamWords(),sc.getStrongSpamThreshold(),sc.getWeakSpamThreshold());
 			errors.state(request, spamFree, "description", "form.error.spam");
 		}
 		
 		if(!errors.hasErrors("assemblyNotes")) {
-			final boolean spamFree = this.helper.spamChecker(entity.getAssemblyNotes());
+			final SystemConfiguration sc = this.repository.findSystemConfiguration();
+			final boolean spamFree = this.helper.spamChecker(entity.getAssemblyNotes(),sc.getStrongSpamWords(),sc.getWeakSpamWords(),sc.getStrongSpamThreshold(),sc.getWeakSpamThreshold());
 			errors.state(request, spamFree, "assemblyNotes", "form.error.spam");
 		}
 		
