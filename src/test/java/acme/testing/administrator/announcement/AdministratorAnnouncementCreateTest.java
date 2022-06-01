@@ -30,7 +30,7 @@ public class AdministratorAnnouncementCreateTest extends TestHarness {
 
 		super.clickOnMenu("Authenticated", "List recent announcements");
 		super.checkListingExists();
-		super.sortListing(0, "asc");
+		super.sortListing(1, "asc");
 		super.checkColumnHasValue(recordIndex, 1, title);
 		super.clickOnListingRecord(recordIndex);
 
