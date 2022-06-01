@@ -20,6 +20,7 @@ Patronage
 + creationDate: Date {Past, Temporal(DATE),NotNull}
 + initialPeriodDate: Date {Temporal(DATE),NotNull}
 + finalPeriodDate: Date {Temporal(DATE),NotNull}
++draftMode: boolean
 + link: String {URL}</panel_attributes>
     <additional_attributes/>
   </element>
@@ -308,7 +309,7 @@ AdministratorDashboard
 + minimumOfComponentsRetailPrice: Map&lt;(String,String),Double&gt; 
 + maximumOfComponentsRetailPrice: Map&lt;(String,String),Double&gt; 
 		
-+ totalNumberOftools: int
++ totalNumberOfTools: int
 + averageOfToolsRetailPrice: Map&lt;String,Double&gt;
 + deviationOfToolsRetailPrice: Map&lt;String,Double&gt;
 + minimumOfToolsRetailPrice: Map&lt;String,Double&gt;
