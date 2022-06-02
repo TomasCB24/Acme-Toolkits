@@ -18,8 +18,8 @@
 <acme:form>
 	
 	<acme:input-select code="any.item.form.label.item-type" path="itemType">
-		<acme:input-option code="any.item.form.label.item-type.tool" value="TOOL" selected="${itemType == 'TOOL'}"/>
-		<acme:input-option code="any.item.form.label.item-type.component" value="COMPONENT" selected="${itemType == 'COMPONENT'}"/>
+		<acme:input-option code="any.item.form.label.item-type.tool" value="TOOL" selected="${type eq 'TOOL'}"/>
+		<acme:input-option code="any.item.form.label.item-type.component" value="COMPONENT" selected="${type eq 'COMPONENT'}"/>
 	</acme:input-select>
 	
 	<acme:input-textbox code="any.item.form.label.name" path="name"/>
