@@ -16,11 +16,11 @@ any.chirp.list.label.email = Correo
 any.chirp.list.button.create = Crear
 
 
-any.chirp.form.label.title = Título
-any.chirp.form.label.author = Autor
-any.chirp.form.label.body = Cuerpo
-any.chirp.form.label.email = Correo
+any.chirp.form.label.title = Título:
+any.chirp.form.label.author = Autor:
+any.chirp.form.label.body = Cuerpo:
+any.chirp.form.label.email = Correo:
 any.chirp.form.button.create = Crear
 any.chirp.form.label.confirmation = Confirmación
-any.chirp.confirmation.error = Es necesario marcar el checkbox para poder crear el chirp
+any.chirp.confirmation.error = Es necesario marcar la casilla para poder crear el chirp
 

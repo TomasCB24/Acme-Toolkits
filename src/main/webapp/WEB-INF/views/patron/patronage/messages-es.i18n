@@ -19,12 +19,12 @@ patron.patronage.form.label.budget = Presupuesto:
 patron.patronage.form.label.creation-date = Fecha de Creación:
 patron.patronage.form.label.initial-period-date = Fecha de Inicio:
 patron.patronage.form.label.final-period-date = Fecha de Fin:
-patron.patronage.form.label.link = Link para más información:
+patron.patronage.form.label.link = Enlace para más información:
 
 patron.patronage.form.label.inventor = Username del Inventor:
 patron.patronage.form.label.company = Compañía del Inventor:
 patron.patronage.form.label.statement = Declaración del Inventor:
-patron.patronage.form.label.inventorLink = Link para más información del Inventor: (Opcional)
+patron.patronage.form.label.inventorLink = Enlace para más información del Inventor: (Opcional)
 
 patron.patronage.form.button.update = Actualizar
 patron.patronage.form.button.publish = Publicar
@@ -35,6 +35,6 @@ patron.patronage.form.button.delete = Borrar
 patron.patronage.form.error.duplicated-code = El código introducido pertenece a un patrocinio ya existente
 patron.patronage.form.error.too-close-initial = La fecha inicial del periodo debe ser al menos un mes posterior a la fecha de creación del patrocinio
 patron.patronage.form.error.too-close-final = La fecha final del periodo debe ser al menos un mes posterior a la fecha inicial de periodo del patrocinio
-patron.patronage.form.error.inventor-not-found = El username del inventor no fue encontrado
+patron.patronage.form.error.inventor-not-found = El nombre de usuario del inventor no fue encontrado
 patron.patronage.form.error.negative-amount = La cantidad del presupuesto no puede ser menor o igual que 0
 patron.patronage.form.error.unknown-currency = La moneda del presupuesto no está aceptada por el sistema

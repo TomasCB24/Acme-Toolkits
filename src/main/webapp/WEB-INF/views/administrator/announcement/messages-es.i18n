@@ -10,7 +10,7 @@
 
 administrator.announcement.form.label.title = Título:
 administrator.announcement.form.label.body = Cuerpo:
-administrator.announcement.form.label.link = Link (Opcional):
+administrator.announcement.form.label.link = Enlace (Opcional):
 administrator.announcement.form.label.confirmation = Confirme que el anuncio es correcto
 administrator.announcement.form.label.flag = Estado:
 administrator.announcement.form.label.is-not-critical = No es Crítico
