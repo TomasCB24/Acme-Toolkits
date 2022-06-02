@@ -24,7 +24,7 @@ public class AdministratorSystemConfigurationUpdateService implements AbstractUp
 	@Autowired
 	protected AdministratorSystemConfigurationRepository repository;
 
-	//All currencies accepted by the API used | Updated at 2022/06/01
+	//All currencies accepted by the API used | Updated at 2022/06/02
 	
 	List<String> currenciesAPI = Arrays.asList("AED", "AFN", "ALL", "AMD", "ANG", "AOA", "ARS", "AUD", 
 		"AWG", "AZN", "BAM", "BBD", "BDT", "BGN", "BHD", "BIF", "BMD", "BND", "BOB", "BRL", "BSD", 

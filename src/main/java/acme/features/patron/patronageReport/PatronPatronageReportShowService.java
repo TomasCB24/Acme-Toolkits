@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import acme.entities.patronages.PatronageReport;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 import acme.roles.Patron;
 
@@ -21,15 +20,15 @@ public class PatronPatronageReportShowService implements AbstractShowService<Pat
 		boolean result;
 		int masterId;
 		PatronageReport patronageReport;
-		Patron patron;
-		Principal principal;
 		
 		masterId = request.getModel().getInteger("id");
 		patronageReport = this.repository.findOnePatronageReportById(masterId);
-		assert patronageReport != null;
-		patron = patronageReport.getPatronage().getPatron();
-		principal = request.getPrincipal();
-		result = patron.getUserAccount().getId()==principal.getAccountId();
+		
+		result = patronageReport != null && 
+			(request.isPrincipal(patronageReport.getPatronage().getPatron())
+		);
+		
+		
 		return result;
 	}
 

@@ -74,7 +74,9 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 			
 			errors.state(request,entity.getPatronage()!=null,"patronageCode", "inventor.quantity.form.error.patronage-can-not-be-null");
 		
-		}else if(!errors.hasErrors("serialNumber")) {
+		}
+        
+        if(!errors.hasErrors("serialNumber")) {
 
 			PatronageReport existing;
 

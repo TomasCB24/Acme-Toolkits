@@ -28,15 +28,13 @@ public class InventorQuantityDeleteService implements AbstractDeleteService<Inve
 		boolean result;
 		int masterId;
 		Quantity quantity;
-		Inventor inventor;
 
 		masterId = request.getModel().getInteger("id");
 		quantity = this.repository.findOneQuantityById(masterId);
-		assert quantity != null;
-		inventor = quantity.getToolkit().getInventor();
-		result = (
+
+		result = quantity != null && (
 			quantity.getToolkit().isDraftMode() &&
-			request.isPrincipal(inventor)
+			request.isPrincipal(quantity.getToolkit().getInventor())
 		);
 		
 		return result;

@@ -21,15 +21,12 @@ public class InventorPatronageReportShowService implements AbstractShowService<I
 		boolean result;
 		int masterId;
 		PatronageReport patronageReport;
-		Inventor inventor;
 		
 		masterId = request.getModel().getInteger("id");
 		patronageReport = this.repository.findOnePatronageReportById(masterId);
-		assert patronageReport != null;
-		inventor = patronageReport.getPatronage().getInventor();
-		result = (
-			request.isPrincipal(inventor)
-		);
+		
+		result = patronageReport != null && 
+				(request.isPrincipal(patronageReport.getPatronage().getInventor()));
 		return result;
 	}
 

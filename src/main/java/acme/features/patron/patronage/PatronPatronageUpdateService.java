@@ -40,8 +40,8 @@ public class PatronPatronageUpdateService  implements AbstractUpdateService<Patr
 		masterId = request.getModel().getInteger("id");
 		patronage = this.repository.findOnePatronageById(masterId);
 		patron = patronage.getPatron();
-		assert patron != null;
-		result = (
+
+		result = patron != null && (
 			patronage.isDraftMode() &&
 			request.isPrincipal(patron)
 		);

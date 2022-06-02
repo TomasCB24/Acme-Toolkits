@@ -32,8 +32,8 @@ public class PatronPatronageShowService implements AbstractShowService<Patron, P
 		masterId = request.getModel().getInteger("id");
 		patronage = this.repository.findOnePatronageById(masterId);
 		patron = patronage.getPatron();
-		assert patron != null;
-		result = (
+		
+		result = patron != null &&(
 			request.isPrincipal(patron));
 			
 		return result;

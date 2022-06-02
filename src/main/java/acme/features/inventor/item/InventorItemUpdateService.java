@@ -36,16 +36,13 @@ public class InventorItemUpdateService implements AbstractUpdateService<Inventor
 		boolean result;
 		int itemId;
 		final Item item;
-		Inventor inventor;
 		
 
 		itemId = request.getModel().getInteger("id");
 		item = this.repository.findOneItemById(itemId);
-		assert item != null;
-		inventor = item.getInventor();
-		result = (
-			item.isDraftMode() &&
-			request.isPrincipal(inventor)
+
+		result = item != null && 
+			     (item.isDraftMode() && request.isPrincipal(item.getInventor())
 		);
 		
 		return result;

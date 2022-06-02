@@ -32,15 +32,13 @@ public class InventorToolkitUpdateService implements AbstractUpdateService<Inven
 		boolean result;
 		int masterId;
 		Toolkit toolkit;
-		Inventor inventor;
 
 		masterId = request.getModel().getInteger("id");
 		toolkit = this.repository.findOneToolkitById(masterId);
-		assert toolkit != null;
-		inventor = toolkit.getInventor();
-		result = (
+		
+		result = toolkit != null && (
 			toolkit.isDraftMode() &&
-			request.isPrincipal(inventor)
+			request.isPrincipal(toolkit.getInventor())
 		);
 		
 		return result;

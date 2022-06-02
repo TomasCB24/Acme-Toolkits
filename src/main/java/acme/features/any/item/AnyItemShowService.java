@@ -37,9 +37,7 @@ public class AnyItemShowService implements AbstractShowService<Any, Item> {
   
 		item = this.repository.findOneItemById(itemId);
 		
-		assert item !=null;
-		
-		result = !item.isDraftMode();
+		result = item != null && !item.isDraftMode();
 		
 		return result;
 		
